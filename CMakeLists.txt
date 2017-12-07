@@ -10,7 +10,7 @@ add_latex_document(full.tex
   INPUTS ${contents_files}
 )
 
-add_latex_document(pertinent.tex
+add_latex_document(simplified.tex
   BIBFILES references.bib
   INPUTS ${contents_files}
 )
