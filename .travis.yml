@@ -17,5 +17,4 @@ deploy:
     - build/full.pdf
     - build/simplified.pdf
   on:
-    repo: Myna65/a11
-    branch: master
+    tags: true
