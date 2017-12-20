@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt, twoside]{article}
 
 \input{include/00-config}
 
@@ -6,13 +6,18 @@
 
 \begin{document}
 
+\input{include/01-title}
+
+\cleardoublepage{}
+
 \tableofcontents{}
 
 \cleardoublepage{}
 
-\input{include/10-combinatorics}
-\input{include/11-polytopes}
-\input{include/13-groups}
+\input{include/10-groups}
+\input{include/11-combinatorics}
+\input{include/12-polytopes}
+%\input{include/13-abstract-polytopes}
 
 \cleardoublepage{}
 
@@ -42,5 +47,9 @@
 
 \bibliographystyle{plain}
 \bibliography{references}
+
+\cleardoublepage{}
+
+\printindex{}
 
 \end{document}

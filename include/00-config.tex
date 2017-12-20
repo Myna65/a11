@@ -7,6 +7,9 @@
 
 \usepackage{tikz}
 
+\usepackage{makeidx}
+\makeindex
+
 \usepackage{float}
 
 \usepackage{amsmath}
@@ -17,6 +20,8 @@
 \usepackage{mathrsfs}
 
 \usepackage{enumitem}
+\usepackage{titling}
+\usepackage{emptypage}
 
 \usepackage{chngcntr}
 \counterwithin{figure}{subsection}
@@ -40,6 +45,14 @@
 \setitemize[1]{label=\textbullet}
 \setitemize[2]{label=$\circ$}
 
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Sym}{Sym}
+
+\author{Nathan Meynaert}
+\title{Study of polytopes with automorphism group $A_{11}$}
+\date{Version of \today}

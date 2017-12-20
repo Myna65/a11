@@ -1,0 +1,49 @@
+\section{Polytopes}
+
+In this section, I will follow the book \cite{polytopes}
+
+\begin{definition}[$\mathcal V$-polytope]
+  A polytope is a bounded intersection of a finite number of closed half-plane.
+\end{definition}
+
+\begin{definition}[$\mathcal H$-polytope]
+  A polytope is a bounded intersection of a finite number of closed half-plane.
+\end{definition}
+
+\begin{theorem}
+  A subset $P \subseteq \mathbb R^d$ is a $\mathcal V$-polytope iff it's a $\mathcal H$-polytope.
+\end{theorem}
+
+\paragraph{}
+We have two ways to represent polytopes and we will use the most adapted representation in every statement.
+
+\paragraph{}
+We can write equation of the half planes in the form $Ax \le c$. Each half plane can be summarized as a couple $(A,c)$. If we index the half planes by $i$, we have that a polytope is the set of points $x$ such that $A_i x \le c_i$ for all $i$.
+
+\begin{definition}[Valid inequality]
+  An inequality $ax \le c$ is valid for a polytope $P$ if it's satisfied for all points $x \in P$.
+\end{definition}
+
+\begin{definition}[Face of polytopes]
+  The faces of a polytopes $P$ are the interection between $P$ and the hyperplane determined by $ax = c$ where $Ax \le c$ is a valid inequality. By convention, $P$ it-self is also a face of $P$.
+\end{definition}
+
+\begin{definition}[Face lattice]
+  We can define a poset of the faces of every polytope. Given two faces $F$ and $G$ of $P$, we say that $F \le G$ iff $F \subseteq G$.
+\end{definition}
+
+\begin{proposition}
+  Every face lattice is a poset
+\end{proposition}
+
+\begin{proposition}
+  Every face lattice is a lattice
+\end{proposition}
+
+\begin{proposition}
+  Every face lattice is a ranked lattice and the dimension of the faces is a good rank function.
+\end{proposition}
+
+\begin{proposition}[Diamond property]
+  Given two faces $F$ and $G$ such that $\dim(F) = \dim(G) - 2$ there exists exactly two faces $H_1$ and $H_2$ such that $F < H_1 < G$ and $F < H_2 < G$.
+\end{proposition}

@@ -8,9 +8,11 @@ file(GLOB_RECURSE contents_files RELATIVE ${CMAKE_SOURCE_DIR} include/*.tex)
 add_latex_document(full.tex
   BIBFILES references.bib
   INPUTS ${contents_files}
+  USE_INDEX
 )
 
 add_latex_document(simplified.tex
   BIBFILES references.bib
   INPUTS ${contents_files}
+  USE_INDEX
 )
