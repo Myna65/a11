@@ -1,5 +1,17 @@
 \section{Groups}
 
+\subsection{Reminders from groups theory}
+
+\begin{definition}[Group]
+  \index{group}
+  A group $G$ is a pair $(E, \cdot)$ where $E$ is a set and $\cdot$ is an operator: $\cdot: E \times E \to E$. A group must satisfies the following properties :
+  \begin{itemize}
+    \item \textbf{Associativity} $(a \cdot b) \cdot c = a \cdot (b \cdot c)\ \forall a,b,c \in G$.
+    \item \textbf{Identity element} There exists an element of $G$ (we will call it $1$) such that $a \cdot 1 = a = 1 \cdot a \ \forall a \in G$.
+    \item \textbf{Inverse element} $\forall a \in G$ there exists $a^{-1} \in G$ such that $a \cdot a^{-1} = 1 = a^{-1} \cdot a$.
+  \end{itemize}
+\end{definition}
+
 \subsection{Permutation groups}
 
 \paragraph{}
@@ -11,7 +23,7 @@ We will begin with some notions of permutation group. Those notions come from~\c
 \end{definition}
 
 \paragraph{}
-We will write permutation on the right, for example the application of the permutation $g$ to a point $\alpha$ is noted $\alpha g$ and not $g(\alpha)$. The permutation is composed left to right, so we write $\alpha gh$ instead of $h(g(\alpha))$. This can be confusing at the beginning be with this notation, we read from the left to the right and avoid changing reading (and reasonning) direction between each expression.
+We will write permutation on the right, for example the application of the permutation $g$ to a point $\alpha$ is noted $\alpha g$ and not $g(\alpha)$. Permutations are composed left to right, so we write $\alpha gh$ instead of $h(g(\alpha))$. This can be confusing at the beginning be with this notation, we read from the left to the right and avoid changing reading (and reasonning) direction between each expression.
 
 \paragraph{}
 One popular way to write permutation is the following notation.
@@ -49,7 +61,7 @@ A transposition of the point $\alpha$ and $\beta$ is written $(\alpha\ \beta)$.
 We note a cycle $(c_1\ c_2\ \dots\ c_n)$ where the $c_i$ are the elements moved by the cyclic permutation.
 
 \paragraph{}
-The term \textit{cyclic permutation} is used to describe a full permutation and the term \textit{cycle} is used to describe a subpermutation. But the meaning remains the same.
+The term \textit{cyclic permutation} is used to describe a full permutation and the term \textit{cycle} is used to describe a part of a permutation. But the meaning remains the same.
 
 \begin{proposition}
   Every cycle can be written as a product of transposition.
@@ -65,13 +77,18 @@ The term \textit{cyclic permutation} is used to describe a full permutation and 
   Every permutation can be written as a product of a cycles.
 \end{proposition}
 
+\begin{proof}
+  For every non fixed-point $\alpha_0$, we can find a sequence defined by $\alpha_{i+1} = \alpha_i g$. There must be a $j \neq 0$ such that $\alpha_j = \alpha_0$. $g$ is a bijection between the same set. And so it's a bijection between two finite sets of the same size. But if the sequence does not loop back to its first element, it can't loop at all because it's a bijection. So it must be infinite and it's a contradiction
+  % TOO COMPLICATED
+\end{proof}
+
 \begin{corollary}
   Every permutation can be written as a product of transposition.
 \end{corollary}
 
 \begin{definition}[Symmetric group]
   \index{symmetric group}
-  Let $\Omega$ be a set, the group of all permutations of $\Omega$ is a called the symmetric group of $\Omega$ and is denoted $\Sym(\Omega)$. Most of we do not care about the elements of $\Omega$, the only important thing about $\Omega$ is its size because the structure of $\Sym(\Omega)$ is only determined by this parameter. Therefore, we will mostly denote $S_n$ the symmetric group over an set of $n$ elements
+  Let $\Omega$ be a set, the group of all permutations of $\Omega$ is a called the symmetric group of $\Omega$ and is denoted $\Sym(\Omega)$. Most of the time, we do not care about the elements of $\Omega$, the only important thing about $\Omega$ is its size because the structure of $\Sym(\Omega)$ is only determined by this parameter. Therefore, we will mostly denote $S_n$ the symmetric group over an set of $n$ elements
 \end{definition}
 
 \begin{definition}[Permutation group]
