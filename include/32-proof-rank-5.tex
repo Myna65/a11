@@ -4,26 +4,27 @@
 \subsection{Basic results}
 
 \paragraph{}
-Des lemmes qui semblent vrais et qui simplifierait grandement les preuves ci-dessous.
-
-\paragraph{}
 Dans la suite, nous noterons les carrés alternés grâce au deux involutions qui les composent. Un carré alterné avec des arêtes $\rho_0$ et $\rho_2$ sera noté $[\rho_0, \rho_2]$.
 
 \begin{definition}
-  Deux carrés alternés sont dit adjacents s'ils partagent deux sommets.
+  Deux carrés alternés sont dit adjacents s'ils partagent deux sommets\footnote{Ces définitions sont à améliorer, il y a quelques problèmes mais je pense qu'il y a moyen de rendre ça correct}.
 \end{definition}
 
 \begin{definition}
-  Une suite de carrés alternés adjacents est un suite finie dans laquelle chaque carré alterné est adjacent avec son précédesseur et son successeur s'ils existent. Cette suite ne doit être adjacente à aucun autre carré alterné.
+  Une suite de carrés alternés adjacents est un suite finie dans laquelle chaque carré alterné est adjacent avec son précédesseur et son successeur s'ils existent.
 \end{definition}
 
 \begin{definition}
   Une suite de carré alternés adjacents est dite linéaire si une des deux composante de sa notation est constante.
 \end{definition}
 
+Par exemple, la suite $[\rho_0, \rho_2], [\rho_0, \rho_4], [\rho_0, \rho_3]$ est linéaire car la première composante est toujours $\rho_0$.
+
 \begin{definition}
   Une suite de carré alterné est dite monotone si la suite formée par les différences des indices de ses carrés est monotone.
 \end{definition}
+
+La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en effet la suite formée par la différente des indice est $2, 3, 4$ et cette suite est bien monotone.
 
 \begin{proposition}
   Toute suite de carrés alternés monotone est linéaire.
@@ -104,6 +105,8 @@ Dans la suite, nous noterons les carrés alternés grâce au deux involutions qu
 \end{lemma}
 
 \begin{proof}
+  Cette preuve et la plupart des suivantes vont utiliser le même schéma pour essayer de construire tous les graphess CPR valides. On va placer un premier motif dans le graphe CPR, soit par hypothèse, soit en effectuant une étude de cas. Ensuite on va construire tous les motifs imposés par ce premier choix. Ceci va souvent nous amener à utiliser tous ou presque tous les points, ce qui nous permettra d'éviter une nouvelle étude de cas. Ensuite on essaie de placer les arêtes restantes pour former des 2 ou 4-transpositions. Ceci va nous donner un ensemble réduit, souvent vide, de graphes CPR valables.
+
   Commençons par placer l'involution $\rho_0$ sur le graphe. Le graphe est toujours composé de 4 arêtes isolées donc, à un isomorphisme près, on a le graphe suivant:
 
   \begin{figure}[H]
@@ -178,7 +181,7 @@ Dans la suite, nous noterons les carrés alternés grâce au deux involutions qu
   \end{figure}
 
   \paragraph{}
-  Par le lemme précédent, on doit trouver une suite de carré alternés jusqu'à ce que la différence ne soit que deux. En partant du carré $(0,4)$, cette suite a une taille d'au moins 3 carrés. Il est possible de le faire avec 5 carrés mais il faudrait 12 points ce que nous n'avons pas. Donc la suite est monotone et donc linéaire.
+  Par le lemme précédent, on doit trouver une suite de carré alternés jusqu'à ce que la différence ne soit que deux. En partant du carré $[\rho_0,\rho_4]$, cette suite a une taille d'au moins 3 carrés. Il est possible de le faire avec 5 carrés mais il faudrait 12 points ce que nous n'avons pas. Donc la suite est monotone et donc linéaire.
 
   \paragraph{}
   En partant du carré $[\rho_0,\rho_4]$ on peut aller au carré $[\rho_1,\rho_4]$ ou au carré $[\rho_0,\rho_3]$. Mais si nous n'utilisons pas les involutions $\rho_0$ maintenant, nous ne pourrons jamais les utiliser plus loin car notre suite est linaire et monotone et donc nous ne réutiliserons jamais l'involution $\rho_0$ dans la suite. Les deux arêtes isolées occupent 4 points et la suite de carrés que nous formons va en utiliser 8, donc il faut que nous utilisions au moins une de ces arêtes isolées sinon nous n'aurons pas assez de points. La carré suivant est donc $[\rho_0,\rho_3]$.
@@ -232,11 +235,11 @@ Dans la suite, nous noterons les carrés alternés grâce au deux involutions qu
 \end{proof}
 
 \begin{lemma}
-  Dans un graphe CPR de rang 5 avec 11 points, il est impossible d'avoir une arête double  entre $\rho_0$ et $\rho_4$.
+  Dans un graphe CPR de rang 5 avec 11 points, il est impossible d'avoir une arête double  entre $\rho_0$ et $\rho_4$.\footnote{La preuve de ce théorème est fausse car elle n'envisage pas tous les cas correctement, elle nécessiterait un peu plus d'explications ainsi que quelques précisions à certains endroits}
 \end{lemma}
 
 \begin{proof}
-  Pour pouvoir étendre cette arête double, il faut utiliser un carré alterné, les possibilités sont soit $[\rho_0, \rho_3]$ soit $[\rho_1, \rho_4]$. Cette deux solutions sont duales donc nous n'étudierons que la première. Il s'agit d'un carré alterné qui nous devons étendre avec $[\rho_0, \rho_2]$ car nous devons rester linéaire. On a donc la graphe suivant:
+  Pour pouvoir étendre cette arête double, il faut utiliser un carré alterné, les possibilités sont soit $[\rho_0, \rho_3]$ soit $[\rho_1, \rho_4]$. Cette deux solutions sont duales donc nous n'étudierons que la première. Il s'agit d'un carré alterné que nous devons à son tour étendre avec $[\rho_0, \rho_2]$ car nous devons rester linéaire. On a donc la graphe suivant:
 
   \begin{figure}[H]
     \begin{center}
@@ -277,7 +280,7 @@ Dans la suite, nous noterons les carrés alternés grâce au deux involutions qu
   \end{figure}
 
   \paragraph{}
-  Nous avons deux problèmes dans ce graphe pour le moment: il n'y a qu'une arête $\rho_4$ et si on relie les points manquants par des arêtes simples, on aura un nombre impaire d'arêtes.
+  Nous avons deux problèmes dans ce graphe pour le moment: il n'y a qu'une arête $\rho_4$ et si on relie les points manquants par des arêtes simples, on aura un nombre impaire d'arêtes.\footnote{À partir d'ici c'est incomplet (peut-être faux)}
 
   \paragraph{}
   Pour pouvoir placer une arête $\rho_4$, nous devons avant placer une arête $\rho_2$ et une arête $\rho_3$. En tout celà utilise 3 points hors des 4 qu'il nous reste. Concernant l'arête double ou le carré alterné, ils ne peuvent être placé sur les points déjà utilisés du graphe actuel. Il faut donc les placer parmi les points non utilisés. Le carré alterné utilise 4 points tandis que l'arête double n'en utilise que deux. Si on place l'arête double à l'extrémité d'une chaîne, elle ne consomme qu'un point. Dans ce cas, il faudrait 3 point pour aller jusque $\rho_4$ et une arête double ensuite. Sauf qu'on ne peut pas placer d'arête double après $\rho_4$, en effet on devrait avoir l'arête double $(\rho_3, \rho_5)$ mais $\rho_5$ n'existe pas.
@@ -300,7 +303,7 @@ Dans la suite, nous noterons les carrés alternés grâce au deux involutions qu
   \end{enumerate}
 
   \paragraph{}
-  La dernière possibilité ne peut être utilisée que pour une arête car après nous n'avons plus de points. Mais que $\rho_4$ soit une 2-transposition ou une 4-transposition, il reste encore au moins une autre arête à placer. Nous devons dès lors utiliser les deux autres possibilités mais nous avons prouvé qu'elles ne mênent à rien. Donc $\rho_4$ ne peut être une 4-transposition.
+  La dernière possibilité ne peut être utilisée qu'une seule fois car après nous n'avons plus assez de points fixes. Mais que $\rho_4$ soit une 2-transposition ou une 4-transposition, il reste encore au moins une autre arête à placer. Nous devons dès lors utiliser les deux autres possibilités mais nous avons prouvé qu'elles ne mênent à rien. Donc $\rho_4$ ne peut être une 4-transposition.
 
 \end{proof}
 
@@ -314,14 +317,17 @@ On peut maintenant diviser notre analyse en deux cas en fonction de la dispositi
 \subsubsection{$\rho_1$ est une 4-transposition}
 
 \begin{theorem}
-  Si $\rho_1$ (ou $\rho_3$) est une 4-transposition alors $\rho_2$ l'est aussi.
+  Si $\rho_1$ est une 4-transposition, alors un générateur peut être écrit comme le produit des autres et donc cet ensemble de "générateurs" n'engendre pas un sggi.
 \end{theorem}
 
 \begin{proof}
-  Supposons que $\rho_1$ soit une 4-transposition, elle doit commuter avec $\rho_3$ et $\rho_4$. $\rho_4$ peut soit former un carré alterné, soit doubler deux arêtes, soit doubler une arête et relier deux points encore fixes.
+  Rappelons que par les deux lemmes qui commencent cette section, nous savons que les arêtes $\rho_0$ et $\rho_4$ ne peuvent pas partager de sommet.
+
+
+  Dessinons donc un graphe sue lequel nous représentons la 4-transposition $\rho_1$, elle doit commuter avec $\rho_3$ et $\rho_4$. Envisageons les différentes possibilité pour $\rho_4$, elle peut soit former un carré alterné, soit doubler deux arêtes, soit doubler une arête et relier deux points encore fixes. Enviageons le premier cas, celui où elle forme un carré alterné avec $\rho_4$.
 
   \paragraph{}
-  Si $\rho_4$ forme un carré alterné avec $\rho_1$, il doit être adjacent à un carré alterné entre $\rho_3$ et $\rho_1$ ($\rho_2$ et $\rho_4$ n'est pas envisageable car $\rho_4$ est une 2-transposition). On se trouve donc avec le graphe suivant:
+  Si $\rho_4$ forme un carré alterné avec $\rho_1$, il doit être adjacent à un carré alterné entre $\rho_3$ et $\rho_1$ ($\rho_2$ et $\rho_4$ n'est pas envisageable car $\rho_4$ est une 2-transposition). Ces carrés doivent être reliés au reste du graphe par une arête $\rho_2$, cette arête ne fait partie d'aucun carré alterné donc elle doit forcément relier le carré au l'arête $\rho_1$. On se trouve donc avec le graphe suivant:
 
   \begin{figure}[H]
     \begin{center}
@@ -348,6 +354,7 @@ On peut maintenant diviser notre analyse en deux cas en fonction de la dispositi
             \path (3)  edge node {$1$} (4);
             \path (5)  edge node {$1$} (6);
             \path (7)  edge node {$1$} (8);
+            \path (5)  edge node {$2$} (7);
             \path (3)  edge node {$3$} (5);
             \path (4)  edge node {$3$} (6);
             \path (1)  edge node {$4$} (3);
@@ -361,7 +368,7 @@ On peut maintenant diviser notre analyse en deux cas en fonction de la dispositi
   \end{figure}
 
   \paragraph{}
-  Maintenant si nous essayons de placer les arêtes $\rho_0$, nous avons un problème car nous n'avons qu'une arête $\rho_1$ pour les relier au reste. Il faut donc former un carré alterné entre $\rho_0$ et $\rho_2$ et relier ce carré au reste grâce à l'arête $\rho_1$. On a le graphe suivant.
+  Maintenant si nous essayons de placer les arêtes $\rho_0$, nous avons un problème car nous n'avons qu'une extrémité d'arête $\rho_1$ disponible pour les relier au reste. Il faut donc former un carré alterné entre $\rho_0$ et $\rho_2$ et relier ce carré au reste grâce à l'arête $\rho_1$. On a le graphe suivant.
   % TODO une petite preuve ?
 
   \begin{figure}[H]
@@ -391,6 +398,7 @@ On peut maintenant diviser notre analyse en deux cas en fonction de la dispositi
             \path (3)  edge node {$1$} (4);
             \path (5)  edge node {$1$} (6);
             \path (7)  edge node {$1$} (8);
+            \path (5)  edge node {$2$} (7);
             \path (8)  edge node {$2$} (9);
             \path (10) edge node {$2$} (11);
             \path (3)  edge node {$3$} (5);
@@ -406,19 +414,54 @@ On peut maintenant diviser notre analyse en deux cas en fonction de la dispositi
   \end{figure}
 
   \paragraph{}
-  Pour compléter le graphe, il faut encore utiliser 2 arêtes $\rho_2$. Il n'est pas possible d'utilise deux arêtes $\rho_3$ supplémentaires. % TODO Pourquoi ?
+  Pour restaurer la parité, il faut encore utiliser une arête $\rho_2$. Il n'y a que deux possibilités pour une telle arête: il faut doubler une des arêtes $\rho_4$.
 
   \paragraph{}
-  Maintenant il faut placer les arêtes $\rho_3$, nous avons deux possibilités, soit $\rho_3$ est une 2-transposition, soit il s'agit d'une 4-transposition. Si c'est un 2-transposition, tout est déjà placé. De plus nous avons déjà placé deux arêtes non-essentielles. Il est impossible de compléter le graphe sans utiliser au moins une autre arête non-essentielle. En effet, si nous continuons le graphe, nous pouvons connecter jusqu'à deux arêtes $\rho_2$. Plaçons-en une, si nous voulons continuer, nous devons maintenant utiliser l'arête $\rho_1$ isolée, suivie par une arête $\rho_0$. Mais nous n'avons aucune façon de placer la dernière arête $\rho_0$.
+  Maitenant soit nous nous arétons là et alors $\rho_3$ est une 2-transposition, soit nous continuons à rajouter deux arêtes $\rho_3$.
 
   \paragraph{}
-  Il faut donc au moins trois arêtes non-essentielles mais alors il faut au moins deux 4-transpositions qui sont forcément $\rho_1$ et $\rho_2$.
+  Analysons les possibilités pour ces dernières, seulement deux possibilités sont disponibles, entre les point $1$ et $2$ ou entre les points $10$ et $11$.
 
   \paragraph{}
-  Étudions maintenant le cas où $\rho_3$ est une 4-transposition. Il reste alors 2 arêtes $\rho_3$ à placer.
+  Ceci conclut notre analyse pour le carré alterné en $\rho_1$ et $\rho_4$, envisageons maitenant la seconde possibilité, celle d'une arête double entre $\rho_0$ et $\rho_4$. Nous devons placer un carré alterné à coté vu que nous voulons le relier au reste. On a donc le graphe suivant
 
-  \paragraph{}
-  Pour $\rho_4$, s'il forme un carré avec $\rho_1$, on ne pourra le relier avec rien car il y deux involutions entre $\rho_1$ et $\rho_4$ et non une. Si par contre $\rho_4$ double un arête et relie deux points fixes. Alors ces deux points nouvellement reliés ne pourront jamais être reliés au reste du graphe car l'involution $\rho_3$ forme un carré alterné et n'est donc pas disponible.
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {1};
+          \node (2)  at (0,0)  {2};
+          \node (3)  at (2,2)  {3};
+          \node (4)  at (2,0)  {4};
+          \node (5)  at (4,2)  {5};
+          \node (6)  at (4,0)  {6};
+          \node (7)  at (6,2)  {7};
+          \node (8)  at (6,0)  {8};
+          \node (9)  at (8,2)  {9};
+          \node (10) at (8,0)  {10};
+          \node (11) at (10,2) {11};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white,circle}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend right=20] node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (1)  edge[bend left=20] node {$4$} (2);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{Un carré alterné et son voisin engendré}
+    \end{center}
+  \end{figure}
+
+
 \end{proof}
 
 \begin{theorem}
@@ -537,8 +580,8 @@ Il nous reste deux cas à analyser, celui où il y a deux 4-transpositions, cell
           \node (4)  at (0,0)  {4};
           \node (5)  at (8,0)  {5};
           \node (6)  at (8,2)  {6};
-          \node (7)  at (4,2) {7};
-          \node (8)  at (-2,2)  {8};
+          \node (7)  at (4,2)  {7};
+          \node (8)  at (-2,2) {8};
           \node (9)  at (6,0)  {9};
           \node (10) at (6,2) {10};
           \node (11) at (4,0) {11};
