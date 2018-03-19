@@ -1,5 +1,32 @@
 \section{Proof for rank 5}
 
+\subsection{Basic results v2}
+
+\begin{proposition}
+  If a vertex is linked with three edges that does not share the other end, then two of those three edges are part of an alternating square.
+\end{proposition}
+
+\begin{proof}
+  Among the three edges, at least two are not adjacent and thus, they need to be part of an alternating square.
+\end{proof}
+
+\begin{corollary}
+  If an vertex is not part of any alternating square, then it it connected to at most two other vertices.
+\end{corollary}
+
+\begin{proposition}
+  In a connected CPR graph over more than two vertices, there no triple edge outside of an alternating square and there is no double edge such that the difference between indices is not 2.
+\end{proposition}
+
+\begin{proof}
+  Each end of the triple edge is not part of an alternating square and so must not be connected to more than 2 vertices. But the graph is connected, so at least one end of the graph must be connected to more than one vertex. So one end must be connected to two vertices but then the edge that connect this vertex to the new one must be adjacent to all three edges. But that is impossible.
+\end{proof}
+
+\begin{proposition}
+  An alternating square can be connected to a simple edge (no part of an alternating square) only if it have two adjacent simple edges with a difference in indices of exactly 2.
+\end{proposition}
+
+
 
 \subsection{Basic results}
 
@@ -79,6 +106,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 \end{lemma}
 
 \begin{lemma}
+  \label{lemma-continue-alternating-square}
   Si on a un carré alterné dont les indices différent de plus 2 alors le seul moyen de l'étendre est d'utiliser un autre carré alterné.
 \end{lemma}
 
@@ -101,13 +129,24 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 \subsection{Intermediate results}
 
 \begin{lemma}
-  Dans un graphe CPR de rang 5 avec 11 points, il est impossible d'avoir un carré alterné entre $\rho_0$ et $\rho_4$ si $\rho_0$ est une 4-transposition\footnote{Cette dernière condition est-elle nécessaire?}
+  \label{lemma-forbidden-alternating-square}
+  Let $\Gamma$ be sggi generating $A_{11}$ of rank 5. Then its permutation representation graph does not contains an alternating square between $\rho_0$ and $\rho_4$ if $\rho_0$ is a 4-transposition\footnote{Is this condition necessaraly?}.
 \end{lemma}
 
 \begin{proof}
-  Cette preuve et la plupart des suivantes vont utiliser le même schéma pour essayer de construire tous les graphess CPR valides. On va placer un premier motif dans le graphe CPR, soit par hypothèse, soit en effectuant une étude de cas. Ensuite on va construire tous les motifs imposés par ce premier choix. Ceci va souvent nous amener à utiliser tous ou presque tous les points, ce qui nous permettra d'éviter une nouvelle étude de cas. Ensuite on essaie de placer les arêtes restantes pour former des 2 ou 4-transpositions. Ceci va nous donner un ensemble réduit, souvent vide, de graphes CPR valables.
+  This proof and the following ones will use the same ideas to try to build valid permutation representatioin graph
+  \begin{itemize}
+    \item First, a pattern will be choosen and placed it on the graph (in this case, it's an alternating squre between $\rho_0$ and $\rho_4)$
+    \item Then all mandatory edges will added such that the pattern can be linked to the rest of the graph
+    \item All possibilities to link all the remaining points of the rest of the graph will then be tested
+    \item The remaining edges will be eventually placed on the graph such that all involutions are even.
+  \end{itemize}
 
-  Commençons par placer l'involution $\rho_0$ sur le graphe. Le graphe est toujours composé de 4 arêtes isolées donc, à un isomorphisme près, on a le graphe suivant:
+  \paragraph{}
+  If no graph were found, that mean that the pattern which has been choosen was impossible. Otherwise, this method provides a complete list of all graphs.
+
+  \paragraph{}
+  Let's start by placing the 4-transposition $\rho_4$ on the graph. We have the following graph:
 
   \begin{figure}[H]
     \begin{center}
@@ -143,7 +182,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
   \end{figure}
 
   \paragraph{}
-  Maitenant plaçons un carré alterné entre $\rho_0$ et $\rho_4$.
+  Now, let's form an alternation square between $\rho_0$ and $\rho_4$.
 
   \begin{figure}[H]
     \begin{center}
@@ -181,13 +220,13 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
   \end{figure}
 
   \paragraph{}
-  Par le lemme précédent, on doit trouver une suite de carré alternés jusqu'à ce que la différence ne soit que deux. En partant du carré $[\rho_0,\rho_4]$, cette suite a une taille d'au moins 3 carrés. Il est possible de le faire avec 5 carrés mais il faudrait 12 points ce que nous n'avons pas. Donc la suite est monotone et donc linéaire.
+  By Lemma~\ref{lemma-continue-alternating-square}, we need to find one sequence of alternating squares until the difference between indices is two. Therefore this sequence contains at least 3 squares. It's impossible to have 5 squares because we only have 11 points. So the sequence is monotone and so linear.
 
   \paragraph{}
-  En partant du carré $[\rho_0,\rho_4]$ on peut aller au carré $[\rho_1,\rho_4]$ ou au carré $[\rho_0,\rho_3]$. Mais si nous n'utilisons pas les involutions $\rho_0$ maintenant, nous ne pourrons jamais les utiliser plus loin car notre suite est linaire et monotone et donc nous ne réutiliserons jamais l'involution $\rho_0$ dans la suite. Les deux arêtes isolées occupent 4 points et la suite de carrés que nous formons va en utiliser 8, donc il faut que nous utilisions au moins une de ces arêtes isolées sinon nous n'aurons pas assez de points. La carré suivant est donc $[\rho_0,\rho_3]$.
+  From the square $[\rho_0, \rho_4]$, we can go to the square $[\rho_1, \rho_4]$ or to the square $[\rho_0, \rho_3]$. But we must use the edges of involution $\rho_0$ now, the two remaining $\rho_0$ edges use 4 points and the sequence of three squares uses 8 points thus they must share at least one point. But no $\rho_0$ edge can be connected to the sequence of alternating square because an $[\rho_{-1}, \rho_1]$ square will be needed to do this but $\rho_{-1}$ does not exist. We cannot use them later in the sequence of alternating square because it is monotone and so, it will never go back to $\rho_0$ once it leave it. The only solution is that the sequence of alternating square must used a $\rho_0$ edge in the next square. The following square in the sequence is therefore $[\rho_0, \rho_3]$.
 
   \paragraph{}
-  Vu que la suite est linéaire, le carré suivant doit être $[\rho_0, \rho_2]$. La différence des indices de ce carré n'est que de deux, on doit donc relier un arête $\rho_1$ dessus ce qui nous donne le graphe:
+  Because the sequence is linear, the following square must be $[\rho_0, \rho_2]$. It's the third square and the difference between indices is only two, so we can stop here. For now we have the following graph:
 
 
   \begin{figure}[H]
@@ -231,15 +270,17 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
   \end{figure}
 
   \paragraph{}
-  Pour relier les deux derniers points, uniquement 2 arêtes sont nécessaires mais alors le nombre total d'arêtes serait impair ce qui interdit. Il faut donc former un carré alterné ou une arête double. Le carré alterné est impossible car le nombre de points est insuffisant. Il faut donc utiliser une arête double dont la différence des indices est exactement 2 . Toutes les arêtes $\rho_0$ on déjà été utilisées, les seules possibilités sont une arête double $(\rho_1,\rho_3)$ ou une arête double $(\rho_2,\rho_4)$ mais alors soit le nombre d'arêtes $\rho_3$ soit $\rho_4$ devient impair. Donc c'est impossible.
+  To link the two remaining points, we only need two edges but the total amount of edge will be odd but that is fordidden because we want that the generated group is $A_{11}$. To restore parity we need to create a double edge or an alternating square. The number of points if insufficient to create an alternating square, so we must create a double edge and the difference between its indices must be two. All $\rho_0$ edges have already be used, so the possibilities for double edges are $(\rho_1, \rho_3)$ and $(\rho_2, \rho_4)$ but then the number of $\rho_3$ or $\rho_4$ edge becomes odd. So it is impossible to connect all points if $\rho_0$ is a 4-transposition and there is an alternating square between $\rho_0$ and $\rho_4$.
 \end{proof}
 
 \begin{lemma}
-  Dans un graphe CPR de rang 5 avec 11 points, il est impossible d'avoir une arête double  entre $\rho_0$ et $\rho_4$.\footnote{La preuve de ce théorème est fausse car elle n'envisage pas tous les cas correctement, elle nécessiterait un peu plus d'explications ainsi que quelques précisions à certains endroits}
+  \label{lemma-forbidden-double-edge}
+  In a permutation representation graph of rank 5 with 11 points, it's impossible to have a double edge between $\rho_0$ and $\rho_4$.
 \end{lemma}
 
 \begin{proof}
-  Pour pouvoir étendre cette arête double, il faut utiliser un carré alterné, les possibilités sont soit $[\rho_0, \rho_3]$ soit $[\rho_1, \rho_4]$. Cette deux solutions sont duales donc nous n'étudierons que la première. Il s'agit d'un carré alterné que nous devons à son tour étendre avec $[\rho_0, \rho_2]$ car nous devons rester linéaire. On a donc la graphe suivant:
+  By Lemme~\ref{lemma-extend-double-edge}
+  To extend a double edge $(\rho_0, \rho_4)$, we must use an alternating square, we have two possibilities, either $[\rho_0, \rho_3]$ or $[\rho_1, \rho_4]$. Those two solutions are dual, so we will only study the first one. This square must then be extended to $[\rho_0, \rho_2]$ because we must stay linear. We have the following graph:
 
   \begin{figure}[H]
     \begin{center}
@@ -280,10 +321,55 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
   \end{figure}
 
   \paragraph{}
-  Nous avons deux problèmes dans ce graphe pour le moment: il n'y a qu'une arête $\rho_4$ et si on relie les points manquants par des arêtes simples, on aura un nombre impaire d'arêtes.\footnote{À partir d'ici c'est incomplet (peut-être faux)}
+  We have two issues in this graphs: there is only one $\rho_4$ edge and if we link all remaining points with single edge, the total number of edges will be odd.
 
   \paragraph{}
-  Pour pouvoir placer une arête $\rho_4$, nous devons avant placer une arête $\rho_2$ et une arête $\rho_3$. En tout celà utilise 3 points hors des 4 qu'il nous reste. Concernant l'arête double ou le carré alterné, ils ne peuvent être placé sur les points déjà utilisés du graphe actuel. Il faut donc les placer parmi les points non utilisés. Le carré alterné utilise 4 points tandis que l'arête double n'en utilise que deux. Si on place l'arête double à l'extrémité d'une chaîne, elle ne consomme qu'un point. Dans ce cas, il faudrait 3 point pour aller jusque $\rho_4$ et une arête double ensuite. Sauf qu'on ne peut pas placer d'arête double après $\rho_4$, en effet on devrait avoir l'arête double $(\rho_3, \rho_5)$ mais $\rho_5$ n'existe pas.
+  The $\rho_4$ edge cannot be place on the existing graph. So it must be placed between two fixed points. Then we need to link this edge to the rest of the graph, and because we have only two points, remaining, it must be done using a $\rho_2$ and $\rho_3$ edge. For now, we have the following graph:
+
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {1};
+          \node (2)  at (0,0)  {2};
+          \node (3)  at (2,2)  {3};
+          \node (4)  at (2,0)  {4};
+          \node (5)  at (4,2)  {5};
+          \node (6)  at (4,0)  {6};
+          \node (7)  at (6,2)  {7};
+          \node (8)  at (6,0)  {8};
+          \node (9)  at (8,2)  {9};
+          \node (10) at (8,0)  {10};
+          \node (11) at (10,2) {11};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white,circle}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend right=20] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (5)  edge node {$1$} (7);
+            \path (3)  edge node {$2$} (5);
+            \path (4)  edge node {$2$} (6);
+            \path (7)  edge node {$2$} (8);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (8)  edge node {$3$} (10);
+            \path (1)  edge[bend left=20] node {$4$} (2);
+            \path (9)  edge node {$4$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{Cas 1.1.2: doubles carrés alternés et arêtes doublées}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If wa want that the total number of point must be even, we must link the last point we a double edge. But that is impossile because the only point where we can start a double edge is the end of the $\rho_4$ edge but the the double edge must be $(\rho_3, \rho_5)$ but $\rho_5$ does not exists. Thus we cannot have a double edge between $\rho_0$ and $\rho_4$ in a permutation representation graph of $A_{11}$.
 
 
 \end{proof}
@@ -291,186 +377,379 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 \subsection{Main theorems}
 
 \begin{lemma}
-  $\rho_0$ (et donc $\rho_4$) ne peut être une 4-transposition.
+  $\rho_0$ (and thus $\rho_4$) cannot be a 4-transposition.
 \end{lemma}
 
 \begin{proof}
-  Plaçons la 4-transposition sur le graphe, ajoutons maintenant $\rho_4$ qui doit commuter avec $\rho_0$. Nous pouvons utiliser les motifs suivants:
+  Takin the graph with only the $\rho_0$ 4-transposition, the $\rho_4$ involution must now be added but must commute with $\rho_0$. The following patterns are
   \begin{enumerate}
-    \item Former un carré alterné
-    \item Doubler une arête existante
-    \item Relier deux points jusque là fixes
+    \item Form an alternating square
+    \item Double an existing edge
+    \item Link two fixed points
   \end{enumerate}
 
   \paragraph{}
-  La dernière possibilité ne peut être utilisée qu'une seule fois car après nous n'avons plus assez de points fixes. Mais que $\rho_4$ soit une 2-transposition ou une 4-transposition, il reste encore au moins une autre arête à placer. Nous devons dès lors utiliser les deux autres possibilités mais nous avons prouvé qu'elles ne mênent à rien. Donc $\rho_4$ ne peut être une 4-transposition.
+  The last pattern can only be user once because we only have three fixed points. But either $\rho_4$ is a 4-transposition or a 2-transposition, it is, at least, one edge to must still be placed. Thus, we must use one of the two other possibilities but we know that they do not lead to anything. So $\rho_4$ cannot be a 4-transposition.
 
 \end{proof}
 
-On peut maintenant diviser notre analyse en deux cas en fonction de la disposition des 4-transposition
-
+We can now split our analysis in two cases dependending of the disposition of 4-tranpositions:
 \begin{enumerate}
-  \item $\rho_1$ est une 4-transposition
-  \item $\rho_1$ n'est pas une 4-transposition. Si $\rho_3$ est une 4-transposition, il suffit de prendre le dual pour se ramener au premier cas.
+  \item $\rho_1$ and $\rho_3$ are 4-transpositions
+  \item $\rho_1$ is a 4-transposition but $\rho_3$ is not.
+  \item $\rho_1$ and $\rho_3$ are 2-transposition. If $\rho_3$ is a 4-transposition but $\rho_1$ not, we can take the dual and reduce it to the second case.
 \end{enumerate}
 
-\subsubsection{$\rho_1$ est une 4-transposition}
-
+\paragraph{}
+The objective is to prove the following theorem in the two first cases:
 \begin{theorem}
-  Si $\rho_1$ est une 4-transposition, alors un générateur peut être écrit comme le produit des autres et donc cet ensemble de "générateurs" n'engendre pas un sggi.
+  If $\rho_1$ is a 4-transposition, then a generator can be written as a product of other generators, and thus the generating set is not free, so the group is not a sggi.
 \end{theorem}
 
-\begin{proof}
-  Rappelons que par les deux lemmes qui commencent cette section, nous savons que les arêtes $\rho_0$ et $\rho_4$ ne peuvent pas partager de sommet.
+\paragraph{}
+If this theorem is proven, no string C-group can belong to the two first cases.
 
+\subsubsection{$\rho_1$ and $\rho_3$ are 4-transpositions}
 
-  Dessinons donc un graphe sue lequel nous représentons la 4-transposition $\rho_1$, elle doit commuter avec $\rho_3$ et $\rho_4$. Envisageons les différentes possibilité pour $\rho_4$, elle peut soit former un carré alterné, soit doubler deux arêtes, soit doubler une arête et relier deux points encore fixes. Enviageons le premier cas, celui où elle forme un carré alterné avec $\rho_4$.
+\paragraph{}
+We must place
 
-  \paragraph{}
-  Si $\rho_4$ forme un carré alterné avec $\rho_1$, il doit être adjacent à un carré alterné entre $\rho_3$ et $\rho_1$ ($\rho_2$ et $\rho_4$ n'est pas envisageable car $\rho_4$ est une 2-transposition). Ces carrés doivent être reliés au reste du graphe par une arête $\rho_2$, cette arête ne fait partie d'aucun carré alterné donc elle doit forcément relier le carré au l'arête $\rho_1$. On se trouve donc avec le graphe suivant:
+\subsubsection{$\rho_1$ is a 4-transposition but $\rho_3$ is not}
 
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}
+\paragraph{}
+Recall that, by Lemmas~\ref{lemma-forbidden-alternating-square} and~\ref{lemma-forbidden-double-edge}, we know that the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex.
 
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+\paragraph{}
+Let's draw a graph on which we draw all edges of the 4-transposition $\rho_1$. This transposition must commute with $\rho_3$ and $\rho_4$. We want to place the edge for $\rho_4$. They must commute with thoses of $\rho_1$, so for the two first edges, we have three possibilities: we can build an alternating square, double two edges or double one edge an link two fixed points.
+
+\paragraph{}
+Let's consider the first case, the alternating square:
+
+\paragraph{}
+If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square between $\rho_1$ and $\rho_3$ ($\rho_2$ and $\rho_4$ is not possible because $\rho_4$ is a 2-transposition). Thoses squares must be linked to the rest of the graph by a $\rho_2$ edge. Thus edge is not part of any alternating square, therefore it must link the square with the remaining $\rho_1$ edge. For now, we have the following graph:
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {1};
+        \node (2)  at (0,0)  {2};
+        \node (3)  at (2,2)  {3};
+        \node (4)  at (2,0)  {4};
+        \node (5)  at (4,2)  {5};
+        \node (6)  at (4,0)  {6};
+        \node (7)  at (6,2)  {7};
+        \node (8)  at (6,0)  {8};
+        \node (9)  at (8,2)  {9};
+        \node (10) at (8,0)  {10};
+        \node (11) at (10,2) {11};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white,circle}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (5)  edge node {$2$} (7);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (1)  edge node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
         \end{scope}
+      \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
 
-          \begin{scope}[every edge/.style={draw}]
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (5)  edge node {$2$} (7);
-            \path (3)  edge node {$3$} (5);
-            \path (4)  edge node {$3$} (6);
-            \path (1)  edge node {$4$} (3);
-            \path (2)  edge node {$4$} (4);
-          \end{scope}
+\paragraph{}
+Now, if we try to place edges of $\rho_0$, we have a problem because we only have one available $\rho_1$ edge to link them to the rest. Therefore we need to from an alternating square between $\rho_0$ and $\rho_2$ and link it with the $\rho_1$ edge. We have the following graph:
+% TODO une petite preuve ?
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {1};
+        \node (2)  at (0,0)  {2};
+        \node (3)  at (2,2)  {3};
+        \node (4)  at (2,0)  {4};
+        \node (5)  at (4,2)  {5};
+        \node (6)  at (4,0)  {6};
+        \node (7)  at (6,2)  {7};
+        \node (8)  at (8,2)  {8};
+        \node (9)  at (8,0)  {9};
+        \node (10) at (10,2)  {10};
+        \node (11) at (10,0) {11};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white,circle}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (9)  edge node {$0$} (11);
+          \path (8)  edge node {$0$} (10);
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (5)  edge node {$2$} (7);
+          \path (8)  edge node {$2$} (9);
+          \path (10) edge node {$2$} (11);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (1)  edge node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
         \end{scope}
+      \end{scope}
 
-      \end{tikzpicture}
-      \caption{Un carré alterné et son voisin engendré}
-    \end{center}
-  \end{figure}
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
 
-  \paragraph{}
-  Maintenant si nous essayons de placer les arêtes $\rho_0$, nous avons un problème car nous n'avons qu'une extrémité d'arête $\rho_1$ disponible pour les relier au reste. Il faut donc former un carré alterné entre $\rho_0$ et $\rho_2$ et relier ce carré au reste grâce à l'arête $\rho_1$. On a le graphe suivant.
-  % TODO une petite preuve ?
+\paragraph{}
+To restore parity, we still need to place a $\rho_2$ edge. There is only one posibility for a such edge: we need to double a $\rho_4$ edge, there are two of them.
 
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}
+\paragraph{}
+Now we can stop here and $\rho_3$ will be a 2-transposition or we can add two extra $\rho_3$ edges. Those edges must be located between points $1$ and $2$, and between points $10$ et $11$.
 
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+\paragraph{}
+If $\rho_3$ is a 4-transposition then the graph is the following:
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {1};
+        \node (2)  at (0,0)  {2};
+        \node (3)  at (2,2)  {3};
+        \node (4)  at (2,0)  {4};
+        \node (5)  at (4,2)  {5};
+        \node (6)  at (4,0)  {6};
+        \node (7)  at (6,2)  {7};
+        \node (8)  at (8,2)  {8};
+        \node (9)  at (8,0)  {9};
+        \node (10) at (10,2)  {10};
+        \node (11) at (10,0) {11};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white,circle}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (9)  edge node {$0$} (11);
+          \path (8)  edge node {$0$} (10);
+          \path (1)  edge[bend right=20] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge[bend left=20] node {$2$} (3);
+          \path (5)  edge node {$2$} (7);
+          \path (8)  edge node {$2$} (9);
+          \path (10) edge[bend right=20] node {$2$} (11);
+          \path (1)  edge[bend left=20] node {$3$} (2);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (10) edge[bend left=20] node {$3$} (11);
+          \path (1)  edge[bend right=20] node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
         \end{scope}
+      \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
 
-          \begin{scope}[every edge/.style={draw}]
-            \path (9)  edge node {$0$} (11);
-            \path (8)  edge node {$0$} (10);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (5)  edge node {$2$} (7);
-            \path (8)  edge node {$2$} (9);
-            \path (10) edge node {$2$} (11);
-            \path (3)  edge node {$3$} (5);
-            \path (4)  edge node {$3$} (6);
-            \path (1)  edge node {$4$} (3);
-            \path (2)  edge node {$4$} (4);
-          \end{scope}
+\paragraph{}
+Let's remove all edges from involutions $\rho_0$ and $\rho_3$, We have the following graph.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {1};
+        \node (2)  at (0,0)  {2};
+        \node (3)  at (2,2)  {3};
+        \node (4)  at (2,0)  {4};
+        \node (5)  at (4,2)  {5};
+        \node (6)  at (4,0)  {6};
+        \node (7)  at (6,2)  {7};
+        \node (8)  at (8,2)  {8};
+        \node (9)  at (8,0)  {9};
+        \node (10) at (10,2)  {10};
+        \node (11) at (10,0) {11};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white,circle}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge[bend left=20] node {$2$} (3);
+          \path (5)  edge node {$2$} (7);
+          \path (8)  edge node {$2$} (9);
+          \path (10) edge node {$2$} (11);
+          \path (1)  edge[bend right=20] node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
         \end{scope}
+      \end{scope}
 
-      \end{tikzpicture}
-      \caption{Un carré alterné et son voisin engendré}
-    \end{center}
-  \end{figure}
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
 
-  \paragraph{}
-  Pour restaurer la parité, il faut encore utiliser une arête $\rho_2$. Il n'y a que deux possibilités pour une telle arête: il faut doubler une des arêtes $\rho_4$.
+\paragraph{}
+Now we can see easily that $\rho_4 = (\rho_1 \rho_2)^{10}$. The set of generators is not free and so it's not a generating set.
 
-  \paragraph{}
-  Maitenant soit nous nous arétons là et alors $\rho_3$ est une 2-transposition, soit nous continuons à rajouter deux arêtes $\rho_3$.
+\paragraph{}
+This conclude our analysis for the alternating square between $\rho_1$ and $\rho_4$. The second possibility is having a double edge with involutions $\rho_0$ and $\rho_4$. We must place an alternating square next to it because this double must be connected to the rest of the graph. We have two possibilities for the alternating square: $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$. In the first case, we have the following graph:
 
-  \paragraph{}
-  Analysons les possibilités pour ces dernières, seulement deux possibilités sont disponibles, entre les point $1$ et $2$ ou entre les points $10$ et $11$.
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
 
-  \paragraph{}
-  Ceci conclut notre analyse pour le carré alterné en $\rho_1$ et $\rho_4$, envisageons maitenant la seconde possibilité, celle d'une arête double entre $\rho_0$ et $\rho_4$. Nous devons placer un carré alterné à coté vu que nous voulons le relier au reste. On a donc le graphe suivant
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {1};
+        \node (2)  at (0,0)  {2};
+        \node (3)  at (2,2)  {3};
+        \node (4)  at (2,0)  {4};
+        \node (5)  at (4,2)  {5};
+        \node (6)  at (4,0)  {6};
+        \node (7)  at (6,2)  {7};
+        \node (8)  at (6,0)  {8};
+        \node (9)  at (8,2)  {9};
+        \node (10) at (8,0)  {10};
+        \node (11) at (10,2) {11};
+      \end{scope}
 
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}
+      \begin{scope}[every node/.style={fill=white,circle}]
 
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=20] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (1)  edge[bend left=20] node {$4$} (2);
         \end{scope}
+      \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
 
-          \begin{scope}[every edge/.style={draw}]
-            \path (1)  edge[bend right=20] node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (1)  edge node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (1)  edge[bend left=20] node {$4$} (2);
-          \end{scope}
+\paragraph{}
+In the second case, it's simpler and we have the following graph:
+
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {1};
+        \node (2)  at (0,0)  {2};
+        \node (3)  at (2,2)  {3};
+        \node (4)  at (2,0)  {4};
+        \node (5)  at (4,2)  {5};
+        \node (6)  at (4,0)  {6};
+        \node (7)  at (6,2)  {7};
+        \node (8)  at (6,0)  {8};
+        \node (9)  at (8,2)  {9};
+        \node (10) at (8,0)  {10};
+        \node (11) at (10,2) {11};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white,circle}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=20] node {$1$} (2);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (9)  edge node {$1$} (10);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (1)  edge[bend left=20] node {$4$} (2);
+          \path (3)  edge node {$4$} (4);
         \end{scope}
+      \end{scope}
 
-      \end{tikzpicture}
-      \caption{Un carré alterné et son voisin engendré}
-    \end{center}
-  \end{figure}
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+Now if we want to connect the alternating square to the rest of the graph, we must use a $\rho_3$ edge. But we cannot connect to a $\rho_1$ edge because we will need to build an alterating square and we will double the edge (and so it can be reduced to the previous case).
+
+\paragraph{}
+Now, this edge must be linked to the fixed point. And we need another edge that goes from the fixed point to a $\rho_1$ edge. We must use a $\rho_2$ edge. We cannot make an alternating square because in this case, a $\rho_1$ edge should leave the point that we just used. But it was fixed before we use it and so no $\rho_1$ touch it.
+
+\paragraph{}
+Let's notice that, for now, we need to place at least two double edges or alternating square if we want to complete the graph. It it the followin for now.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {1};
+        \node (2)  at (0,0)  {2};
+        \node (3)  at (2,2)  {3};
+        \node (4)  at (2,0)  {4};
+        \node (11) at (4,2) {11};
+        \node (5)  at (6,2)  {5};
+        \node (6)  at (6,0)  {6};
+        \node (7)  at (8,2)  {7};
+        \node (8)  at (8,0)  {8};
+        \node (9)  at (10,2) {9};
+        \node (10) at (10,0) {10};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white,circle}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=20] node {$1$} (2);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (9)  edge node {$1$} (10);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (5)  edge node {$2$} (11);
+          \path (3)  edge node {$3$} (11);
+          \path (1)  edge[bend left=20] node {$4$} (2);
+          \path (3)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
 
 
-\end{proof}
 
 \begin{theorem}
-  Soit un sggi de rang 5 sur $A_{11}$. Alors ce sggi contient exactement une 4-transposition.
+  Let be a sggi of rank 5 on $A_{11}$. Then this sggi contains exactly a 4-transposition.
 \end{theorem}
 
-Il nous reste deux cas à analyser, celui où il y a deux 4-transpositions, celles-ci sont alors forcément en $\rho_1$ et $\rho_2$ (à la dualité près) et celui où on a trois 4-transpositions qui sont alors positionnées en $\rho_1$, $\rho_2$ et $\rho_3$.
+\paragraph{}
+We must analyse two cases: the one who has two 4-tranpsositions (they will necessaraly be $\rho_1$ and $\rho_2$) and the one who has three 4-transpositions (in $\rho_1$, $\rho_2$ and $\rho_3$).
 
 \begin{proof}
+  Let's start with the graph of the previous proof, if we add the involutions $\rho_3$
   En partant du graphe de la preuve précédente, si on rajoute l'involution $\rho_3$, on l'étend à $A_{11}$.
   En effet, partons du graphe et essayons de rajouter la 2-transposition $\rho_3$, celle-ci doit commuter avec $\rho_0$ et $\rho_1$.
   \begin{figure}[H]
@@ -628,7 +907,7 @@ Dans ce cas, aucun générateur n'est redondante. En effet si on supprimait un g
 Commençons par trouver tous les sggis de rang 5 qui sont valables.
 
 \begin{theorem}
-  Les seuls graphes CPR de rang 5 sur 11 points sont les suivants:
+  Les seuls graphes CPR de rang 5 sur 11 points sont ceux présents à la section~\ref{monodromy-5} (p.~\pageref{monodromy-5}).
 
 \end{theorem}
 
@@ -798,20 +1077,20 @@ En tout, on a donc exactement 6 graphe CPR admissibles pour cette configuration.
 
 \end{proof}
 
-Dans la suite, nous reprendrons la numérotation des sommets décrite à la section~\ref{monodromy-5} (p. \pageref{monodromy-5})
+From now, we are numeroting points of the graph in the same way as in section~\ref{monodromy-5} (p. \pageref{monodromy-5})
 
 \begin{theorem}
-  Aucun des groupes engendré par ces graphes n'est un C-group.
+  None of the groups generated by sggis reprensented on those graphs are C-group.
 \end{theorem}
 
 \begin{proof}
-  D'après la definition d'un C-group, il suffit de trouver deux sous-ensembles de générateurs $S_1$ et $S_2$ tel que $\Gamma_{S_1} \cap \Gamma_{S_2} \neq \Gamma_{S_1 \cap S_2}$.
+  By the definition of a C-group, it is sufficient to find two subsets of generators $S_1$ and $S_2$ such that $\Gamma_{S_1} \cap \Gamma_{S_2} \neq \Gamma_{S_1 \cap S_2}$.
 
   \paragraph{}
-  Dans notre cas, nous prendrons $S_1 = \{\rho_1, \rho_2\}$, et $S_2 = \{\rho_2, \rho_3, \rho_4\}$. Dans ce cas, $S_1 \cap S_2 = \{\rho_2\}$  et donc $\Gamma_{\rho_2} = \langle (1\ 2)(5\ 6)(7\ 8)(9\ 10) \rangle$. Ce groupe ne contient que deux éléments, l'identité et $\rho_2$. En effet $\rho_2$ est une involution et donc $\rho_2\rho_2 = 1$.
+  In our case, let's take $S_1 = \{\rho_1, \rho_2\}$ and $S_2 = \{\rho_2, \rho_3, \rho_4\}$. Here $S_1 \cap S_2 = \{\rho_2\}$ and so $\Gamma_{\rho_2} = \langle (1\ 2)(5\ 6)(7\ 8)(9\ 10) \rangle$. This group is a cylic groupe of order 2, so it contains only two elements, identity and $\rho_2$. Hence, $\rho_2$ is an involution.
 
   \paragraph{}
-  Étudions plus en détail $S_1$, si nous ne conservons que ces générateurs, le choix que nous avons effectuer concernant la position des arêtes $\rho_3$ le long du carré alterné n'a aucune importance. Nous avons juste deux graphes différents à étudier:
+  Let's study $S_1$ more deeply, if we only consider those generators the choice made while positioning $\rho_3$ in the alternating square does not have any importance. We have only two different graphs to study (it may be necessary to renumber some vertex):
 
   \begin{figure}[H]
     \begin{center}
@@ -884,15 +1163,15 @@ Dans la suite, nous reprendrons la numérotation des sommets décrite à la sect
   \end{figure}
 
   \paragraph{}
-  Dans le premier cas, étudions la permutation $(\rho_1\rho_2)^2\rho_1$, elle laisse les points des deux arêtes isolées tel quel car la permutation utilise $\rho_2$ un nombre pair de fois. Les points 3 et 4 restent aussi fixes, mais les points 1 et 2 ainsi que 5 et 6 sont intervertis. On a $(\rho_1\rho_2)^2\rho_1 = (1\ 2)(5\ 6)$, donc $(1\ 2)(5\ 6) \in \Gamma_{S_1}$.
+  In the first graph, the permutation $(\rho_1 \rho_2)^2 \rho_1$, it lets points of the two isolated edge as-is because the permutation use $\rho_2$ an even number of times. Points 3 and 4 also remain in the same position. But points 1 and 2 as well as 5 and 6 are swaped. We have $(\rho_1 \rho_2)^2 \rho_1 = (1\ 2)(5\ 6) \in \Gamma_{S_1}$.
 
   \paragraph{}
-  Dans le second graphe, c'est $(\rho_1\rho_2)^4\rho_1$ qui nous donne le même résultat.
+  In the second graph, it's $(\rho_1\rho_2)^4 \rho_1$ that give us the same result.
 
   % TODO Renuméroter les graphes !!!
 
   \paragraph{}
-  Étudions maitenant $S_2$, Dans ce cas, il n'y a que la façon donc nous avons disposé les arêtes $\rho_3$ sur le carré atlerné qui intervient. Ceci nous donne donc trois possibilités.
+  Now, let's study $S_2$, the way we have connected the tail to the alternating graph does not matter here. But the disposition of the edges alongside the alternating square is very important.
 
   \begin{figure}[H]
     \begin{center}
@@ -1004,6 +1283,9 @@ Dans la suite, nous reprendrons la numérotation des sommets décrite à la sect
       \caption{[1, 5, 994, 232, 267]}
     \end{center}
   \end{figure}
+
+  \paragraph{}
+  In all the graphs,
 
 \end{proof}
 
