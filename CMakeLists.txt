@@ -11,6 +11,12 @@ add_latex_document(full.tex
   USE_INDEX
 )
 
+add_latex_document(compact.tex
+  BIBFILES references.bib
+  INPUTS ${contents_files}
+  USE_INDEX
+)
+
 add_latex_document(simplified.tex
   BIBFILES references.bib
   INPUTS ${contents_files}

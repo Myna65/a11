@@ -1,6 +1,6 @@
-\section{Proof for rank 5}
+\chapter{Proof for rank 5}
 
-\subsection{Basic results v2}
+\section{Basic results v2}
 
 \begin{proposition}
   If a vertex is linked with three edges that does not share the other end, then two of those three edges are part of an alternating square.
@@ -28,7 +28,7 @@
 
 
 
-\subsection{Basic results}
+\section{Basic results}
 
 \paragraph{}
 Dans la suite, nous noterons les carrés alternés grâce au deux involutions qui les composent. Un carré alterné avec des arêtes $\rho_0$ et $\rho_2$ sera noté $[\rho_0, \rho_2]$.
@@ -75,7 +75,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
           \node (8)  at (4,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (2)  edge node {$i-1$} (3);
@@ -126,7 +126,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
   Une arête double dont la différence des indices est supérieure à 2 ne peut être relié que par un carré alterné.
 \end{lemma}
 
-\subsection{Intermediate results}
+\section{Intermediate results}
 
 \begin{lemma}
   \label{lemma-forbidden-alternating-square}
@@ -153,20 +153,20 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -189,20 +189,20 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -234,20 +234,20 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -287,20 +287,20 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=20] node {$0$} (2);
@@ -332,20 +332,20 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=20] node {$0$} (2);
@@ -374,7 +374,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
 \end{proof}
 
-\subsection{Main theorems}
+\section{Main theorems}
 
 \begin{lemma}
   $\rho_0$ (and thus $\rho_4$) cannot be a 4-transposition.
@@ -409,12 +409,12 @@ The objective is to prove the following theorem in the two first cases:
 \paragraph{}
 If this theorem is proven, no string C-group can belong to the two first cases.
 
-\subsubsection{$\rho_1$ and $\rho_3$ are 4-transpositions}
+\subsection{$\rho_1$ and $\rho_3$ are 4-transpositions}
 
 \paragraph{}
 We must place
 
-\subsubsection{$\rho_1$ is a 4-transposition but $\rho_3$ is not}
+\subsection{$\rho_1$ is a 4-transposition but $\rho_3$ is not}
 
 \paragraph{}
 Recall that, by Lemmas~\ref{lemma-forbidden-alternating-square} and~\ref{lemma-forbidden-double-edge}, we know that the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex.
@@ -433,20 +433,20 @@ If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (6,0)  {8};
-        \node (9)  at (8,2)  {9};
-        \node (10) at (8,0)  {10};
-        \node (11) at (10,2) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (6,0)  {};
+        \node (9)  at (8,2)  {};
+        \node (10) at (8,0)  {};
+        \node (11) at (10,2) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$1$} (2);
@@ -475,20 +475,20 @@ Now, if we try to place edges of $\rho_0$, we have a problem because we only hav
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (8,2)  {8};
-        \node (9)  at (8,0)  {9};
-        \node (10) at (10,2)  {10};
-        \node (11) at (10,0) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (8,2)  {};
+        \node (9)  at (8,0)  {};
+        \node (10) at (10,2)  {};
+        \node (11) at (10,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
@@ -526,20 +526,20 @@ If $\rho_3$ is a 4-transposition then the graph is the following:
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (8,2)  {8};
-        \node (9)  at (8,0)  {9};
-        \node (10) at (10,2)  {10};
-        \node (11) at (10,0) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (8,2)  {};
+        \node (9)  at (8,0)  {};
+        \node (10) at (10,2)  {};
+        \node (11) at (10,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
@@ -574,20 +574,20 @@ Let's remove all edges from involutions $\rho_0$ and $\rho_3$, We have the follo
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (8,2)  {8};
-        \node (9)  at (8,0)  {9};
-        \node (10) at (10,2)  {10};
-        \node (11) at (10,0) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (8,2)  {};
+        \node (9)  at (8,0)  {};
+        \node (10) at (10,2)  {};
+        \node (11) at (10,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$1$} (2);
@@ -619,20 +619,20 @@ This conclude our analysis for the alternating square between $\rho_1$ and $\rho
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (6,0)  {8};
-        \node (9)  at (8,2)  {9};
-        \node (10) at (8,0)  {10};
-        \node (11) at (10,2) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (6,0)  {};
+        \node (9)  at (8,2)  {};
+        \node (10) at (8,0)  {};
+        \node (11) at (10,2) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=20] node {$1$} (2);
@@ -659,20 +659,20 @@ In the second case, it's simpler and we have the following graph:
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (6,0)  {8};
-        \node (9)  at (8,2)  {9};
-        \node (10) at (8,0)  {10};
-        \node (11) at (10,2) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (6,0)  {};
+        \node (9)  at (8,2)  {};
+        \node (10) at (8,0)  {};
+        \node (11) at (10,2) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=20] node {$1$} (2);
@@ -705,20 +705,20 @@ Let's notice that, for now, we need to place at least two double edges or altern
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (11) at (4,2) {11};
-        \node (5)  at (6,2)  {5};
-        \node (6)  at (6,0)  {6};
-        \node (7)  at (8,2)  {7};
-        \node (8)  at (8,0)  {8};
-        \node (9)  at (10,2) {9};
-        \node (10) at (10,0) {10};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (11) at (4,2) {};
+        \node (5)  at (6,2)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (8,2)  {};
+        \node (8)  at (8,0)  {};
+        \node (9)  at (10,2) {};
+        \node (10) at (10,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=20] node {$1$} (2);
@@ -757,20 +757,20 @@ We must analyse two cases: the one who has two 4-tranpsositions (they will neces
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (6,2)  {5};
-          \node (6)  at (6,0)  {6};
-          \node (7)  at (-2,2) {7};
-          \node (8)  at (4,2)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0) {10};
-          \node (11) at (-2,0) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (6,2)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (-2,2) {};
+          \node (8)  at (4,2)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0) {};
+          \node (11) at (-2,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=20] node {$0$} (2);
@@ -809,20 +809,20 @@ We must analyse two cases: the one who has two 4-tranpsositions (they will neces
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (6,2)  {5};
-          \node (6)  at (6,0)  {6};
-          \node (7)  at (-2,2) {7};
-          \node (8)  at (4,2)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0) {10};
-          \node (11) at (-2,0) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (6,2)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (-2,2) {};
+          \node (8)  at (4,2)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0) {};
+          \node (11) at (-2,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=20] node {$0$} (2);
@@ -853,20 +853,20 @@ We must analyse two cases: the one who has two 4-tranpsositions (they will neces
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (2,2)  {1};
-          \node (2)  at (2,0)  {2};
-          \node (3)  at (0,2)  {3};
-          \node (4)  at (0,0)  {4};
-          \node (5)  at (8,0)  {5};
-          \node (6)  at (8,2)  {6};
-          \node (7)  at (4,2)  {7};
-          \node (8)  at (-2,2) {8};
-          \node (9)  at (6,0)  {9};
-          \node (10) at (6,2) {10};
-          \node (11) at (4,0) {11};
+          \node (1)  at (2,2)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (0,2)  {};
+          \node (4)  at (0,0)  {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (8,2)  {};
+          \node (7)  at (4,2)  {};
+          \node (8)  at (-2,2) {};
+          \node (9)  at (6,0)  {};
+          \node (10) at (6,2) {};
+          \node (11) at (4,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=20] node {$0$} (2);
@@ -895,7 +895,7 @@ We must analyse two cases: the one who has two 4-tranpsositions (they will neces
   Ce graphe engendre $A_{11}$.
 \end{lemma}
 
-\subsubsection{$\rho_1$ n'est pas une 4-transposition}
+\subsection{$\rho_1$ n'est pas une 4-transposition}
 
 \paragraph{}
 Par le lemme précédent, il faut au moins une 4-transposition. Celle-ci doit forcément se trouver en $\rho_2$.
@@ -926,20 +926,20 @@ Nous devons prouver qu'il n'y a aucun C-group de rang 5 qui engendre $A_{11}$.
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,2)  {3};
-          \node (4)  at (2,0)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$2$} (2);
@@ -986,20 +986,20 @@ La seule possibilité qu'il nous reste est de choisir que $\rho_0$ reliera deux 
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (6,0)  {8};
-        \node (9)  at (8,2)  {9};
-        \node (10) at (8,0)  {10};
-        \node (11) at (10,2) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (6,0)  {};
+        \node (9)  at (8,2)  {};
+        \node (10) at (8,0)  {};
+        \node (11) at (10,2) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (10);
@@ -1035,20 +1035,20 @@ Remarquons que l'arête double $(\rho_0, \rho_2)$ ainsi que l'arête simple $\rh
     \begin{tikzpicture}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {1};
-        \node (2)  at (0,0)  {2};
-        \node (3)  at (2,2)  {3};
-        \node (4)  at (2,0)  {4};
-        \node (5)  at (4,2)  {5};
-        \node (6)  at (4,0)  {6};
-        \node (7)  at (6,2)  {7};
-        \node (8)  at (6,0)  {8};
-        \node (9)  at (8,2)  {9};
-        \node (10) at (8,0)  {10};
-        \node (11) at (10,2) {11};
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,2)  {};
+        \node (8)  at (6,0)  {};
+        \node (9)  at (8,2)  {};
+        \node (10) at (8,0)  {};
+        \node (11) at (10,2) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (10);
@@ -1097,20 +1097,20 @@ From now, we are numeroting points of the graph in the same way as in section~\r
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,0)  {3};
-          \node (4)  at (2,2)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,0)  {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (2)  edge node {$1$} (3);
@@ -1132,20 +1132,20 @@ From now, we are numeroting points of the graph in the same way as in section~\r
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,0)  {3};
-          \node (4)  at (2,2)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,2)  {7};
-          \node (8)  at (6,0)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,0) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,0)  {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,2)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (2)  edge node {$1$} (3);
@@ -1178,20 +1178,20 @@ From now, we are numeroting points of the graph in the same way as in section~\r
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,0)  {3};
-          \node (4)  at (2,2)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,0)  {7};
-          \node (8)  at (6,2)  {8};
-          \node (9)  at (8,2)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,0) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,0)  {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,0)  {};
+          \node (8)  at (6,2)  {};
+          \node (9)  at (8,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$2$} (2);
@@ -1215,20 +1215,20 @@ From now, we are numeroting points of the graph in the same way as in section~\r
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,0)  {3};
-          \node (4)  at (2,2)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (6,0)  {7};
-          \node (8)  at (6,2)  {8};
-          \node (9)  at (8,0)  {9};
-          \node (10) at (8,2)  {10};
-          \node (11) at (10,2) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,0)  {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,0)  {};
+          \node (8)  at (6,2)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (8,2)  {};
+          \node (11) at (10,2) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$2$} (2);
@@ -1252,20 +1252,20 @@ From now, we are numeroting points of the graph in the same way as in section~\r
       \begin{tikzpicture}
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {1};
-          \node (2)  at (0,0)  {2};
-          \node (3)  at (2,0)  {3};
-          \node (4)  at (2,2)  {4};
-          \node (5)  at (4,2)  {5};
-          \node (6)  at (4,0)  {6};
-          \node (7)  at (8,2)  {7};
-          \node (8)  at (6,2)  {8};
-          \node (9)  at (6,0)  {9};
-          \node (10) at (8,0)  {10};
-          \node (11) at (10,0) {11};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,0)  {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (8,2)  {};
+          \node (8)  at (6,2)  {};
+          \node (9)  at (6,0)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$2$} (2);
