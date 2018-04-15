@@ -8,7 +8,7 @@
   $\Gamma$ is transitive so its permutation representation graph is connected. Therefore, because there are $n-1$ edges for $n$ vertices, the graph must be a tree.
 
   \paragraph{}
-  Suppose now, that there is a vertex with at least three incident edges. These edges must be labelled with three differents numbers, $i, j, k$ that describe three different involutions, $\rho_i, \rho_j$ and $\rho_k$. But at least two of these involutions are not adjacent and so must commute. It will be considered that the involution $\rho_i$ and $\rho_k$ does commute.
+  Suppose now, that there is a vertex with at least three incident edges. These edges must be labelled with three differents numbers, $i, j, k$ that describe three different involutions, $\rho_i, \rho_j$ and $\rho_k$. But at least two of these involutions are not adjacent and so must commute. It will be considered that the involution $\rho_i$ and $\rho_k$ does not commute.
 
   \paragraph{}
   And so by proposition 3.5 of~\cite{cprGraph}, the permutation representation graph where only edges labelled with $i$ and $k$ are kept must only contains those patterns:
@@ -36,6 +36,7 @@
 \end{proof}
 
 \begin{lemma}
+  \label{min-4-trans}
   Let $\Gamma$ be a sggi generating $A_{11}$. Then $\Gamma$ contains at least two 4-transpositions if it is of rank 4 and at least one 4-transposition if its rank is 5.
 \end{lemma}
 
@@ -50,7 +51,7 @@
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,0)  {};
@@ -91,7 +92,7 @@
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}[scale=0.8]
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw,transform shape}]
           \node (1)  at (0,0)  {};
@@ -144,7 +145,7 @@
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,0)  {};
@@ -177,7 +178,7 @@ For the second case, that is the graph. On each side, it must be continued with 
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
         \node (1)  at (0,0)  {};
