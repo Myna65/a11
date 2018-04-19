@@ -62,7 +62,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
@@ -150,7 +150,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
@@ -186,7 +186,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
@@ -231,7 +231,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
@@ -284,7 +284,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
@@ -303,7 +303,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
         \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
-            \path (1)  edge[bend right=20] node {$0$} (2);
+            \path (1)  edge[bend right=30] node {$0$} (2);
             \path (3)  edge node {$0$} (4);
             \path (5)  edge node {$0$} (6);
             \path (5)  edge node {$1$} (7);
@@ -311,7 +311,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
             \path (4)  edge node {$2$} (6);
             \path (1)  edge node {$3$} (3);
             \path (2)  edge node {$3$} (4);
-            \path (1)  edge[bend left=20] node {$4$} (2);
+            \path (1)  edge[bend left=30] node {$4$} (2);
           \end{scope}
         \end{scope}
 
@@ -329,7 +329,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
@@ -348,7 +348,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
         \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
-            \path (1)  edge[bend right=20] node {$0$} (2);
+            \path (1)  edge[bend right=30] node {$0$} (2);
             \path (3)  edge node {$0$} (4);
             \path (5)  edge node {$0$} (6);
             \path (5)  edge node {$1$} (7);
@@ -358,7 +358,7 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
             \path (1)  edge node {$3$} (3);
             \path (2)  edge node {$3$} (4);
             \path (8)  edge node {$3$} (10);
-            \path (1)  edge[bend left=20] node {$4$} (2);
+            \path (1)  edge[bend left=30] node {$4$} (2);
             \path (9)  edge node {$4$} (10);
           \end{scope}
         \end{scope}
@@ -374,6 +374,15 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
 \end{proof}
 
+\begin{corollary}
+  \label{0-4-no-share}
+  $\rho_0$ and $\rho_4$ edges cannot share a vertex.
+\end{corollary}
+
+\begin{proof}
+  This can be directly deduced of Lemmas ~\ref{lemma-forbidden-alternating-square} and~\ref{lemma-forbidden-double-edge}.
+\end{proof}
+
 \section{Main theorems}
 
 \begin{lemma}
@@ -381,7 +390,10 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 \end{lemma}
 
 \begin{proof}
-  Takin the graph with only the $\rho_0$ 4-transposition, the $\rho_4$ involution must now be added but must commute with $\rho_0$. The following patterns are
+  Suppose that $\rho_0$ is a 4-transposition
+
+  \paragraph{}
+  The $\rho_4$ involution must placed on the graph such that it commutes with $\rho_0$. The following patterns are possible for each $\rho_4$ edge:
   \begin{enumerate}
     \item Form an alternating square
     \item Double an existing edge
@@ -389,61 +401,42 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
   \end{enumerate}
 
   \paragraph{}
-  The last pattern can only be user once because we only have three fixed points. But either $\rho_4$ is a 4-transposition or a 2-transposition, it is, at least, one edge to must still be placed. Thus, we must use one of the two other possibilities but we know that they do not lead to anything. So $\rho_4$ cannot be a 4-transposition.
-
+  The last pattern can only be used once because we only have three fixed points. But either $\rho_4$ is a 4-transposition or a 2-transposition, it is, at least, one edge that must still be placed. Thus, we must use one of the two other possibilities but then $\rho_0$ and $\rho_4$ will share a vertex which is impossible.
 \end{proof}
 
 We can now split our analysis in two cases dependending of the disposition of 4-tranpositions:
 \begin{enumerate}
-  \item $\rho_1$ and $\rho_3$ are 4-transpositions
-  \item $\rho_1$ is a 4-transposition but $\rho_3$ is not.
-  \item $\rho_1$ and $\rho_3$ are 2-transposition. If $\rho_3$ is a 4-transposition but $\rho_1$ not, we can take the dual and reduce it to the second case.
+  \item $\rho_1$ is a 4-transpositions (whatever $\rho_3$ is)
+  \item $\rho_1$ and $\rho_3$ are 2-transposition. If $\rho_3$ is a 4-transposition but $\rho_1$ not, we can take the dual and reduce it to the first case.
 \end{enumerate}
 
+\subsection{$\rho_1$ is a 4-transposition}
+
 \paragraph{}
-The objective is to prove the following theorem in the two first cases:
+The objective of this section is to prove the following theorem in the two first cases:
 \begin{theorem}
   If $\rho_1$ is a 4-transposition, then a generator can be written as a product of other generators, and thus the generating set is not free, so the group is not a sggi.
 \end{theorem}
 
 \paragraph{}
-If this theorem is proven, no string C-group can belong to the two first cases.
-
-\subsection{$\rho_1$ and $\rho_3$ are 4-transpositions}
-
-\paragraph{}
-We must place
-
-\subsection{$\rho_1$ is a 4-transposition but $\rho_3$ is not}
-
-\paragraph{}
-Recall that, by Lemmas~\ref{lemma-forbidden-alternating-square} and~\ref{lemma-forbidden-double-edge}, we know that the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex.
-
-\paragraph{}
-Let's draw a graph on which we draw all edges of the 4-transposition $\rho_1$. This transposition must commute with $\rho_3$ and $\rho_4$. We want to place the edge for $\rho_4$. They must commute with thoses of $\rho_1$, so for the two first edges, we have three possibilities: we can build an alternating square, double two edges or double one edge an link two fixed points.
-
-\paragraph{}
-Let's consider the first case, the alternating square:
-
-\paragraph{}
-If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square between $\rho_1$ and $\rho_3$ ($\rho_2$ and $\rho_4$ is not possible because $\rho_4$ is a 2-transposition). Thoses squares must be linked to the rest of the graph by a $\rho_2$ edge. Thus edge is not part of any alternating square, therefore it must link the square with the remaining $\rho_1$ edge. For now, we have the following graph:
+Let's draw a graph on which we place all edges of the 4-transposition $\rho_1$.
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
-        \node (5)  at (4,2)  {};
-        \node (6)  at (4,0)  {};
-        \node (7)  at (6,2)  {};
-        \node (8)  at (6,0)  {};
-        \node (9)  at (8,2)  {};
-        \node (10) at (8,0)  {};
-        \node (11) at (10,2) {};
+        \node (1)  at (0,0)  {};
+        \node (2)  at (2,0)  {};
+        \node (3)  at (4,0)  {};
+        \node (4)  at (6,0)  {};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (10,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (14,0)  {};
+        \node (9)  at (16,0)  {};
+        \node (10) at (18,0)  {};
+        \node (11) at (20,0) {};
       \end{scope}
 
       \begin{scope}[every node/.style={fill=white}]
@@ -453,7 +446,135 @@ If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
           \path (7)  edge node {$1$} (8);
-          \path (5)  edge node {$2$} (7);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+This transposition must commute with $\rho_3$ and $\rho_4$. We want to place the edge for $\rho_4$. They must commute with thoses of $\rho_1$, so for the two first edges, we have three possibilities: we can build an alternating square, double two edges or double one edge an link two fixed points.
+
+\paragraph{}
+Let's consider the first case, the alternating square:
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (8,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (12,0)  {};
+        \node (10) at (14,0)  {};
+        \node (11) at (16,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square between $\rho_1$ and $\rho_3$ ($\rho_2$ and $\rho_4$ is not possible because $\rho_4$ is a 2-transposition). The sequence of square cannot be extended in this direction because we will need to build 2 extra alternating square and we cannot place a rotation pattern and so we would need 2 extra $\rho_1$ edge but there is only one.
+
+\paragraph{}
+If it's extended in the other direction, we would use the last $\rho_1$ edge and two $\rho_3$ edge. At the end, there will remain only 2 $\rho_0$ edges and 2 or 4 $\rho_2$ edges. But the cannot form a connex graph. We will remain with our 2 alternating squares. Thoses squares must be linked to the rest of the graph by a $\rho_2$ edge. But there are still 2 $\rho_0$ edge to place.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,0)  {};
+        \node (8)  at (8,0)  {};
+        \node (9)  at (10,0)  {};
+        \node (10) at (12,0)  {};
+        \node (11) at (14,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (1)  edge node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+
+\paragraph{}
+Now let's place the two $\rho_0$ edges. They must touch at least one $\rho_1$ edge, otherwise $\rho_0$ and $\rho_1$ would commute but that's impossible.
+
+\paragraph{}
+Recall that, by Lemmas~\ref{lemma-forbidden-alternating-square} and~\ref{lemma-forbidden-double-edge}, we know that the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex. So the $\rho_0$ edge cannot be linked to the first 4 vertices. They cannot be connected thus to the 5th and 6th vertices because it would form an alternating square but we choose to not make one at this position. The cannot be connected to the end of the $\rho_2$ too.
+
+\paragraph{}
+The only remaining possibility is to link the extremity of the compoenent with a single $\rho_1$ edge to a fixed point. The other $\rho_0$ edge must link the two fixed points because if we used to other extremity of the single $\rho_1$ edge, we would not be able to connect it to anything because all $\rho_1$ would have been already used.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,0)  {};
+        \node (8)  at (8,0)  {};
+        \node (9)  at (10,0)  {};
+        \node (10) at (12,0)  {};
+        \node (11) at (14,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (8)  edge node {$0$} (9);
+          \path (10)  edge node {$0$} (11);
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
           \path (3)  edge node {$3$} (5);
           \path (4)  edge node {$3$} (6);
           \path (1)  edge node {$4$} (3);
@@ -467,12 +588,11 @@ If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an
 \end{figure}
 
 \paragraph{}
-Now, if we try to place edges of $\rho_0$, we have a problem because we only have one available $\rho_1$ edge to link them to the rest. Therefore we need to from an alternating square between $\rho_0$ and $\rho_2$ and link it with the $\rho_1$ edge. We have the following graph:
-% TODO une petite preuve ?
+The two alternating square can only be linked by a $\rho_2$ edge. This edge must be linked to the $\rho_1$ component because we choosed to not make an alternating square at this place.
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
         \node (1)  at (0,2)  {};
@@ -481,7 +601,50 @@ Now, if we try to place edges of $\rho_0$, we have a problem because we only hav
         \node (4)  at (2,0)  {};
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
-        \node (7)  at (6,2)  {};
+        \node (7)  at (6,0)  {};
+        \node (8)  at (8,0)  {};
+        \node (9)  at (10,0)  {};
+        \node (10) at (12,0)  {};
+        \node (11) at (14,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (8)  edge node {$0$} (9);
+          \path (10)  edge node {$0$} (11);
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (6)  edge node {$2$} (7);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (1)  edge node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+All $\rho_1$ edges have been used, they cannot be used to link the single $\rho_0$. Therefore we must used an alternating square to connect it. But this alternating square must be connected directly. Therefore the difference between the indices of the edges must be 2. The vertical edges of the square must therefore be $\rho_2$.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,0)  {};
         \node (8)  at (8,2)  {};
         \node (9)  at (8,0)  {};
         \node (10) at (10,2)  {};
@@ -496,8 +659,8 @@ Now, if we try to place edges of $\rho_0$, we have a problem because we only hav
           \path (1)  edge node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
-          \path (7)  edge node {$1$} (8);
-          \path (5)  edge node {$2$} (7);
+          \path (7)  edge node {$1$} (9);
+          \path (6)  edge node {$2$} (7);
           \path (8)  edge node {$2$} (9);
           \path (10) edge node {$2$} (11);
           \path (3)  edge node {$3$} (5);
@@ -513,17 +676,11 @@ Now, if we try to place edges of $\rho_0$, we have a problem because we only hav
 \end{figure}
 
 \paragraph{}
-To restore parity, we still need to place a $\rho_2$ edge. There is only one posibility for a such edge: we need to double a $\rho_4$ edge, there are two of them.
-
-\paragraph{}
-Now we can stop here and $\rho_3$ will be a 2-transposition or we can add two extra $\rho_3$ edges. Those edges must be located between points $1$ and $2$, and between points $10$ et $11$.
-
-\paragraph{}
-If $\rho_3$ is a 4-transposition then the graph is the following:
+There are only 3 $\rho_2$ edges on this graph. A last one must be added to restore parity. There is only two places possible:  we can double any of the $\rho_4$ edge. That gives us 2 graphs:
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
         \node (1)  at (0,2)  {};
@@ -532,7 +689,7 @@ If $\rho_3$ is a 4-transposition then the graph is the following:
         \node (4)  at (2,0)  {};
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
-        \node (7)  at (6,2)  {};
+        \node (7)  at (6,0)  {};
         \node (8)  at (8,2)  {};
         \node (9)  at (8,0)  {};
         \node (10) at (10,2)  {};
@@ -544,19 +701,17 @@ If $\rho_3$ is a 4-transposition then the graph is the following:
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
           \path (8)  edge node {$0$} (10);
-          \path (1)  edge[bend right=20] node {$1$} (2);
+          \path (1)  edge node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
-          \path (7)  edge node {$1$} (8);
-          \path (1)  edge[bend left=20] node {$2$} (3);
-          \path (5)  edge node {$2$} (7);
+          \path (7)  edge node {$1$} (9);
+          \path (1)  edge[bend left=30] node {$2$} (3);
+          \path (6)  edge node {$2$} (7);
           \path (8)  edge node {$2$} (9);
-          \path (10) edge[bend right=20] node {$2$} (11);
-          \path (1)  edge[bend left=20] node {$3$} (2);
+          \path (10) edge node {$2$} (11);
           \path (3)  edge node {$3$} (5);
           \path (4)  edge node {$3$} (6);
-          \path (10) edge[bend left=20] node {$3$} (11);
-          \path (1)  edge[bend right=20] node {$4$} (3);
+          \path (1)  edge[bend right=30] node {$4$} (3);
           \path (2)  edge node {$4$} (4);
         \end{scope}
       \end{scope}
@@ -566,12 +721,9 @@ If $\rho_3$ is a 4-transposition then the graph is the following:
   \end{center}
 \end{figure}
 
-\paragraph{}
-Let's remove all edges from involutions $\rho_0$ and $\rho_3$, We have the following graph.
-
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
         \node (1)  at (0,2)  {};
@@ -580,7 +732,7 @@ Let's remove all edges from involutions $\rho_0$ and $\rho_3$, We have the follo
         \node (4)  at (2,0)  {};
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
-        \node (7)  at (6,2)  {};
+        \node (7)  at (6,0)  {};
         \node (8)  at (8,2)  {};
         \node (9)  at (8,0)  {};
         \node (10) at (10,2)  {};
@@ -590,15 +742,154 @@ Let's remove all edges from involutions $\rho_0$ and $\rho_3$, We have the follo
       \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
+          \path (9)  edge node {$0$} (11);
+          \path (8)  edge node {$0$} (10);
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (9);
+          \path (2)  edge[bend left=30] node {$2$} (4);
+          \path (6)  edge node {$2$} (7);
+          \path (8)  edge node {$2$} (9);
+          \path (10) edge node {$2$} (11);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (1)  edge node {$4$} (3);
+          \path (2)  edge[bend right=30] node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+But $\rho_3$ is currently a 2-transposition, we can stop here or try to convert $\rho_3$ to a 4-transposition. If we look where we can place an extra $\rho_3$ edge, there are two positions for two edges: double the left $\rho_1$ edge and double the right $\rho_0$ edge. That creates two other graphs:
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,0)  {};
+        \node (8)  at (8,2)  {};
+        \node (9)  at (8,0)  {};
+        \node (10) at (10,2)  {};
+        \node (11) at (10,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (9)  edge[bend left=30] node {$0$} (11);
+          \path (8)  edge node {$0$} (10);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (9);
+          \path (1)  edge[bend left=30] node {$2$} (3);
+          \path (6)  edge node {$2$} (7);
+          \path (8)  edge node {$2$} (9);
+          \path (10) edge node {$2$} (11);
+          \path (1)  edge[bend left=30] node {$3$} (2);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (9)  edge[bend right=30] node {$3$} (11);
+          \path (1)  edge[bend right=30] node {$4$} (3);
+          \path (2)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,2)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (6,0)  {};
+        \node (8)  at (8,2)  {};
+        \node (9)  at (8,0)  {};
+        \node (10) at (10,2)  {};
+        \node (11) at (10,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (9)  edge[bend left=30] node {$0$} (11);
+          \path (8)  edge node {$0$} (10);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (9);
+          \path (2)  edge[bend left=30] node {$2$} (4);
+          \path (6)  edge node {$2$} (7);
+          \path (8)  edge node {$2$} (9);
+          \path (10) edge node {$2$} (11);
+          \path (1)  edge[bend left=30] node {$3$} (2);
+          \path (3)  edge node {$3$} (5);
+          \path (4)  edge node {$3$} (6);
+          \path (9)  edge[bend right=30] node {$3$} (11);
+          \path (1)  edge node {$4$} (3);
+          \path (2)  edge[bend right=30] node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+Let's go back to the case where $\rho_3$ is a 2-transposition. Let's remove all edges from involutions $\rho_0$ and $\rho_3$, We have the following graph.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (6,0)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (8,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (12,0)  {};
+        \node (10) at (14,0)  {};
+        \node (11) at (16,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
           \path (7)  edge node {$1$} (8);
-          \path (1)  edge[bend left=20] node {$2$} (3);
+          \path (1)  edge[bend left=30] node {$2$} (3);
           \path (5)  edge node {$2$} (7);
           \path (8)  edge node {$2$} (9);
           \path (10) edge node {$2$} (11);
-          \path (1)  edge[bend right=20] node {$4$} (3);
+          \path (1)  edge[bend right=30] node {$4$} (3);
           \path (2)  edge node {$4$} (4);
         \end{scope}
       \end{scope}
@@ -612,11 +903,14 @@ Let's remove all edges from involutions $\rho_0$ and $\rho_3$, We have the follo
 Now we can see easily that $\rho_4 = (\rho_1 \rho_2)^{10}$. The set of generators is not free and so it's not a generating set.
 
 \paragraph{}
+When $\rho_3$ is a 4-transposition, the same applies.
+
+\paragraph{}
 This conclude our analysis for the alternating square between $\rho_1$ and $\rho_4$. The second possibility is having a double edge with involutions $\rho_0$ and $\rho_4$. We must place an alternating square next to it because this double must be connected to the rest of the graph. We have two possibilities for the alternating square: $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$. In the first case, we have the following graph:
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
         \node (1)  at (0,2)  {};
@@ -635,13 +929,13 @@ This conclude our analysis for the alternating square between $\rho_1$ and $\rho
       \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
-          \path (1)  edge[bend right=20] node {$1$} (2);
+          \path (1)  edge[bend right=30] node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
           \path (7)  edge node {$1$} (8);
           \path (1)  edge node {$3$} (3);
           \path (2)  edge node {$3$} (4);
-          \path (1)  edge[bend left=20] node {$4$} (2);
+          \path (1)  edge[bend left=30] node {$4$} (2);
         \end{scope}
       \end{scope}
 
@@ -651,85 +945,220 @@ This conclude our analysis for the alternating square between $\rho_1$ and $\rho
 \end{figure}
 
 \paragraph{}
-In the second case, it's simpler and we have the following graph:
+Recall that $\rho_0$ and $\rho_1$ must not commute. Therefore a $\rho_0$ edge must be connected to at least one $\rho_1$ edge. Therefore at least one $\rho_1$ edge must not be part of an alternating square that does not also use $\rho_0$.
 
+\paragraph{}
+This alternating square cannot be linked by another alternating square on the right because it will need two alternating square on the right of we are not changing the value of the vertical edges. But that will place all $\rho_1$ in alternating squares. We must therefore change the value of the vertical edges. But the horizontal edges of the second square must be $\rho_2$ because there if not enough $\rho_4$ edge. But then the new value for vertical edge must be adjacent to $\rho_3$. $\rho_2$ is impossible because it is already used for the horizontal edges. The only remaining possibility is $\rho_4$ but if we want to build an alternating square, we will need 2 $\rho_4$ but there are only 2 in total and one has already been used.
+
+\paragraph{}
+If we attach an alternating square on the left, it must be a $[\rho_2, \rho_4]$ alternating square. The graph is the following:
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
         \node (4)  at (2,0)  {};
-        \node (5)  at (4,2)  {};
-        \node (6)  at (4,0)  {};
-        \node (7)  at (6,2)  {};
-        \node (8)  at (6,0)  {};
-        \node (9)  at (8,2)  {};
-        \node (10) at (8,0)  {};
-        \node (11) at (10,2) {};
-      \end{scope}
-
-      \begin{scope}[every node/.style={fill=white}]
-
-        \begin{scope}[every edge/.style={draw}]
-          \path (1)  edge[bend right=20] node {$1$} (2);
-          \path (5)  edge node {$1$} (6);
-          \path (7)  edge node {$1$} (8);
-          \path (9)  edge node {$1$} (10);
-          \path (1)  edge node {$2$} (3);
-          \path (2)  edge node {$2$} (4);
-          \path (1)  edge[bend left=20] node {$4$} (2);
-          \path (3)  edge node {$4$} (4);
-        \end{scope}
-      \end{scope}
-
-    \end{tikzpicture}
-    \caption{Un carré alterné et son voisin engendré}
-  \end{center}
-\end{figure}
-
-\paragraph{}
-Now if we want to connect the alternating square to the rest of the graph, we must use a $\rho_3$ edge. But we cannot connect to a $\rho_1$ edge because we will need to build an alterating square and we will double the edge (and so it can be reduced to the previous case).
-
-\paragraph{}
-Now, this edge must be linked to the fixed point. And we need another edge that goes from the fixed point to a $\rho_1$ edge. We must use a $\rho_2$ edge. We cannot make an alternating square because in this case, a $\rho_1$ edge should leave the point that we just used. But it was fixed before we use it and so no $\rho_1$ touch it.
-
-\paragraph{}
-Let's notice that, for now, we need to place at least two double edges or alternating square if we want to complete the graph. It it the followin for now.
-
-\begin{figure}[H]
-  \begin{center}
-    \begin{tikzpicture}
-
-      \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
-        \node (11) at (4,2) {};
-        \node (5)  at (6,2)  {};
+        \node (5)  at (4,0)  {};
         \node (6)  at (6,0)  {};
-        \node (7)  at (8,2)  {};
-        \node (8)  at (8,0)  {};
-        \node (9)  at (10,2) {};
-        \node (10) at (10,0) {};
+        \node (7)  at (8,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (-2,2)  {};
+        \node (10) at (-2,0)  {};
+        \node (11) at (12,0) {};
       \end{scope}
 
       \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
-          \path (1)  edge[bend right=20] node {$1$} (2);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$2$} (9);
+          \path (2)  edge node {$2$} (10);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (9)  edge node {$4$} (10);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+Now we must place the two $\rho_0$ edges, they cannot be placed on any vertex of the left component. They must therefore link the $\rho_1$ edges and the fixed points. The fixed point can only be linked once and each $\rho_1$ edge can be linked twice. But we cannot link the $\rho_1$ edges together twice because it will just form an alternating square and then the involutions commutes. The only remaining possibility is to link the fixed point to a $\rho_1$ edge and the two $\rho_1$ edges together.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (8,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (-2,2)  {};
+        \node (10) at (-2,0)  {};
+        \node (11) at (12,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (6)  edge node {$0$} (7);
+          \path (8)  edge node {$0$} (11);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$2$} (9);
+          \path (2)  edge node {$2$} (10);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (9)  edge node {$4$} (10);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+Now the two components must be linked by a $\rho_2$ edge but the total number of $\rho_2$ edges becomes odd. Another $\rho_2$ must be placed but the only possibilites are to double a $\rho_0$ edge. Therefore, we have two possible graphs.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (8,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (-2,2)  {};
+        \node (10) at (-2,0)  {};
+        \node (11) at (12,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (6)  edge[bend left=30] node {$0$} (7);
+          \path (8)  edge node {$0$} (11);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$2$} (9);
+          \path (2)  edge node {$2$} (10);
+          \path (4)  edge node {$2$} (5);
+          \path (6)  edge[bend right=30] node {$2$} (7);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (9)  edge node {$4$} (10);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (8,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (-2,2)  {};
+        \node (10) at (-2,0)  {};
+        \node (11) at (12,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (6)  edge node {$0$} (7);
+          \path (8)  edge[bend left=30] node {$0$} (11);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$2$} (9);
+          \path (2)  edge node {$2$} (10);
+          \path (4)  edge node {$2$} (5);
+          \path (8)  edge[bend right=30] node {$2$} (11);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (9)  edge node {$4$} (10);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+In those graph, if the $\rho_4$ edge is removed, the generated group remains 2-transitive\footnote{TODO} and thus primitive. By looking at the size of the subgroups, it is possible to deduce that the generated group
+
+\paragraph{}
+Now let's look at the case when we start with a $[\rho_2,  \rho_4]$ square.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (6,0)  {};
+        \node (6)  at (4,0)  {};
+        \node (7)  at (10,0)  {};
+        \node (8)  at (8,0)  {};
+        \node (9)  at (12,0)  {};
+        \node (10) at (14,0)  {};
+        \node (11) at (16,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=30] node {$1$} (2);
           \path (5)  edge node {$1$} (6);
           \path (7)  edge node {$1$} (8);
           \path (9)  edge node {$1$} (10);
           \path (1)  edge node {$2$} (3);
           \path (2)  edge node {$2$} (4);
-          \path (5)  edge node {$2$} (11);
-          \path (3)  edge node {$3$} (11);
-          \path (1)  edge[bend left=20] node {$4$} (2);
+          \path (1)  edge[bend left=30] node {$4$} (2);
           \path (3)  edge node {$4$} (4);
         \end{scope}
       \end{scope}
@@ -739,6 +1168,238 @@ Let's notice that, for now, we need to place at least two double edges or altern
   \end{center}
 \end{figure}
 
+\paragraph{}
+Now you can add two extra alternating square or link this alternating square to some other component. But it's impossible to add another alternating square to right of this sequence because the vertical component cannot be another $\rho_4$ edge because we have used all. So we need to double right edge of the square but the only possibilites are $\rho_1$ and $\rho_3$ but $\rho_1$ is excluded by our previous choice. Therefore the vertical edge of the square must be double bu a $\rho_3$ edge but the horizontal component of the new sqaure must also be $\rho_3$ but that is impossible.
+
+\paragraph{}
+The alternating square can however be extended to the left by a $[\rho_1, \rho_3]$ edge but then we can reduce it to the first case where we choose to build a $[\rho_1, \rho_3]$ square directly.
+
+\paragraph{}
+The only remaining possibility is to link to square to the rest of the graph with a single edge. We must use a $\rho_3$ edge. But we cannot connect to a $\rho_1$ edge because we will need to build an alterating square but we proved that is impossible. The only possibility is to link it to the fixed point. We have the following graph.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (14,0)  {};
+        \node (10) at (16,0)  {};
+        \node (11) at (4,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (9)  edge node {$1$} (10);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (4)  edge node {$3$} (11);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (3)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+We still need to place two $\rho_0$ edges, they must not commute with $\rho_1$, thus at least one edge must link two $\rho_1$ involutions. But the other $\rho_0$ must link the two other $\rho_1$ edges.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (14,0)  {};
+        \node (10) at (16,0)  {};
+        \node (11) at (4,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (5)  edge node {$0$} (8);
+          \path (7)  edge node {$0$} (9);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (9)  edge node {$1$} (10);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (4)  edge node {$3$} (11);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (3)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+We need to connect this point to the rest of the graph. But, since all $\rho_4$ edge have been used and since nothing can be connected to the alternating square, we must connect this point to a $\rho_1$ edge by a $\rho_2$ edge.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (14,0)  {};
+        \node (10) at (16,0)  {};
+        \node (11) at (4,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (5)  edge node {$0$} (8);
+          \path (7)  edge node {$0$} (9);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (9)  edge node {$1$} (10);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (11)  edge node {$2$} (6);
+          \path (4)  edge node {$3$} (11);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (3)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+Now we need to place a $\rho_3$ edge, the only possibility is to place it on the double edge. The $\rho_2$ edge must then be placed such that it double a $\rho_0$ edge. We have two graphs:
+
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (14,0)  {};
+        \node (10) at (16,0)  {};
+        \node (11) at (4,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (5)  edge[bend left=30] node {$0$} (8);
+          \path (7)  edge node {$0$} (9);
+          \path (1)  edge[bend right=40] node {$1$} (2);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (9)  edge node {$1$} (10);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (5)  edge[bend right=30] node {$2$} (8);
+          \path (11) edge node {$2$} (6);
+          \path (1)  edge node {$3$} (2);
+          \path (4)  edge node {$3$} (11);
+          \path (1)  edge[bend left=40] node {$4$} (2);
+          \path (3)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (14,0)  {};
+        \node (10) at (16,0)  {};
+        \node (11) at (4,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (5)  edge node {$0$} (8);
+          \path (7)  edge[bend left=30] node {$0$} (9);
+          \path (1)  edge[bend right=40] node {$1$} (2);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (9)  edge node {$1$} (10);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (7)  edge[bend right=30] node {$2$} (9);
+          \path (11) edge node {$2$} (6);
+          \path (1)  edge node {$3$} (2);
+          \path (4)  edge node {$3$} (11);
+          \path (1)  edge[bend left=40] node {$4$} (2);
+          \path (3)  edge node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{Un carré alterné et son voisin engendré}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+We have no possibility to transform $\rho_3$ into a 4-transposition.
+
+\paragraph{}
+Here we can remove the $\rho_0$ and $\rho_3$ edge and we have the same results as for the alternating square $[\rho_1,\rho_4]$, i.e. $\rho_4 = (\rho_1\rho_2)^{10}$. The group represented by the graphs are therefore not sggi.
+
+\paragraph{}
+The third possibility is to have two double edges between $\rho_1$ and $\rho_4$. But it does not go anywehre. Hence if the two double edge are placed on the same alternating square, this is a subcase of what we saw previously and we proved that we got nothing. If the two alternating square are place on two differents alternating square, we already have been used 8 points out of 11 but we have not yet placed any $\rho_0$ edge but so at least one $\rho_0$ must touch an alternating square but then we need to build at least two additionnal alternating square to satisfy the string constraint but fell out out of vertices.
 
 \subsection{$\rho_1$ is not a 4-transposition}
 
