@@ -746,7 +746,7 @@ Let's notice that, for now, we need to place at least two double edges or altern
 By Lemma~\ref{min-4-trans}, at least one 4-transposition is needed. But it cannot be at the $\rho_1$ position ($\rho_3$ is impossible too by duality). Therefore, $\rho_2$ must be the 4-transposition.
 
 \paragraph{}
-In this case, no generator can be omitted. Thus, if one generator is removed, the remaining group would be a sggi of rank 4 with a single 4-transposition but Lemma~\ref{min-4-trans} proved that this is impossible. So it cannot generate $A_{11}$.
+In this case, no generator can be omitted. Thus, if one generator is removed, the remaining group would be a sggi of rank 4 with a single 4-transposition but Lemma~\ref{min-4-trans} proved that it cannot generate $A_{11}$.
 
 \begin{theorem}
   The only permutation representation graphs of rank 5 on 11 points are those displayed in appendix~\ref{monodromy-5} (p.~\pageref{monodromy-5}).
@@ -789,7 +789,7 @@ In this case, no generator can be omitted. Thus, if one generator is removed, th
   \end{figure}
 
 \paragraph{}
-If the involutions $\rho_0$ and $\rho_4$ are added to the graph, they must commute with $\rho_3$ and so the only possibilities are:
+If the involutions $\rho_0$ and $\rho_4$ are added to the graph, they must commute with $\rho_2$ and so the only possibilities are:
 \begin{enumerate}
   \item A double edge with $\rho_2$ and link two currently fixed points.
   \item Two double edges with $\rho_2$.
@@ -800,7 +800,7 @@ If the involutions $\rho_0$ and $\rho_4$ are added to the graph, they must commu
 Since there is only one 4-transposition, there are only 12 edges to link 11 points, 2 more than the minimum. Thus if a edge is added, it must link two distinct components, expect two times. Those two edges are called "joker" edges. When an alternating square is built, one of those edge is used, it is the same if a double edge is made.
 
 \paragraph{}
-From the three possibilites, the second is impossible because, if it is used, even once, it uses both "joker" edges and it is not possible to place the other involution.
+Among the three possibilites, the second is impossible because, if it is used, even once, it uses both "joker" edges and it is not possible to place the other involution.
 
 \paragraph{}
 The same choice cannot be made for $\rho_0$ and $\rho_4$. The first proposition cannot be used twice because it links two fixed points but there is only three of them and so it cannot be used two times.
@@ -809,13 +809,13 @@ The same choice cannot be made for $\rho_0$ and $\rho_4$. The first proposition 
 If the third proposition is used twice, there are two alternating squares. If those squares does not share a vertex, they cannot be linked. Thus one square must be linked to the rest of the graph by a $\rho_1$ edge and the other by a $\rho_3$. But those two edges cannot be linked because all $\rho_2$ have already be used and no more alternating square or double edges cannot be used.
 
 \paragraph{}
-If the two squares share an edge, a $\rho_0$ and a $\rho_4$ edge are next one to each other and so an alternating square must be build to solve this problem but it is impossible.
+If the two squares share an edge, a $\rho_0$ and a $\rho_4$ edge are next to each other and so an alternating square must be build to solve this problem but it is impossible.
 
 \paragraph{}
-The two squares cannot share all their vertices because it will not be able to be connected two the rest of the graph without using an other alternating square which is impossble.
+The two squares cannot share all their vertices because it will not be able to be connected two the rest of the graph.
 
 \paragraph{}
-Thus one of the involution must make an alternating square and the other must double an edge and link two fixed points. By duality, only the case where $\rho_4$ make an alternating square will be considered and the other double an edge and link two fixed points. Currently the graph is the following
+Thus one of the involution must make an alternating square and the other must make a double edge and links two fixed points. By duality, only the case where $\rho_4$ makes an alternating square will be considered and the other doubles an edge and links two fixed points. Currently the graph is the following
 
 \begin{figure}[H]
   \begin{center}
@@ -858,10 +858,10 @@ Thus one of the involution must make an alternating square and the other must do
 Now that all of our "joker" edges has been used, every other edge must link two different connex components of the graph.
 
 \paragraph{}
-Now the $\rho_3$ edge we will be placed. It cannot be adjacent to the component consisting of the single $\rho_0$ edge or to the double edge. There is only three component that can be adjacent to such edge. Thus there is three places for two edges. But the component that we are currently builing must be linked to the rest of the graph by $\rho_1$ edges and a $\rho_1$ edge can only be connected to the single $\rho_2$ edge. This edge must so be connected by only one $\rho_3$ edge. The same is true for the fixed point that cannot be connected two times otherwise two $\rho_3$ edge will share this vertex.
+Now the $\rho_3$ edge will be placed. It cannot be adjacent to the component consisting of the single $\rho_0$ edge or to the double edge. There are only three components that can be adjacent to such edge. Thus there are three places for two edges. But the component that we are currently builing must be linked to the rest of the graph by $\rho_1$ edges and a $\rho_1$ edge can only be connected to the single $\rho_2$ edge. This edge must so be connected by only one $\rho_3$ edge. The same applies for the fixed point that cannot be connected two times, otherwise two $\rho_3$ edges will share this vertex.
 
 \paragraph{}
-The square must thus be connected twice. There is three possibilities: the two connected vertices can be opposed or adjacent and, in this case, separated by a $\rho_1$ or a $\rho_3$ edge. This does not influence the position of the $\rho_1$ edges and we can continue to build the graph without having to deal with cases. Here is one the possible graph:
+The square must thus be connected twice. There are three possibilities: the two connected vertices can be opposed or adjacent and, in this case, separated by a $\rho_1$ or a $\rho_3$ edge. This does not influence the position of the $\rho_1$ edges it is possible to continue building the graph without having to deal with cases. Here is one of the possible graphs:
 
 \begin{figure}[H]
   \begin{center}
@@ -898,12 +898,12 @@ The square must thus be connected twice. There is three possibilities: the two c
       \end{scope}
 
     \end{tikzpicture}
-    \caption{One of the graph after placing $\rho_3$ edges}
+    \caption{One of the graphs after placing $\rho_3$ edges}
   \end{center}
 \end{figure}
 
 \paragraph{}
-Now the two edges of $\rho_1$ must be placed, the component containing the alternating square must be attached by its right end, the one that ends with a $\rho_2$ edge. The last two component must be linked together. The last component can be attached in two ways depending on the end choosen to be attached. Here is one of the graphs:
+Now the two edges of $\rho_1$ must be placed, the component containing the alternating square must be attached by its left end, the one that ends with a $\rho_2$ edge. The first two component must be linked together. The first component can be attached in two ways depending on the end choosen to be attached. Here is one of the graphs:
 
 \begin{figure}[H]
   \begin{center}
@@ -947,7 +947,7 @@ Now the two edges of $\rho_1$ must be placed, the component containing the alter
 \end{figure}
 
 \paragraph{}
-There are 6 possibilites graph but only one was built. The construction of the five remaining graphs is left to the reader. He can check that the graphs built match the graph of appendix~\ref{monodromy-5}.
+There are 6 possible graphs but only one was built. The construction of the five remaining graphs is left to the reader. He can check that the graphs built match the graphs of appendix~\ref{monodromy-5}.
 
 \end{proof}
 
@@ -960,10 +960,10 @@ There are 6 possibilites graph but only one was built. The construction of the f
   By the definition of a C-group, it is sufficient to find two subsets of generators $S_1$ and $S_2$ such that $\Gamma_{S_1} \cap \Gamma_{S_2} \neq \Gamma_{S_1 \cap S_2}$.
 
   \paragraph{}
-  In our case, let's take $S_1 = \{\rho_1, \rho_2\}$ and $S_2 = \{\rho_2, \rho_3, \rho_4\}$. Here $S_1 \cap S_2 = \{\rho_2\}$ and so $\Gamma_{S_1 \cap S_2} = \Gamma_{\rho_2}$ is a cyclic group of order 2. Hence, $\rho_2$ is an involution.
+  In this case, they will be chosse $S_1 = \{\rho_1, \rho_2\}$ and $S_2 = \{\rho_2, \rho_3, \rho_4\}$. Here $S_1 \cap S_2 = \{\rho_2\}$ and so $\Gamma_{S_1 \cap S_2} = \Gamma_{\rho_2}$ is a cyclic group of order 2. Hence, $\rho_2$ is an involution.
 
   \paragraph{}
-  Let's study $S_1$ more deeply, only the $\rho_1$ and $\rho_2$ edges are kept in all the possibles graphs. There are only two possibles graphs:
+  $S_1$ will be studied more deeply, only the $\rho_1$ and $\rho_2$ edges are kept in all the possible graphs. There are only two possibles graphs:
 
   \begin{figure}[H]
     \begin{center}
@@ -1033,10 +1033,10 @@ There are 6 possibilites graph but only one was built. The construction of the f
   \end{figure}
 
   \paragraph{}
-  In the first graph, the permutation $(\rho_1 \rho_2)^2 \rho_1$ lets the points of the two isolated edges fixed because the permutation use $\rho_2$ an even number of times. The points only linked by $\rho_1$ edges remain fixed too. But the point linked by $\rho_2$ edges in the big components are swapped. So it is possible to permute only two $\rho_2$ edges without touching the two others.
+  In the first graph, the permutation $(\rho_1 \rho_2)^2 \rho_1$ lets the points of the two isolated edges fixed because the permutation uses $\rho_2$ an even number of times. The points only linked by $\rho_1$ edges remain fixed too. But the point linked by $\rho_2$ edges in the big components are swapped. So it is possible to permute only two $\rho_2$ edges without touching the two others.
 
   \paragraph{}
-  In the second graph, it's $(\rho_1\rho_2)^4 \rho_1$ that give us the same result.
+  In the second graph, $(\rho_1\rho_2)^4 \rho_1$ gives the same result.
 
   \paragraph{}
   Now, let's study $S_2$, the disposition of the edges alongside the alternating square is very important. Therefore there are 3 possibilities:
@@ -1150,7 +1150,10 @@ There are 6 possibilites graph but only one was built. The construction of the f
   The group generated by the right component is transitive because the component is connex. It's also 2-transitive, this can be checked by fixing the most right point and trying to move it's neighbor. For the first possibility this can be obtained by the permutation $\rho_2 \rho_4 \rho_3 \rho_2 \rho_3 \rho_2 \rho_3$. This can easily be proved for the three graphs and the proof is left to the reader.
 
   \paragraph{}
-  The group is 2-transitive and thus primitive. We can look at the list of primitive group on seven points in~\cite{buekenhout1996list}. The group is 2-transitive and so its order is a multiple of $7 \times 6 = 42$. But it is possible two find one subgroup by looking at the group generated by $\rho_2$ and $\rho_3$ only. This group is $D_10$ which is of order 10. The order of the group must also divides the order of those sub-groups. Thus the order of the group must be a multiple of $7 \times 6 \times 5 = 210$. By looking at the list, there are only two primitive groups on 7 points such that 210 divides they orders : $A_7$ and $S_7$. But the permutation $\rho_2$ is odd on those 7 points, the only possibility is $S_7$.
+  The group is 2-transitive and thus primitive. The list of all primitive groups on seven points can be found in~\cite{buekenhout1996list}. The group is 2-transitive and so its order is a multiple of $7 \times 6 = 42$. But it is possible to find one subgroup by looking at the group generated by $\rho_2$ and $\rho_3$ only. This group is $D_{10}$ which is of order 10. The order of the group must also divides the order of those sub-groups.
+
+  \paragraph{}
+  Thus the order of the group must be a multiple of $7 \times 6 \times 5 = 210$. By looking at the list, there are only two primitive groups on 7 points such that 210 divides they orders : $A_7$ and $S_7$. But the permutation $\rho_2$ is odd on those 7 points, the only possibility is $S_7$.
 
   \paragraph{}
   But then every $\rho_2$ edge is an involution on those 7 points. The other component, that only contains a $\rho_2$ edge must be there to keep the parity of the whole permutation. Therefore this group contains the same involution on 4 point that was found for $\Gamma_{S_1}$. This involution is in $\Gamma_{S_1}$ and in $\Gamma_{S_2}$ but not in $\Gamma_{\rho_2}$ thus $\Gamma$ does not satisfy the intersection property and thus, is not a C-group.
