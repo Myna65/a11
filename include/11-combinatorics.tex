@@ -1,5 +1,14 @@
 \section{Combinatorics}
 
+\begin{definition}[Equality relation]
+  An equality relation $\sim$ on a set $E$ is a subset $R$ of $E \times E$. We write $x \sim y$ iff $(x,y) \in R$ with the following properties:
+  \begin{enumerate}
+    \item ("Reflexivity") $x \sim x \ \forall x \in E$
+    \item ("Symmetry") $x \sim y \Leftrightarrow y\sim x \ \forall x,y \in E$.
+    \item ("Transitivity") if $x \sim y$ and $y \sim z$ then $x \sim z$ forall $x,y,z \in E$.
+  \end{enumerate}
+\end{definition}
+
 \subsection{Posets}
 
 \begin{definition}[Partially ordered set]
@@ -8,8 +17,8 @@
   A \textit{partially ordered set} or \textit{poset} is a pair $(P,\le)$ with $P$ a set and $\le$ a relation between $P$ and $P$ such that
   \begin{enumerate}
     \item $x \le x$ ($\forall x \in P$)
-    \item if $x \le y$ and $y \le x$, then $x = y$ ($\forall x,y \in P$)
-    \item if $x \le y$ and $y \le z$, then $x \le z$ ($\forall x,y,z \in P$)
+    \item ("Anti-symmetry") if $x \le y$ and $y \le x$, then $x = y$ ($\forall x,y \in P$)
+    \item ("Transitivity") if $x \le y$ and $y \le z$, then $x \le z$ ($\forall x,y,z \in P$)
   \end{enumerate}
 \end{definition}
 
