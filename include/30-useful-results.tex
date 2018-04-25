@@ -8,17 +8,17 @@
   $\Gamma$ is transitive so its permutation representation graph is connected. Therefore, because there are $n-1$ edges for $n$ vertices, the graph must be a tree.
 
   \paragraph{}
-  Suppose now, that there is a vertex with at least three incident edges. These edges must be labelled with three differents numbers, $i, j, k$ that describe three different involutions, $\rho_i, \rho_j$ and $\rho_k$. But at least two of these involutions are not adjacent and so must commute. It will be considered that the involution $\rho_i$ and $\rho_k$ does not commute.
+  Suppose now, that there is a vertex with at least three incident edges. These edges must be labeled with three different numbers, $i, j, k$ that describe three different involutions, $\rho_i, \rho_j$ and $\rho_k$. But at least two of these involutions are not adjacent and so must commute. It will be considered that the involution $\rho_i$ and $\rho_k$ does not commute.
 
   \paragraph{}
-  And so by proposition 3.5 of~\cite{cprGraph}, the permutation representation graph where only edges labelled with $i$ and $k$ are kept must only contains those patterns:
+  And so by proposition 3.5 of~\cite{cprGraph}, the permutation representation graph where only edges labeled with $i$ and $k$ are kept must only contains those patterns:
   \begin{itemize}
     \item Fixed points
-    \item Isolated edge (labelled with $i$ or $k$)
+    \item Isolated edge (labeled with $i$ or $k$)
     \item Double edge
     \item Alternating square
   \end{itemize}
-  But in our case, there are already two edges labelled $i$ and $k$ that connect the same point to two differents points. So the only way it can be extended to a good pattern is with an alternating square. But the graph cannot have an alternating square because it is a tree and thus does not contains any cycle.
+  But in our case, there are already two edges labeled $i$ and $k$ that connect the same point to two different points. So the only way it can be extended to a good pattern is with an alternating square. But the graph cannot have an alternating square because it is a tree and thus does not contains any cycle.
 
   \paragraph{}
   Thus no vertex can have three edges but the graph must be connected, so the only solution is a string.
@@ -29,7 +29,7 @@
 \end{lemma}
 
 \begin{proof}
-  The permutation representation graph is a string so it cannot have alterning square or double edge, thus two involutions that must commute can not share a vertex. By definition of a sggi, the $\rho_0$ involution must commute with all other involutions except $\rho_1$.
+  The permutation representation graph is a string so it cannot have alternating square or double edge, thus two involutions that must commute can not share a vertex. By definition of a sggi, the $\rho_0$ involution must commute with all other involutions except $\rho_1$.
 
   \paragraph{}
   The $\rho_0$ edges must only share vertices with $\rho_1$ but there are two edges for each involution. But each $\rho_0$ edge must be surrounded by two $\rho_1$ if it is not at an end of the graph. One $\rho_1$ edge can be spared if it is surrounded by two $\rho_0$ edges but even with that three $\rho_1$ edges are needed with a $\rho_0$ cannot be placed at an end of the graph but there are only have two of them. Therefore one $\rho_0$ edge is at an end of the graph.
@@ -47,7 +47,7 @@
   In this case, there are five involutions and all of them are 2-transpositions. Thus, by Lemma~\ref{rho0atEnd}, a $\rho_0$ edge must be at one end of the graph. By duality, the same can be done with $\rho_4$ and so there is a $\rho_4$ edge at the other end.
 
   \paragraph{}
-  Because the other end is occupied, the other edge of $\rho_0$ cannot go there. So a $\rho_1$ edge must be between the two $\rho_0$ edge (see the proof of Lemma~\ref{rho0atEnd} for details). The same reasonning can be applied to $\rho_3$ by duality. At this point, the graph is the following:
+  Because the other end is occupied, the other edge of $\rho_0$ cannot go there. So a $\rho_1$ edge must be between the two $\rho_0$ edge (see the proof of Lemma~\ref{rho0atEnd} for details). The same reasoning can be applied to $\rho_3$ by duality. At this point, the graph is the following:
 
   \begin{figure}[H]
     \begin{center}

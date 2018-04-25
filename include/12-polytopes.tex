@@ -25,7 +25,7 @@ We can write equation of the half planes in the form $Ax \le c$. Each half plane
 \end{definition}
 
 \begin{definition}[Face of polytopes]
-  The faces of a polytopes $P$ are the interection between $P$ and the hyperplane determined by $ax = c$ where $Ax \le c$ is a valid inequality. By convention, $P$ it-self is also a face of $P$.
+  The faces of a polytopes $P$ are the intersection between $P$ and the hyperplane determined by $ax = c$ where $Ax \le c$ is a valid inequality. By convention, $P$ it-self is also a face of $P$.
 \end{definition}
 
 \begin{definition}[Face lattice]
@@ -45,5 +45,15 @@ We can write equation of the half planes in the form $Ax \le c$. Each half plane
 \end{proposition}
 
 \begin{proposition}[Diamond property]
-  Given two faces $F$ and $G$ such that $\dim(F) = \dim(G) - 2$ there exists exactly two faces $H_1$ and $H_2$ such that $F < H_1 < G$ and $F < H_2 < G$.
+
+\end{proposition}
+
+\begin{proposition}
+  Let $P$ be a convex polytope and $L(P)$ its face lattice $L(P)$:
+
+  \begin{enumerate}
+    \item $L(P)$ is a graded poset of length $\dim(F) + 1$ with rank function : $\rank(F) = \dim(F) + 1$.
+    \item Every interval $[G,F]$ of $L(P)$ is a face lattice of a convex polytope of dimension $\dim(F) - \dim(G) - 1$
+    \item ("Diamond property")\index{diamond property} Given two faces $F$ and $G$ of $P$ such that $\dim(F) = \dim(G) - 2$ there exists exactly two faces $H_1$ and $H_2$ such that $F < H_1 < G$ and $F < H_2 < G$.
+  \end{enumerate}
 \end{proposition}

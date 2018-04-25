@@ -1,24 +1,24 @@
-\documentclass[a4paper]{book}
+\documentclass[a4paper, oneside]{book}
 
 \input{include/00-config}
 
 \begin{document}
 
 \input{include/01-title}
-
-\cleardoublepage{}
+\input{include/02-introduction}
 
 \tableofcontents{}
 
-\cleardoublepage{}
+\input{include/02-introduction}
 
 \chapter{Notions}
 
-\input{include/10-groups}
+\input{include/16-graphs}
 \input{include/11-combinatorics}
 \input{include/12-polytopes}
 \input{include/13-abstract-polytopes}
 \input{include/14-links}
+\input{include/10-groups}
 \input{include/15-graph-properties}
 
 %\input{include/20-lattice-elimination}
@@ -36,12 +36,8 @@
 \input{include/33-monodromy-rank-4}
 
 
-\cleardoublepage{}
-
 \bibliographystyle{plain}
 \bibliography{references}
-
-\cleardoublepage{}
 
 \printindex{}
 

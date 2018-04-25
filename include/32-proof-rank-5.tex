@@ -68,7 +68,7 @@ Let's draw a graph with all edges of the 4-transposition $\rho_1$.
 \end{figure}
 
 \paragraph{}
-This transposition must commute with $\rho_3$ and $\rho_4$. There are three possibilities to place the two $\rho_4$ edges: build an alternating square, double one edge a link two fixed points or double two edges.
+This transposition must commute with $\rho_3$ and $\rho_4$. There are three possibilities to place the two $\rho_4$ edges: building an alternating square, doubling one edge a linking two fixed points or doubling two edges.
 
 \subsection{The alternating square}
 
@@ -108,7 +108,7 @@ This transposition must commute with $\rho_3$ and $\rho_4$. There are three poss
 \end{figure}
 
 \paragraph{}
-If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square between $[\rho_1, \rho_3]$ ($[\rho_2, \rho_4]$ is not possible because $\rho_4$ is a 2-transposition). The sequence of squares cannot be extended to the right because two extra alternating squares are needed. There is only one remaining $\rho_1$ edge, therefore it is not possible to continue linearly. But a rotation pattern cannot be placed, so it is impossible.
+If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square $[\rho_1, \rho_3]$ ($[\rho_2, \rho_4]$ is not possible because $\rho_4$ is a 2-transposition). The sequence of squares cannot be extended to the right because two extra alternating squares are needed. There is only one remaining $\rho_1$ edge, therefore it is not possible to continue linearly. But a rotation pattern cannot be placed, so it is impossible.
 
 \paragraph{}
 If the sequence is extended to the left, the last $\rho_1$ edge and two $\rho_3$ edges would be used. At the end only 2 $\rho_0$ edges and 2 or 4 $\rho_2$ edges remain but they cannot form a connected graph.
@@ -380,7 +380,7 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
 \end{figure}
 
 \paragraph{}
-Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution can be extended to a 4-transposition. There are only two possibles positions for extra $\rho_3$ edges: double the left $\rho_1$ edge and the upper $\rho_0$ edge. That creates two other graphs:
+Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution can be extended to a 4-transposition. There are only two possible positions for extra $\rho_3$ edges: double the left $\rho_1$ edge and the upper $\rho_0$ edge. That creates two other graphs:
 
 \begin{figure}[H]
   \begin{center}
@@ -403,8 +403,8 @@ Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution
       \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
-          \path (9)  edge[bend left=30] node {$0$} (11);
-          \path (8)  edge node {$0$} (10);
+          \path (9)  edge node {$0$} (11);
+          \path (8)  edge[bend left=30] node {$0$} (10);
           \path (1)  edge[bend right=30] node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
@@ -416,7 +416,7 @@ Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution
           \path (1)  edge[bend left=30] node {$3$} (2);
           \path (3)  edge node {$3$} (5);
           \path (4)  edge node {$3$} (6);
-          \path (9)  edge[bend right=30] node {$3$} (11);
+          \path (8)  edge[bend right=30] node {$3$} (10);
           \path (1)  edge[bend right=30] node {$4$} (3);
           \path (2)  edge node {$4$} (4);
         \end{scope}
@@ -747,7 +747,7 @@ Two components must be linked by a $\rho_2$ edge. But the total number of $\rho_
 \end{figure}
 
 \paragraph{}
-In those graphs, if the $\rho_4$ edge is removed, the generated group is 2-transitive\footnote{TO DO} and thus primitive. By looking at the size of the subgroups, it is possible to deduce that the generated group is $A_{11}$.
+In those graphs, if the $\rho_4$ edge is removed, the generated group is 2-transitive\footnote{TO DO} and thus primitive. By looking at the size of the subgroups, it is possible to deduce that the generated group is $A_{11}$\footnote{Missing the case where no other square are attached}.
 
 \subsection{Alternating square $[\rho_2,\rho_4]$}
 
@@ -1252,10 +1252,13 @@ There are 6 possible graphs but only one was built. The construction of the five
   By the definition of a C-group, it is sufficient to find two subsets of generators $S_1$ and $S_2$ such that $\Gamma_{S_1} \cap \Gamma_{S_2} \neq \Gamma_{S_1 \cap S_2}$.
 
   \paragraph{}
+  This proof is inspired by the section 4 of~\cite{leemansTransactions}.
+
+  \paragraph{}
   In this case, they will be choose $S_1 = \{\rho_1, \rho_2\}$ and $S_2 = \{\rho_2, \rho_3, \rho_4\}$. Here $S_1 \cap S_2 = \{\rho_2\}$ and so $\Gamma_{S_1 \cap S_2} = \Gamma_{\rho_2}$ is a cyclic group of order 2. Hence, $\rho_2$ is an involution.
 
   \paragraph{}
-  $S_1$ will be studied more deeply, only the $\rho_1$ and $\rho_2$ edges are kept in all the possible graphs. There are only two possibles graphs:
+  $S_1$ will be studied more deeply, only the $\rho_1$ and $\rho_2$ edges are kept in all the possible graphs. There are only two possible graphs:
 
   \begin{figure}[H]
     \begin{center}
