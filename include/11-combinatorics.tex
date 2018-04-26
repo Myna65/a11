@@ -1,11 +1,13 @@
 \section{Combinatorics}
 
+The definitions come from~\cite{polytopes}
+
 \begin{definition}[Equality relation]
   An equality relation $\sim$ on a set $E$ is a subset $R$ of $E \times E$. We write $x \sim y$ iff $(x,y) \in R$ with the following properties:
   \begin{enumerate}
     \item ("Reflexivity") $x \sim x \ \forall x \in E$
     \item ("Symmetry") $x \sim y \Leftrightarrow y\sim x \ \forall x,y \in E$.
-    \item ("Transitivity") if $x \sim y$ and $y \sim z$ then $x \sim z$ forall $x,y,z \in E$.
+    \item ("Transitivity") if $x \sim y$ and $y \sim z$ then $x \sim z$ for all $x,y,z \in E$.
   \end{enumerate}
 \end{definition}
 
@@ -66,7 +68,7 @@ We try to minimize the number of edges so we will not connect $x$ and $z$ (with 
 \end{figure}
 
 \paragraph{}
-In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. So $a \le d$ by transitivity, even if there is no line between thoses points.
+In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. So $a \le d$ by transitivity, even if there is no line between those points.
 
 \begin{definition}[Totally ordered set]
   \index{totally ordered set}
@@ -75,6 +77,7 @@ In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. 
 
 \begin{definition}[Chain]
   \index{chain}
+  A \textit{chain} is a totally ordered subset of a poset.
 \end{definition}
 
 \begin{definition}[Interval]
@@ -82,7 +85,7 @@ In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. 
 \end{definition}
 
 \begin{definition}[Maximal chain]
-
+  A chain is called \textit{maximal} if it is not contained in any bigger chain.
 \end{definition}
 
 \subsection{Lattice}

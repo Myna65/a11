@@ -1,6 +1,6 @@
 \section{Polytopes}
 
-In this section, I will follow the book \cite{polytopes}
+This section follow the book \cite{polytopes}
 
 \begin{definition}[$\mathcal V$-polytope]
   A polytope is a bounded intersection of a finite number of closed half-plane.
@@ -15,7 +15,7 @@ In this section, I will follow the book \cite{polytopes}
 \end{theorem}
 
 \paragraph{}
-We have two ways to represent polytopes and we will use the most adapted representation in every statement.
+There are two ways to represent polytopes and the most adapted representation will be used in every statement.
 
 \paragraph{}
 We can write equation of the half planes in the form $Ax \le c$. Each half plane can be summarized as a couple $(A,c)$. If we index the half planes by $i$, we have that a polytope is the set of points $x$ such that $A_i x \le c_i$ for all $i$.
@@ -25,7 +25,7 @@ We can write equation of the half planes in the form $Ax \le c$. Each half plane
 \end{definition}
 
 \begin{definition}[Face of polytopes]
-  The faces of a polytopes $P$ are the intersection between $P$ and the hyperplane determined by $ax = c$ where $Ax \le c$ is a valid inequality. By convention, $P$ it-self is also a face of $P$.
+  The faces of a polytopes $P$ are the intersection between $P$ and the hyperplane determined by $ax = c$ where $Ax \le c$ is a valid inequality. By convention, $P$ itself is also a face of $P$.
 \end{definition}
 
 \begin{definition}[Face lattice]
@@ -33,11 +33,11 @@ We can write equation of the half planes in the form $Ax \le c$. Each half plane
 \end{definition}
 
 \begin{proposition}
-  Every face lattice is a poset
+  Every face lattice is a poset.
 \end{proposition}
 
 \begin{proposition}
-  Every face lattice is a lattice
+  Every face lattice is a lattice.
 \end{proposition}
 
 \begin{proposition}
@@ -54,6 +54,6 @@ We can write equation of the half planes in the form $Ax \le c$. Each half plane
   \begin{enumerate}
     \item $L(P)$ is a graded poset of length $\dim(F) + 1$ with rank function : $\rank(F) = \dim(F) + 1$.
     \item Every interval $[G,F]$ of $L(P)$ is a face lattice of a convex polytope of dimension $\dim(F) - \dim(G) - 1$
-    \item ("Diamond property")\index{diamond property} Given two faces $F$ and $G$ of $P$ such that $\dim(F) = \dim(G) - 2$ there exists exactly two faces $H_1$ and $H_2$ such that $F < H_1 < G$ and $F < H_2 < G$.
+    \item ("Diamond property")\index{diamond property} Given two faces $F$ and $G$ of $P$ such that $\dim(F) = \dim(G) - 2$ there exist exactly two faces $H_1$ and $H_2$ such that $F < H_1 < G$ and $F < H_2 < G$.
   \end{enumerate}
 \end{proposition}
