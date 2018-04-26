@@ -1,0 +1,26 @@
+\chapter{Proof for rank 5}
+
+\begin{lemma}
+  $\rho_0$ (and thus $\rho_4$) cannot be a 4-transposition.
+\end{lemma}
+
+\begin{proof}
+  Suppose that $\rho_0$ is a 4-transposition.
+
+  \paragraph{}
+  The $\rho_4$ involution must be placed on the graph such that it commutes with $\rho_0$. The following patterns are possible for each $\rho_4$ edge:
+  \begin{enumerate}
+    \item Form an alternating square
+    \item Double an existing edge
+    \item Link two fixed points
+  \end{enumerate}
+
+  \paragraph{}
+  The last pattern can only be used once because there are only three fixed points. But $\rho_4$ is either a 4-transposition or a 2-transposition, so at least one edge that must still be placed. Thus, at least one of the two other possibilities must be used. But $\rho_0$ and $\rho_4$ would share a vertex but that is impossible by Lemma~\ref{0-4-no-share}.
+\end{proof}
+
+The analysis is split in two cases depending of the disposition of 4-transpositions:
+\begin{enumerate}
+  \item $\rho_1$ is a 4-transposition (regardless of $\rho_3$)
+  \item $\rho_1$ and $\rho_3$ are 2-transpositions. If $\rho_3$ is a 4-transposition but $\rho_1$ not, it can be reduced to the first case by taking the dual.
+\end{enumerate}

@@ -1,0 +1,30 @@
+\chapter{Proof for rank 4}
+
+\paragraph{}
+Nous allons maintenant étudier les différents cas en rang 4. Nous pouvons avoir deux, trois ou quatre 4-transpositions. Étudions ces cas successivement.
+
+\begin{theorem}
+  $\rho_1$ et donc $\rho_2$ ne peuvent être des 2-transposition.
+\end{theorem}
+
+\begin{proof}
+  $\rho_2$ ou $\rho_3$ est une 4-transposition. Donc $\rho_0$ doit partager des sommets avec au moins une d'entre elle.
+
+  \paragraph{}
+  Si c'est $\rho_2$ qui est une 4-transposition, $\rho_0$ et $\rho_3$ doivent partager un sommet. Dès lors, elles doivent former soit un carré alterné $[\rho_0, \rho_3]$ soit une arête double $(\rho_0, \rho_3)$.
+
+  \paragraph{}
+  Dans le premier cas, ce carré alterné devra être adjacent à un autre carré alterné $[\rho_0, \rho_2]$, dans le second cas, on a le choix entre ce carré et un carré du type $[\rho_1, \rho_3]$. Dans les deux cas, nous avons utilisés toutes nos arêtes exédentaires, la suite devra donc être linéaire. En fonction des cas que nous avons faits, il y a trois possibiliés:
+
+  \begin{itemize}
+    \item 1 $\rho_0$, 2 $\rho_1$, 2 $\rho_2$, 0 $\rho_3$
+    \item 2 $\rho_0$, 2 $\rho_1$, 2 $\rho_2$, 1 $\rho_3$
+    \item 3 $\rho_0$, 0 $\rho_1$, 4 $\rho_2$, 0 $\rho_3$
+  \end{itemize}
+\end{proof}
+
+\paragraph{}
+Le troisième cas est clairement impossible car, en partant d'une arête $\rho_2$, nous ne pourons jamais atteindre $\rho_0$ de manière linéaire.
+
+\paragraph{}
+Dans les deux premiers cas, nous devons continuer avec des arêtes $\rho_1$ donc le trois

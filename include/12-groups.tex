@@ -4,10 +4,10 @@
 
 \begin{definition}[Group]
   \index{group}
-  A group $G$ is a pair $(E, \cdot)$ where $E$ is a set and $\cdot$ is an operator: $\cdot: E \times E \to E$. A group must satisfies the following properties :
+  A group $G$ is a pair $(E, \cdot)$ where $E$ is a set and $\cdot$ is an operator $\cdot: E \times E \to E$. A group must satisfies the following properties:
   \begin{itemize}
     \item \textbf{Associativity} $(a \cdot b) \cdot c = a \cdot (b \cdot c)\ \forall a,b,c \in G$.
-    \item \textbf{Identity element} There exists an element of $G$ (we will call it $1$) such that $a \cdot 1 = a = 1 \cdot a \ \forall a \in G$.
+    \item \textbf{Identity element} There exists an element of $G$ (called $1$) such that $a \cdot 1 = a = 1 \cdot a \ \forall a \in G$.
     \item \textbf{Inverse element} $\forall a \in G$ there exists $a^{-1} \in G$ such that $a \cdot a^{-1} = 1 = a^{-1} \cdot a$.
   \end{itemize}
 \end{definition}
@@ -15,18 +15,18 @@
 \subsection{Permutation groups}
 
 \paragraph{}
-We will begin with some notions of permutation group. Those notions come from~\cite{cameronPermutationGroups}
+The followings statements about permutation groups come from~\cite{cameronPermutationGroups}.
 
 \begin{definition}[Permutation]
   \index{permutation}
-  A permutation of $S$ is a bijection between $S$ and itself. We can see it as a reordering of the elements of $S$.
+  A permutation of $S$ is a bijection between $S$ and itself. It can be seen as a reordering of the elements of $S$.
 \end{definition}
 
 \paragraph{}
-We will write permutation on the right, for example the application of the permutation $g$ to a point $\alpha$ is noted $\alpha g$ and not $g(\alpha)$. Permutations are composed left to right, so we write $\alpha gh$ instead of $h(g(\alpha))$. This can be confusing at the beginning be with this notation, we read from the left to the right and avoid changing reading (and thinking) direction between each expression.
+Instead of the using the functional notation, the permutation will be written on the right on the composing read from the left to right. The application of the permutation $g$ to a point $\alpha$ is noted $\alpha g$ and not $g(\alpha)$. This make the notation lighter and the reading easier. So $\alpha gh$ will be written instead of $h(g(\alpha))$.
 
 \paragraph{}
-One popular way to write permutation is the following notation.
+One common way to write permutation is the following notation.
 
 \[
   g =
@@ -37,6 +37,9 @@ One popular way to write permutation is the following notation.
     \end{array}
   \right)
 \]
+
+\paragraph{}
+Here $1g = 2$ and $5g = 1$.
 
 \begin{definition}[Fixed point]
   \index{fixed point (permutation)}
@@ -85,6 +88,9 @@ The term \textit{cyclic permutation} is used to describe a full permutation and 
 \begin{corollary}
   Every permutation can be written as a product of transposition.
 \end{corollary}
+
+\paragraph{}
+The new notation for permutation can now be introduced. Permutation will now be written as a product of cycle. This new notation does not include the total number of points. This must be clear in the context.
 
 \begin{definition}[Symmetric group]
   \index{symmetric group}
