@@ -2,8 +2,22 @@
 
 This section follow the book \cite{polytopes}
 
+\begin{definition}[Convex hull]
+  The convex hull of a finite set of points $\{x_1 \dots x_n\}$ is the set of points determined by
+  \[
+    y = \sum_{i=1}^n \lambda_i x_i
+  \]
+  such that
+  \[
+    \sum_{i=1}^n \lambda_i = 1
+  \]
+  \[
+    \lambda_i \ge O \quad \forall i
+  \]
+\end{definition}
+
 \begin{definition}[$\mathcal V$-polytope]
-  A polytope is a bounded intersection of a finite number of closed half-plane.
+  A polytope is the convex hull of a finite number of points.
 \end{definition}
 
 \begin{definition}[$\mathcal H$-polytope]
@@ -42,10 +56,6 @@ We can write equation of the half planes in the form $Ax \le c$. Each half plane
 
 \begin{proposition}
   Every face lattice is a ranked lattice and the dimension of the faces is a good rank function.
-\end{proposition}
-
-\begin{proposition}[Diamond property]
-
 \end{proposition}
 
 \begin{proposition}

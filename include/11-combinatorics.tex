@@ -3,11 +3,12 @@
 The definitions come from~\cite{polytopes}
 
 \begin{definition}[Equality relation]
+  \index{equality relation}
   An equality relation $\sim$ on a set $E$ is a subset $R$ of $E \times E$. We write $x \sim y$ iff $(x,y) \in R$ with the following properties:
   \begin{enumerate}
-    \item ("Reflexivity") $x \sim x \ \forall x \in E$
-    \item ("Symmetry") $x \sim y \Leftrightarrow y\sim x \ \forall x,y \in E$.
-    \item ("Transitivity") if $x \sim y$ and $y \sim z$ then $x \sim z$ for all $x,y,z \in E$.
+    \item \textbf{Reflexivity} $x \sim x \ \forall x \in E$
+    \item \textbf{Symmetry} $x \sim y \Leftrightarrow y\sim x \ \forall x,y \in E$.
+    \item \textbf{Transitivity} if $x \sim y$ and $y \sim z$ then $x \sim z$ for all $x,y,z \in E$.
   \end{enumerate}
 \end{definition}
 
@@ -18,9 +19,9 @@ The definitions come from~\cite{polytopes}
   \index{poset}
   A \textit{partially ordered set} or \textit{poset} is a pair $(P,\le)$ with $P$ a set and $\le$ a relation between $P$ and $P$ such that
   \begin{enumerate}
-    \item $x \le x$ ($\forall x \in P$)
-    \item ("Anti-symmetry") if $x \le y$ and $y \le x$, then $x = y$ ($\forall x,y \in P$)
-    \item ("Transitivity") if $x \le y$ and $y \le z$, then $x \le z$ ($\forall x,y,z \in P$)
+    \item \textbf{Reflexivity} $x \le x$ ($\forall x \in P$)
+    \item \textbf{Anti-symmetry} if $x \le y$ and $y \le x$, then $x = y$ ($\forall x,y \in P$)
+    \item \textbf{Transitivity} if $x \le y$ and $y \le z$, then $x \le z$ ($\forall x,y,z \in P$)
   \end{enumerate}
 \end{definition}
 
@@ -32,7 +33,7 @@ We denote $x < y$ when $x \le y$ and $x \neq y$.
 
 \paragraph{}
 \index{Hasse diagram}
-Given a poset, we can draw its Hasse diagram. It's a graph where the vertices are the elements of $P$ and two elements $x$ and $y$ are connected with $x$ under $y$ if $x \le y$. Therefore, no horizontal edge can exist.
+Given a poset, we can draw its \textit{Hasse diagram}. It's a graph where the vertices are the elements of $P$ and two elements $x$ and $y$ are connected with $x$ under $y$ if $x \le y$. Therefore, no horizontal edge can exist.
 
 \paragraph{}
 We try to minimize the number of edges so we will not connect $x$ and $z$ (with $x \le z$) if there exists $y$ such that $x < y < z$. This is required otherwise the diagram becomes overloaded even more quickly. The reader can deduce the removed edge by transitivity.
@@ -80,10 +81,6 @@ In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. 
   A \textit{chain} is a totally ordered subset of a poset.
 \end{definition}
 
-\begin{definition}[Interval]
-  \index{interval}
-\end{definition}
-
 \begin{definition}[Maximal chain]
   A chain is called \textit{maximal} if it is not contained in any bigger chain.
 \end{definition}
@@ -99,7 +96,7 @@ In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. 
 \begin{definition}[Supremum, Infinimum]
   \index{supremum}
   \index{infinimum}
-  The supremum (resp. infinimum) of two elements $x$ and $y$ is the lower (resp. upper) bound of all upper (resp. lower) bounds of $x$ and $y$. If it exists, it's unique. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$.
+  The supremum (resp. infinimum) of two elements $x$ and $y$ is the lower (resp. upper) bound in the set of all upper (resp. lower) bounds of $x$ and $y$. If it exists, it's unique. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$.
 \end{definition}
 
 \begin{definition}[Lattice]
@@ -204,5 +201,5 @@ On the Hasse diagram, it means that, if we place all elements with the same rank
 \end{figure}
 
 \begin{proposition}
-  Let $(P,\le)$ be a bounded poset, then it's ranked if and only if all it's maximal chain of the same length.
+  Let $(P,\le)$ be a bounded poset, then it is ranked if and only if all its maximal chains have the same length.
 \end{proposition}
