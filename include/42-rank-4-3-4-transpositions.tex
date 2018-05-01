@@ -1,7 +1,7 @@
 \section{Three 4-transpositions}
 
 \begin{lemma}
-  Let $\Gamma$ be a sggi of rank 4 on 11 points. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions whatever $\rho_0$ then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).
+  Let $\Gamma$ be a sggi of rank 4 on 11 points. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions and $\rho_0$ is a 2-transposition then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).\footnote{TO DO EXTEND}
 \end{lemma}
 
 \begin{proof}
@@ -17,7 +17,25 @@
   Suppose now that we have two double edges between $\rho_1$ and $\rho_3$. Those edges can be connected to the rest of the graph by a $\rho_2$ edge or be part of an alternating square.
 
   \paragraph{}
-  At least one $\rho_1$ single edge is needed. Thus a single $\rho_3$ edge must also exists.
+  At least one $\rho_1$ single edge is needed. Thus a single $\rho_3$ edge must also exists. This uses 10 vertices, therefore it cannot be two single $\rho_1$ edge.
+
+  \paragraph{}
+  Now let's proof that at least one alternating square must exists. Suppose that no alternating squares exists.
+
+  \paragraph{}
+  There are 2 $\rho_0$ edges. Those edges can be placed in alternating square, double edges or simple edges.
+
+  \paragraph{}
+  If it is placed in an alternating square it can be a component or just an additional edge.
+
+  \paragraph{}
+  If it just an additional edge, the other component must be $\rho_1$. And those edges cannot be doubled. Therefore there are 2 $\rho_1$ edges. At least one of them must therefore be part of an alternating square or a double edge. But the latter is impossible and therefore the former is mandatory.
+
+  \paragraph{}
+  If it is a component of a square, the other component must be $\rho_2$ or $\rho_3$. If it is $\rho_3$ it must be  adjacent to another square. It can be $[\rho_0, \rho_2]$ or $[\rho_1, \rho_3]$. The two cases are impossible.
+
+  \paragraph{}
+  The $\rho_0$ edges are not placed in an alternating square. Each must be connected by a $\rho_1$. An alternating square or a double edge is not possible. But that is a contradiction.
 \end{proof}
 
 \begin{theorem}
@@ -60,7 +78,7 @@
     \end{center}
   \end{figure}
 
-  \paragraph{}~\footnote{TODO}
+  \paragraph{}By previous Lemma, the pattern between $\rho_1$ and $\rho_3$ is the following.
 
 
   \begin{figure}[H]
@@ -101,39 +119,38 @@
   \end{figure}
 
   \paragraph{}
-  Essayons de placer les involutions $\rho_0$, celles-ci doivent commuter avec $\rho_3$. On peut placer facilement un arête pour relier l'arête simple avec $\rho_1$ au point fixe. Mais pour l'autre c'est plus compliqué. Il faut trouver une arête $\rho_2$ unqiement contenue entre deux arêtes $\rho_1$. A priori, ça parait impossible mais en regardant bien, sur le carré alterne, nous avons deux cotés (les arêtes $\rho_3$) sont placées entre deux arêtes $\rho_1$. Mais ces arêtes ne sont pas $\rho_2$. On peut cependant rajouter une arête $\rho_2$ pour doubler l'arête $\rho_3$ et maintenant on peut la tripler avec $\rho_0$. On a donc
+  Let's place the $\rho_0$ edges. We know by the proof of the previous lemma that one edge must be added to an alternating square. The other must be a single edge. This last edge must be connected by the single $\rho_1$ edge.
 
   \begin{figure}[H]
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
           \node (4)  at (2,0)  {};
-          \node (5)  at (4,2)  {};
-          \node (6)  at (4,0)  {};
-          \node (7)  at (8,2)  {};
-          \node (8)  at (8,0)  {};
-          \node (9)  at (6,2)  {};
-          \node (10) at (6,0)  {};
-          \node (11) at (10,2) {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (14,0)  {};
+          \node (8)  at (12,0)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (10,0)  {};
+          \node (11) at (16,0) {};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
-            \path (1)  edge[bend left=40] node {$0$} (3);
+            \path (1)  edge[bend left=30] node {$0$} (3);
             \path (7)  edge node {$0$} (11);
             \path (1)  edge node {$1$} (2);
             \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend right=20] node {$1$} (6);
+            \path (5)  edge[bend left=30] node {$1$} (6);
             \path (7)  edge node {$1$} (8);
-            \path (1)  edge node {$2$} (3);
-            \path (1)  edge[bend right=40] node {$3$} (3);
+            \path (1)  edge[bend right=30] node {$3$} (3);
             \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend left=20] node {$3$} (6);
+            \path (5)  edge[bend right=30] node {$3$} (6);
             \path (9)  edge node {$3$} (10);
           \end{scope}
         \end{scope}
@@ -144,6 +161,78 @@
   \end{figure}
 
   \paragraph{}
-  Les trois dernières arêtes de $\rho_2$ doivent servir à relier les trois composantes connexes du graphe ci-dessus, sachant que l'arête 0 ne peut être relié à rien et qu'on ne sait créer que deux branches sur le carré alterné. Il y a donc 2 possibilités (une seule branche) plus 2 possibilités (deux branches, la branche avec $\rho_0$ ne contient aucune autre composante) plus 2 possibilités (deux branches, la branche avec $\rho_0$ contient deux composantes). On a donc exactement 6 possibilités.
+  There are only 4 $\rho_2$ waiting to be placed. Three of them must link the components. The last one must double someting. The only two possibilities: triple the double edge $(\rho_0, \rho_3)$ or double the other $\rho_0$.
 
+  \paragraph{}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (14,0)  {};
+          \node (8)  at (12,0)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (10,0)  {};
+          \node (11) at (16,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend left=45] node {$0$} (3);
+            \path (7)  edge node {$0$} (11);
+            \path (1)  edge node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge[bend left=30] node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge node {$2$} (3);
+            \path (1)  edge[bend right=45] node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (5)  edge[bend right=30] node {$3$} (6);
+            \path (9)  edge node {$3$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  The component can be link in a lot of differents ways.\footnote{TO DO Double single $\rho_0$ edge.}
+
+  \paragraph{}
+  If the $\rho_2$ edge is placed such that it triple $(\rho_0, \rho_2)$ then the reader is advised to try to find all sggis and check that those displayed in appendix~\ref{} are correct. Once more it can help to sort them by the length of the chain between the square and the double edge and them by the length of the chain between the double edge and the end of the chain.
+
+\end{proof}
+
+\begin{theorem}
+  None of those graphs are C-groups.
+\end{theorem}
+
+\begin{proof}
+  As for previous similar proof, only the summary is displayed and the details is left to the reader
+
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+      Figure & $\Gamma_3$ & $\Gamma_0$ & $\Gamma_{0,3}$ & $\#\Gamma_{0,3}$ & $\Gamma_3 \cap \Gamma_0$ & $\#(\Gamma_3 \cap \Gamma_0)$ \\ \hline
+
+      \ref{r4-5-1} & $S_7 : D_8$ & $A_{10}$ & $D_{42}$ & 42 & $\ge S_5$ & $\ge 120$ \\ \hline
+      \ref{r4-5-2} & $A_{10}$ & $A_{10}$ & $D_{18}$ & 18 & $A_9$ & $181440$ \\ \hline
+      \ref{r4-5-3} & $A_{10}$ & $A_{10}$ & $D_{18}$ & 18 & $A_9$ & $181440$ \\ \hline
+      \ref{r4-5-4} & $S_7 : D_8$ & $A_{10}$ & $D_{42}$ & 42 & $\ge S_5$ & $\ge 120$ \\ \hline
+      \ref{r4-5-5} & $A_5 : S_6$ & $A_{10}$ & $D_{10}$ & 10 & $\ge S_4$ & $\ge 24$ \\ \hline
+      \ref{r4-5-6} & $A_8 : S_3$ & $A_{10}$ & $D_{42}$ & 42 & $\ge S_5$ & $\ge 120$ \\ \hline
+
+    \end{tabular}
+  \end{table}
 \end{proof}

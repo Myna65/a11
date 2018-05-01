@@ -1,97 +1,55 @@
-\section{Abstract Polytopes}
+\cleardoublepage{}
+\subsection{Abstract Polytopes}
 
 \paragraph{}
 This section uses~\cite{incidenceGeometry} and \cite{abstractRegularPolytopes}.
 
 \paragraph{}
-The problem with polytopes is that, as of today, given a face lattice we can not known whether it's a polytope or not. And so we cannot work on face lattice which in annoying. We want to work on this face lattice and so we define an \textit{abstract polytope} as a face lattice which satisfy all major properties of face lattice of polytope but without asking them to have a representation in an euclidean space. With abstract polytopes, we only keep the combinatorial structure.
-
-
-
-\begin{definition}[Face of a partially ordered set]
-  In the context of abstract polytopes, we denote elements of the poset, \textit{faces}.
-\end{definition}
-
-\begin{definition}[$i$-face]
-  If a face have a rank equals to $i$, we will call this face a $i$-face.
-\end{definition}
-
-\begin{definition}[Flag of a partially ordered set]
-  A \textit{flag} of a partially ordered set is a subset of the poset which is maximal totally.
-\end{definition}
+Given a face lattice it is not possible to not known whether there exists an euclidean polytope that admit this face lattice or not. Therefore it is not possible to modify or to generate face lattice. So we define the concept of \textit{abstract polytope}. An abstract polytope is a face lattice which satisfies the four major properties of the face lattice of polytopes but without asking them to have a representation in an euclidean space. With abstract polytopes, only the combinatorial structure is kept.
 
 \begin{definition}[Abstract $d$-polytope]
-  An \textit{abstract $d$-polytope} $\mathcal P$ is a ranked partially ordered set of \textit{faces}. Such that
+  An \textit{abstract $d$-polytope} $\mathcal P$ is a ranked lattice. The elements of the lattice are called \textit{faces}. This lattice must be such that
   \begin{enumerate}
-    \item $\mathcal P$ contains two improper faces, a least face $F_{-1}$ and a greatest face $F_d$.
+    \item $\mathcal P$ contains two improper faces, a least face $F_{-1}$ and a greatest face $F_d$
     \item The flags of $\mathcal P$ contains $d + 2$ faces (including the 2 improper faces)
-    \item $\mathcal P$ is strongly connected (see below)
-    \item Let $F, G$ be two faces of $\mathcal P$ such that $\rank(F) = i - 1$ and $\rank(G) = i + 1$. Then there exists exactly 2 $i$-faces $H$ such that $F < H < G$. This is called the diamond property.
+    \item $\mathcal P$ is strongly connected
+    \item $\mathcal P$ satisfies the diamond property.
   \end{enumerate}
 \end{definition}
 
-\begin{definition}[Section of a poset]
-  For any two faces $F, G$ with $F \le G$, we define the \textit{section} \[
-    F/G = \{H | H \in R, F \le H \le G\}
-  \]
+\paragraph{}
+The main subject of this work is abstract polytope. Therefore the word "polytope" will be used to talk about abstract polytopes and not about euclidean polytopes.
+
+\begin{definition}[Flags of polytope]
+  The flags of a polytope are the maximal chains of the underlying poset. The set of all flags is denoted $\mathcal F(P)$.
 \end{definition}
 
-\begin{property}
-  Every section of a polytope is a polytope
-\end{property}
+\subsection{Morphisms}
 
-\begin{definition}[Connected poset]
-  A poset which satisfy the two first properties of a polytope is said \textit{connected} if $d \le 1$ or if, for any proper faces $F, G$, there exists a sequence of proper faces $F = H_0, H_1, \dots, H_{k-1}, H_k = G$. such that $H_i$ and $H_{i+1}$ are compararable for every $i$.
+\begin{definition}[Homomorphism of polytopes]
+  \index{homomorphism}
+  Let $\mathcal P$ and $\mathcal Q$ be two abstract polytopes. A homomorphism $\varphi$ from $\mathcal P$ to $\mathcal Q$ is a map between the faces of $\mathcal P$ and $\mathcal Q$ such that, for $F, G \in P$ with $F \le_{\mathcal P} G$ then $F\varphi \le_{\mathcal Q} G\varphi$.
 \end{definition}
 
-\begin{definition}[Strictly connected poset]
-  A poset is \textit{strictly connected} if every section (including the whole poset) is connected.
+\begin{definition}[Isomorphism of polytopes]
+  \index{isomorphism}
+  An isomorphism of polytopes is a bijection $\varphi$ such that $\varphi$ and $\varphi^{-1}$ are homomorphisms.
 \end{definition}
 
-\begin{definition}[Adjacent flags]
-  Two flags of a $d$-polytope are said adjacent if they differ by exactly one face.
+\begin{definition}[Automorphism of polytopes]
+  \index{automorphism}
+  An automorphism of a polytope $\mathcal P$ is an isomorphism between $\mathcal P$ and itself.
 \end{definition}
 
-\begin{definition}[$i$-adjacent flag]
-  Let $\Phi$ be a flag, we know by the diamond property that there exists exactly a flag that share all faces execpt the face of rank $i$ with $\Phi$. We call this face the $i$-adjacent flag of $\Phi$ and we denote it $\Phi^i$.
+\paragraph{}
+The set of all automorphisms of a polytope $\mathcal P$ forms a group called the automorphism group of the polytope. This group is denoted $\Gamma(\mathcal P)$.
+
+\subsection{Regularity}
+
+\begin{definition}
+  An abstract regular polytope is a polytope such that $\Gamma(\mathcal P)$ is transitive on $\mathcal F(\mathcal P)$.
 \end{definition}
 
-\begin{property}
-  \[
-    \left(\Phi^i\right)^i = \Phi
-  \]
-\end{property}
-
-\begin{property}
-  \[
-    \left(\Phi^i\right)^j = \left(\Phi^j\right)^i \quad \text{if} \ |i-j| > 1.
-  \]
-\end{property}
-
-\begin{definition}[Equivar polytope]
-  A $d$-polytope is said \textit{equivar} if for all $i = 1, 2, \dots, d-1$ there is an integer $p_i$ such that any section $G/F$ where $F$ is $(i-2)$-face and $G$ is a $(i+1)$-face.
-\end{definition}
-
-\begin{definition}[Schläfli type]
-  If $\mathcal P$ is equivelar, we say that ha have a \textit{Schläfli type} of $\{p_1, \dots, p_{d-1}\}$.
-\end{definition}
-
-\begin{definition}[Regular polytope]
-  A polytope is regular if it's automoprhism group have exactly one orbit over the flags.
-\end{definition}
-
-\begin{property}
-  Equivalently, a polytope is regular if for some flag $\Phi$, and each $i$, there exists a unique involutory automorphism $\rho_i$ such that $\Phi_i = \Phi \rho_i$. In fact this property holds for every flag.
-\end{property}
-
-\begin{definition}[Base flag]
-  We choose a fixed flag of a polytope and we call it the \textit{base flag}.
-\end{definition}
-
-\begin{property}
-  For a regular $d$-polytope with base flag $\Phi$, it's group $\Gamma(\Phi)$ is generated by the involutions $\rho_i$ defined below.
-\end{property}
-
-\begin{definition}[Distinguised generator]
-  The $\rho_i$ are called the \textit{distinguished generators}.
-\end{definition}
+\begin{theorem}
+  The automorphism group of an abstract regular polytope is a string C-group.
+\end{theorem}

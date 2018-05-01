@@ -1,9 +1,17 @@
-\section{Links}
-\subsection{CPR graphs}
+\subsection{Permutation representation graphs}
 
 \paragraph{}
-CPR graph were introduced by Pellicier in~\cite{cprGraph}.
 
-\begin{definition}[CPR graph]
-  Let $P$ be a regular polytope of dimension $d$ and let $\pi$ be an embedding of the automorphism graph of $\Gamma$ into $S_n$ for some $n$. The C-group permutation representation graph or CPR graph of $P$ is a labeled multigraph with vertices ${1 \dots n}$, labels ${1 \dots d}$ such that there is an edge of label $k$ between $i$ and $j$ if $(\pi \rho_k)i = j$.
+\begin{definition}[Permutation representation graph]
+  \index{permutation representation graph}
+  Let $\mathcal P$ be a regular polytope of dimension $d$ and let $\pi$ be an embedding of the automorphism graph of $\Gamma$ into $S_n$ for some $n$. The permutation representation graph of $P$ is a labeled multigraph with vertices ${1 \dots n}$, labels ${1 \dots d}$ such that there is an edge of label $k$ between $i$ and $j$ if $(\pi \rho_k)i = j$.
 \end{definition}
+
+Permutation representation graphs were introduced by Pellicier in~\cite{cprGraph} under the name "CPR graph". He requires an additional condition that the group satisfies the intersection property. But given the graph, it is not easy to check whether it is a C-group or not. Therefore we choosed to remove the intersection condition and call it "permutation representation graph".
+
+\begin{property}
+  \label{intersection-patterns}
+  Let $\Gamma = \langle \rho_0, \dots \rho_n \rangle$ be a permutation representation graph of a regular polytope $\mathcal P$, and let $|i - j| \ge 2$. Then every connected component of $\Gamma_{\rho_i,\rho_j}$ is either a single vertex, a single edge, a double edge or an alternating square.
+\end{property}
+
+For the proof see the proposition 3.5 of~\cite{cprGraph}.

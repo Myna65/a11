@@ -1,9 +1,11 @@
+\cleardoublepage{}
+
 \section{Polytopes}
 
-This section follow the book \cite{polytopes}
-
+\subsection{Euclidean polytopes}
 \begin{definition}[Convex hull]
-  The convex hull of a finite set of points $\{x_1 \dots x_n\}$ is the set of points determined by
+  \index{convex hull}
+  The \textit{convex hull} of a finite set of points $\{x_1 \dots x_n\}$ is the set of points determined by
   \[
     y = \sum_{i=1}^n \lambda_i x_i
   \]
@@ -12,58 +14,54 @@ This section follow the book \cite{polytopes}
     \sum_{i=1}^n \lambda_i = 1
   \]
   \[
-    \lambda_i \ge O \quad \forall i
+    \lambda_i \ge 0 \quad \forall i
   \]
 \end{definition}
 
 \begin{definition}[$\mathcal V$-polytope]
-  A polytope is the convex hull of a finite number of points.
+  A $\mathcal V$-polytope is the convex hull of a finite number of points.
 \end{definition}
 
 \begin{definition}[$\mathcal H$-polytope]
-  A polytope is a bounded intersection of a finite number of closed half-plane.
+  A $\mathcal H$-polytope is a bounded intersection of a finite number of closed half-planes.
 \end{definition}
 
 \begin{theorem}
-  A subset $P \subseteq \mathbb R^d$ is a $\mathcal V$-polytope iff it's a $\mathcal H$-polytope.
+  A subset $\mathcal P \subseteq \mathbb R^d$ is a $\mathcal V$-polytope iff it's a $\mathcal H$-polytope.
 \end{theorem}
+
+\paragraph{}
+For the proof see for instance the theorem 1.1 of~\cite{polytopes}
 
 \paragraph{}
 There are two ways to represent polytopes and the most adapted representation will be used in every statement.
 
 \paragraph{}
-We can write equation of the half planes in the form $Ax \le c$. Each half plane can be summarized as a couple $(A,c)$. If we index the half planes by $i$, we have that a polytope is the set of points $x$ such that $A_i x \le c_i$ for all $i$.
+The equation of a half plane is of the form $Ax \le c$. Each half plane can be summarized as a couple $(A,c)$. If the half planes are indexed by $i$, then a polytope is a set op points $x$ such that $A_i x \le c_i$ for all $i$.
 
 \begin{definition}[Valid inequality]
-  An inequality $ax \le c$ is valid for a polytope $P$ if it's satisfied for all points $x \in P$.
+  An inequality $ax \le c$ is valid for a polytope $P$ if it is satisfied for all points $x \in \mathcal P$.
 \end{definition}
 
-\begin{definition}[Face of polytopes]
-  The faces of a polytopes $P$ are the intersection between $P$ and the hyperplane determined by $ax = c$ where $Ax \le c$ is a valid inequality. By convention, $P$ itself is also a face of $P$.
+\begin{definition}[Face of polytope]
+  A face of a polytopes $\mathcal P$ is the intersection between $\mathcal P$ and the hyperplane determined by $Ax = c$ where $Ax \le c$ is a valid inequality. By convention, $\mathcal P$ itself is also a face of $\mathcal P$ with $A=0$ and $c=0$.
 \end{definition}
 
 \begin{definition}[Face lattice]
-  We can define a poset of the faces of every polytope. Given two faces $F$ and $G$ of $P$, we say that $F \le G$ iff $F \subseteq G$.
+  For every polytope $\mathcal P$, the face lattice of $\mathcal P$, noted $L(\mathcal P)$ is a poset. The elements of the face lattice are the faces of $\mathcal P$. Given two faces $F$ and $G$ of $\mathcal P$, $F \le G$ iff $F \subseteq G$.
 \end{definition}
 
-\begin{proposition}
-  Every face lattice is a poset.
-\end{proposition}
+\begin{property}
+  $L(\mathcal P)$ is a graded poset of length $\dim(F) + 1$ with rank function : $\rank(F) = \dim(F) + 1$.
+\end{property}
 
 \begin{proposition}
-  Every face lattice is a lattice.
-\end{proposition}
-
-\begin{proposition}
-  Every face lattice is a ranked lattice and the dimension of the faces is a good rank function.
-\end{proposition}
-
-\begin{proposition}
-  Let $P$ be a convex polytope and $L(P)$ its face lattice $L(P)$:
+  Let $\mathcal P$ be a convex polytope and $L(\mathcal P)$ its face lattice:
 
   \begin{enumerate}
-    \item $L(P)$ is a graded poset of length $\dim(F) + 1$ with rank function : $\rank(F) = \dim(F) + 1$.
-    \item Every interval $[G,F]$ of $L(P)$ is a face lattice of a convex polytope of dimension $\dim(F) - \dim(G) - 1$
-    \item ("Diamond property")\index{diamond property} Given two faces $F$ and $G$ of $P$ such that $\dim(F) = \dim(G) - 2$ there exist exactly two faces $H_1$ and $H_2$ such that $F < H_1 < G$ and $F < H_2 < G$.
+    \item \textbf{(P1)} $L(\mathcal P)$ has a maximum element called $\mathcal P$ and a minimum element denoted $\emptyset$.
+    \item \textbf{(P2)} Every maximal chain of $L(\mathcal P)$ has a length $n + 2$.
+    \item \textbf{(P3)} $L(\mathcal P)$ is strongly connected.
+    \item \textbf{(P4)} $L(\mathcal P)$ satisfies the diamond property.
   \end{enumerate}
 \end{proposition}

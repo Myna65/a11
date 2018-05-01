@@ -1,6 +1,6 @@
-\section{Combinatorics}
+\subsection{Equality relations}
 
-The definitions come from~\cite{polytopes}
+The definitions come from~\cite{polytopes} and~\cite{incidenceGeometry}
 
 \begin{definition}[Equality relation]
   \index{equality relation}
@@ -25,6 +25,11 @@ The definitions come from~\cite{polytopes}
   \end{enumerate}
 \end{definition}
 
+\begin{definition}[Comparability]
+  \index{comparability}
+  Two elements $x$, $y$ of a poset are said to be \textit{comparable} if $x \le y$ or $y \le x$.
+\end{definition}
+
 \paragraph{}
 This is called a \textit{partial} order because there is no constraint that implies that every pair of elements of $P$ is comparable, i.e. for $x,y \in P$ it is possible that neither $x \le y$ nor $y \le x$.
 
@@ -36,7 +41,7 @@ We denote $x < y$ when $x \le y$ and $x \neq y$.
 Given a poset, we can draw its \textit{Hasse diagram}. It's a graph where the vertices are the elements of $P$ and two elements $x$ and $y$ are connected with $x$ under $y$ if $x \le y$. Therefore, no horizontal edge can exist.
 
 \paragraph{}
-We try to minimize the number of edges so we will not connect $x$ and $z$ (with $x \le z$) if there exists $y$ such that $x < y < z$. This is required otherwise the diagram becomes overloaded even more quickly. The reader can deduce the removed edge by transitivity.
+We try to minimize the number of edges so we will not connect $x$ and $z$ (with $x \le z$) if there exists $y$ such that $x < y < z$. This is required otherwise the diagram becomes overloaded quickly. The reader can deduce the removed edge by transitivity.
 
 \begin{figure}[H]
   \begin{center}
@@ -71,9 +76,25 @@ We try to minimize the number of edges so we will not connect $x$ and $z$ (with 
 \paragraph{}
 In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. So $a \le d$ by transitivity, even if there is no line between those points.
 
+\begin{definition}[Section]
+  \index{section}
+  Let $P$ be a poset and $x, z \in P$. The \textit{section} $[x,z]$ is the set of all elements $y \in P$ such that $x \le y \le z$.
+\end{definition}
+
+\begin{definition}[Connected poset]
+  \index{connected poset}
+  A poset $P$ is \textit{connected} if for every pair of elements $x, y$ there exists a sequence $x = x_0, x_1, \dots, x_{n-1}, x_n = y$ such that $x_i$ and $x_{i+1}$ are comparable for all $i$.
+\end{definition}
+
+\begin{definition}[Strongly connected poset]
+  \index{strongly connected poset}
+  A poset is said to be \textit{strongly connected} if every section of this poset is connected.
+\end{definition}
+
+
 \begin{definition}[Totally ordered set]
   \index{totally ordered set}
-  A \textit{totally ordered set} is a poset such that $\forall x,y \in P$, we have $x \le y$ or $y \le x$.
+  A \textit{totally ordered set} is a poset in which every pair of elements is comparable.
 \end{definition}
 
 \begin{definition}[Chain]
@@ -82,66 +103,7 @@ In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. 
 \end{definition}
 
 \begin{definition}[Maximal chain]
-  A chain is called \textit{maximal} if it is not contained in any bigger chain.
-\end{definition}
-
-\subsection{Lattice}
-
-\begin{definition}[Upper bound, Lower bound]
-  \index{upper bound}
-  \index{lower bound}
-  An upper (resp. lower) bound of two elements $x$ and $y$ is an element $m$ such that $x \le m$ and $y \le m$ (resp. $m \le x$ and $m \le y$).
-\end{definition}
-
-\begin{definition}[Supremum, Infinimum]
-  \index{supremum}
-  \index{infinimum}
-  The supremum (resp. infinimum) of two elements $x$ and $y$ is the lower (resp. upper) bound in the set of all upper (resp. lower) bounds of $x$ and $y$. If it exists, it's unique. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$.
-\end{definition}
-
-\begin{definition}[Lattice]
-  \index{lattice}
-  A lattice is a poset such that every pair of elements has a supremum and an infinimum.
-\end{definition}
-
-\paragraph{}
-It's not always clear whether a poset is a lattice or not, see for example the following diagram.
-
-\begin{figure}[H]
-  \begin{center}
-    \begin{tikzpicture}
-
-      \begin{scope}[every node/.style={circle,draw}]
-        \node (f)  at (1,6)  {f};
-        \node (e)  at (2,4)  {e};
-        \node (d)  at (0,4)  {d};
-        \node (c)  at (2,2)  {c};
-        \node (b)  at (0,2)  {b};
-        \node (a)  at (1,0)  {a};
-      \end{scope}
-
-      \begin{scope}[every node/.style={fill=white,circle}]
-
-        \begin{scope}[every edge/.style={draw}]
-          \path (a)  edge (b);
-          \path (a)  edge (c);
-          \path (b)  edge (d);
-          \path (b)  edge (e);
-          \path (c)  edge (d);
-          \path (c)  edge (e);
-          \path (d)  edge (f);
-          \path (e)  edge (f);
-
-        \end{scope}
-      \end{scope}
-
-    \end{tikzpicture}
-    \caption{Not a lattice: the infinimum of $d$ and $e$ is not unique}
-  \end{center}
-\end{figure}
-
-\begin{definition}[Bounded poset]
-  \index{bounded poset}
+  A chain is called \textit{maximal} if it is not contained in any other chain.
 \end{definition}
 
 \begin{definition}[Ranked poset]
@@ -154,7 +116,7 @@ It's not always clear whether a poset is a lattice or not, see for example the f
 \end{definition}
 
 \paragraph{}
-On the Hasse diagram, it means that, if we place all elements with the same rank at the same level, an element in only connected to elements placed the level just above or just under itself.
+On the Hasse diagram, it means that, if all elements with the same rank are placed at the same level, an element in only connected to elements placed the level just above or just under itself.
 
 
 \begin{figure}[H]
@@ -200,6 +162,62 @@ On the Hasse diagram, it means that, if we place all elements with the same rank
   \end{center}
 \end{figure}
 
-\begin{proposition}
-  Let $(P,\le)$ be a bounded poset, then it is ranked if and only if all its maximal chains have the same length.
-\end{proposition}
+\begin{definition}[Diamond property]
+  \index{diamond property}
+  Let $P$ be a ranked poset. This poset satisfies the \textit{diamond property} iff given two elements $x$ and $y$ of $P$ such that $\rank(x) = \rank(y) - 2$ there exist exactly two elements $z_1$ and $z_2$ such that $x < z_1 < y$ and $x < z_2 < y$.
+\end{definition}
+
+  \subsection{Lattice}
+
+  \begin{definition}[Upper bound, Lower bound]
+    \index{upper bound}
+    \index{lower bound}
+    An upper (resp. lower) bound of two elements $x$ and $y$ is an element $m$ such that $x \le m$ and $y \le m$ (resp. $m \le x$ and $m \le y$).
+  \end{definition}
+
+  \begin{definition}[Supremum, Infinimum]
+    \index{supremum}
+    \index{infinimum}
+    The supremum (resp. infinimum) of two elements $x$ and $y$ is the lower (resp. upper) bound in the set of all upper (resp. lower) bounds of $x$ and $y$. If it exists, it's unique. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$\footnote{À améliorer}.
+  \end{definition}
+
+  \begin{definition}[Lattice]
+    \index{lattice}
+    A lattice is a poset such that every pair of elements has a supremum and an infinimum.
+  \end{definition}
+
+  \paragraph{}
+  It's not always clear whether a poset is a lattice or not, see for example the following diagram.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (f)  at (1,6)  {f};
+          \node (e)  at (2,4)  {e};
+          \node (d)  at (0,4)  {d};
+          \node (c)  at (2,2)  {c};
+          \node (b)  at (0,2)  {b};
+          \node (a)  at (1,0)  {a};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white,circle}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (a)  edge (b);
+            \path (a)  edge (c);
+            \path (b)  edge (d);
+            \path (b)  edge (e);
+            \path (c)  edge (d);
+            \path (c)  edge (e);
+            \path (d)  edge (f);
+            \path (e)  edge (f);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{Not a lattice: the infinimum of $d$ and $e$ is not unique}
+    \end{center}
+  \end{figure}

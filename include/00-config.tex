@@ -59,6 +59,17 @@
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Sym}{Sym}
 
+\newenvironment{bigmargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{4cm}%
+\setlength{\rightmargin}{4cm}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
 \author{Nathan Meynaert}
 \title{Study of polytopes with automorphism group $A_{11}$}
 \date{Version of \today}
