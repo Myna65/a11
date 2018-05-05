@@ -1,26 +1,24 @@
 \chapter{Proof for rank 5}
 
+\paragraph{}
+In this chapter we will consider polytopes of rank 5. Thus there are 5 generators : $\rho_0, \rho_1, \rho_2, \rho_3, \rho_4$. We want to prove that are no polytopes of rank 5 with automorphism group $A_{11}$. This equivalent to prove that there exist no string C-group of rank 5 generating $A_{11}$.
+
+\paragraph{}
+By Lemma~\ref{min-4-trans} we know that there is at least one 4-transposition. We first exclude the case where $\rho_0$ is a 4-transposition in Lemma~\ref{exclude-0}. By duality $\rho_4$ is also excluded.
+
+\paragraph{}
+Then we exclude the case where $\rho_1$ is a 4-transposition in Theorem~\ref{exclude-1}. $\rho_3$ is also excluded by duality. Thus $\rho_2$ must be a 4-transposition. Given this condition, we find some sggis in Theorem~\ref{find-2} but we prove in Theorem~\ref{exclude-2} that none of them are C-groups.
+
+\paragraph{}
+Thus there are no polytopes of rank 5 with $A_{11}$ as automorphism group.
+
+\section{$\rho_0$ cannot be a 4-transposition}
+
 \begin{lemma}
+  \label{exclude-0}
   $\rho_0$ (and thus $\rho_4$) cannot be a 4-transposition.
 \end{lemma}
 
 \begin{proof}
-  Suppose that $\rho_0$ is a 4-transposition.
-
-  \paragraph{}
-  The $\rho_4$ involution must be placed on the graph such that it commutes with $\rho_0$. The following patterns are possible for each $\rho_4$ edge:
-  \begin{enumerate}
-    \item Form an alternating square
-    \item Double an existing edge
-    \item Link two fixed points
-  \end{enumerate}
-
-  \paragraph{}
-  The last pattern can only be used once because there are only three fixed points. But $\rho_4$ is either a 4-transposition or a 2-transposition, so at least one edge that must still be placed. Thus, at least one of the two other possibilities must be used. But $\rho_0$ and $\rho_4$ would share a vertex but that is impossible by Lemma~\ref{0-4-no-share}.
+  Suppose that $\rho_0$ is a 4-transposition. Then $\rho_0$ permutes 8 points and leave 3 other points fixed. $\rho_4$ is either a 2-transposition or a 4-transposition. It must permute at least 4 points. Since $\rho_0$ has only 3 fixed points, at least one point is moved by $\rho_0$ and $\rho_4$ but that is in contradiction with Lemma~\ref{0-4-no-share}.
 \end{proof}
-
-The analysis is split in two cases depending of the disposition of 4-transpositions:
-\begin{enumerate}
-  \item $\rho_1$ is a 4-transposition (regardless of $\rho_3$)
-  \item $\rho_1$ and $\rho_3$ are 2-transpositions. If $\rho_3$ is a 4-transposition but $\rho_1$ not, it can be reduced to the first case by taking the dual.
-\end{enumerate}

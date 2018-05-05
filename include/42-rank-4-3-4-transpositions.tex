@@ -1,7 +1,7 @@
 \section{Three 4-transpositions}
 
 \begin{lemma}
-  Let $\Gamma$ be a sggi of rank 4 on 11 points. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions and $\rho_0$ is a 2-transposition then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).\footnote{TO DO EXTEND}
+  Let $\Gamma$ be a sggi of rank 4 on 11 points. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions and $\rho_0$ is a 2-transposition then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).\footnote{Extend this part}
 \end{lemma}
 
 \begin{proof}
@@ -161,55 +161,56 @@
   \end{figure}
 
   \paragraph{}
-  There are only 4 $\rho_2$ waiting to be placed. Three of them must link the components. The last one must double someting. The only two possibilities: triple the double edge $(\rho_0, \rho_3)$ or double the other $\rho_0$.
+  There are only 4 $\rho_2$ edges waiting to be placed. Three of them must link the components. The last one must double something. The only two possibilities: triple the double edge $(\rho_0, \rho_3)$ or double the other $\rho_0$.
 
   \paragraph{}
+  If the single edge is double, the graph where the $\rho_1$ edge is removed is always this one:
 
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (0,0)  {};
-          \node (3)  at (2,2)  {};
-          \node (4)  at (2,0)  {};
-          \node (5)  at (4,0)  {};
-          \node (6)  at (6,0)  {};
-          \node (7)  at (14,0)  {};
-          \node (8)  at (12,0)  {};
-          \node (9)  at (8,0)  {};
-          \node (10) at (10,0)  {};
-          \node (11) at (16,0) {};
+          \node (1)  at (-4,0)  {};
+          \node (2)  at (-2,0)  {};
+          \node (3)  at (14,0)  {};
+          \node (4)  at (16,0) {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (10,0)  {};
+          \node (7)  at (0,0)  {};
+          \node (8)  at (2,0)  {};
+          \node (9)  at (4,0)  {};
+          \node (10) at (6,0)  {};
+          \node (11) at (12,0)  {};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
-            \path (1)  edge[bend left=45] node {$0$} (3);
-            \path (7)  edge node {$0$} (11);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend left=30] node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (1)  edge node {$2$} (3);
-            \path (1)  edge[bend right=45] node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend right=30] node {$3$} (6);
+            \path (1)  edge[bend right=30] node {$0$} (2);
+            \path (3)  edge[bend left=30] node {$0$} (4);
+            \path (3)  edge[bend right=30] node {$2$} (4);
+            \path (5)  edge node {$2$} (10);
+            \path (6)  edge node {$2$} (11);
+            \path (8)  edge node {$2$} (9);
+            \path (1)  edge[bend left=30] node {$3$} (2);
+            \path (5)  edge node {$3$} (6);
+            \path (7)  edge node {$3$} (8);
             \path (9)  edge node {$3$} (10);
           \end{scope}
         \end{scope}
 
       \end{tikzpicture}
-      \caption{}
+      \caption{[1, 1029, 8827, 994]}
+      \label{r4-5-1}
     \end{center}
   \end{figure}
 
   \paragraph{}
-  The component can be link in a lot of differents ways.\footnote{TO DO Double single $\rho_0$ edge.}
+  But here it is clear that $\rho_0 = (\rho_2 \rho_3)^7$. Thus the last $\rho_2$ edge must triple to existing double edge.
 
   \paragraph{}
-  If the $\rho_2$ edge is placed such that it triple $(\rho_0, \rho_2)$ then the reader is advised to try to find all sggis and check that those displayed in appendix~\ref{} are correct. Once more it can help to sort them by the length of the chain between the square and the double edge and them by the length of the chain between the double edge and the end of the chain.
+  The components can be link in a lot of different ways. The reader is advised to try to find all sggis and check that those displayed in appendix~\ref{rank4-3-4transpositions} are correct. Once more it can help to sort them by the length of the chain between the square and the double edge and then by the length of the chain between the double edge and the end of the graph.
 
 \end{proof}
 
@@ -218,7 +219,7 @@
 \end{theorem}
 
 \begin{proof}
-  As for previous similar proof, only the summary is displayed and the details is left to the reader
+  As for previous similar proof, only the summary is displayed and the details is left to the reader.
 
   \begin{table}[H]
     \centering

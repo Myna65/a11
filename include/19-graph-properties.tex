@@ -20,9 +20,43 @@
   Each end of the triple edge is not part of an alternating square and so must not be connected to more than 2 vertices. But the graph is connected, so at least one end of the graph must be connected to more than one vertex. So one end must be connected to two vertices but then the edge that connect this vertex to the new one must be adjacent to all three edges. But that is impossible.
 \end{proof}
 
+\begin{lemma}
+  An alternating square cannot be connected to the rest of the graph by a double edge.
+\end{lemma}
+
+\begin{corollary}
+  \label{sequence-connection}
+  If a component of the permutation representation graph is composed with alternating squares. If this sequence cannot be extended it must be connected to other component of the graph by single edge.
+\end{corollary}
+
 \begin{proposition}
-  An alternating square can be connected to a simple edge (no part of an alternating square) only if it have two adjacent simple edges with a difference in indices of exactly 2.
+  \label{square-connection}
+  An alternating square can be connected to a simple edge (no part of an alternating square) only if it have two adjacent simple edges with a difference in indices of exactly 2. The index of the edge used to connect the square must be between the indices of the edges of the square.
 \end{proposition}
+
+\begin{proposition}
+  \label{adjacent-must-not-commute}
+  If a group of automorphism of a polytope is almost simple then its Scafli type does not contains 2. Therefore adjacent generators must not commute.
+\end{proposition}
+
+\begin{proposition}
+  \label{patterns-adding}
+  When adding edge of an involution $\rho_i$ to an existing permutation representation graph, for each $\rho_j$ that must commute with $\rho_i$, the following pattern are possible:
+  \begin{enumerate}
+    \item Form an alternating square $[\rho_i, \rho_j]$
+    \item Double an existing $\rho_j$ edge and form a double edge $(\rho_i, \rho_j)$
+    \item Link two points fixed by $\rho_j$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  This can be directly deduced of~\ref{todo}.
+\end{proof}
+
+\begin{lemma}
+  \label{adjacent-squares}
+  An alternating square $[\rho_i, \rho_j]$ can only be adjacent to the following squares: $[\rho_{i-1}, \rho_j]$, $[\rho_{i+1}, \rho_j]$, $[\rho_i, \rho_{j-1}]$ $[\rho_i, \rho_{j+1}]$
+\end{lemma}
 
 
 
@@ -99,6 +133,88 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 
 \end{proof}
 
+\begin{proposition}
+  \label{rotation-pattern}
+  Le seul motif de rotation est le suivant:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (0,-2) {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (2,0)  {};
+          \node (6)  at (2,-2) {};
+          \node (7)  at (4,2)  {};
+          \node (8)  at (4,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (2)  edge node {$i+1$} (3);
+            \path (5)  edge node {$i+1$} (6);
+            \path (1)  edge node {$i$} (2);
+            \path (4)  edge node {$i$} (5);
+            \path (7)  edge node {$i$} (8);
+            \path (1)  edge node {$i+3$} (4);
+            \path (2)  edge node {$i+3$} (5);
+            \path (3)  edge node {$i+3$} (6);
+            \path (4)  edge node {$i+2$} (7);
+            \path (5)  edge node {$i+2$} (8);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{Suite de carrés alternés monotone et non-linéaire}
+    \end{center}
+  \end{figure}
+
+\end{proposition}
+
+\begin{proposition}
+  \label{rotation-pattern}
+  Le seul motif linéaire qui change les indices verticaux est le suivant:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (1)  edge node {$i+2$} (3);
+            \path (2)  edge node {$i+2$} (4);
+            \path (3)  edge node {$i+1$} (5);
+            \path (4)  edge node {$i+1$} (6);
+            \path (3)  edge[bend left=40] node {$i+3$} (4);
+            \path (5)  edge node {$i+3$} (6);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{Suite de carrés alternés monotone et non-linéaire}
+    \end{center}
+  \end{figure}
+
+\end{proposition}
+
+
 \begin{lemma}
   La parité de la taille d'une suite de carrés alternés est toujours la même que la partité d'une suite monotone qui admet les deux même extrémités.
 \end{lemma}
@@ -121,6 +237,12 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 \end{lemma}
 
 \begin{lemma}
+  \label{parity-sequence-squares}
+  La taille d'une suite allant d'un carré alterné dont la différence des indices est 2 vers un autre carré alterné qui satisfait le même propriété est impaire.
+\end{lemma}
+
+\begin{lemma}
+  \label{continue-double-edge}
   Une arête double dont la différence des indices est supérieure à 2 ne peut être relié que par un carré alterné.
 \end{lemma}
 
@@ -380,3 +502,17 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 \begin{proof}
   This can be directly deduced of Lemmas ~\ref{lemma-forbidden-alternating-square} and~\ref{lemma-forbidden-double-edge}.
 \end{proof}
+
+\begin{method}
+  \label{method}
+  When trying to find all sggis, the following method will be applied:
+
+  \begin{enumerate}
+    \item Choose an involution and draw the graph with only this involution
+    \item Choose an other involution and use Lemma~\ref{pattern-adding} to create a list of start patterns. For each of those pattern,
+    \item Attach all vertices until the graph is connected. Extra edges can be placed during this step to satisfy various constraints.
+    \item Add remaining edges
+  \end{enumerate}
+
+
+\end{method}

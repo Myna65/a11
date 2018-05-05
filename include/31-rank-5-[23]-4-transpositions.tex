@@ -1,13 +1,15 @@
-\section{$\rho_1$ is a 4-transposition}
+\section{$\rho_1$ cannot be 4-transposition}
 
 \begin{theorem}
+  \label{exclude-1}
   If $\rho_1$ is a 4-transposition, then a generator can be written as a product of other generators, and thus the generating set is not free, and the group is not a sggi.
 \end{theorem}
 
 \begin{proof}
+We will use the method saw in~\ref{method}.
 
 \paragraph{}
-Let's draw a graph with all edges of the 4-transposition $\rho_1$.
+First we choose an involution, it this case $\rho_1$. The graph with only this involution is displayed in Figure~\ref{proof-5-1}.
 
 \begin{figure}[H]
   \begin{center}
@@ -39,13 +41,18 @@ Let's draw a graph with all edges of the 4-transposition $\rho_1$.
 
     \end{tikzpicture}
     \caption{}
+    \label{proof-5-1}
   \end{center}
 \end{figure}
 
 \paragraph{}
-This transposition must commute with $\rho_3$ and $\rho_4$. There are three possibilities to place the two $\rho_4$ edges: building an alternating square, doubling one edge a linking two fixed points or doubling two edges.
+Now we will add the involution $\rho_4$. $\rho_1$ and $\rho_4$ must commute. Lemma~\ref{adding-pattern} applies and there are only three possibilities to place the two $\rho_4$ edges.
 
-\subsection{The alternating square}
+\paragraph{}
+This proof will now be split between the different possibilities. The first part deal with an alternating square $[\rho_1, \rho_4]$, the second part with a single double edge $(\rho_1, \rho_4)$ and the last part with two double edges $(\rho_1, \rho_4)$.
+
+\paragraph{}
+\textbf{The alternating square}
 
 \begin{figure}[H]
   \begin{center}
@@ -79,33 +86,31 @@ This transposition must commute with $\rho_3$ and $\rho_4$. There are three poss
 
     \end{tikzpicture}
     \caption{}
+    \label{proof-5-2}
   \end{center}
 \end{figure}
 
 \paragraph{}
-If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square $[\rho_1, \rho_3]$ ($[\rho_2, \rho_4]$ is not possible because $\rho_4$ is a 2-transposition). The sequence of squares cannot be extended to the right because two extra alternating squares are needed. There is only one remaining $\rho_1$ edge, therefore it is not possible to continue linearly. But a rotation pattern cannot be placed, so it is impossible.
+Now we will apply the third part of the method and try to form a connected graph by adding some edge. First we will try to extend the alternating square to a sequence. Then we will place the two $\rho_0$ edges. Finally we will add some $\rho_2$ edge to link everything.
 
 \paragraph{}
-If the sequence is extended to the left, the last $\rho_1$ edge and two $\rho_3$ edges would be used. At the end only 2 $\rho_0$ edges and 2 or 4 $\rho_2$ edges remain but they cannot form a connected graph.
-
-\paragraph{}
-The sequence of alternating squares must therefore be of length 2. Those squares must be linked to the rest of the graph by a $\rho_2$ edge.
+If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square by Lemma~\ref{lemma-continue-alternating-square}. The possibilities are $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$ by Lemma~\ref{adjacent-squares}. But the last one is impossible because $\rho_4$ is a 2-transposition by Lemma~\ref{exclude-0}.
 
 \begin{figure}[H]
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
-        \node (5)  at (4,2)  {};
-        \node (6)  at (4,0)  {};
-        \node (7)  at (6,0)  {};
-        \node (8)  at (8,0)  {};
-        \node (9)  at (10,0)  {};
-        \node (10) at (12,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
+        \node (3)  at (2,2)  {d};
+        \node (4)  at (2,0)  {c};
+        \node (5)  at (4,2)  {f};
+        \node (6)  at (4,0)  {e};
+        \node (7)  at (6,0)  {g};
+        \node (8)  at (8,0)  {h};
+        \node (9)  at (10,0) {};
+        \node (10) at (12,0) {};
         \node (11) at (14,0) {};
       \end{scope}
 
@@ -125,34 +130,43 @@ The sequence of alternating squares must therefore be of length 2. Those squares
 
     \end{tikzpicture}
     \caption{}
+    \label{proof-5-3}
   \end{center}
 \end{figure}
 
+\paragraph{}
+The sequence of squares cannot be extended to the right because two extra alternating squares are needed by Lemma~\ref{parity-sequence-squares}. If the sequence is linear, two additional $\rho_1$ edge would be used. There is only one remaining $\rho_1$ edge, therefore it is not possible to continue linearly. Also it is not possible to place the only rotation pattern found in Lemma~\ref{rotation-pattern}. The sequence cannot be extended on the right.
 
 \paragraph{}
-By Lemma~\ref{adjacent-must-not-commute} $\rho_0$ and $\rho_1$ must not commute. Thus a $\rho_0$ edge must share a vertex with a $\rho_1$ edge, otherwise $\rho_0$ and $\rho_1$ would commute.
+If the sequence is extended to the left, an alternating square $[\rho_1, \rho_3]$ will be built. This uses the last $\rho_1$ edge and the last two $\rho_3$ edges. After that, only 2 $\rho_0$ edges and 2 or 4 $\rho_2$ edges remain but they cannot form a connected graph.
 
 \paragraph{}
-By Lemma~\ref{0-4-no-share}, the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex. So the $\rho_0$ edge cannot be linked to the first 4 vertices. They cannot be connected thus to the 5th and 6th vertices because it would form an alternating square but it was proved that the sequence cannot be extended.
+The sequence of alternating squares cannot be extended neither on the left nor on the right. Now we will place the $\rho_0$ edges.
 
 \paragraph{}
-Thus, a $\rho_0$ edge must link the extremity of the single $\rho_1$ edge to a fixed point. The other $\rho_0$ edge must link the two fixed points because if the other extremity of the single $\rho_1$ edge is used, it is not possible to connect the formed component.
+By Lemma~\ref{adjacent-must-not-commute} $\rho_0$ and $\rho_1$ must not commute. Thus a $\rho_0$ edge must share a vertex with a $\rho_1$ edge. By Lemma~\ref{0-4-no-share}, the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex. So the $\rho_0$ edge cannot be linked to the vertices $a, b, c$ or $d$ of Figure~\ref{proof-5-3}. Also, they cannot be connected to the vertices $e$ or $f$ because it would form an alternating square. But it is in contradiction with the fact that the sequence of alternating square cannot be extended.
+
+\paragraph{}
+There are 5 acceptable vertices to place the two $\rho_0$ edges. They use 4 vertices. If one $\rho_0$ edge is connected to $g$ and the other is connected to $h$, it is impossible to make a connected graph. This component cannot be linked at all. The $g$ and $h$ vertices cannot be connected by at the same time. Hence no $\rho_1$ edge are available to connect those $\rho_0$ edge.\footnote{Complete?}
+
+\paragraph{}
+Thus only $g$ or $h$ can be used to connect a $\rho_0$ edge. But both cases are isomorphic. Thus there is only one possibility for the graph. It is displayed in Figure~\ref{proof-5-4}.
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}[scale=.8]
+    \begin{tikzpicture}[scale=.8] \ref{no-extremity-connection-to-square}
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
-        \node (5)  at (4,2)  {};
-        \node (6)  at (4,0)  {};
-        \node (7)  at (6,0)  {};
-        \node (8)  at (8,0)  {};
-        \node (9)  at (10,0)  {};
-        \node (10) at (12,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
+        \node (3)  at (2,2)  {d};
+        \node (4)  at (2,0)  {c};
+        \node (5)  at (4,2)  {f};
+        \node (6)  at (4,0)  {e};
+        \node (7)  at (6,0)  {g};
+        \node (8)  at (8,0)  {h};
+        \node (9)  at (10,0) {};
+        \node (10) at (12,0) {};
         \node (11) at (14,0) {};
       \end{scope}
 
@@ -160,7 +174,7 @@ Thus, a $\rho_0$ edge must link the extremity of the single $\rho_1$ edge to a f
 
         \begin{scope}[every edge/.style={draw}]
           \path (8)  edge node {$0$} (9);
-          \path (10)  edge node {$0$} (11);
+          \path (10) edge node {$0$} (11);
           \path (1)  edge node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
@@ -174,11 +188,18 @@ Thus, a $\rho_0$ edge must link the extremity of the single $\rho_1$ edge to a f
 
     \end{tikzpicture}
     \caption{}
+    \label{proof-5-4}
   \end{center}
 \end{figure}
 
 \paragraph{}
-The two alternating squares can only be linked by a $\rho_2$ edge. This edge must be linked to the $\rho_1$ component because it is not possible to continue the sequence.
+We will place the last remaining edge: $\rho_2$.
+
+\paragraph{}
+By Lemma~\ref{sequence-connection}, only a single edge can be connected to the sequence of alternating squares. And this edge cannot be connected to vertices $a,b,c,d$ due to Lemma~\ref{square-connection}. It must be connected to vertices $e$ or $f$ and it must be a $\rho_2$ edge by the same Lemma. But both case are isomorphic so only one is kept.
+
+\paragraph{}
+The only available vertex to connect the other end of this $\rho_2$ edge is the point $g$.
 
 \begin{figure}[H]
   \begin{center}
@@ -191,18 +212,18 @@ The two alternating squares can only be linked by a $\rho_2$ edge. This edge mus
         \node (4)  at (2,0)  {};
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
-        \node (7)  at (6,0)  {};
-        \node (8)  at (8,0)  {};
-        \node (9)  at (10,0)  {};
-        \node (10) at (12,0)  {};
-        \node (11) at (14,0) {};
+        \node (7)  at (6,0)  {g};
+        \node (8)  at (8,0)  {h};
+        \node (9)  at (10,0)  {i};
+        \node (10) at (12,0)  {j};
+        \node (11) at (14,0) {k};
       \end{scope}
 
       \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (8)  edge node {$0$} (9);
-          \path (10)  edge node {$0$} (11);
+          \path (10) edge node {$0$} (11);
           \path (1)  edge node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
@@ -221,17 +242,17 @@ The two alternating squares can only be linked by a $\rho_2$ edge. This edge mus
 \end{figure}
 
 \paragraph{}
-All $\rho_1$ edges have been used, they cannot be used to link the single $\rho_0$. Therefore it is necessary to use an alternating square to connect it. But this alternating square must be connected to a single edge. Therefore the difference between the indices of the edges must be 2. The vertical edges of the square must therefore be $\rho_2$.
+All $\rho_1$ edges have been used, so they cannot be used to link the $\rho_0$ edge $(j,k)$. Therefore this edge must be part of an alternating square. This square must include the $\rho_0$ edge $(h,i)$ because it is the only other $\rho_0$ edge. The creation of the square will use two other edge of a given index. Those edge will be $(h,j)$ and $(i,k)$. But the edge $(h,j)$ is adjacent to the $\rho_1$ edge $(g,h)$. Therefore, the index of the other edges of the square must thus be consecutive to $1$. Hence the index of the other involution of the alternating square edges must be $2$. The result can be seen on Figure~\ref{proof-5-5}.
 
 \begin{figure}[H]
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
+        \node (3)  at (2,2)  {d};
+        \node (4)  at (2,0)  {c};
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
         \node (7)  at (6,0)  {};
@@ -262,27 +283,31 @@ All $\rho_1$ edges have been used, they cannot be used to link the single $\rho_
 
     \end{tikzpicture}
     \caption{}
+    \label{proof-5-5}
   \end{center}
 \end{figure}
 
 \paragraph{}
-There are only 3 $\rho_2$ edges on this graph. A last one must be added to restore parity. There are only two places possible: double any of the $\rho_4$ edge. That gives 2 graphs:
+The graph is now connected, we enter our last part of the method: adding edges until all of them are placed.
+
+\paragraph{}
+There are only 3 $\rho_2$ edges on this graph. A last one must be added to restore parity. There are only two possible places: $(a,b)$ or $(c,d)$. That gives 2 graphs:
 
 \begin{figure}[H]
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
+        \node (3)  at (2,2)  {d};
+        \node (4)  at (2,0)  {c};
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
         \node (7)  at (6,0)  {};
-        \node (8)  at (8,2)  {};
+        \node (8)  at (8,2)  {j};
         \node (9)  at (8,0)  {};
-        \node (10) at (10,2)  {};
+        \node (10) at (10,2)  {k};
         \node (11) at (10,0) {};
       \end{scope}
 
@@ -316,16 +341,16 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
+        \node (3)  at (2,2)  {d};
+        \node (4)  at (2,0)  {c};
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
         \node (7)  at (6,0)  {};
-        \node (8)  at (8,2)  {};
+        \node (8)  at (8,2)  {j};
         \node (9)  at (8,0)  {};
-        \node (10) at (10,2)  {};
+        \node (10) at (10,2)  {k};
         \node (11) at (10,0) {};
       \end{scope}
 
@@ -355,7 +380,7 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
 \end{figure}
 
 \paragraph{}
-Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution can be extended to a 4-transposition. There are only two possible positions for extra $\rho_3$ edges: double the left $\rho_1$ edge and the upper $\rho_0$ edge. That creates two other graphs:
+Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-transposition. To find all possibles sggis, it is needed to try to extend it to a 4-transposition. There are only two possible positions for extra $\rho_3$ edges: between $(a,b)$ and $(j,k)$. That creates two other graphs:
 
 \begin{figure}[H]
   \begin{center}
@@ -369,9 +394,9 @@ Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
         \node (7)  at (6,0)  {};
-        \node (8)  at (8,2)  {};
+        \node (8)  at (8,2)  {j};
         \node (9)  at (8,0)  {};
-        \node (10) at (10,2)  {};
+        \node (10) at (10,2)  {k};
         \node (11) at (10,0) {};
       \end{scope}
 
@@ -414,9 +439,9 @@ Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution
         \node (5)  at (4,2)  {};
         \node (6)  at (4,0)  {};
         \node (7)  at (6,0)  {};
-        \node (8)  at (8,2)  {};
+        \node (8)  at (8,2)  {j};
         \node (9)  at (8,0)  {};
-        \node (10) at (10,2)  {};
+        \node (10) at (10,2)  {k};
         \node (11) at (10,0) {};
       \end{scope}
 
@@ -448,7 +473,7 @@ Those graphs are valid graphs but $\rho_3$ is a 2-transposition. This involution
 \end{figure}
 
 \paragraph{}
-Let's remove all edges from involutions $\rho_0$ and $\rho_3$:
+If the $\rho_0 $ and $\rho_3$ edges are removed, the graphs become to following one:
 
 \begin{figure}[H]
   \begin{center}
@@ -490,13 +515,14 @@ Let's remove all edges from involutions $\rho_0$ and $\rho_3$:
 \end{figure}
 
 \paragraph{}
-Now it can easily be seen that $\rho_4 = (\rho_1 \rho_2)^{10}$. Thus none of those four graphs have a free set of generators and so none of then are sggis.
-
-\section{A double edge and a single edge between two fixed points}
+But it can be easily seen that $\rho_4 = (\rho_1 \rho_2)^{10}$. Thus none of those four graphs have a free set of generators and so none of then are sggis.
 
 \paragraph{}
-The second possibility is having a double edge $(\rho_0, \rho_4)$. By Lemma~\ref{todo}, an alternating square must be placed next to it in order to allow it to be connected to the rest of the graph. There are possibilities for the alternating square: $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$.
-\subsection{Alternating square $[\rho_1, \rho_3]$}
+\textbf{One double edge}\\
+The second possibility is having a double edge $(\rho_1, \rho_4)$. The double edge alone is too small to be used as a starting pattern for the method described in~\ref{method}. By Lemma~\ref{continue-double-edge}, this double edge must be adjacent to some alternating square. The pattern that we will choose include this alternating square. By Lemma~\ref{todo}, there are two possibilities for the alternating square: $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$. Therefore we have 2 starting patterns.
+
+\paragraph{}
+\textit{Alternating square $[\rho_1, \rho_3]$}
 
 \begin{figure}[H]
   \begin{center}
@@ -535,10 +561,10 @@ The second possibility is having a double edge $(\rho_0, \rho_4)$. By Lemma~\ref
 \end{figure}
 
 \paragraph{}
-By lemma~\ref{todo}, $\rho_0$ and $\rho_1$ must not commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge must not be part of an alternating square of which $\rho_0$ does not belong.
+By lemma~\ref{adjacent-must-not-commute}, $\rho_0$ and $\rho_1$ must not commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge must not be part of an alternating square of which $\rho_0$ does not belong.
 
 \paragraph{}
-This alternating square cannot be linked by another alternating square on the right because it will need two alternating squares on the right if the value of the vertical edges is not changed. But that uses all $\rho_1$ in alternating squares, which is not possible by the previous statement.
+The alternating square cannot be extended to a sequence on the right because this will need two alternating squares by Lemma~\ref{todo}. If the sequence is linear, the index of the vertical edges is not changed. But adding two squares would require all of the $\rho_1$ edges. None of the horizontal edges of the squares can be an edge of $\rho_0$. Thus, the square cannot be extended to the right by previous statement.
 
 \paragraph{}
 The values of the vertical edges must therefore be changed. The horizontal edges of the second square must be $\rho_2$ because the involutions must be adjacent to $\rho_3$ and there is not enough $\rho_4$ edges. Then the new value for vertical edge must be adjacent to $\rho_3$. $\rho_2$ is impossible because it is already used for the horizontal edges. The only remaining possibility is $\rho_4$ but there are no enough remaining edges.
@@ -724,7 +750,8 @@ Two components must be linked by a $\rho_2$ edge. But the total number of $\rho_
 \paragraph{}
 In those graphs, if the $\rho_4$ edge is removed, the generated group is 2-transitive\footnote{TO DO} and thus primitive. By looking at the size of the subgroups, it is possible to deduce that the generated group is $A_{11}$\footnote{Missing the case where no other square are attached}.
 
-\subsection{Alternating square $[\rho_2,\rho_4]$}
+\paragraph{}
+\textit{Alternating square $[\rho_2,\rho_4]$}
 
 \begin{figure}[H]
   \begin{center}
@@ -996,7 +1023,8 @@ There are no possibility to convert $\rho_3$ to a 4-transposition in this case.
 \paragraph{}
 The $\rho_0$ and $\rho_3$ edges can be removed and the obtained graph is the same as those obtained for the alternating square $[\rho_1,\rho_4]$. The consequence are the same: $\rho_4 = (\rho_1\rho_2)^{10}$. The group represented by the previous graphs are therefore not sggi.
 
-\section{Two double edges}
+\paragraph{}
+\textbf{Two double edges}
 
 \paragraph{}
 The double edges must be contained into alternating squares.
