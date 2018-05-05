@@ -96,7 +96,7 @@ If the two squares share no vertices the graph is the following.
       \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
-          \path (1)  edge node {$0$} (3)
+          \path (1)  edge node {$0$} (3);
           \path (2)  edge node {$0$} (4);
           \path (1)  edge node {$2$} (2);
           \path (3)  edge node {$2$} (4);
@@ -113,7 +113,7 @@ If the two squares share no vertices the graph is the following.
 \end{figure}
 
 \paragraph{}
-All "joker" edges have been used so no more alternating square can be built. But the left square must be connected by a $\rho_1$ edge and the right one by a $\rho_3$ edge. We need to find a chain that connect the left square to the right square with only $\rho_1$ and $\rho_3$ edges. But that is impossible because the indices must be consecutive by Lemma~\ref{todo}.
+All "joker" edges have been used so no more alternating square can be built. But the left square must be connected by a $\rho_1$ edge and the right one by a $\rho_3$ edge. We need to find a chain that connect the left square to the right square with only $\rho_1$ and $\rho_3$ edges. But that is impossible because the indices must be consecutive in a chain by Lemma~\ref{todo}.
 
 \paragraph{}
 Therefore one of the involution must build an alternating square and the other must build a double edge and link two fixed points. By duality, only the case where $\rho_4$ makes an alternating square will be considered and the other doubles an edge and links two fixed points.
@@ -151,7 +151,7 @@ Therefore one of the involution must build an alternating square and the other m
       \end{scope}
 
     \end{tikzpicture}
-    \caption{The graph with only $\rho_0$ and $\rho_2$}
+    \caption{The graph with $\rho_0$, $\rho_2$ and $\rho_4$}
   \end{center}
 \end{figure}
 
