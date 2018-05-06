@@ -46,10 +46,10 @@ First we choose an involution, it this case $\rho_1$. The graph with only this i
 \end{figure}
 
 \paragraph{}
-Now we will add the involution $\rho_4$. $\rho_1$ and $\rho_4$ must commute. Lemma~\ref{adding-pattern} applies and there are only three possibilities to place the two $\rho_4$ edges.
+Now we will add the involution $\rho_4$. $\rho_1$ and $\rho_4$ must commute. Lemma~\ref{patterns-adding} applies and there are only three possibilities to place the two $\rho_4$ edges.
 
 \paragraph{}
-This proof will now be split between the different possibilities. The first part deal with an alternating square $[\rho_1, \rho_4]$, the second part with a single double edge $(\rho_1, \rho_4)$ and the last part with two double edges $(\rho_1, \rho_4)$.
+We will now applies the second part of the Method~\ref{method}. For each of those pattern we will continue with the third step. The first part deal with the first pattern, an alternating square $[\rho_1, \rho_4]$, the second part with a single double edge $(\rho_1, \rho_4)$ and the last part with two double edges $(\rho_1, \rho_4)$.
 
 \paragraph{}
 \textbf{The alternating square}
@@ -94,7 +94,7 @@ This proof will now be split between the different possibilities. The first part
 Now we will apply the third part of the method and try to form a connected graph by adding some edge. First we will try to extend the alternating square to a sequence. Then we will place the two $\rho_0$ edges. Finally we will add some $\rho_2$ edge to link everything.
 
 \paragraph{}
-If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square by Lemma~\ref{lemma-continue-alternating-square}. The possibilities are $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$ by Lemma~\ref{adjacent-squares}. But the last one is impossible because $\rho_4$ is a 2-transposition by Lemma~\ref{exclude-0}.
+If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square by Corollary~\ref{continue-alternating-square}. The possibilities are $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$ by Proposition~\ref{adjacent-squares}. But the last one is impossible because $\rho_4$ is a 2-transposition by Lemma~\ref{exclude-0}.
 
 \begin{figure}[H]
   \begin{center}
@@ -135,7 +135,7 @@ If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an
 \end{figure}
 
 \paragraph{}
-The sequence of squares cannot be extended to the right because two extra alternating squares are needed by Lemma~\ref{parity-sequence-squares}. If the sequence is linear, two additional $\rho_1$ edge would be used. There is only one remaining $\rho_1$ edge, therefore it is not possible to continue linearly. Also it is not possible to place the only rotation pattern found in Lemma~\ref{rotation-pattern}. The sequence cannot be extended on the right.
+The sequence of squares cannot be extended to the right because two extra alternating squares are needed by Corollary~\ref{parity-sequence-squares}. If the sequence is linear, two additional $\rho_1$ edge would be used. There is only one remaining $\rho_1$ edge, therefore it is not possible to continue linearly. Also it is not possible to place the only rotation pattern found in Lemma~\ref{rotation-pattern}. The sequence cannot be extended on the right.
 
 \paragraph{}
 If the sequence is extended to the left, an alternating square $[\rho_1, \rho_3]$ will be built. This uses the last $\rho_1$ edge and the last two $\rho_3$ edges. After that, only 2 $\rho_0$ edges and 2 or 4 $\rho_2$ edges remain but they cannot form a connected graph.
@@ -196,7 +196,7 @@ Thus only $g$ or $h$ can be used to connect a $\rho_0$ edge. But both cases are 
 We will place the last remaining edge: $\rho_2$.
 
 \paragraph{}
-By Lemma~\ref{sequence-connection}, only a single edge can be connected to the sequence of alternating squares. And this edge cannot be connected to vertices $a,b,c,d$ due to Lemma~\ref{square-connection}. It must be connected to vertices $e$ or $f$ and it must be a $\rho_2$ edge by the same Lemma. But both case are isomorphic so only one is kept.
+By Corollary~\ref{sequence-connection}, only a single edge can be connected to the sequence of alternating squares. And this edge cannot be connected to vertices $a,b,c,d$ due to Proposition~\ref{square-connection}. It must be connected to vertices $e$ or $f$ and it must be a $\rho_2$ edge by the same Lemma. But both case are isomorphic so only one is kept.
 
 \paragraph{}
 The only available vertex to connect the other end of this $\rho_2$ edge is the point $g$.
@@ -519,7 +519,7 @@ But it can be easily seen that $\rho_4 = (\rho_1 \rho_2)^{10}$. Thus none of tho
 
 \paragraph{}
 \textbf{One double edge}\\
-The second possibility is having a double edge $(\rho_1, \rho_4)$. The double edge alone is too small to be used as a starting pattern for the method described in~\ref{method}. By Lemma~\ref{continue-double-edge}, this double edge must be adjacent to some alternating square. The pattern that we will choose include this alternating square. By Lemma~\ref{todo}, there are two possibilities for the alternating square: $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$. Therefore we have 2 starting patterns.
+The second possibility is having a double edge $(\rho_1, \rho_4)$. The double edge alone is too small to be used as a starting pattern for the method described in~\ref{method}. By Lemma~\ref{continue-double-edge}, this double edge must be adjacent to some alternating square. The pattern that we will choose include this alternating square. By Proposition~\ref{adjacent-squares}, there are two possibilities for the alternating square: $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$. Therefore we have 2 starting patterns.
 
 \paragraph{}
 \textit{Alternating square $[\rho_1, \rho_3]$}
@@ -564,7 +564,7 @@ The second possibility is having a double edge $(\rho_1, \rho_4)$. The double ed
 By lemma~\ref{adjacent-must-not-commute}, $\rho_0$ and $\rho_1$ must not commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge must not be part of an alternating square of which $\rho_0$ does not belong.
 
 \paragraph{}
-The alternating square cannot be extended to a sequence on the right because this will need two alternating squares by Lemma~\ref{todo}. If the sequence is linear, the index of the vertical edges is not changed. But adding two squares would require all of the $\rho_1$ edges. None of the horizontal edges of the squares can be an edge of $\rho_0$. Thus, the square cannot be extended to the right by previous statement.
+The alternating square cannot be extended to a sequence on the right because this will need two alternating squares by Proposition~\ref{parity-sequence-squares}. If the sequence is linear, the index of the vertical edges is not changed. But adding two squares would require all of the $\rho_1$ edges. None of the horizontal edges of the squares can be an edge of $\rho_0$. Thus, the square cannot be extended to the right by previous statement.
 
 \paragraph{}
 The values of the vertical edges must therefore be changed. The horizontal edges of the second square must be $\rho_2$ because the involutions must be adjacent to $\rho_3$ and there is not enough $\rho_4$ edges. Then the new value for vertical edge must be adjacent to $\rho_3$. $\rho_2$ is impossible because it is already used for the horizontal edges. The only remaining possibility is $\rho_4$ but there are no enough remaining edges.
@@ -1064,7 +1064,7 @@ If the double edges are placed on the same alternating square, the graph is the 
 But this situation has already be seen in Figure~\ref{todo} and we proved that no sggi can be made out of this pattern.
 
 \paragraph{}
-If the two double edges are place on two different squares. But the possibilities for the squares are limited because each square can only contains one $\rho_4$ edge. The single possibility for the square is $[\rho_1, \rho_3]$ by Lemma~\ref{todo}. The graph is the following.
+If the two double edges are place on two different squares. But the possibilities for the squares are limited because each square can only contains one $\rho_4$ edge. The single possibility for the square is $[\rho_1, \rho_3]$ by Proposition~\ref{adjacent-squares}. The graph is the following.
 
 \begin{figure}[H]
   \begin{center}
@@ -1106,7 +1106,7 @@ If the two double edges are place on two different squares. But the possibilitie
 \end{figure}
 
 \paragraph{}
-There are only 4 edges avaliable to connect 5 components. Thus every edge must link two different component. Each square must be link by a $\rho_2$ edge by Lemma~\ref{todo}.
+There are only 4 edges available to connect 5 components. Thus every edge must link two different component. Each square must be link by a $\rho_2$ edge by Proposition~\ref{square-connection}.
 
 \begin{figure}[H]
   \begin{center}
@@ -1118,7 +1118,7 @@ There are only 4 edges avaliable to connect 5 components. Thus every edge must l
         \node (3)  at (2,2)  {d};
         \node (4)  at (2,0)  {c};
         \node (5)  at (8,0)  {};
-        \node (6)  at (6,0)  {};
+        \node (6)  at (6,0)  {f};
         \node (7)  at (12,0)  {};
         \node (8)  at (10,0)  {};
         \node (9)  at (10,2)  {};
@@ -1150,6 +1150,6 @@ There are only 4 edges avaliable to connect 5 components. Thus every edge must l
 \end{figure}
 
 \paragraph{}
-But it is not possible to place the $\rho_0$ edges because they cannot be conencted to $a$ or $b$ by Lemma~\ref{} or to $c$ or $d$ by Lemma~\ref{todo} or to $e$ by Lemma~\ref{todo}. Thus this is impossible.
+But it is not possible to place the $\rho_0$ edges because they will share the vertex $f$ but that is forbidden by Property~\ref{fixed-only-1}
 
 \end{proof}

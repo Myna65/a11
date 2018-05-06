@@ -43,7 +43,7 @@ In the Theorem~\ref{find-2} we will use the method defined in~\ref{find-2} to fi
         \end{scope}
 
       \end{tikzpicture}
-      \caption{[1, 5, 1010, 232, 381]}
+      \caption{}
     \end{center}
   \end{figure}
 
@@ -108,7 +108,7 @@ If the two squares does not share a vertex, the graph is the following.
       \end{scope}
 
     \end{tikzpicture}
-    \caption{[1, 5, 1010, 232, 381]}
+    \caption{}
   \end{center}
 \end{figure}
 
@@ -159,10 +159,10 @@ Therefore one of the involution must build an alternating square and the other m
 Now that all of our "joker" edges has been used, every other edge must link two different connected components of the graph.
 
 \paragraph{}
-Now the $\rho_3$ edge will be placed. It cannot be adjacent to the component $\{a,b\}$ or $\{e,f\}$ by Lemmas~\ref{todo} and~\ref{todo} respectively. There are three components that can be connected by two $\rho_3$ edges.After placing all $\rho_3$ edges, those three component will form one big component. Then the $\rho_1$ edges will be placed and they must be able to connect to this new component. But the edge $(c,d)$ is only component from the three that can be connected to a $\rho_1$ edge. Therefore one end of this edge must remain free.
+Now the $\rho_3$ edge will be placed. It cannot be adjacent to the component $\{a,b\}$ or $\{e,f\}$ by Proposition~\ref{chain-consecutive} and~\ref{adjacent-double} respectively. There are three components that can be connected by two $\rho_3$ edges.After placing all $\rho_3$ edges, those three component will form one big component. Then the $\rho_1$ edges will be placed and they must be able to connect to this new component. But the edge $(c,d)$ is only component from the three that can be connected to a $\rho_1$ edge. Therefore one end of this edge must remain free.
 
 \paragraph{}
-The fixed point cannot be connected twice by $\rho_3$ edges by Lemma~\ref{todo}. So there is only one possibility. One edge must connect the component $\{e,f\}$ to the component $\{g,h,i,j\}$ and the other must connect $\{g,h,i,j\}$ to the fixed point $k$.
+The fixed point cannot be connected twice by $\rho_3$ edges by Proposition~\ref{fixed-only-1}. So there is only one possibility. One edge must connect the component $\{e,f\}$ to the component $\{g,h,i,j\}$ and the other must connect $\{g,h,i,j\}$ to the fixed point $k$.
 
 \paragraph{}
 The square must thus be connected twice. There are three possibilities: the two connected vertices can be opposed or adjacent and, in this case, separated by a $\rho_1$ or a $\rho_3$ edge. This does not influence the position of the $\rho_1$ edges. It is possible to continue building the graph without having to deal with cases. Here is one of the possible graphs:
@@ -245,7 +245,7 @@ Now the two edges of $\rho_1$ must be placed. A $\rho_1$ edge must link the comp
       \end{scope}
 
     \end{tikzpicture}
-    \caption{One of the graphs after placing $\rho_3$ edges}
+    \caption{}
   \end{center}
 \end{figure}
 
@@ -508,16 +508,16 @@ When placing the $\rho_3$ edge we made a choice between three possibilities, for
   We will only do the graph displayed in Figure~\ref{S2-1}. The proof is similar for the two other graphs and is left to the reader.
 
   \paragraph{}
-  We will prove that the $\Gamma_{\rho_2,\rho_3,\rho_4}$ is $S_7$ on the component $d,e,f,g,h,i,j$. To do this, we will first prove that the group is 2-transitive. Thus by Lemma~\ref{todo}, it is primitive. But the primitive group are well-known and the list of all primitive groups of degree less than 50 is available in~\cite{buekenhout1996list}.
+  We will prove that the $\Gamma_{\rho_2,\rho_3,\rho_4}$ is $S_7$ on the component $d,e,f,g,h,i,j$. To do this, we will first prove that the group is 2-transitive. Thus by Property~\ref{2-transitive-primitive}, it is primitive. But the primitive group are well-known and the list of all primitive groups of degree less than 50 is available in~\cite{buekenhout1996list}.
 
   \paragraph{}
-  The group is transitive because its graph is connected. To prove that the group is 2-transitive we will use Lemma~\ref{todo}. We try to find a permutation that send $i$ to any other point while keeping $j$ fixed. If the permutation does not contains $\rho_3$ then $j$ is fixed. Thus in fact there are two orbits : $\{d,e\}$ and $\{f,g,h,i\}$. The vertex $i$ is already in the second orbit, thus it can be easily send to every other point of the orbit.
+  The group is transitive because its graph is connected. To prove that the group is 2-transitive we will use Property~\ref{practical-transitivity}. We try to find a permutation that send $i$ to any other point while keeping $j$ fixed. If the permutation does not contains $\rho_3$ then $j$ is fixed. Thus in fact there are two orbits : $\{d,e\}$ and $\{f,g,h,i\}$. The vertex $i$ is already in the second orbit, thus it can be easily send to every other point of the orbit.
 
   \paragraph{}
   We need to find a permutation that send $i$ to $d$ or $e$ while keeping $j$ in place. The permutation $\rho_2 \rho_4 \rho_3 \rho_2 \rho_3 \rho_2 \rho_3$ is a solution that send $d$ to $e$. $\Gamma_{\rho_2, \rho_3, \rho_4}$ is 2-transitive and thus primitive on $\{d,e,f,g,h,i,j\}$
 
   \paragraph{}
-  We will now look at the list of all primitive groups~\cite{buekenhout1996list}. We will compute the size of some subgroup. But by Proposition~\ref{todo} the order of a group is a multiple of the size of its subgroups. Thus the order of the group must be an multiple of the least common multiple of the size of some subgroups.
+  We will now look at the list of all primitive groups~\cite{buekenhout1996list}. We will compute the size of some subgroup. But by Property~\ref{magic-formula} the order of a group is a multiple of the size of its subgroups. Thus the order of the group must be an multiple of the least common multiple of the size of some subgroups.
 
   \paragraph{}
   The group is 2-transitive and so its order is a multiple of $7 \times 6 = 42$. $\Gamma_{\rho_2, \rho_3}$ is $D_{10}$ which is of order 10. Thus the order of the group must is a multiple of the least common divisor of 42 and 10 which is 240. But the only groups that satisfies this condition are $A_7$ and $S_7$. $\rho_2$ is an odd involution and cannot be member of $A_7$ thus the group must be $S_7$.

@@ -1,4 +1,4 @@
-\section{Some useful results}
+\section{Minimal number of 4-transposition}
 
 \begin{lemma}\label{graphIsString}
   Let $\Gamma$ be a transitive sggi over $n$ points such that the permutation representation graph have exactly $n-1$ edges. Then the graph of $\Gamma$ is a string.
@@ -211,3 +211,30 @@ For the second case, that is the graph. On each side, it must be continued with 
 \end{figure}
 
 \end{proof}
+
+\section{Properties on $A_{11}$}
+
+\begin{lemma}
+  \label{0-4-no-share}
+  In a permutation representation graph of a group of rank 5. No $\rho_0$ can be adjacent to a $\rho_4$ edge.
+\end{lemma}
+
+\paragraph{}
+In the next chapter we will prove that there are no polytope a a give rank with automorphism group $A_{11}$. To do this we will generate all the possible permutation representation graph and then proof that none exists or that the group that generate the graph is not a C-group and thus not the automorphism group of a polytope.
+
+\paragraph{}
+To generate all the possibles permutation representation graph we need a simple and systematic method. We will use the following one.
+
+\begin{method}
+  \label{method}
+  When trying to find all permutation representation graph, the following method will be applied:
+
+  \begin{enumerate}
+    \item Choose an involution and draw the graph with only this involution
+    \item Choose an other involution and use Lemma~\ref{patterns-adding} to create a list of start patterns. For each of those pattern,
+    \item Attach all vertices until the graph is connected. Extra edges can be placed during this step to satisfy various constraints.
+    \item Add remaining edges
+  \end{enumerate}
+
+
+\end{method}

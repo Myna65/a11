@@ -1,6 +1,6 @@
 \section{Groups}
 
-\subsection{Reminders from groups theory}
+\subsection{Groups and subgroups}
 
 \begin{definition}[Group]
   \index{group}
@@ -17,6 +17,11 @@
   \index{generator}
   It is said that a set generates a group if all elements of the group can be written as a product of elements of this set. The elements of this set are called \textit{generators}. Conversely, no element outside the group can be written as a product of the generators.
 \end{definition}
+
+\begin{property}
+  \label{magic-formula}
+  The order of a subgroup must divide the order of the group.
+\end{property}
 
 \subsection{Permutation groups}
 
@@ -118,6 +123,11 @@ The new notation for permutation can now be introduced. Permutation will now be 
   A permutation group $G$ on $\Omega$ is called \textit{sharp $k$-transitive} if for every pair of $k$-uple $((\alpha_1, \dots, \alpha_n), (\beta_1, \dots, \beta_n)$ with $\alpha_i, \beta_i \in \Omega$ there exists exactly one $g \in G$ such that $\alpha_i g = \beta_i \  \forall i$.
 \end{definition}
 
+\begin{property}
+  \label{practical-transitivity}
+  A group is $k$-transitive if there are $k-1$ points that can be fixed while one other point can be permuted with any non fixed point.
+\end{property}
+
 \subsection{Primitivity}
 
 \begin{definition}[Congruence]
@@ -135,6 +145,7 @@ There are two trivial congruences on all permutation groups:
 \end{definition}
 
 \begin{property}
+  \label{2-transitive-primitive}
   Every 2-transitive permutation group is primitive
 \end{property}
 
