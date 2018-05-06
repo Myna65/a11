@@ -6,7 +6,7 @@
 \end{theorem}
 
 \begin{proof}
-We will use the method saw in~\ref{method}.
+We will use the Method~\ref{method}.
 
 \paragraph{}
 First we choose an involution, it this case $\rho_1$. The graph with only this involution is displayed in Figure~\ref{proof-5-1}.
@@ -46,13 +46,14 @@ First we choose an involution, it this case $\rho_1$. The graph with only this i
 \end{figure}
 
 \paragraph{}
-Now we will add the involution $\rho_4$. $\rho_1$ and $\rho_4$ must commute. Lemma~\ref{adding-pattern} applies and there are only three possibilities to place the two $\rho_4$ edges.
+Now we will add the involution $\rho_4$. $\rho_1$ and $\rho_4$ must commute. Lemma~\ref{patterns-adding} applies and there are only three possibilities to place the two $\rho_4$ edges: make one alternating square with $\rho_1$, make two double edges with $\rho_1$ or make an double edge with $\rho_1$ and link two fixed by $\rho_1$.
 
 \paragraph{}
-This proof will now be split between the different possibilities. The first part deal with an alternating square $[\rho_1, \rho_4]$, the second part with a single double edge $(\rho_1, \rho_4)$ and the last part with two double edges $(\rho_1, \rho_4)$.
+This proof will now be split between the different possibilities. The first part deal with an alternating square $[\rho_1, \rho_4]$, the second part with one double edge $(\rho_1, \rho_4)$ and the last part with two double edges $(\rho_1, \rho_4)$.
 
 \paragraph{}
-\textbf{The alternating square}
+\textbf{The alternating square}\\
+The starting pattern of the Method~\ref{method} is this graph:
 
 \begin{figure}[H]
   \begin{center}
@@ -91,7 +92,7 @@ This proof will now be split between the different possibilities. The first part
 \end{figure}
 
 \paragraph{}
-Now we will apply the third part of the method and try to form a connected graph by adding some edge. First we will try to extend the alternating square to a sequence. Then we will place the two $\rho_0$ edges. Finally we will add some $\rho_2$ edge to link everything.
+Now we will apply the third part of the Method and try to form a connected graph by adding some edges. First we will try to extend the alternating square to a sequence. Then we will place the two $\rho_0$ edges. Finally we will add some $\rho_2$ edge to link everything.
 
 \paragraph{}
 If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an other alternating square by Lemma~\ref{lemma-continue-alternating-square}. The possibilities are $[\rho_1, \rho_3]$ or $[\rho_2, \rho_4]$ by Lemma~\ref{adjacent-squares}. But the last one is impossible because $\rho_4$ is a 2-transposition by Lemma~\ref{exclude-0}.
@@ -206,12 +207,12 @@ The only available vertex to connect the other end of this $\rho_2$ edge is the 
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
-        \node (5)  at (4,2)  {};
-        \node (6)  at (4,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
+        \node (3)  at (2,2)  {d};
+        \node (4)  at (2,0)  {c};
+        \node (5)  at (4,2)  {f};
+        \node (6)  at (4,0)  {e};
         \node (7)  at (6,0)  {g};
         \node (8)  at (8,0)  {h};
         \node (9)  at (10,0)  {i};
@@ -253,13 +254,13 @@ All $\rho_1$ edges have been used, so they cannot be used to link the $\rho_0$ e
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
         \node (4)  at (2,0)  {c};
-        \node (5)  at (4,2)  {};
-        \node (6)  at (4,0)  {};
-        \node (7)  at (6,0)  {};
-        \node (8)  at (8,2)  {};
-        \node (9)  at (8,0)  {};
-        \node (10) at (10,2)  {};
-        \node (11) at (10,0) {};
+        \node (5)  at (4,2)  {f};
+        \node (6)  at (4,0)  {e};
+        \node (7)  at (6,0)  {g};
+        \node (8)  at (8,2)  {i};
+        \node (9)  at (8,0)  {h};
+        \node (10) at (10,2)  {k};
+        \node (11) at (10,0) {j};
       \end{scope}
 
       \begin{scope}[every node/.style={fill=white}]
@@ -302,13 +303,13 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
         \node (4)  at (2,0)  {c};
-        \node (5)  at (4,2)  {};
-        \node (6)  at (4,0)  {};
-        \node (7)  at (6,0)  {};
+        \node (5)  at (4,2)  {f};
+        \node (6)  at (4,0)  {e};
+        \node (7)  at (6,0)  {g};
         \node (8)  at (8,2)  {j};
-        \node (9)  at (8,0)  {};
+        \node (9)  at (8,0)  {h};
         \node (10) at (10,2)  {k};
-        \node (11) at (10,0) {};
+        \node (11) at (10,0) {i};
       \end{scope}
 
       \begin{scope}[every node/.style={fill=white}]
@@ -387,8 +388,8 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {};
         \node (4)  at (2,0)  {};
         \node (5)  at (4,2)  {};
@@ -432,8 +433,8 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {};
         \node (4)  at (2,0)  {};
         \node (5)  at (4,2)  {};
@@ -448,8 +449,8 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
       \begin{scope}[every node/.style={fill=white}]
 
         \begin{scope}[every edge/.style={draw}]
-          \path (9)  edge[bend left=30] node {$0$} (11);
-          \path (8)  edge node {$0$} (10);
+          \path (9)  edge node {$0$} (11);
+          \path (8)  edge[bend left=30] node {$0$} (10);
           \path (1)  edge[bend right=30] node {$1$} (2);
           \path (3)  edge node {$1$} (4);
           \path (5)  edge node {$1$} (6);
@@ -461,7 +462,7 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
           \path (1)  edge[bend left=30] node {$3$} (2);
           \path (3)  edge node {$3$} (5);
           \path (4)  edge node {$3$} (6);
-          \path (9)  edge[bend right=30] node {$3$} (11);
+          \path (8)  edge[bend right=30] node {$3$} (10);
           \path (1)  edge node {$4$} (3);
           \path (2)  edge[bend right=30] node {$4$} (4);
         \end{scope}
@@ -473,7 +474,10 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
 \end{figure}
 
 \paragraph{}
-If the $\rho_0 $ and $\rho_3$ edges are removed, the graphs become to following one:
+Now we have found a set of possible permutation representation group. But in all those four graphs one generator can be written as a product of other generators. To demonstrate this, we will only choose some edges of the graphs.
+
+\paragraph{}
+If the $\rho_0 $ and $\rho_3$ edges are removed, all the graphs become to following one:
 
 \begin{figure}[H]
   \begin{center}
