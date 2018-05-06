@@ -1027,12 +1027,129 @@ The $\rho_0$ and $\rho_3$ edges can be removed and the obtained graph is the sam
 \textbf{Two double edges}
 
 \paragraph{}
-The double edges must be contained into alternating squares.
+The double edges must be contained into alternating squares by Lemma~\ref{continue-double-edge}. There are two possibilities depending if the two double edge are in the same alternating square or not.
 
 \paragraph{}
-If the double edges are placed on the same alternating square, it has already been proved that this does not lead anywhere\footnote{This proof has been deleted}.
+If the double edges are placed on the same alternating square, the graph is the following:
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge[bend right=30] node {$1$} (4);
+          \path (1)  edge node {$2$} (3);
+          \path (2)  edge node {$2$} (4);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (3)  edge[bend left=30] node {$4$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
 
 \paragraph{}
-If the two double edges are place on two different squares, those squares use eight points out of eleven. But it is not possible to place the $\rho_0$ edges such that they do not touch any alternating square.
+But this situation has already be seen in Figure~\ref{todo} and we proved that no sggi can be made out of this pattern.
+
+\paragraph{}
+If the two double edges are place on two different squares. But the possibilities for the squares are limited because each square can only contains one $\rho_4$ edge. The single possibility for the square is $[\rho_1, \rho_3]$ by Lemma~\ref{todo}. The graph is the following.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (10,2)  {};
+        \node (10) at (12,2)  {};
+        \node (11) at (4,0) {};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (8)  edge node {$1$} (9);
+          \path (7)  edge[bend left=30] node {$1$} (10);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (8)  edge node {$3$} (7);
+          \path (9)  edge node {$3$} (10);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (7)  edge[bend right=30] node {$4$} (10);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+There are only 4 edges avaliable to connect 5 components. Thus every edge must link two different component. Each square must be link by a $\rho_2$ edge by Lemma~\ref{todo}.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {b};
+        \node (2)  at (0,0)  {a};
+        \node (3)  at (2,2)  {d};
+        \node (4)  at (2,0)  {c};
+        \node (5)  at (8,0)  {};
+        \node (6)  at (6,0)  {};
+        \node (7)  at (12,0)  {};
+        \node (8)  at (10,0)  {};
+        \node (9)  at (10,2)  {};
+        \node (10) at (12,2)  {};
+        \node (11) at (4,0) {e};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (8)  edge node {$1$} (9);
+          \path (7)  edge[bend left=30] node {$1$} (10);
+          \path (4)  edge node {$2$} (11);
+          \path (5)  edge node {$2$} (8);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (8)  edge node {$3$} (7);
+          \path (9)  edge node {$3$} (10);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (7)  edge[bend right=30] node {$4$} (10);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+But it is not possible to place the $\rho_0$ edges because they cannot be conencted to $a$ or $b$ by Lemma~\ref{} or to $c$ or $d$ by Lemma~\ref{todo} or to $e$ by Lemma~\ref{todo}. Thus this is impossible.
 
 \end{proof}
