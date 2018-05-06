@@ -564,30 +564,30 @@ The second possibility is having a double edge $(\rho_1, \rho_4)$. The double ed
 By lemma~\ref{adjacent-must-not-commute}, $\rho_0$ and $\rho_1$ must not commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge must not be part of an alternating square of which $\rho_0$ does not belong.
 
 \paragraph{}
-The alternating square cannot be extended to a sequence on the right because this will need two alternating squares by Lemma~\ref{todo}. If the sequence is linear, the index of the vertical edges is not changed. But adding two squares would require all of the $\rho_1$ edges. None of the horizontal edges of the squares can be an edge of $\rho_0$. Thus, the square cannot be extended to the right by previous statement.
+The alternating square cannot be extended to a sequence on the right because this will need two alternating squares by Lemma~\ref{todo}. If the index of the vertical edges is not changed, adding two squares would require all of the $\rho_1$ edges. None of the horizontal edges of the squares can be an edge of $\rho_0$. Thus, the square cannot be extended to the right by previous statement.
 
 \paragraph{}
-The values of the vertical edges must therefore be changed. The horizontal edges of the second square must be $\rho_2$ because the involutions must be adjacent to $\rho_3$ and there is not enough $\rho_4$ edges. Then the new value for vertical edge must be adjacent to $\rho_3$. $\rho_2$ is impossible because it is already used for the horizontal edges. The only remaining possibility is $\rho_4$ but there are no enough remaining edges.
+The values of the vertical edges must therefore be changed. There is a single pattern for a linear change of the vertical index. It has been seen in Lemma~\ref{todo}. But it cannot be applied because it require a third $\rho_4$ edge. Thus the alternating squares cannot be extended to a sequence on the right.
 
 \paragraph{}
-If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$.
+If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$ by Lemma~\ref{todo}.
 
 \begin{figure}[H]
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
-        \node (5)  at (4,0)  {};
-        \node (6)  at (6,0)  {};
-        \node (7)  at (8,0)  {};
-        \node (8)  at (10,0)  {};
-        \node (9)  at (-2,2)  {};
-        \node (10) at (-2,0)  {};
-        \node (11) at (12,0) {};
+        \node (1)  at (0,2)  {d};
+        \node (2)  at (0,0)  {c};
+        \node (3)  at (2,2)  {f};
+        \node (4)  at (2,0)  {e};
+        \node (5)  at (4,0)  {g};
+        \node (6)  at (6,0)  {h};
+        \node (7)  at (8,0)  {i};
+        \node (8)  at (10,0)  {j};
+        \node (9)  at (-2,2)  {b};
+        \node (10) at (-2,0)  {a};
+        \node (11) at (12,0) {k};
       \end{scope}
 
       \begin{scope}[every node/.style={fill=white}]
@@ -612,27 +612,24 @@ If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$.
 \end{figure}
 
 \paragraph{}
-The two $\rho_0$ edges cannot be placed on any vertex of the left component. If the fixed point is not used to connect the $\rho_0$ edges, the two $\rho_1$ edges must be linked together twice and thus build an alternating square. Then $\rho_0$ and $\rho_1$ commute and that is impossible. Thus the fixed point must be connected by $\rho_0$.
-
-\paragraph{}
-The first $\rho_0$ edge must connect the fixed point to a $\rho_1$ edge and the second must connect the two $\rho_1$ edges together.
+The two $\rho_0$ edges cannot be connected to any vertex of the left component, thus $a, b, c, d, e, f$ by Lemmas~\ref{todo} and~\ref{todo}. The point $k$ cannot be connected by two $\rho_0$ edge thus there is a single possibility to place $\rho_0$ edges at isomorphism: link $(h, i)$ and $(j, k)$.
 
 \begin{figure}[H]
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
-        \node (1)  at (0,2)  {};
-        \node (2)  at (0,0)  {};
-        \node (3)  at (2,2)  {};
-        \node (4)  at (2,0)  {};
-        \node (5)  at (4,0)  {};
-        \node (6)  at (6,0)  {};
-        \node (7)  at (8,0)  {};
-        \node (8)  at (10,0)  {};
-        \node (9)  at (-2,2)  {};
-        \node (10) at (-2,0)  {};
-        \node (11) at (12,0) {};
+        \node (1)  at (0,2)  {d};
+        \node (2)  at (0,0)  {c};
+        \node (3)  at (2,2)  {f};
+        \node (4)  at (2,0)  {e};
+        \node (5)  at (4,0)  {g};
+        \node (6)  at (6,0)  {h};
+        \node (7)  at (8,0)  {i};
+        \node (8)  at (10,0)  {j};
+        \node (9)  at (-2,2)  {b};
+        \node (10) at (-2,0)  {a};
+        \node (11) at (12,0) {k};
       \end{scope}
 
       \begin{scope}[every node/.style={fill=white}]
@@ -659,7 +656,52 @@ The first $\rho_0$ edge must connect the fixed point to a $\rho_1$ edge and the 
 \end{figure}
 
 \paragraph{}
-Two components must be linked by a $\rho_2$ edge. But the total number of $\rho_2$ edges becomes odd. Another $\rho_2$ must thus be placed. The only possibilities are to double a $\rho_0$ edge. There are two possible graphs:
+The component $\{g,h,i,j,k\}$ can only be connected by a $\rho_2$ edge on the vertex $g$ by Lemma~\ref{todo} and because all $\rho_0$ have been used. Nothing can be connected to the vertex $k$ because a $\rho_1$ edge is needed but none are available. On the other component a $\rho_2$ edge can only be attache to $e$ or $f$ by Lemma~\ref{todo}.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {};
+        \node (2)  at (0,0)  {};
+        \node (3)  at (2,2)  {f};
+        \node (4)  at (2,0)  {};
+        \node (5)  at (4,0)  {};
+        \node (6)  at (6,0)  {h};
+        \node (7)  at (8,0)  {i};
+        \node (8)  at (10,0)  {j};
+        \node (9)  at (-2,2)  {};
+        \node (10) at (-2,0)  {};
+        \node (11) at (12,0) {k};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (8)  edge node {$0$} (11);
+          \path (6)  edge node {$0$} (7);
+          \path (1)  edge[bend right=30] node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$2$} (9);
+          \path (2)  edge node {$2$} (10);
+          \path (4)  edge node {$2$} (5);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+          \path (1)  edge[bend left=30] node {$4$} (2);
+          \path (9)  edge node {$4$} (10);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+The graph is now connected, we begin the last part of the method~\ref{method}: place some remaining edge to satisfies parity. Thus at least one $\rho_2$ edge must still be placed. The only available edges are $f,h,i,j$ and $k$. But $f$ cannot be connected to any other point due to Lemma~\ref{0-no-share-square}. Thus an edge $(h,i)$ or an adge $(j,k)$ must be built. That gave us two cases.
 
 \begin{figure}[H]
   \begin{center}
@@ -748,7 +790,57 @@ Two components must be linked by a $\rho_2$ edge. But the total number of $\rho_
 \end{figure}
 
 \paragraph{}
-In those graphs, if the $\rho_4$ edge is removed, the generated group is 2-transitive\footnote{TO DO} and thus primitive. By looking at the size of the subgroups, it is possible to deduce that the generated group is $A_{11}$\footnote{Missing the case where no other square are attached}.
+In the first graph we will remove the $\rho_4$ edges. The graph becomes the following.
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+
+      \begin{scope}[every node/.style={circle,draw}]
+        \node (1)  at (0,2)  {d};
+        \node (2)  at (0,0)  {c};
+        \node (3)  at (2,2)  {f};
+        \node (4)  at (2,0)  {e};
+        \node (5)  at (4,0)  {g};
+        \node (6)  at (6,0)  {h};
+        \node (7)  at (8,0)  {i};
+        \node (8)  at (10,0)  {j};
+        \node (9)  at (-2,2)  {b};
+        \node (10) at (-2,0)  {a};
+        \node (11) at (12,0) {k};
+      \end{scope}
+
+      \begin{scope}[every node/.style={fill=white}]
+
+        \begin{scope}[every edge/.style={draw}]
+          \path (6)  edge[bend left=30] node {$0$} (7);
+          \path (8)  edge node {$0$} (11);
+          \path (1)  edge node {$1$} (2);
+          \path (3)  edge node {$1$} (4);
+          \path (5)  edge node {$1$} (6);
+          \path (7)  edge node {$1$} (8);
+          \path (1)  edge node {$2$} (9);
+          \path (2)  edge node {$2$} (10);
+          \path (4)  edge node {$2$} (5);
+          \path (6)  edge[bend right=30] node {$2$} (7);
+          \path (1)  edge node {$3$} (3);
+          \path (2)  edge node {$3$} (4);
+        \end{scope}
+      \end{scope}
+
+    \end{tikzpicture}
+    \caption{}
+  \end{center}
+\end{figure}
+
+\paragraph{}
+This graph is 2-transitive. To prove that we will fix the point $k$ and try to move the point $j$ everywhere. But this is trivial because the $k$ point does not move if no $\rho_0$ edges are placed. But all the other points are in the same orbit of $\Gamma_{\rho_1, \rho_2, \rho_3}$ and thus can be send to any other point without using a $\rho_0$ edge.
+
+\paragraph{}
+The group is 2-transitive, thus its order is a multiple of $11 \times 10 = 110$. The subgroup $\Gamma_{\rho_2, \rho_3}$ is $D_24$. Thus the order of the group must be a multiple of 1320. There are 3 possibilities: $M_{11}$, $A_{11}$ and $S_{11}$ but all involutions are even and $M_{11}$ and $S_{11}$ contains odd involutions. Therefore the group must be $A_{11}$.
+
+\paragraph{}
+But $\rho_4 \in A_{11}$, thus $\rho_4$ can be written as a product of other generator. Thus the set of generators is not free.\footnote{Missing the case where no other square are attached}.
 
 \paragraph{}
 \textit{Alternating square $[\rho_2,\rho_4]$}
