@@ -1,8 +1,8 @@
-\section{$\rho_1$ cannot be 4-transposition}
+\section{$\rho_1$ cannot be a 4-transposition}
 
 \begin{theorem}
   \label{exclude-1}
-  If $\rho_1$ is a 4-transposition, then a generator can be written as a product of other generators, and thus the generating set is not free, and the group is not a sggi.
+  If $\rho_1$ is a 4-transposition, then a generator can be written as a product of other generators, and thus the generating set is not free, and the group is not a sggi\footnote{Rewrite}.
 \end{theorem}
 
 \begin{proof}
@@ -145,13 +145,13 @@ If the sequence is extended to the left, an alternating square $[\rho_1, \rho_3]
 The sequence of alternating squares cannot be extended neither on the left nor on the right. Now we will place the $\rho_0$ edges.
 
 \paragraph{}
-By Lemma~\ref{adjacent-must-not-commute} $\rho_0$ and $\rho_1$ must not commute. Thus a $\rho_0$ edge must share a vertex with a $\rho_1$ edge. By Lemma~\ref{0-4-no-share}, the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex. So the $\rho_0$ edge cannot be linked to the vertices $a, b, c$ or $d$ of Figure~\ref{proof-5-3}. Also, they cannot be connected to the vertices $e$ or $f$ because it would form an alternating square. But it is in contradiction with the fact that the sequence of alternating square cannot be extended.
+By Lemma~\ref{adjacent-must-not-commute} $\rho_0$ and $\rho_1$ must not commute. Thus a $\rho_0$ edge must share a vertex with a $\rho_1$ edge. By Lemma~\ref{0-4-no-share}, the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex. So the $\rho_0$ edge cannot be linked to the vertices $a, b, c$ or $d$ of Figure~\ref{proof-5-3}. Also, they cannot be adjacent to the vertices $e$ or $f$ because it would form an alternating square. But it is in contradiction with the fact that the sequence of alternating square cannot be extended.
 
 \paragraph{}
-There are 5 acceptable vertices to place the two $\rho_0$ edges. They use 4 vertices. If one $\rho_0$ edge is connected to $g$ and the other is connected to $h$, it is impossible to make a connected graph. This component cannot be linked at all. The $g$ and $h$ vertices cannot be connected by at the same time. Hence no $\rho_1$ edge are available to connect those $\rho_0$ edge.\footnote{Complete?}
+There are 5 acceptable vertices to place the two $\rho_0$ edges. They use 4 vertices. If one $\rho_0$ edge is connected to $g$ and the other is connected to $h$, it is impossible to make a connected graph. This component cannot be linked at all. The $g$ and $h$ vertices cannot be connected by at the same time. Hence no $\rho_1$ edge are available to connect those $\rho_0$ edge.\footnote{Clear?}
 
 \paragraph{}
-Thus only $g$ or $h$ can be used to connect a $\rho_0$ edge. But both cases are isomorphic. Thus there is only one possibility for the graph. It is displayed in Figure~\ref{proof-5-4}.
+Thus either $g$ or $h$ can be used to connect a $\rho_0$ edge but not both. The case where the $\rho_0$ edge is connected to $g$ is isomorphic to the case where $\rho_0$ is connected to $h$. Thus there is only one possibility for the graph. It is displayed in Figure~\ref{proof-5-4}.
 
 \begin{figure}[H]
   \begin{center}
@@ -194,10 +194,7 @@ Thus only $g$ or $h$ can be used to connect a $\rho_0$ edge. But both cases are 
 \end{figure}
 
 \paragraph{}
-We will place the last remaining edge: $\rho_2$.
-
-\paragraph{}
-By Corollary~\ref{sequence-connection}, only a single edge can be connected to the sequence of alternating squares. And this edge cannot be connected to vertices $a,b,c,d$ due to Proposition~\ref{square-connection}. It must be connected to vertices $e$ or $f$ and it must be a $\rho_2$ edge by the same Lemma. But both case are isomorphic so only one is kept.
+We will place the last remaining edge: $\rho_2$. By Corollary~\ref{sequence-connection}, only a single edge can be connected to the sequence of alternating squares. And this edge cannot be connected to vertices $a,b,c,d$ due to Proposition~\ref{square-connection}. It must be connected to vertices $e$ or $f$ and it must be a $\rho_2$ edge by the same Lemma. But both case are isomorphic so only one is kept.
 
 \paragraph{}
 The only available vertex to connect the other end of this $\rho_2$ edge is the point $g$.
@@ -474,7 +471,7 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
 \end{figure}
 
 \paragraph{}
-Now we have found a set of possible permutation representation group. But in all those four graphs one generator can be written as a product of other generators. To demonstrate this, we will only choose some edges of the graphs.
+Now we have found a set of possible permutation representation group. But in all those four graphs, one generator can be written as a product of other generators. To demonstrate this, we will only choose some edges of the graphs.
 
 \paragraph{}
 If the $\rho_0 $ and $\rho_3$ edges are removed, all the graphs become to following one:
@@ -565,16 +562,16 @@ The second possibility is having a double edge $(\rho_1, \rho_4)$. The double ed
 \end{figure}
 
 \paragraph{}
-By lemma~\ref{adjacent-must-not-commute}, $\rho_0$ and $\rho_1$ must not commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge must not be part of an alternating square of which $\rho_0$ does not belong.
+By lemma~\ref{adjacent-must-not-commute}, $\rho_0$ and $\rho_1$ must not commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge must not be part of an alternating square if there are no $\rho_0$ edge in this square.
 
 \paragraph{}
 The alternating square cannot be extended to a sequence on the right because this will need two alternating squares by Proposition~\ref{parity-sequence-squares}.  If the index of the vertical edges is not changed, adding two squares would require all of the $\rho_1$ edges. None of the horizontal edges of the squares can be an edge of $\rho_0$. Thus, the square cannot be extended to the right by previous statement.
 
 \paragraph{}
-The values of the vertical edges must therefore be changed. There is a single pattern for a linear change of the vertical index. It has been seen in Lemma~\ref{todo}. But it cannot be applied because it require a third $\rho_4$ edge. Thus the alternating squares cannot be extended to a sequence on the right.
+The values of the vertical edges must therefore be changed. There is a single pattern for a linear change of the vertical index. It has been seen in Lemma~\ref{linear-pattern}. But it cannot be applied in this case because it require a third $\rho_4$ edge. Thus the alternating squares cannot be extended to a sequence on the right.
 
 \paragraph{}
-If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$ by Lemma~\ref{todo}.
+If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$ by Propositions~\ref{continue-double-edge} and~\ref{continue-alternating-square}.
 
 \begin{figure}[H]
   \begin{center}
@@ -616,7 +613,7 @@ If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$ 
 \end{figure}
 
 \paragraph{}
-The two $\rho_0$ edges cannot be connected to any vertex of the left component, thus $a, b, c, d, e, f$ by Lemmas~\ref{todo} and~\ref{todo}. The point $k$ cannot be connected by two $\rho_0$ edge thus there is a single possibility to place $\rho_0$ edges at isomorphism: link $(h, i)$ and $(j, k)$.
+The two $\rho_0$ edges cannot be connected to any vertex of the left component, thus $a, b, c, d, e, f$ by Proposition~\ref{square-connection}. The point $k$ cannot be connected by two $\rho_0$ edge thus there is a single possibility to place $\rho_0$ edges at isomorphism: link $(h, i)$ and $(j, k)$.
 
 \begin{figure}[H]
   \begin{center}
@@ -660,7 +657,7 @@ The two $\rho_0$ edges cannot be connected to any vertex of the left component, 
 \end{figure}
 
 \paragraph{}
-The component $\{g,h,i,j,k\}$ can only be connected by a $\rho_2$ edge on the vertex $g$ by Lemma~\ref{todo} and because all $\rho_0$ have been used. Nothing can be connected to the vertex $k$ because a $\rho_1$ edge is needed but none are available. On the other component a $\rho_2$ edge can only be attache to $e$ or $f$ by Lemma~\ref{todo}.
+The component $\{g,h,i,j,k\}$ can only be connected by a $\rho_2$ edge on the vertex $g$ by Lemma~\ref{chain-consecutive} and because all $\rho_0$ have been used. Nothing can be connected to the vertex $k$ because a $\rho_1$ edge is needed but none are available. On the other component a $\rho_2$ edge can only be attached to $e$ or $f$ by Property~\ref{fixed-only-1}.
 
 \begin{figure}[H]
   \begin{center}
@@ -670,8 +667,8 @@ The component $\{g,h,i,j,k\}$ can only be connected by a $\rho_2$ edge on the ve
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {f};
-        \node (4)  at (2,0)  {};
-        \node (5)  at (4,0)  {};
+        \node (4)  at (2,0)  {e};
+        \node (5)  at (4,0)  {g};
         \node (6)  at (6,0)  {h};
         \node (7)  at (8,0)  {i};
         \node (8)  at (10,0)  {j};
@@ -705,7 +702,7 @@ The component $\{g,h,i,j,k\}$ can only be connected by a $\rho_2$ edge on the ve
 \end{figure}
 
 \paragraph{}
-The graph is now connected, we begin the last part of the method~\ref{method}: place some remaining edge to satisfies parity. Thus at least one $\rho_2$ edge must still be placed. The only available edges are $f,h,i,j$ and $k$. But $f$ cannot be connected to any other point due to Lemma~\ref{0-no-share-square}. Thus an edge $(h,i)$ or an adge $(j,k)$ must be built. That gave us two cases.
+The graph is now connected, we begin the last part of the method~\ref{method}: place some remaining edge to satisfies parity. Thus at least one $\rho_2$ edge must still be placed. The only available edges are $f,h,i,j$ and $k$. But $f$ cannot be connected to any other point by a $\rho_0$ edge because it must form an alternating square but this square does not satisfies Proposition~\ref{adjacent-squares}. Thus an edge $(h,i)$ or an edge $(j,k)$ must be built. That gave us two cases.
 
 \begin{figure}[H]
   \begin{center}
@@ -717,8 +714,8 @@ The graph is now connected, we begin the last part of the method~\ref{method}: p
         \node (3)  at (2,2)  {};
         \node (4)  at (2,0)  {};
         \node (5)  at (4,0)  {};
-        \node (6)  at (6,0)  {};
-        \node (7)  at (8,0)  {};
+        \node (6)  at (6,0)  {h};
+        \node (7)  at (8,0)  {i};
         \node (8)  at (10,0)  {};
         \node (9)  at (-2,2)  {};
         \node (10) at (-2,0)  {};
@@ -761,8 +758,8 @@ The graph is now connected, we begin the last part of the method~\ref{method}: p
         \node (4)  at (2,0)  {};
         \node (5)  at (4,0)  {};
         \node (6)  at (6,0)  {};
-        \node (7)  at (8,0)  {};
-        \node (8)  at (10,0)  {};
+        \node (7)  at (8,0)  {j};
+        \node (8)  at (10,0)  {k};
         \node (9)  at (-2,2)  {};
         \node (10) at (-2,0)  {};
         \node (11) at (12,0) {};
@@ -792,6 +789,15 @@ The graph is now connected, we begin the last part of the method~\ref{method}: p
     \caption{}
   \end{center}
 \end{figure}
+
+\paragraph{}
+Now we want to prove that one generator can be written as a product of the other. The strategy is different because there is no obvious solution. We will remove one involution and then prove that the group is still $A_{11}$. But the remove generator is in $A_{11}$ thus it must be written as a product of other generators.
+
+\paragraph{}
+To achieve this goal, we will use the primitive groups. Those groups are well-known and have been classified in~\cite{bukenhoutlist1998} for group of degree smaller than 50. To achieve this we will first prove that the group is 2-transitive with Proposition~\ref{practical-transitivity}. Then we will use Property~\ref{2-transitive-primitive} to prove that they are primitive.
+
+\paragraph{}
+We must know the order of the group in order to eliminate some group from the classification. To do this, we will use Property~\ref{magic-formula} to know that the order of the group must be a multiple of a given number.
 
 \paragraph{}
 In the first graph we will remove the $\rho_4$ edges. The graph becomes the following.
@@ -838,13 +844,13 @@ In the first graph we will remove the $\rho_4$ edges. The graph becomes the foll
 \end{figure}
 
 \paragraph{}
-This graph is 2-transitive. To prove that we will fix the point $k$ and try to move the point $j$ everywhere. But this is trivial because the $k$ point does not move if no $\rho_0$ edges are placed. But all the other points are in the same orbit of $\Gamma_{\rho_1, \rho_2, \rho_3}$ and thus can be send to any other point without using a $\rho_0$ edge.
+This group is 2-transitive. To prove this we will fix the point $k$ and try to keep $k$ fixed while finding permutation between $j$ and all non-fixed point. But this is trivial because the $k$ point does not move if no $\rho_0$ edges are placed. But all the other points are in the same orbit of $\Gamma_{\rho_1, \rho_2, \rho_3}$ and thus $j$ can be permuted with any non-fixed point without using a $\rho_0$ edge.
 
 \paragraph{}
-The group is 2-transitive, thus its order is a multiple of $11 \times 10 = 110$. The subgroup $\Gamma_{\rho_2, \rho_3}$ is $D_24$. Thus the order of the group must be a multiple of 1320. There are 3 possibilities: $M_{11}$, $A_{11}$ and $S_{11}$ but all involutions are even and $M_{11}$ and $S_{11}$ contains odd involutions. Therefore the group must be $A_{11}$.
+The group is 2-transitive thus primitive. Its order is a multiple of $11 \times 10 = 110$. The subgroup $\Gamma_{\rho_2, \rho_3}$ is $D_{24}$. Thus the order of the group must be a multiple of 1320. There are 3 possibilities: $M_{11}$, $A_{11}$ and $S_{11}$ but all involutions are even and $M_{11}$ and $S_{11}$ contains odd involutions. Therefore the group must be $A_{11}$.
 
 \paragraph{}
-But $\rho_4 \in A_{11}$, thus $\rho_4$ can be written as a product of other generator. Thus the set of generators is not free.\footnote{Missing the case where no other square are attached}.
+But $\rho_4 \in A_{11}$, thus $\rho_4$ can be written as a product of other generators. Thus the set of generators is not free.
 
 \paragraph{}
 \textit{Alternating square $[\rho_2,\rho_4]$}
