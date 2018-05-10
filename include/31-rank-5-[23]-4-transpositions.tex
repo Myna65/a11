@@ -47,7 +47,7 @@ First we choose an involution, in this case $\rho_1$. The graph with only this i
 \end{figure}
 
 \paragraph{}
-Now we add the 2-transposition $\rho_4$ keeping in mind that $\rho_1$ and $\rho_4$ must commute. Lemma~\ref{patterns-adding} applies and there are only three possibilities to place the two $\rho_4$ edges.
+Now we add the 2-transposition $\rho_4$ keeping in mind that $\rho_1$ and $\rho_4$ must commute. There are only three possibilities to place the two $\rho_4$ edges by Proposition~\ref{patterns-adding}.
 
 \paragraph{}
 We now apply the second part of the Method~\ref{method}. For each of those pattern we continue with the third step. The first part deals with the first pattern, an alternating square $[\rho_1, \rho_4]$, the second part with a unique double edge $(\rho_1, \rho_4)$ and the last part with two double edges $(\rho_1, \rho_4)$.
@@ -156,7 +156,7 @@ Thus either $g$ or $h$ can be used to connect a $\rho_0$ edge but not both. The 
 
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}[scale=.8] \ref{no-extremity-connection-to-square}
+    \begin{tikzpicture}[scale=.8]
 
       \begin{scope}[every node/.style={circle,draw}]
         \node (1)  at (0,2)  {b};
@@ -667,7 +667,7 @@ The two $\rho_0$ edges cannot be connected to any vertex of the left component, 
 \end{figure}
 
 \paragraph{}
-The component $\{g,h,i,j,k\}$ can only be connected by a $\rho_2$ edge on the vertex $g$ by Lemma~\ref{chain-consecutive} and because all $\rho_0$ have been used. Nothing can be connected to the vertex $k$ because a $\rho_1$ edge is needed but none are available. On the other component a $\rho_2$ edge can only be attached to $e$ or $f$ by Property~\ref{fixed-only-1}.
+By Proposition~\ref{chain-consecutive}, the component $\{g,h,i,j,k\}$ can only be connected by a $\rho_2$ edge on the vertex $g$ and because all $\rho_0$ have been used. Nothing can be connected to the vertex $k$ because a $\rho_1$ edge is needed but none are available. On the other component a $\rho_2$ edge can only be attached to $e$ or $f$ by Property~\ref{fixed-only-1}.
 
 \begin{figure}[H]
   \begin{center}
