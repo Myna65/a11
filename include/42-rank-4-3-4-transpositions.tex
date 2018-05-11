@@ -1,41 +1,84 @@
 \section{Three 4-transpositions}
 
 \begin{lemma}
+  If $\rho_0$ is a 2-transposition then there must be a single $\rho_1$ edge (and thus a single $\rho_3$ edge).
+\end{lemma}
+
+\begin{proof}
+  By Lemma~\ref{adjacent-must-not-commute}, a $\rho_0$ must be adjacent to a $\rho_1$ edge. The $\rho_1$ can be a single edge, a double edge with another involution or on an alternating square.
+
+  \paragraph{}
+  If the $\rho_1$ edge is on a double edge then this edge can be $\rho_2$ or $\rho_3$. But the if $\rho_0$ and $\rho_1$ does not commute in this location~\footnote{...} then $\rho_0$ does not commute with the other involution and this is a contradiction with Proposition~\ref{intersection-patterns}.
+
+  \paragraph{}
+  If $\rho_1$ is on an alternating square, the same occurs\footnote{to do}.
+
+\end{proof}
+
+\begin{lemma}
+  There cannot be more than one $\rho_1$ single edge and thus there cannot be more than one $\rho_3$ single edge.
+\end{lemma}
+
+\begin{proof}
+  There are not enough points otherwise.
+\end{proof}
+
+\begin{corollary}
+  \label{rank-4-single-1}
+  If $\rho_0$ is a 2-transposition then there is exactly one $\rho_1$ single edge and one $\rho_3$ single edge.
+\end{corollary}
+
+\begin{lemma}
+  \label{rank-4-3-patterns}
   Let $\Gamma$ be a sggi of rank 4 on 11 points. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions and $\rho_0$ is a 2-transposition then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).\footnote{Extend this part}
 \end{lemma}
 
 \begin{proof}
-  Suppose that there are two alternating squares. Those square can only be connected by $\rho_2$ simple edges. But those $\rho_2$ edges cannot be connected to other simple edge because all $\rho_1$ and $\rho_3$ have been used.
+  By Corollary~\ref{rank-4-single-1} there are exactly one $\rho_1$ single edge. The remaining possibilities for the three remaining edges are limited: one alternating square $[\rho_1, \rho_3]$ and one double edge $(\rho_1, \rho_3)$ or three double edges $(\rho_1, \rho_3)$.
 
   \paragraph{}
-  In fact, it is impossible to connect any $\rho_0$ edges to this graph. This edge cannot be connected directly because all $\rho_1$ edges have been used. It must be part of an alternating square. $[\rho_0, \rho_3]$ is impossible because a such square cannot be placed between to existing $\rho_3$ edge. The square must be $[\rho_0, \rho_2]$.
+  Suppose that there are three double edges.
+
+    \begin{figure}[H]
+      \begin{center}
+        \begin{tikzpicture}[scale=.8]
+
+          \begin{scope}[every node/.style={circle,draw}]
+            \node (1)  at (0,0)  {};
+            \node (2)  at (2,0)  {};
+            \node (3)  at (4,0)  {};
+            \node (4)  at (6,0) {};
+            \node (5)  at (8,0)  {};
+            \node (6)  at (10,0)  {};
+            \node (7)  at (12,0)  {};
+            \node (8)  at (14,0)  {};
+            \node (9)  at (16,0)  {};
+            \node (10) at (18,0)  {};
+            \node (11) at (20,0)  {};
+          \end{scope}
+
+          \begin{scope}[every node/.style={fill=white}]
+
+            \begin{scope}[every edge/.style={draw}]
+              \path (1)  edge node {$0$} (2);
+              \path (2)  edge node {$1$} (3);
+              \path (6)  edge[bend left=30] node {$1$} (7);
+              \path (8)  edge[bend left=30] node {$1$} (9);
+              \path (10) edge[bend left=30] node {$1$} (11);
+              \path (4)  edge node {$3$} (5);
+              \path (6)  edge[bend right=30] node {$3$} (7);
+              \path (8)  edge[bend right=30] node {$3$} (9);
+              \path (10) edge[bend right=30] node {$3$} (11);
+            \end{scope}
+          \end{scope}
+
+        \end{tikzpicture}
+        \caption{}
+      \end{center}
+    \end{figure}
 
   \paragraph{}
-  Thus a sequence of alternating square going from $[\rho_0, \rho_2]$ to $[\rho_1, \rho_3]$ must exists. Starting from $[\rho_1, \rho_3]$, the $\rho_3$ index must change in the next square because all of them have been used. But the same applies to $\rho_1$. This square cannot be part of a sequence therefore, there cannot be two alternating squares.
-
-  \paragraph{}
-  Suppose now that we have two double edges between $\rho_1$ and $\rho_3$. Those edges can be connected to the rest of the graph by a $\rho_2$ edge or be part of an alternating square.
-
-  \paragraph{}
-  At least one $\rho_1$ single edge is needed. Thus a single $\rho_3$ edge must also exists. This uses 10 vertices, therefore it cannot be two single $\rho_1$ edge.
-
-  \paragraph{}
-  Now let's proof that at least one alternating square must exists. Suppose that no alternating squares exists.
-
-  \paragraph{}
-  There are 2 $\rho_0$ edges. Those edges can be placed in alternating square, double edges or simple edges.
-
-  \paragraph{}
-  If it is placed in an alternating square it can be a component or just an additional edge.
-
-  \paragraph{}
-  If it just an additional edge, the other component must be $\rho_1$. And those edges cannot be doubled. Therefore there are 2 $\rho_1$ edges. At least one of them must therefore be part of an alternating square or a double edge. But the latter is impossible and therefore the former is mandatory.
-
-  \paragraph{}
-  If it is a component of a square, the other component must be $\rho_2$ or $\rho_3$. If it is $\rho_3$ it must be  adjacent to another square. It can be $[\rho_0, \rho_2]$ or $[\rho_1, \rho_3]$. The two cases are impossible.
-
-  \paragraph{}
-  The $\rho_0$ edges are not placed in an alternating square. Each must be connected by a $\rho_1$. An alternating square or a double edge is not possible. But that is a contradiction.
+  But now by~\ref{todo}\footnote{Not complete}, we can clearly see that the other $\rho_0$ edge will never be placed.
 \end{proof}
 
 \begin{theorem}
@@ -78,7 +121,7 @@
     \end{center}
   \end{figure}
 
-  \paragraph{}By previous Lemma, the pattern between $\rho_1$ and $\rho_3$ is the following.
+  \paragraph{}By Lemma~\ref{rank-4-3-patterns}, the pattern between $\rho_1$ and $\rho_3$ is the following.
 
 
   \begin{figure}[H]
@@ -86,17 +129,17 @@
       \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (0,0)  {};
-          \node (3)  at (2,2)  {};
-          \node (4)  at (2,0)  {};
-          \node (5)  at (4,0)  {};
-          \node (6)  at (6,0)  {};
-          \node (7)  at (8,0)  {};
-          \node (8)  at (10,0) {};
-          \node (9)  at (12,0) {};
-          \node (10) at (14,0) {};
-          \node (11) at (16,0) {};
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (6,0)  {f};
+          \node (7)  at (8,0)  {g};
+          \node (8)  at (10,0) {h};
+          \node (9)  at (12,0) {i};
+          \node (10) at (14,0) {j};
+          \node (11) at (16,0) {k};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white}]
@@ -119,7 +162,53 @@
   \end{figure}
 
   \paragraph{}
-  Let's place the $\rho_0$ edges. We know by the proof of the previous lemma that one edge must be added to an alternating square. The other must be a single edge. This last edge must be connected by the single $\rho_1$ edge.
+  We will used our notion of "joker" edges. In this case there are 14 edges to link 11 vertices. Thus we have 4 "joker" edges. But two of them have already been used to build the alternating square and the double edge.
+
+  \paragraph{}
+  Let's place the $\rho_0$ edges. We know by the proof of the previous lemma that one edge must be adjacent to the single $\rho_1$ edge.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (14,0)  {};
+          \node (8)  at (12,0)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (10,0)  {};
+          \node (11) at (16,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (7)  edge node {$0$} (11);
+            \path (1)  edge node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge[bend left=30] node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (5)  edge[bend right=30] node {$3$} (6);
+            \path (9)  edge node {$3$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}The other $\rho_0$ cannot connect different components\footnote{Justify}. Furthermore it cannot be used in the component $\{i,j,k\}$. If it is used in the component $\{e,f\}$ Then this component must be part of an alternating square. But the only available involution to make this alternating square is $\rho_2$. But then this new component cannot be linked by $\rho_2$ edges\footnote{Graph}.
+
+  \paragraph{}
+  Thus the last $\rho_0$ edge must be used in the $\{a,b,c,d\}$ component.
 
   \begin{figure}[H]
     \begin{center}
@@ -161,10 +250,101 @@
   \end{figure}
 
   \paragraph{}
-  There are only 4 $\rho_2$ edges waiting to be placed. Three of them must link the components. The last one must double something. The only two possibilities: triple the double edge $(\rho_0, \rho_3)$ or double the other $\rho_0$.
+  There are only 4 $\rho_2$ edges to be placed. Three of them must link the components because there are only on "joker" edge remaining. There are multiple way to link those components. As for the previous section, all the permutation representation graphs are diplayed in Appendix~\ref{rank4-3-4transpositions}. We only consider one graph but the reader can check that all the following statement can be applied to all other variants.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (6,0)  {f};
+          \node (7)  at (14,0)  {j};
+          \node (8)  at (12,0)  {i};
+          \node (9)  at (8,0)  {g};
+          \node (10) at (10,0)  {h};
+          \node (11) at (16,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend left=30] node {$0$} (3);
+            \path (7)  edge node {$0$} (11);
+            \path (1)  edge node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge[bend left=30] node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (4)  edge node {$2$} (5);
+            \path (6)  edge node {$2$} (9);
+            \path (10) edge node {$2$} (8);
+            \path (1)  edge[bend right=30] node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (5)  edge[bend right=30] node {$3$} (6);
+            \path (9)  edge node {$3$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
   \paragraph{}
-  If the single edge is double, the graph where the $\rho_1$ edge is removed is always this one:
+  The last $\rho_2$ edge one must double something. The only two possibilities: triple the double edge $(b, d)$ or double the edge $(j,k)$.
+
+  \paragraph{}
+  If the edge $(j,k)$ is doubled, the graph is the following.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (6,0)  {f};
+          \node (7)  at (14,0)  {j};
+          \node (8)  at (12,0)  {i};
+          \node (9)  at (8,0)  {g};
+          \node (10) at (10,0)  {h};
+          \node (11) at (16,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend left=30] node {$0$} (3);
+            \path (7)  edge[bend left=30] node {$0$} (11);
+            \path (1)  edge node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge[bend left=30] node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (4)  edge node {$2$} (5);
+            \path (6)  edge node {$2$} (9);
+            \path (10) edge node {$2$} (8);
+            \path (7) edge[bend right=30] node {$2$} (11);
+            \path (1)  edge[bend right=30] node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (5)  edge[bend right=30] node {$3$} (6);
+            \path (9)  edge node {$3$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If the $\rho_1$ edge is removed the graph this one (for every variation too):
 
   \begin{figure}[H]
     \begin{center}
@@ -201,15 +381,55 @@
         \end{scope}
 
       \end{tikzpicture}
-      \caption{[1, 1029, 8827, 994]}
+      \caption{}
     \end{center}
   \end{figure}
 
   \paragraph{}
-  But here it is clear that $\rho_0 = (\rho_2 \rho_3)^7$. Thus the last $\rho_2$ edge must triple to existing double edge.
+  But here it is clear that $\rho_0 = (\rho_2 \rho_3)^7$. Thus the last $\rho_2$ edge must triple to existing double edge. Therefore the last $\rho_2$ edge must be $(b,d)$.
 
-  \paragraph{}
-  The components can be link in a lot of different ways. The reader is advised to try to find all sggis and check that those displayed in appendix~\ref{rank4-3-4transpositions} are correct. Once more it can help to sort them by the length of the chain between the square and the double edge and then by the length of the chain between the double edge and the end of the graph.
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (2,2)  {};
+          \node (2)  at (0,2)  {};
+          \node (3)  at (14,0)  {};
+          \node (4)  at (16,0) {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (10,0)  {};
+          \node (7)  at (0,0)  {};
+          \node (8)  at (2,0)  {};
+          \node (9)  at (4,0)  {};
+          \node (10) at (6,0)  {};
+          \node (11) at (12,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend right=45] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (1)  edge node {$1$} (8);
+            \path (2)  edge node {$1$} (7);
+            \path (3)  edge node {$1$} (11);
+            \path (9)  edge[bend left=30] node {$1$} (10);
+            \path (1)  edge node {$2$} (2);
+            \path (5)  edge node {$2$} (10);
+            \path (6)  edge node {$2$} (11);
+            \path (8)  edge node {$2$} (9);
+            \path (1)  edge[bend left=45] node {$3$} (2);
+            \path (5)  edge node {$3$} (6);
+            \path (7)  edge node {$3$} (8);
+            \path (9)  edge[bend right=30] node {$3$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
 \end{proof}
 
