@@ -3,6 +3,8 @@
 \paragraph{}
 Nous allons maintenant étudier les différents cas en rang 4. Nous pouvons avoir deux, trois ou quatre 4-transpositions. Étudions ces cas successivement.
 
+\section{Preliminary results}
+
 \begin{theorem}
   Neither $\rho_1$ nor $\rho_2$ can be 2-transposition.
 \end{theorem}
@@ -22,10 +24,95 @@ Nous allons maintenant étudier les différents cas en rang 4. Nous pouvons avoi
     \item 2 $\rho_0$, 2 $\rho_1$, 2 $\rho_2$, 1 $\rho_3$
     \item 3 $\rho_0$, 0 $\rho_1$, 4 $\rho_2$, 0 $\rho_3$
   \end{itemize}
+
+  \paragraph{}
+  Le troisième cas est clairement impossible car, en partant d'une arête $\rho_2$, nous ne pourons jamais atteindre $\rho_0$ de manière linéaire.
+
+  \paragraph{}
+  Dans les deux premiers cas, nous devons continuer avec des arêtes $\rho_1$ donc le trois
+
 \end{proof}
 
 \paragraph{}
-Le troisième cas est clairement impossible car, en partant d'une arête $\rho_2$, nous ne pourons jamais atteindre $\rho_0$ de manière linéaire.
+We start by proving some lemmas that are used when there are used for the cases with three or four 4-transpositions. We suppose in the following proofs that if there is a 2-transition, then it is $\rho_0$. This can be done with the previous theorem and by using the duality.
 
-\paragraph{}
-Dans les deux premiers cas, nous devons continuer avec des arêtes $\rho_1$ donc le trois
+\begin{lemma}
+  In a sggi $\Gamma$ of rank 4 on $A_{11}$ with at least three 4-transposition, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge).
+\end{lemma}
+
+\begin{proof}
+  By Lemma~\ref{adjacent-must-not-commute}, a $\rho_0$ must be adjacent to a $\rho_1$ edge. The $\rho_1$ can be a single edge, a double edge with another involution or on an alternating square.
+
+  \paragraph{}
+  If the $\rho_1$ edge is part of a double edge then the other involution of this double edge can be $\rho_2$ or $\rho_3$. But the if $\rho_0$ and $\rho_1$ do not commute then $\rho_0$ does not commute with the other involution and this is a contradiction with Proposition~\ref{intersection-patterns}.
+
+  \paragraph{}
+  If $\rho_1$ is on an alternating square, the same occurs\footnote{More precise}.
+
+\end{proof}
+
+\begin{lemma}
+  There cannot be more than one $\rho_1$ single edge and thus there cannot be more than one $\rho_3$ single edge.
+\end{lemma}
+
+\begin{proof}
+  There are not enough points otherwise. Hence if they are two single $\rho_1$ edges, there are two single $\rho_3$ edges. Those 4 edges uses 8 points. But the four last edges can be arranged in an alternating square or two double edges. But those edges uses 4 vertices. But that is a contradiction because there are only 11 points.
+\end{proof}
+
+\begin{corollary}
+  \label{rank-4-single-1}
+  There are exactly one $\rho_1$ single edge and one $\rho_3$ single edge.
+\end{corollary}
+
+\begin{lemma}
+  \label{rank-4-3-patterns}
+  Let $\Gamma$ be a sggi of rank 4 on 11 points. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).
+\end{lemma}
+
+\begin{proof}
+  By Corollary~\ref{rank-4-single-1} there is exactly one $\rho_1$ single edge. The remaining possibilities for the three remaining edges of $\rho_1$ are limited: one alternating square $[\rho_1, \rho_3]$ and one double edge $(\rho_1, \rho_3)$ or three double edges $(\rho_1, \rho_3)$.
+
+  \paragraph{}
+  Suppose that there are three double edges.
+
+    \begin{figure}[H]
+      \begin{center}
+        \begin{tikzpicture}[scale=.8]
+
+          \begin{scope}[every node/.style={circle,draw}]
+            \node (1)  at (0,0)  {};
+            \node (2)  at (2,0)  {};
+            \node (3)  at (4,0)  {};
+            \node (4)  at (6,0) {};
+            \node (5)  at (8,0)  {};
+            \node (6)  at (10,0)  {};
+            \node (7)  at (12,0)  {};
+            \node (8)  at (14,0)  {};
+            \node (9)  at (16,0)  {};
+            \node (10) at (18,0)  {};
+            \node (11) at (20,0)  {};
+          \end{scope}
+
+          \begin{scope}[every node/.style={fill=white}]
+
+            \begin{scope}[every edge/.style={draw}]
+              \path (1)  edge node {$0$} (2);
+              \path (2)  edge node {$1$} (3);
+              \path (6)  edge[bend left=30] node {$1$} (7);
+              \path (8)  edge[bend left=30] node {$1$} (9);
+              \path (10) edge[bend left=30] node {$1$} (11);
+              \path (4)  edge node {$3$} (5);
+              \path (6)  edge[bend right=30] node {$3$} (7);
+              \path (8)  edge[bend right=30] node {$3$} (9);
+              \path (10) edge[bend right=30] node {$3$} (11);
+            \end{scope}
+          \end{scope}
+
+        \end{tikzpicture}
+        \caption{}
+      \end{center}
+    \end{figure}
+
+  \paragraph{}
+  But now by~\ref{todo}\footnote{Not complete}, we can clearly see that no other $\rho_0$ edge cannot be placed.
+\end{proof}
