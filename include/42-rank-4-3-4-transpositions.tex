@@ -9,7 +9,7 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
 \end{theorem}
 
 \begin{proof}
-  Let, without loss of generality, $\rho_1$ and $\rho_3$ be 4-transposition.
+  Let, without loss of generality, $\rho_1$ and $\rho_3$ be 4-transpositions.
 
   \begin{figure}[H]
     \begin{center}
@@ -52,17 +52,17 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
       \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {b};
-          \node (2)  at (0,0)  {a};
-          \node (3)  at (2,2)  {d};
-          \node (4)  at (2,0)  {c};
-          \node (5)  at (4,0)  {e};
-          \node (6)  at (6,0)  {f};
-          \node (7)  at (8,0)  {g};
-          \node (8)  at (10,0) {h};
-          \node (9)  at (12,0) {i};
-          \node (10) at (14,0) {j};
-          \node (11) at (16,0) {k};
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0) {};
+          \node (9)  at (12,0) {};
+          \node (10) at (14,0) {};
+          \node (11) at (16,0) {};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white}]
@@ -70,11 +70,11 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$1$} (2);
             \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend right=30] node {$1$} (6);
+            \path (5)  edge[bend left=30] node {$1$} (6);
             \path (7)  edge node {$1$} (8);
             \path (1)  edge node {$3$} (3);
             \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend left=30] node {$3$} (6);
+            \path (5)  edge[bend right=30] node {$3$} (6);
             \path (9)  edge node {$3$} (10);
           \end{scope}
         \end{scope}
@@ -85,27 +85,27 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
   \end{figure}
 
   \paragraph{}
-  In this case there are 14 edges to link 11 vertices. Thus there are 4 "joker" edges. But two of them have already been used to build the alternating square and the double edge.
+  In this case there are 14 edges to link 11 vertices. Thus there are 4 "joker" edges. Two of them have already been used to build the alternating square and the double edge.
 
   \paragraph{}
-  We place the $\rho_0$ edges. We know by the proof of the previous lemma that one edge must be adjacent to the single $\rho_1$ edge.
+  We place the $\rho_0$ edges. By the proof of Lemma~\ref{todo}, one edge must be adjacent to the single $\rho_1$ edge.
 
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (0,0)  {};
-          \node (3)  at (2,2)  {};
-          \node (4)  at (2,0)  {};
-          \node (5)  at (4,0)  {};
-          \node (6)  at (6,0)  {};
-          \node (7)  at (14,0)  {};
-          \node (8)  at (12,0)  {};
-          \node (9)  at (8,0)  {};
-          \node (10) at (10,0)  {};
-          \node (11) at (16,0) {};
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (6,0)  {f};
+          \node (7)  at (14,0) {j};
+          \node (8)  at (12,0) {i};
+          \node (9)  at (8,0)  {g};
+          \node (10) at (10,0) {h};
+          \node (11) at (16,0) {k};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white}]
@@ -128,7 +128,7 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
     \end{center}
   \end{figure}
 
-  \paragraph{}The other $\rho_0$ cannot connect different components by Propositions~\ref{chain-consecutive}, \ref{square-connection} and~\ref{double-connection}. Thus it must double an edge inside a component.The component $\{i,j,k\}$ cannot be used because there is already a $\rho_0$ edge. If the edge is placed in the component $\{e,f\}$, then this component must be part of an alternating square by Proposition~\ref{continue-triple-edge}. The only available involution to make this alternating square is $\rho_2$. This new component then cannot be linked by $\rho_2$ edges\footnote{Graph}.
+  \paragraph{}The other $\rho_0$ cannot connect different components by Propositions~\ref{chain-consecutive}, \ref{square-connection} and~\ref{adjacent-double}. Thus it must double an edge into a component.The component $\{i,j,k\}$ cannot be used because there is already a $\rho_0$ edge. If the edge is placed in the component $\{e,f\}$, then this component must be part of an alternating square by Proposition~\ref{continue-triple-edge}. The only available involution to make this alternating square is $\rho_2$. This new component then cannot be linked by $\rho_2$ edges\footnote{Graph}.
 
   \paragraph{}
   Thus the last $\rho_0$ edge must be used in the $\{a,b,c,d\}$ component.
@@ -173,7 +173,7 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
   \end{figure}
 
   \paragraph{}
-  There are only 4 $\rho_2$ edges to be placed. Three of them must link the components because there are only on "joker" edge remaining. There are multiple ways to link those components. As for the previous section, all the permutation representation graphs are displayed in Appendix~\ref{rank4-3-4transpositions}. We only consider one case but the reader can check that all the following statements can be applied to all other variants.
+  There are only 4 $\rho_2$ edges to be placed. Three of them must link the components because there is only one "joker" edge remaining. There are multiple ways to link those components. As for the previous section, all the permutation representation graphs are displayed in Appendix~\ref{rank4-3-4transpositions}. We only consider one case but the reader can check that all the following statements can be applied to all other variants.
 
   \begin{figure}[H]
     \begin{center}
@@ -221,7 +221,7 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
   The last $\rho_2$ edge must double something. The only two possibilities are: triple the double edge $(b, d)$ or double the edge $(j,k)$.
 
   \paragraph{}
-  If the edge $(j,k)$ is doubled, the graph is the following.
+  If the edge $(j,k)$ is doubled, the graph is the following:
 
   \begin{figure}[H]
     \begin{center}
@@ -309,7 +309,7 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
   \end{figure}
 
   \paragraph{}
-  It is clear here that $\rho_0 = (\rho_2 \rho_3)^7$. Thus the last $\rho_2$ edge must triple to existing double edge. Therefore the last $\rho_2$ edge must be $(b,d)$.
+  It is clear here that $\rho_0 = (\rho_2 \rho_3)^7$. Thus the last $\rho_2$ edge must triple an existing double edge. Therefore the last $\rho_2$ edge must be $(b,d)$.
 
   \begin{figure}[H]
     \begin{center}
@@ -368,14 +368,14 @@ Now we use Lemma~\ref{rank-4-3-patterns} to prove the Theorems~\ref{rank4-3-th1}
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
       \hline
-      Figure & $\Gamma_3$ & $\Gamma_0$ & $\Gamma_{0,3}$ & $\#\Gamma_{0,3}$ & $\Gamma_3 \cap \Gamma_0$ & $\#(\Gamma_3 \cap \Gamma_0)$ \\ \hline
+      Figure & $\Gamma_{S_1}$ & $\Gamma_{S_2}$ & $\Gamma_{S_1 \cap S_2}$ & $\#\Gamma_{S_1 \cap S_2}$ & $\Gamma_{S_1} \cap \Gamma_{S_2}$ & $\#(\Gamma_{S_1} \cap \Gamma_{S_2})$ \\ \hline
 
       \ref{r4-5-1} & $S_7 : D_8$ & $A_{10}$ & $D_{42}$ & 42 & $\ge S_5$ & $\ge 120$ \\ \hline
-      \ref{r4-5-2} & $A_{10}$ & $A_{10}$ & $D_{18}$ & 18 & $A_9$ & $181440$ \\ \hline
-      \ref{r4-5-3} & $A_{10}$ & $A_{10}$ & $D_{18}$ & 18 & $A_9$ & $181440$ \\ \hline
-      \ref{r4-5-4} & $S_7 : D_8$ & $A_{10}$ & $D_{42}$ & 42 & $\ge S_5$ & $\ge 120$ \\ \hline
-      \ref{r4-5-5} & $A_5 : S_6$ & $A_{10}$ & $D_{10}$ & 10 & $\ge S_4$ & $\ge 24$ \\ \hline
-      \ref{r4-5-6} & $A_8 : S_3$ & $A_{10}$ & $D_{42}$ & 42 & $\ge S_5$ & $\ge 120$ \\ \hline
+      \ref{r4-5-2} & $A_{10}$ & $A_{10}$ & $D_{18}$ & 18 & $\ge A_9$ & $\ge 181440$ \\ \hline
+      \ref{r4-5-3} & $A_{10}$ & $A_{10}$ & $D_{18}$ & 18 & $\ge A_9$ & $\ge 181440$ \\ \hline
+      \ref{r4-5-4} & $S_7 : D_8$ & $A_{10}$ & $D_{42}$ & 42 & $\ge A_6$ & $\ge 360$ \\ \hline
+      \ref{r4-5-5} & $A_5 : S_6$ & $A_{10}$ & $D_{10}$ & 10 & $\ge A_6$ & $\ge 360$ \\ \hline
+      \ref{r4-5-6} & $A_8 : S_3$ & $A_{10}$ & $D_{42}$ & 42 & $\ge A_7$ & $\ge 2520$ \\ \hline
 
     \end{tabular}
   \end{table}

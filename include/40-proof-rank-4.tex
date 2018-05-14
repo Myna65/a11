@@ -1,7 +1,7 @@
 \chapter{Proof for rank 4}
 
 \paragraph{}
-Nous allons maintenant étudier les différents cas en rang 4. Nous pouvons avoir deux, trois ou quatre 4-transpositions. Étudions ces cas successivement.
+We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}, we can have two, three or four 4-transposition.
 
 \section{Preliminary results}
 
@@ -37,14 +37,14 @@ Nous allons maintenant étudier les différents cas en rang 4. Nous pouvons avoi
 We start by proving some lemmas that are used when there are used for the cases with three or four 4-transpositions. We suppose in the following proofs that if there is a 2-transition, then it is $\rho_0$. This can be done with the previous theorem and by using the duality.
 
 \begin{lemma}
-  In a sggi $\Gamma$ of rank 4 on $A_{11}$ with at least three 4-transposition, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge).
+  In a sggi $\Gamma$ of rank 4 on $A_{11}$ with at least three 4-transpositions, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge).
 \end{lemma}
 
 \begin{proof}
   By Lemma~\ref{adjacent-must-not-commute}, a $\rho_0$ must be adjacent to a $\rho_1$ edge. The $\rho_1$ can be a single edge, a double edge with another involution or on an alternating square.
 
   \paragraph{}
-  If the $\rho_1$ edge is part of a double edge then the other involution of this double edge can be $\rho_2$ or $\rho_3$. But the if $\rho_0$ and $\rho_1$ do not commute then $\rho_0$ does not commute with the other involution and this is a contradiction with Proposition~\ref{intersection-patterns}.
+  If the $\rho_1$ edge is part of a double edge then the other involution of this double edge can be $\rho_2$ or $\rho_3$. But if the $\rho_0$ and $\rho_1$ do not commute then $\rho_0$ does not commute with the other involution and this is a contradiction with Proposition~\ref{intersection-patterns}.
 
   \paragraph{}
   If $\rho_1$ is on an alternating square, the same occurs\footnote{More precise}.
@@ -56,7 +56,7 @@ We start by proving some lemmas that are used when there are used for the cases 
 \end{lemma}
 
 \begin{proof}
-  There are not enough points otherwise. Hence if they are two single $\rho_1$ edges, there are two single $\rho_3$ edges. Those 4 edges uses 8 points. But the four last edges can be arranged in an alternating square or two double edges. But those edges uses 4 vertices. But that is a contradiction because there are only 11 points.
+  There are not enough points otherwise. Hence if they are two single $\rho_1$ edges, there are two single $\rho_3$ edges. Those 4 edges uses 8 points. The four last edges can be arranged in an alternating square or two double edges. Those edges uses 4 vertices. That is not possible because there are only 11 points.
 \end{proof}
 
 \begin{corollary}
@@ -114,5 +114,5 @@ We start by proving some lemmas that are used when there are used for the cases 
     \end{figure}
 
   \paragraph{}
-  But now by~\ref{todo}\footnote{Not complete}, we can clearly see that no other $\rho_0$ edge cannot be placed.
+  By~\ref{todo}\footnote{Not complete}, no other $\rho_0$ edge can be placed.
 \end{proof}
