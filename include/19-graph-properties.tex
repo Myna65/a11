@@ -1,13 +1,129 @@
-\section{Single edge}
+\chapter{Properties}
+\label{Properties}
 
-\begin{definition}
-  An edge (simple or double) is called adjacent to another pattern if they share exactly one vertex.
-\end{definition}
+\paragraph{}
+In this chapter we discuss the implications of what we have seen in the previous chapter. The implications of Property~\ref{intersection-patterns} on the possible permutation representation graphs. We start with a direct consequence of the definition of a permutation representation graph.
 
 \begin{proposition}
   \label{fixed-only-1}
-  Two edges with the same index cannot be adjacent.
+  In a permutation representation graph, two edges with the same index cannot be adjacent.
 \end{proposition}
+
+\begin{proof}
+  Here is one graph of the situation
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)  {a};
+          \node (2)  at (2,0)  {b};
+          \node (3)  at (4,0)  {c};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (2)  edge node {$i$} (3);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If a such graph exist then, by definition of a permutation representation graph, because there is an edge labeled with $i$ between $a$ and $b$, then this mean that $a \rho_i = b$ and $b \rho_i = a$. But there is also an edge labeled with $i$ between $b$ and $c$, thus $b \rho_i = c$ and $c \rho_i = b$. There is a contradiction because $a = b \rho_i = c$ but $a \neq c$. Thus this graph is impossible.
+\end{proof}
+
+\paragraph{}
+First we define three patterns that are used in the construction of the permutation representation graphs.
+
+\section{Definitions}
+\begin{definition}[Alternating square]
+  \index{alternating square}
+  An alternating edge is a set of 4 vertices and 4 edges that form the following graph:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge node {$i$} (4);
+            \path (1)  edge node {$j$} (3);
+            \path (2)  edge node {$j$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Additional edges can be present on the permutation representation graph, if there exists 4 edges and 4 vertices that form the previous graph, then there is an alternating square.
+
+  \paragraph{}
+  This alternating square is denoted $[\rho_i, \rho_j]$
+\end{definition}
+
+\begin{definition}[Multiple edge]
+  \index{multiple edge}
+  \index{double edge}
+
+  A \textit{multiple edge} is a pair of vertices and a set of at least two edges linking those vertices. The number of edges is called the multiplicity of the multiple edge. If the multiplicity is exactly two, it is called a \textit{double edge}.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend right=30] node {$i$} (2);
+            \path (1)  edge[bend left=30] node {$j$} (2);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  A double edge is denoted $(\rho_i, \rho_j)$.
+\end{definition}
+
+\begin{definition}[Single edge]
+  A single edge is a pair of vertices and an edge such that both vertices are not in the same alternating square or in the same multiple edge.
+\end{definition}
+
+\paragraph{}
+Now we continue with the implications on the permutation representation graphs.
+
+\section{Single edge}
+
+\begin{definition}
+  An edge (simple or multiple) is called adjacent to another pattern if they share exactly one vertex.
+\end{definition}
 
 \begin{definition}
   A sequence of single edges will be called a chain.
@@ -18,14 +134,53 @@
   In a chain, the indices of two adjacent edges must be consecutive.
 \end{proposition}
 
+\begin{proof}
+  currently the situation is this graph
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)  {a};
+          \node (2)  at (2,0)  {b};
+          \node (3)  at (4,0)  {c};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (2)  edge node {$j$} (3);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If $i$ and $j$ are not consecutive, the graph obtained from the permutation representation graph where only the $\rho_i$ and $\rho_j$ edges are kept must only form the patterns displayed in Property~\ref{intersection-patterns}.
+
+  \paragraph{}
+  The pattern the graph cannot form fixed points, distinct single edges or a double edge. Thus the only remaining pattern of Property~\ref{intersection-patterns} is the alternating square. But if those two edges are part of an alternating square, there are no more single edges and thus they does not form a chain which is a contradiction.
+
+  \paragraph{}
+  Thus in a chain, the indices must be consecutive.
+\end{proof}
+
 \section{Multiple edge}
 
-\begin{notation}
-  A double edge between involution $\rho_i$ and $\rho_j$ will be denoted $(\rho_i, \rho_j)$.
-\end{notation}
+\begin{proposition}
+  A multiple edge with multiplicity three or more cannot be connected to a single edge\footnote{Unused}.
+\end{proposition}
+
+\begin{proof}
+\end{proof}
 
 \begin{proposition}
-  A double edge cannot be adjacent to either an alternating square or another double edge.
+  A double edge cannot be adjacent to either an alternating square or another double edge\footnote{Unused}.
 \end{proposition}
 
 \begin{definition}
