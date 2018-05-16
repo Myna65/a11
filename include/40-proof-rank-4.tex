@@ -7,7 +7,7 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
 \section{Preliminary results}
 
 \begin{theorem}
-  Neither $\rho_1$ nor $\rho_2$ can be 2-transposition.
+  Neither $\rho_1$ nor $\rho_2$ can be a 2-transposition.
 \end{theorem}
 
 \begin{proof}
@@ -17,10 +17,16 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
   \textbf{$\rho_0$ is a 4-transposition}
 
   \paragraph{}
-  If the $\rho_0$ edge are single edges or are part of double edges they needs one $\rho_1$ edge each to be connected to the graph\footnote{More precise}. But that is impossible because there are only two of them. Thus the $\rho_0$ edges must be part of an alternating square.
+  If the $\rho_0$ edge are not part of any alternating square, by Lemma~\ref{rho0AtEnd}, they needs one $\rho_1$ edge each to be connected to the graph. But that is impossible because there are only two $\rho_1$ edge for four $\rho_0$ edges. Thus the $\rho_0$ edges must be part of an alternating square and moreover no $\rho_1$ edges can be part of an alternating square except if all $\rho_0$ edges are part of an alternating square.
 
   \paragraph{}
-  The distance between the indices of the alternating square must be 2\footnote{to do}. Thus there are two alternating square $[\rho_0, \rho_2]$ and $\rho_2$ is a 4-transposition. Each square must be connected to the rest of the graph by a $\rho_1$ edge. Now all $\rho_0, \rho_1$ and $\rho_2$ edge have been used but the graph is not connected and there are only $\rho_3$ edges that cannot connected two distincit components.
+  There are multiple possibilities for the square: $[\rho_0, \rho_1]$, $[\rho_0, \rho_2]$ and $[\rho_0, \rho_3]$. The first possibility contains a $\rho_1$ edge and thus is impossible. If the alternating square is $[\rho_0, \rho_3]$, it must still be part of a sequence of alternating square. And the adjacent alternating square can be $[\rho_0, \rho_2]$ or $[\rho_1, \rho_3]$. The last case is not possible because it contains a $\rho_1$ edge.
+
+  \paragraph{}
+  Thus an alternating square must be $[\rho_0, \rho_2]$, this alternating square can be extended into a sequence. The possible adjacent alternating squares are $[\rho_1, \rho_2], [\rho_0, \rho_1]$ and $[\rho_0, \rho_3]$. The sequence cannot be extended twice in the same direction, and if it is extended once on both side, it cannot be connected to anything. Thus no $\rho_1$ edges can be part of an alternating square. The only possibility is the last one: $[\rho_0, \rho_3]$.
+
+  \paragraph{}
+  If the sequence is not extended.\footnote{Continue}
 
   \paragraph{}
   \textbf{$\rho_3$ is a 4-transposition}
@@ -34,22 +40,22 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
 We start by proving some lemmas that are used when there are used for the cases with three or four 4-transpositions. We suppose in the following proofs that if there is a 2-transition, then it is $\rho_0$. This can be done with the previous theorem and by using the duality.
 
 \begin{lemma}
-  In a sggi $\Gamma$ of rank 4 on $A_{11}$ with at least three 4-transpositions, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge).
+  Let $\Gamma$ be a sggi of rank 4 on $A_{11}$ in which $\rho_1, \rho_2$ and $\rho_3$ are 4-transpositions, in the permutation representation graph of $\Gamma_{\rho_1, \rho_3}$, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge).
 \end{lemma}
 
 \begin{proof}
-  By Lemma~\ref{adjacent-must-not-commute}, a $\rho_0$ must be adjacent to a $\rho_1$ edge. The $\rho_1$ can be a single edge, a double edge with another involution or on an alternating square.
+  By Lemma~\ref{adjacent-must-not-commute}, a $\rho_0$ must be adjacent to a $\rho_1$ edge. The $\rho_1$ can be a single edge, a double edge with another involution or on an alternating square in $\Gamma_{\rho_1, \rho_3}$.
 
   \paragraph{}
-  If the $\rho_1$ edge is part of a double edge then the other involution of this double edge can be $\rho_2$ or $\rho_3$. But if the $\rho_0$ and $\rho_1$ do not commute then $\rho_0$ does not commute with the other involution and this is a contradiction with Proposition~\ref{intersection-patterns}.
+  If the $\rho_1$ edge is part of a double edge $(\rho_1, \rho_3)$. But if the $\rho_0$ and $\rho_1$ do not commute then $\rho_0$ does not commute with $\rho_3$ and this is a contradiction with Proposition~\ref{intersection-patterns}.
 
   \paragraph{}
-  If $\rho_1$ is on an alternating square, the same occurs\footnote{More precise}.
+  If $\rho_1$ is on an alternating square $[\rho_1, \rho_3]$, the same occurs.
 
 \end{proof}
 
 \begin{lemma}
-  There cannot be more than one $\rho_1$ single edge and thus there cannot be more than one $\rho_3$ single edge.
+    If $\Gamma$ is a sggi of rank 4 on $A_{11}$ in which $\rho_1, \rho_2$ and $\rho_3$ are 4-transpositions, there cannot be more than one $\rho_1$ single edge and thus there cannot be more than one $\rho_3$ single edge in the graph of $\Gamma_{\rho_1, \rho_3}$.
 \end{lemma}
 
 \begin{proof}
@@ -58,36 +64,36 @@ We start by proving some lemmas that are used when there are used for the cases 
 
 \begin{corollary}
   \label{rank-4-single-1}
-  There are exactly one $\rho_1$ single edge and one $\rho_3$ single edge.
+    If $\Gamma$ is a sggi of rank 4 on $A_{11}$ in which $\rho_1, \rho_2$ and $\rho_3$ are 4-transpositions, there are exactly one $\rho_1$ single edge and one $\rho_3$ single edge in the graph of $\Gamma_{\rho_1, \rho_3}$.
 \end{corollary}
 
 \begin{lemma}
   \label{rank-4-3-patterns}
-  Let $\Gamma$ be a sggi of rank 4 on 11 points. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).
+  Let $\Gamma$ be a sggi of rank 4 that generate $A_{11}$. If $\rho_1$, $\rho_2$ and $\rho_3$ are 4-transpositions then the patterns formed by $\rho_1$ and $\rho_3$ edges are one alternating square, one double edge and two simple edges (one for each involution).
 \end{lemma}
 
 \begin{proof}
   By Corollary~\ref{rank-4-single-1} there is exactly one $\rho_1$ single edge. The remaining possibilities for the three remaining edges of $\rho_1$ are limited: one alternating square $[\rho_1, \rho_3]$ and one double edge $(\rho_1, \rho_3)$ or three double edges $(\rho_1, \rho_3)$.
 
   \paragraph{}
-  Suppose that there are three double edges.
+  Suppose that there are three double edges. A $\rho_0$ edge must be placed next to the $\rho_1$ single edge.
 
     \begin{figure}[H]
       \begin{center}
         \begin{tikzpicture}[scale=.8]
 
           \begin{scope}[every node/.style={circle,draw}]
-            \node (1)  at (0,0)  {};
-            \node (2)  at (2,0)  {};
-            \node (3)  at (4,0)  {};
-            \node (4)  at (6,0) {};
-            \node (5)  at (8,0)  {};
-            \node (6)  at (10,0)  {};
-            \node (7)  at (12,0)  {};
-            \node (8)  at (14,0)  {};
-            \node (9)  at (16,0)  {};
-            \node (10) at (18,0)  {};
-            \node (11) at (20,0)  {};
+            \node (1)  at (0,0)   {a};
+            \node (2)  at (2,0)   {b};
+            \node (3)  at (4,0)   {c};
+            \node (4)  at (6,0)   {d};
+            \node (5)  at (8,0)   {e};
+            \node (6)  at (10,0)  {f};
+            \node (7)  at (12,0)  {g};
+            \node (8)  at (14,0)  {h};
+            \node (9)  at (16,0)  {i};
+            \node (10) at (18,0)  {j};
+            \node (11) at (20,0)  {k};
           \end{scope}
 
           \begin{scope}[every node/.style={fill=white}]
@@ -111,5 +117,5 @@ We start by proving some lemmas that are used when there are used for the cases 
     \end{figure}
 
   \paragraph{}
-  By~\ref{todo}\footnote{Not complete}, no other $\rho_0$ edge can be placed.
+  Now no $\rho_0$ edge can be connected to any point without being in an alternating square but there are three $\rho_0$ edges remaining, thus there must be two adjacent squares but that is impossible because there is not two chain of length at least 3. 
 \end{proof}
