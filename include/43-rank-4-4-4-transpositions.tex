@@ -122,64 +122,12 @@
   \end{figure}
 
   \paragraph{}
-  Also by Lemma~\ref{rank-4-3-patterns}, we know that $\rho_0$ and $\rho_2$ must commute.
+  Also by Lemma~\ref{rank-4-3-patterns}, we know that $\rho_0$ and $\rho_2$ must commute. Thus there are at least two alternating square. There are somme possibilities for the relations between both squares.
+
+  \textbf{No share}
 
   \paragraph{}
-  The alternating square $[\rho_0, \rho_2]$ cannot be adjacent to the alternating square on points $\{a,b,c,d\}$
-
-  \paragraph{}
-  By the same argument but for the dual, a $\rho_2$ edge must be placed between an single $\rho_3$ edge and a fixed point when removing all $\rho_1$ edge. The only fixed point for $\rho_0$ and $\rho_3$ is $j$. Thus this edge must go from $j$ to one single $\rho_3$ when removing $\rho_1$ edge.
-
-  \paragraph{}
-  Now we can apply this trick one last time. There must be a $\rho_2$ edge adjacent to a $\rho_1$ edge and that does not form one pattern of~\ref{intersection-patterns}. Thus one $\rho_2$ edge must link
-
-  \paragraph{}
-  But the only unplaced involution will be $\rho_2$. Therefore all connected components need to be able to be connected by a $\rho_2$ component.
-
-  \paragraph{}
-  The two squares need to be adjacent\footnote{TO DO}.
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (2,2)  {};
-          \node (3)  at (0,0)  {};
-          \node (4)  at (2,0)  {};
-          \node (5)  at (4,2)  {};
-          \node (6)  at (4,0)  {};
-          \node (7)  at (8,2)  {};
-          \node (8)  at (8,0)  {};
-          \node (9)  at (6,2)  {};
-          \node (10) at (6,0)  {};
-          \node (11) at (10,2) {};
-        \end{scope}
-
-        \begin{scope}[every node/.style={fill=white}]
-
-          \begin{scope}[every edge/.style={draw}]
-            \path (2)  edge node {$0$} (5);
-            \path (4)  edge node {$0$} (6);
-            \path (7)  edge node {$0$} (11);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend right=30] node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (1)  edge node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend left=30] node {$3$} (6);
-            \path (9)  edge node {$3$} (10);
-          \end{scope}
-        \end{scope}
-
-      \end{tikzpicture}
-      \caption{}
-    \end{center}
-  \end{figure}
-
-  \paragraph{}
-  The double edge cannot be the single $\rho_3$ because it will be part of an alternating square but that is impossible\footnote{TO DO}.
+  In this case, both square already use eight points.
 
   \begin{figure}[H]
     \begin{center}
@@ -187,177 +135,29 @@
 
         \begin{scope}[every node/.style={circle,draw}]
           \node (1)  at (0,2)  {};
-          \node (2)  at (2,2)  {};
-          \node (3)  at (0,0)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
           \node (4)  at (2,0)  {};
-          \node (5)  at (4,2)  {};
-          \node (6)  at (4,0)  {};
-          \node (7)  at (8,2)  {};
-          \node (8)  at (8,0)  {};
-          \node (9)  at (6,2)  {};
-          \node (10) at (6,0)  {};
-          \node (11) at (10,2) {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0) {};
+          \node (9)  at (10,2) {};
+          \node (10) at (12,0) {};
+          \node (11) at (12,2) {};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white}]
 
           \begin{scope}[every edge/.style={draw}]
-            \path (2)  edge node {$0$} (5);
-            \path (4)  edge node {$0$} (6);
-            \path (1)  edge[bend right=30] node {$0$} (3);
-            \path (7)  edge node {$0$} (11);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend right=30] node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (1)  edge[bend left=30] node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend left=30] node {$3$} (6);
-            \path (9)  edge node {$3$} (10);
-          \end{scope}
-        \end{scope}
-
-      \end{tikzpicture}
-      \caption{}
-    \end{center}
-  \end{figure}
-
-  \paragraph{}
-  It is impossible to link the component on the right to anything with a $\rho_2$ edge without using an alternating square. The involution $\rho_3$ must not be in the new alternating square. There are two places for a square with $\rho_3$ but it is impossible on the right because all $\rho_1$ edges have already been used. And it is impossible on the left because a $\rho_0$ and $\rho_2$ cannot share an edge without an alternating square.
-
-  \paragraph{}
-  It is not possible to used $\rho_1$ in the square because a $\rho_0$ and $\rho_2$ edge will be adjacent. The $\rho_0$ must be used.
-
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (2,2)  {};
-          \node (3)  at (0,0)  {};
-          \node (4)  at (2,0)  {};
-          \node (5)  at (4,2)  {};
-          \node (6)  at (4,0)  {};
-          \node (7)  at (4,-2)  {};
-          \node (8)  at (6,-2)  {};
-          \node (9)  at (6,2)  {};
-          \node (10) at (6,0)  {};
-          \node (11) at (2,-2) {};
-        \end{scope}
-
-        \begin{scope}[every node/.style={fill=white}]
-
-          \begin{scope}[every edge/.style={draw}]
-            \path (2)  edge node {$0$} (5);
-            \path (4)  edge node {$0$} (6);
-            \path (1)  edge[bend right=30] node {$0$} (3);
-            \path (7)  edge node {$0$} (11);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend right=30] node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (4)  edge node {$2$} (11);
-            \path (6)  edge node {$2$} (7);
-            \path (1)  edge[bend left=30] node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend left=30] node {$3$} (6);
-            \path (9)  edge node {$3$} (10);
-          \end{scope}
-        \end{scope}
-
-      \end{tikzpicture}
-      \caption{}
-    \end{center}
-  \end{figure}
-
-  \paragraph{}
-  It still impossible to link the single $\rho_3$ by an alternating square. It must be linked by a single edge. There is single attach point.
-
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (2,2)  {};
-          \node (3)  at (0,0)  {};
-          \node (4)  at (2,0)  {};
-          \node (5)  at (4,2)  {};
-          \node (6)  at (4,0)  {};
-          \node (7)  at (4,-2)  {};
-          \node (8)  at (6,-2)  {};
-          \node (9)  at (6,2)  {};
-          \node (10) at (6,0)  {};
-          \node (11) at (2,-2) {};
-        \end{scope}
-
-        \begin{scope}[every node/.style={fill=white}]
-
-          \begin{scope}[every edge/.style={draw}]
-            \path (2)  edge node {$0$} (5);
-            \path (4)  edge node {$0$} (6);
-            \path (1)  edge[bend right=30] node {$0$} (3);
-            \path (7)  edge node {$0$} (11);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend right=30] node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (4)  edge node {$2$} (11);
-            \path (6)  edge node {$2$} (7);
-            \path (8)  edge node {$2$} (10);
-            \path (1)  edge[bend left=30] node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend left=30] node {$3$} (6);
-            \path (9)  edge node {$3$} (10);
-          \end{scope}
-        \end{scope}
-
-      \end{tikzpicture}
-      \caption{}
-    \end{center}
-  \end{figure}
-
-  \paragraph{}
-  The is a single place for the last $\rho_0$ edge.
-
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (2,2)  {};
-          \node (3)  at (0,0)  {};
-          \node (4)  at (2,0)  {};
-          \node (5)  at (4,2)  {};
-          \node (6)  at (4,0)  {};
-          \node (7)  at (4,-2)  {};
-          \node (8)  at (6,-2)  {};
-          \node (9)  at (6,2)  {};
-          \node (10) at (6,0)  {};
-          \node (11) at (2,-2) {};
-        \end{scope}
-
-        \begin{scope}[every node/.style={fill=white}]
-
-          \begin{scope}[every edge/.style={draw}]
-            \path (2)  edge node {$0$} (5);
-            \path (4)  edge node {$0$} (6);
-            \path (1)  edge[bend right=40] node {$0$} (3);
-            \path (7)  edge node {$0$} (11);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend right=30] node {$1$} (6);
-            \path (7)  edge node {$1$} (8);
-            \path (4)  edge node {$2$} (11);
-            \path (6)  edge node {$2$} (7);
-            \path (8)  edge node {$2$} (10);
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
             \path (1)  edge node {$2$} (3);
-            \path (1)  edge[bend left=40] node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend left=30] node {$3$} (6);
-            \path (9)  edge node {$3$} (10);
+            \path (2)  edge node {$2$} (4);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
           \end{scope}
         \end{scope}
 
@@ -366,14 +166,544 @@
     \end{center}
   \end{figure}
 
-  \begin{theorem}
-    This sggi is not a C-group
-  \end{theorem}
+  \paragraph{}
+  If a square is extended in a sequence this sequence cannot have a length bigger than two because there are not enough points. Suppose that this square is $[\rho_0, \rho_2]$, the new square must left one $\rho_1$ and one $\rho_3$ edge to link the two squares together. Thus the new square must be $[\rho_0, \rho_3]$.
 
-  \begin{proof}
-    TO DO
-  \end{proof}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (-2,0) {};
+          \node (6)  at (-2,2) {};
+          \node (7)  at (4,0)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (6,2)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (8,2)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (1)  edge node {$3$} (6);
+            \path (2)  edge node {$3$} (5);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Now we must connect the two square together using one $\rho_1$ and one $\rho_2$ edge.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {d};
+          \node (2)  at (0,0)  {c};
+          \node (3)  at (2,2)  {e};
+          \node (4)  at (2,0)  {f};
+          \node (5)  at (-2,0) {a};
+          \node (6)  at (-2,2) {b};
+          \node (7)  at (4,0)  {g};
+          \node (8)  at (6,0)  {h};
+          \node (9)  at (6,2)  {i};
+          \node (10) at (8,0)  {j};
+          \node (11) at (8,2)  {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
+            \path (4)  edge node {$1$} (7);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (7)  edge node {$2$} (8);
+            \path (1)  edge node {$3$} (6);
+            \path (2)  edge node {$3$} (5);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  The last $\rho_0$ edge must be placed on $(j,k)$. But there no available position for the last $\rho_1$ edge. Thus this does not lead to any valid sggi.
+
+  \textbf{All vertices shared}
+
+  \paragraph{}
+  If all vertices are shared then, the square cannot be connected.
+
+  \textbf{Two vertices shared}
+
+  The
+
+  \textbf{One vertex shared}
+
+  \paragraph{}
+  If one vertex is shared, then a rotation pattern must be used between the two square (see Proposition~\ref{rotation-pattern}).
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {c};
+          \node (2)  at (0,0)  {b};
+          \node (3)  at (0,-2) {a};
+          \node (4)  at (2,2)  {f};
+          \node (5)  at (2,0)  {e};
+          \node (6)  at (2,-2) {d};
+          \node (7)  at (4,2)  {h};
+          \node (8)  at (4,0)  {g};
+          \node (9)  at (6,0)  {i};
+          \node (10) at (8,0)  {j};
+          \node (11) at (10,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (1)  edge node {$3$} (4);
+            \path (2)  edge node {$3$} (5);
+            \path (3)  edge node {$3$} (6);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  But we need to place all the other patterns deduces from the usages of~\ref{rank-4-3-patterns}. But the edge $(b,c)$ or $(c,f)$ can be used to form those pattern. First we suppose that both are single edges and then we we see the case where one of the edge is a double edge.
+
+  \paragraph{}
+  Both two double edges cannot be placed on vertices $i,j,k$. Thus one double edge must share a vertex with an alternating square. But then it must be inside this alternating square. Suppose that this edge is $(\rho_0, \rho_2)$ (using $(\rho_0, \rho_3)$ gives the same situation up to duality), it must not use any other vertex already used by an edge $\rho_0$ or $\rho_2$. The only possibility is $(a,d)$. If the other double edge is placed in this component, on $(g,h)$ then this component cannot be connected to anything and thus the graph can not be connected.
+
+  \paragraph{}
+  Now the component $\{a,b,c,d,e,f,g,h\}$ can not be extended by $a$ or $b$. If it is extended on $g$ and $h$ then there is no more free vertices for the double edges $(\rho_1, \rho_3)$, thus it must be placed on the big component but then this component cannot be extended by previous statement.
+
+  \paragraph{}
+  The double edge $(\rho_1, \rho_3)$ must be on the three remaining points. This edge must be connected to a $\rho_2$ edge. But this $\rho_2$ edge cannot have its other vertex in the big component.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {c};
+          \node (2)  at (0,0)  {b};
+          \node (3)  at (0,-2) {a};
+          \node (4)  at (2,2)  {f};
+          \node (5)  at (2,0)  {e};
+          \node (6)  at (2,-2) {d};
+          \node (7)  at (4,2)  {h};
+          \node (8)  at (4,0)  {g};
+          \node (9)  at (6,0)  {i};
+          \node (10) at (8,0)  {j};
+          \node (11) at (10,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=45] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (10) edge[bend left=30] node {$1$} (11);
+            \path (3)  edge node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+            \path (1)  edge node {$3$} (4);
+            \path (2)  edge node {$3$} (5);
+            \path (3)  edge[bend right=45] node {$3$} (6);
+            \path (10) edge[bend right=30] node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Because the sequence of alternating squares cannot be extended, a single $\rho_1$ edge must connect either $g$ or $h$ to the fixed point $i$. That gives us two graphs:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (0,-2) {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (2,0)  {};
+          \node (6)  at (2,-2) {};
+          \node (7)  at (4,2)  {};
+          \node (8)  at (4,0)  {};
+          \node (9)  at (6,0)  {};
+          \node (10) at (8,0)  {};
+          \node (11) at (10,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=45] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (8)  edge node {$1$} (9);
+            \path (10) edge[bend left=30] node {$1$} (11);
+            \path (3)  edge node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+            \path (1)  edge node {$3$} (4);
+            \path (2)  edge node {$3$} (5);
+            \path (3)  edge[bend right=45] node {$3$} (6);
+            \path (10) edge[bend right=30] node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (0,-2) {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (2,0)  {};
+          \node (6)  at (2,-2) {};
+          \node (7)  at (4,2)  {};
+          \node (8)  at (4,0)  {};
+          \node (9)  at (6,2)  {};
+          \node (10) at (8,2)  {};
+          \node (11) at (10,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=45] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (9);
+            \path (10) edge[bend left=30] node {$1$} (11);
+            \path (3)  edge node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+            \path (1)  edge node {$3$} (4);
+            \path (2)  edge node {$3$} (5);
+            \path (3)  edge[bend right=45] node {$3$} (6);
+            \path (10) edge[bend right=30] node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Now we prove that both of those graphs are string C-group representations of $A_{11}$. To prove this, remove the $\rho_3$ edge, both graphs becomes:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (-6,0) {c};
+          \node (2)  at (-4,0) {b};
+          \node (3)  at (-2,0) {a};
+          \node (4)  at (2,2)  {f};
+          \node (5)  at (2,0)  {e};
+          \node (6)  at (0,0)  {d};
+          \node (7)  at (4,2)  {h};
+          \node (8)  at (4,0)  {g};
+          \node (9)  at (6,0)  {i};
+          \node (10) at (8,0)  {j};
+          \node (11) at (10,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=30] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (8)  edge node {$1$} (9);
+            \path (10) edge node {$1$} (11);
+            \path (3)  edge[bend right=30] node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (-6,0) {};
+          \node (2)  at (-4,0) {};
+          \node (3)  at (-2,0) {};
+          \node (4)  at (2,2)  {};
+          \node (5)  at (2,0)  {};
+          \node (6)  at (0,0)  {};
+          \node (7)  at (4,2)  {};
+          \node (8)  at (4,0)  {};
+          \node (9)  at (6,2)  {};
+          \node (10) at (8,2)  {};
+          \node (11) at (10,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=30] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (9);
+            \path (10) edge node {$1$} (11);
+            \path (3)  edge[bend right=30] node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  As usual, only the first case is proved and the other are left to the reader.
+
+  \paragraph{}
+  The group displayed is transitive because the graph is connected. Furthermore it is to transitive, to prove that, we must find permutations that keep $c$ fixed and that send $b$ to any other unfixed points. However $c$ keep fixed if no $\rho_0$ edge are used, thus $b$ can be easily send to $a,d,e,g,i,j,k$ while keeping $c$ fixed. Now we only need to find a permutation that send $c$ fixed and that send $b$ to $f$ or $h$. This permutation is $(\rho_1\rho_2)^3\rho_0\rho_1\rho_2\rho_0\rho_1\rho_0$.
+
+  \paragraph{}
+  The group is 2-transitive thus primitive. Its order is a multiple of $11 \times 10$ and of the order of the subgroups: $D_{12}$ and $D_{16}$. The order is thus a multiple of $11 \times 5 \times 3 \times 2^4 = 2640$. By looking at the primitive groups of degree 11 in~\cite{buekenhout1996list}, there is only three possible groups: $M_{11}$, $A_{11}$ and $S_{11}$. The first can be eliminated because $D_{16}$ is not one of its subgroup, $S_{11}$ contains odd permutations but the graph only contains even generators and thus cannot generate $S_{11}$.
+
+  \paragraph{}
+  The only solution is $A_{11}$. But if $\Gamma_{\rho_0, \rho_1, \rho_2} = \Gamma = A_{11}$, then $\Gamma$ cannot satisfies the intersection property by~\ref{todo}.
+
+  \paragraph{}
+  The last possibility is to move the double edge on $(c,d)$. The graph is this one:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {c};
+          \node (2)  at (0,0)  {b};
+          \node (3)  at (0,-2) {a};
+          \node (4)  at (2,2)  {f};
+          \node (5)  at (2,0)  {e};
+          \node (6)  at (2,-2) {d};
+          \node (7)  at (4,2)  {h};
+          \node (8)  at (4,0)  {g};
+          \node (9)  at (6,0)  {i};
+          \node (10) at (8,0)  {j};
+          \node (11) at (10,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=45] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (1)  edge[bend left=30] node {$1$} (4);
+            \path (3)  edge node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (1)  edge[bend right=30] node {$3$} (4);
+            \path (2)  edge node {$3$} (5);
+            \path (3)  edge[bend right=45] node {$3$} (6);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  There are 16 edges to link 11 vertices, thus we have 6 "joker" edges. But we built three alternating square and three double edges and thus all of them have been used. All new edges must link two differents components.
+
+  \paragraph{}
+  The component big component can only be linked by a $\rho_1$ edge from $g$ or $h$. Then there are a $\rho_2$ and a $\rho_3$ edge remaining and thus the possible graphs are:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {c};
+          \node (2)  at (0,0)  {b};
+          \node (3)  at (0,-2) {a};
+          \node (4)  at (2,2)  {f};
+          \node (5)  at (2,0)  {e};
+          \node (6)  at (2,-2) {d};
+          \node (7)  at (4,2)  {h};
+          \node (8)  at (4,0)  {g};
+          \node (9)  at (6,0)  {i};
+          \node (10) at (8,0)  {j};
+          \node (11) at (10,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=45] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (8)  edge node {$1$} (9);
+            \path (1)  edge[bend left=30] node {$1$} (4);
+            \path (3)  edge node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+            \path (1)  edge[bend right=30] node {$3$} (4);
+            \path (2)  edge node {$3$} (5);
+            \path (3)  edge[bend right=45] node {$3$} (6);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {c};
+          \node (2)  at (0,0)  {b};
+          \node (3)  at (0,-2) {a};
+          \node (4)  at (2,2)  {f};
+          \node (5)  at (2,0)  {e};
+          \node (6)  at (2,-2) {d};
+          \node (7)  at (4,2)  {h};
+          \node (8)  at (4,0)  {g};
+          \node (9)  at (6,2)  {i};
+          \node (10) at (8,2)  {j};
+          \node (11) at (10,2) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=45] node {$0$} (6);
+            \path (4)  edge node {$0$} (5);
+            \path (7)  edge node {$0$} (8);
+            \path (2)  edge node {$1$} (3);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (9);
+            \path (1)  edge[bend left=30] node {$1$} (4);
+            \path (3)  edge node {$2$} (6);
+            \path (4)  edge node {$2$} (7);
+            \path (5)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+            \path (1)  edge[bend right=30] node {$3$} (4);
+            \path (2)  edge node {$3$} (5);
+            \path (3)  edge[bend right=45] node {$3$} (6);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
 
+\end{proof}
 
+\begin{theorem}
+  This sggi is not a C-group
+\end{theorem}
+
+\begin{proof}
+  TO DO
 \end{proof}
