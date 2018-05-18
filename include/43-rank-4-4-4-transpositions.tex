@@ -122,8 +122,105 @@
   \end{figure}
 
   \paragraph{}
-  Also by Lemma~\ref{rank-4-3-patterns}, we know that $\rho_0$ and $\rho_2$ must commute. Thus there are at least two alternating squares. There are some possibilities for the relations between both squares.
+  Also by Lemma~\ref{rank-4-3-patterns}, $\rho_0$ and $\rho_2$ must form the same patterns. Thus there are at least two alternating squares. There are some possibilities for the relations between both squares.
 
+  \textbf{All vertices shared}
+
+  \paragraph{}
+  If all vertices are shared then, the square cannot be connected.
+
+  \textbf{Two vertices shared}
+
+  In this case, there is a single possible graph by Proposition~\ref{linear-pattern}:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)  {a};
+          \node (2)  at (0,2)  {b};
+          \node (3)  at (2,0)  {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (4,2)  {f};
+          \node (7)  at (6,0)  {g};
+          \node (8)  at (8,0)  {h};
+          \node (9)  at (10,0) {i};
+          \node (10) at (12,0) {j};
+          \node (11) at (14,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=30] node {$0$} (4);
+            \path (3)  edge node {$1$} (5);
+            \path (4)  edge node {$1$} (6);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (3)  edge[bend right=30] node {$3$} (4);
+            \path (5)  edge node {$3$} (6);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If the sequence is extended, the possible adjacent squares are $[\rho_0,\rho_3]$, $[\rho_2, \rho_3]$ or $[\rho_0, \rho_2]$\footnote{Not finished}.
+
+  \paragraph{}
+  If the sequence is not extended, one $\rho_2$ edge must connect the square to a fixed point (up to duality).
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)  {a};
+          \node (2)  at (0,2)  {b};
+          \node (3)  at (2,0)  {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (4,2)  {f};
+          \node (7)  at (6,0)  {g};
+          \node (8)  at (8,0)  {h};
+          \node (9)  at (10,0) {i};
+          \node (10) at (12,0) {j};
+          \node (11) at (14,0) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=30] node {$0$} (4);
+            \path (3)  edge node {$1$} (5);
+            \path (4)  edge node {$1$} (6);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (5)  edge node {$2$} (7);
+            \path (3)  edge[bend right=30] node {$3$} (4);
+            \path (5)  edge node {$3$} (6);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Now, there are four points remaining. We can build and alternating square. This square must be $[\rho_1, \rho_3]$ but then there are two $\rho_0$ edge and no $\rho_1$. No new alternating square can be built because there not enough points. Thus that is impossible and no new square can be built.
+
+  \paragraph{}
+  No $\rho_0$ edge can be placed inside existing square and there are two $\rho_0$ edges remaining for one $\rho_1$ and thus by Proposition~\ref{rho0atEnd} the graph will never be completed.
+
+  \paragraph{}
   \textbf{No share}
 
   \paragraph{}
@@ -257,14 +354,138 @@
   \paragraph{}
   The last $\rho_0$ edge must be placed on $(j,k)$. But there no available position for the last $\rho_1$ edge. Thus this does not lead to any valid sggi.
 
-  \textbf{All vertices shared}
+  \paragraph{}
+  Thus none of the two alternating square can be extended. Thus they must be linked by a single edge.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0) {};
+          \node (9)  at (10,2) {};
+          \node (10) at (12,0) {};
+          \node (11) at (12,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (4)  edge node {$1$} (5);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
   \paragraph{}
-  If all vertices are shared then, the square cannot be connected.
+  There are three posiibilities to link both component a chain $\rho_0, \rho_1$, a chain $\rho_2, \rho_1$ or a chain $\rho_3, \rho_1$. The last case is the dual of the first case.
 
-  \textbf{Two vertices shared}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
 
-  The
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (6,0)  {f};
+          \node (7)  at (8,0)  {g};
+          \node (8)  at (10,0) {h};
+          \node (9)  at (10,2) {i};
+          \node (10) at (12,0) {j};
+          \node (11) at (12,2) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (4)  edge node {$1$} (5);
+            \path (6)  edge node {$1$} (7);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,0)  {e};
+          \node (6)  at (6,0)  {f};
+          \node (7)  at (8,0)  {g};
+          \node (8)  at (10,0) {h};
+          \node (9)  at (10,2) {i};
+          \node (10) at (12,0) {j};
+          \node (11) at (12,2) {k};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (4)  edge node {$1$} (5);
+            \path (6)  edge node {$1$} (7);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (5)  edge node {$2$} (6);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  In both graphs, a $\rho_0$ edge can be placed on $(j,k)$ and a $\rho_3$ edge on $(a,b)$ but in the first one, there is no possibility for the last $\rho_3$ edge. In the second graph the last $\rho_0$ edge must be placed on $(e,f)$ but the the last $\rho_3$ cannot be placed on $(f,g)$ and thus can not be placed.
+
+  \paragraph{}
+  This conclude this part of the proof.
 
   \textbf{One vertex shared}
 

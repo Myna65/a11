@@ -2,7 +2,7 @@
 \label{Properties}
 
 \paragraph{}
-In this chapter we discuss the implications of what we have seen in the previous chapter. The implications of Property~\ref{intersection-patterns} on the possible permutation representation graphs. We start with a direct consequence of the definition of a permutation representation graph.
+In this chapter we discuss the implications of what we have seen in the previous chapter, in particular the implications of Property~\ref{intersection-patterns}. We start with a direct consequence of the definition of a permutation representation graph.
 
 \begin{proposition}
   \label{fixed-only-1}
@@ -10,7 +10,7 @@ In this chapter we discuss the implications of what we have seen in the previous
 \end{proposition}
 
 \begin{proof}
-  Here is one graph of the situation
+  Here is one graph of this situation:
 
   \begin{figure}[H]
     \begin{center}
@@ -36,11 +36,11 @@ In this chapter we discuss the implications of what we have seen in the previous
   \end{figure}
 
   \paragraph{}
-  If a such graph exist then, by definition of a permutation representation graph, because there is an edge labeled with $i$ between $a$ and $b$, then this mean that $a \rho_i = b$ and $b \rho_i = a$. But there is also an edge labeled with $i$ between $b$ and $c$, thus $b \rho_i = c$ and $c \rho_i = b$. There is a contradiction because $a = b \rho_i = c$ but $a \neq c$. Thus this graph is impossible.
+  If a such graph exists, there is an edge labeled with $i$ between $a$ and $b$ thus, by definition of a permutation representation graph, $a \rho_i = b$ and $b \rho_i = a$. There is also an edge labeled with $i$ between $b$ and $c$, thus $b \rho_i = c$ and $c \rho_i = b$. There is a contradiction because $a = b \rho_i = c$ but $a \neq c$. Thus this graph is impossible.
 \end{proof}
 
 \paragraph{}
-First we define three patterns that are used in the construction of the permutation representation graphs.
+We define three patterns that are used in the construction of permutation representation graphs.
 
 \section{Definitions}
 \begin{definition}[Alternating square]
@@ -74,10 +74,10 @@ First we define three patterns that are used in the construction of the permutat
   \end{figure}
 
   \paragraph{}
-  Additional edges can be present on the permutation representation graph, if there exists 4 edges and 4 vertices that form the previous graph, then there is an alternating square.
+  Additional edges can be present on the permutation representation graph even between vertices of the alternating square.
 
   \paragraph{}
-  This alternating square is denoted $[\rho_i, \rho_j]$
+  This alternating square is denoted $[\rho_i, \rho_j]$.
 \end{definition}
 
 \begin{definition}[Multiple edge]
@@ -113,8 +113,13 @@ First we define three patterns that are used in the construction of the permutat
 \end{definition}
 
 \begin{definition}[Single edge]
+  \label{single-edge}
+  \index{single-edge}
   A single edge is a pair of vertices and an edge such that both vertices are not in the same alternating square or in the same multiple edge.
 \end{definition}
+
+\paragraph{}
+Note that the word "edge" conserves its original meaning in graph theory. We only define a special type of edge here.
 
 \paragraph{}
 Now we continue with the implications on the permutation representation graphs.
@@ -122,11 +127,14 @@ Now we continue with the implications on the permutation representation graphs.
 \section{Single edge}
 
 \begin{definition}
-  An edge (simple or multiple) is called adjacent to another pattern if they share exactly one vertex.
+  An edge (single or multiple) is called adjacent to another pattern if they share exactly one vertex.
 \end{definition}
 
+\paragraph{}
+If a single share more than one vertex with a given pattern then it not a single edge by the Definition~\ref{single-edge}.
+
 \begin{definition}
-  A sequence of single edges will be called a chain.
+  A sequence of adjacent single edges is called a chain.
 \end{definition}
 
 \begin{proposition}
@@ -135,7 +143,7 @@ Now we continue with the implications on the permutation representation graphs.
 \end{proposition}
 
 \begin{proof}
-  currently the situation is this graph
+  The situation is this graph:
 
   \begin{figure}[H]
     \begin{center}
@@ -164,7 +172,7 @@ Now we continue with the implications on the permutation representation graphs.
   If $i$ and $j$ are not consecutive, the graph obtained from the permutation representation graph where only the $\rho_i$ and $\rho_j$ edges are kept must only form the patterns displayed in Property~\ref{intersection-patterns}.
 
   \paragraph{}
-  The pattern the graph cannot form fixed points, distinct single edges or a double edge. Thus the only remaining pattern of Property~\ref{intersection-patterns} is the alternating square. But if those two edges are part of an alternating square, there are no more single edges and thus they does not form a chain which is a contradiction.
+  The pattern of the graph cannot form fixed points, distinct single edges or a double edge. Thus the only remaining pattern of Property~\ref{intersection-patterns} is the alternating square. But if those two edges are part of an alternating square, there are no more single edges and thus they does not form a chain which is a contradiction.
 
   \paragraph{}
   Thus in a chain, the indices must be consecutive.
@@ -173,24 +181,121 @@ Now we continue with the implications on the permutation representation graphs.
 \section{Multiple edge}
 
 \begin{proposition}
-  A multiple edge with multiplicity three or more cannot be connected to a single edge\footnote{Unused}.
+  A multiple edge with multiplicity three or more cannot be connected to a single edge.
 \end{proposition}
 
 \begin{proof}
-\end{proof}
+  Let $\Gamma$ be the graph representing the situation:
 
-\begin{proposition}
-  A double edge cannot be adjacent to either an alternating square or another double edge\footnote{Unused}.
-\end{proposition}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)  {a};
+          \node (2)  at (2,0)  {b};
+          \node (3)  at (4,0)  {c};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend left=45] node {$i$} (2);
+            \path (1)  edge node {$j$} (2);
+            \path (1)  edge[bend right=45] node {$k$} (2);
+            \path (2)  edge node {$l$} (3);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  In this situation $i,j,k$ and $l$ are different by Proposition~\ref{fixed-only-1}. Therefore there exists an edge, suppose $k$, such that $|k - l| > 1$. Thus $\rho_i$ and $\rho_l$ must commute. But there is a chain of length 2 with non consecutive indices in the graph $\Gamma_{\rho_i \rho_l}$ which is impossible by Proposition~\ref{chain-consecutive}.
+\end{proof}
 
 \begin{definition}
   A double edge is included into an alternating square if both vertices of the double edge are vertices of the alternating square.
 \end{definition}
 
 \begin{proposition}
-  \label{adjacent-double}
-  A double edge $(\rho_i, \rho_j)$ can only be adjacent to a simple edge if the difference between the indices of its edges is exactly 2. In this case the index of the single edge must be in the middle of the indices of the double edge i.e. if the index of the simple edge is $k$ then $|i-k| = 1$ and $|j-k| = 1$.
+  A multiple edge that is not included in an alternating square cannot be adjacent to either an alternating square or another double edge.
 \end{proposition}
+
+\begin{proof}
+  The proof of this proposition is similar to the previous one. Here is the graph $\Gamma$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)  {a};
+          \node (2)  at (0,2)  {b};
+          \node (3)  at (2,0)  {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,0)  {c};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge node {$i$} (4);
+            \path (1)  edge node {$j$} (3);
+            \path (2)  edge node {$j$} (4);
+            \path (3)  edge[bend left=30] node {$k$} (5);
+            \path (3)  edge[bend right=30] node {$l$} (5);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Here there exists a pair, suppose $j$ and $l$ such that $|j-l| > 1$. Thus, in $\Gamma_{\rho_j, \rho_l}$, there is a chain of length 2. An alternating square must thus be built but that is a contradiction.
+
+\end{proof}
+
+\begin{proposition}
+  \label{adjacent-double}
+  A double edge $(\rho_i, \rho_j)$ can only be adjacent to a single edge if the difference between the indices of its edges is exactly 2. In this case the index of the single edge must be in the middle of the indices of the double edge i.e. if the index of the single edge is $k$ then $|i-k| = 1$ and $|j-k| = 1$.
+\end{proposition}
+
+\begin{proof}
+  This can be clearly deduced from the graph:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)  {a};
+          \node (2)  at (2,0)  {b};
+          \node (3)  at (4,0)  {c};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend left=30] node {$i$} (2);
+            \path (1)  edge[bend right=30] node {$j$} (2);
+            \path (2)  edge node {$k$} (3);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  The indices $i$ and $k$ must be consecutive, but $k$ and $j$ must also be consecutive. That leads immedialtely to the conclusion.
+
+\end{proof}
 
 \begin{corollary}
   \label{continue-double-edge}
@@ -199,22 +304,18 @@ Now we continue with the implications on the permutation representation graphs.
 
 \begin{proposition}
   \label{continue-triple-edge}
-  A triple edge or a quadruple edge can only be connected to an alternating square.
+  A triple edge or a quadruple edge can only be connected if it is included in an alternating square.
 \end{proposition}
 
 \section{Alternating square}
 
-\begin{notation}
-  An alternating square between involutions $\rho_i$ and $\rho_j$ will be denoted $[\rho_i, \rho_j]$.
-\end{notation}
-
 \begin{proposition}
   \label{square-connection}
-  Given an alternating square $[\rho_i, \rho_j]$ a single edge can be adjacent to this square only if $|i - j| = 2$. In this case the index of the single edge will be in in the middle of the two indices i.e. if the index of the edge is $k$ then $|i-k| = 1$ and $|j-k| = 1$.
+  Given an alternating square $[\rho_i, \rho_j]$ a single edge can be adjacent to this square only if $|i - j| = 2$. In this case the index of the single edge is in in the middle of the two indices i.e. if the index of the edge is $k$ then $|i-k| = 1$ and $|j-k| = 1$.
 \end{proposition}
 
 \begin{definition}
-  Two alternating square are adjacent if they share two vertices.
+  Two alternating squares are adjacent if they share two vertices.
 \end{definition}
 
 \begin{proposition}
@@ -224,27 +325,27 @@ Now we continue with the implications on the permutation representation graphs.
 
 \begin{corollary}
   \label{continue-alternating-square}
-  If the difference between the indices of an alternating square is not 2, then it can only be adjacent to another alternating square.
+  If the difference between the indices of an alternating square is not 2, then this square must be adjacent to another alternating square.
 \end{corollary}
 
 \begin{corollary}
-  If two alternating square are adjacent, then the difference between the difference of the indices of the square is exactly 1.
+  If two alternating squares are adjacent, then the difference between the indices of the square is exactly 1\footnote{From here, it is not very clear until the end of the section}.
 \end{corollary}
 
 \paragraph{}
-Due to the fact that some alternating square must be adjacent to other one, we will study the sequence of alternating squares.
+Due to the fact that some alternating squares must be adjacent to other one, we study the sequence of alternating squares.
 
 \begin{corollary}
   \label{parity-sequence-squares}
-  If an alternating square in a sequence can be connected to a single edge then the number of square in the sequence before the next square with this property in sequence is odd.
+  If an alternating square in a sequence can be connected to a single edge then the number of squares in the sequence before the next square with this property in sequence is odd.
 \end{corollary}
 
 \paragraph{}
-There are a number a special patterns that achieve a given goal. Those pattern are unique.
+There is a number of special patterns that achieve a given goal. Those patterns are unique.
 
 \begin{proposition}
   \label{rotation-pattern}
-  The single rotation pattern is the following
+  The single rotation pattern is the following:
 
   \begin{figure}[H]
     \begin{center}
@@ -286,7 +387,7 @@ There are a number a special patterns that achieve a given goal. Those pattern a
 
 \begin{proposition}
   \label{linear-pattern}
-  The single linear pattern that allow to change the vertical index of the sequence is the following:
+  The single linear pattern that allows to change the vertical index of the sequence is the following:
 
   \begin{figure}[H]
     \begin{center}
@@ -332,10 +433,48 @@ There are a number a special patterns that achieve a given goal. Those pattern a
 
 \begin{proposition}
   \label{patterns-adding}
-  When adding edge of an involution $\rho_i$ to an existing permutation representation graph, for each $\rho_j$ that must commute with $\rho_i$, the following pattern are possible:
+  When adding edge of an involution $\rho_i$ to an existing permutation representation graph, for each $\rho_j$ that must commute with $\rho_i$, the following patterns are possible:
   \begin{enumerate}
-    \item Form an alternating square $[\rho_i, \rho_j]$
-    \item Double an existing $\rho_j$ edge and form a double edge $(\rho_i, \rho_j)$
-    \item Link two points fixed by $\rho_j$.
+    \item An alternating square $[\rho_i, \rho_j]$.
+    \item Two double edges $(\rho_i, \rho_j)$.
+    \item One double edge $(\rho_i, \rho_j)$ and a single edge between two points fixed by $\rho_j$.
   \end{enumerate}
 \end{proposition}
+
+\begin{proof}
+  This is a clear corollary of Property~\ref{intersection-patterns}.
+\end{proof}
+
+\paragraph{}
+In the next chapter we prove that there are no polytope of a given rank with automorphism group $A_{11}$. To do this we generate all the possible permutation representation graphs and then prove that, if a such graph exists, the graph is not a string C-group representation of $A_{11}$.
+
+\paragraph{}
+To generate all the possible permutation representation graphs we need a single and systematic method. We will use the following one.
+
+\begin{method}
+  \label{method}
+  This is a metho that we used when we want to find all string C-group representations of a given group ($A_{11}$ in our case).
+
+  \paragraph{}
+  To achieve this, we start by finding all permutation representation graphs. The following method is applied:
+
+  \begin{enumerate}
+    \item Choose an involution and draw the graph with only this involution.
+    \item Choose an other involution and use Lemma~\ref{patterns-adding} to create a list of start patterns.
+    \item Attach all vertices until the graph is connected. Extra edges can be placed during this step to satisfy various constraints.
+    \item Add remaining edges.
+  \end{enumerate}
+
+  \paragraph{}
+  Once this is done, we must check the sggi that we found is a monodromy group, i.e. that the generating set is free. Then this monodromy group must satisfy the intersection property and is thus a string C-group representation. Finally, we check that the string C-group is a representation of $A_{11}$ and not of one of its transitive subgroup.
+
+\end{method}
+
+\begin{lemma}
+  \label{rho0atEnd}
+  During the construction of a permutation representation graph of rank $r$ (i.e. the generators are $\rho_0, \dots, \rho_{r-1}$), if there are $r$ $\rho_0$ edges that are not placed and that none of the unplaced $\rho_0$ edges can be part of an alternating square, then there must be at least $n$ single $\rho_1$ edges in the final $\Gamma_{\rho_0, \rho_1}$.
+\end{lemma}
+
+\begin{proof}
+  Easy\footnote{todo}.
+\end{proof}

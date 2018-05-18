@@ -1,7 +1,7 @@
 \section{Two 4-transpositions}
 
 \paragraph{}
-If there are two 4-transpositions, there are 12 edges but the minimum number to link 11 points is 10. There are two "joker" edges. Thus there are three different possibilities for those "joker" edges: two double edges, one double edge and one alternating square or two alternating squares. We study this three cases.
+If there are two 4-transpositions, there are 12 edges but the minimum number to link 11 points is 10. So there are two "joker" edges. There are three different possibilities for those "joker" edges: two double edges, one double edge and one alternating square or two alternating squares. We study this three cases.
 
 \begin{lemma}
   If there are two double edges then they must be $(\rho_0, \rho_2)$ and $(\rho_1, \rho_3)$.
@@ -11,7 +11,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   If the difference between the indices of one alternating edge is not 2, this double must be adjacent to alternating square by Proposition~\ref{continue-double-edge}. But there are no alternating square, thus the difference of the indices must be 2. There are only two possibilities: $(\rho_0, \rho_2)$ and $(\rho_1, \rho_3)$
 
   \paragraph{}
-  If there are two double edges $(\rho_0, \rho_2)$, then all $\rho_0$ edges have been used and the graph is the following.
+  If there are two double edges $(\rho_0, \rho_2)$, then all $\rho_0$ edges have been used and the graph is the following:
 
   \begin{figure}[H]
     \begin{center}
@@ -47,7 +47,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  To connect the two $\rho_3$ edges, since no alternating square or double can be built, the $\rho_3$ edges must be surrounded by two $\rho_2$ edges by Lemma~\ref{rho0AtEnd}. Hence one $\rho_3$ edge must use one of the two ends of the graph.
+  To connect the two $\rho_3$ edges, since no alternating square or double can be built, the $\rho_3$ edges must be surrounded by two $\rho_2$ edges by Lemma~\ref{rho0atEnd}. Hence one $\rho_3$ edge must use one of the two ends of the graph.
 
   \paragraph{}
   Thus at least one double edge is not placed at one end of the graph and thus needs two $\rho_2$ edges to be connected. But the last double edge also needs at least one $\rho_2$ edge. And thus 5 $\rho_2$ edges are needed but that is impossible.
@@ -96,7 +96,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  The alternating square can only be connected by a $\rho_1$ edge. There are only two $\rho_2$ edges to link the two $\rho_3$ edges thus one of them must be at the end of a branch of the graph. This $\rho_3$ edge must be connected by a $\rho_2$ edge and this last edge can be connected to the $\rho_1$ edge or not. That gives use the two following graphs:
+  The alternating square can only be connected by a $\rho_1$ edge. There are only two $\rho_2$ edges to link the two $\rho_3$ edges thus one of them must be at the end of a branch of the graph. This $\rho_3$ edge must be connected by a $\rho_2$ edge and this last edge can be connected to the $\rho_1$ edge or not. That gives us the two following graphs:
 
   \begin{figure}[H]
     \begin{center}
@@ -111,7 +111,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (6)  at (4,2)  {};
           \node (7)  at (6,2)  {};
           \node (8)  at (8,2)  {};
-          \node (9)  at (10,2)  {};
+          \node (9)  at (10,2) {};
           \node (10) at (6,0)  {};
           \node (11) at (8,0)  {};
         \end{scope}
@@ -217,7 +217,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  Now only single edge can be placed. Thus the alternating square can only be connected by $c$ or $d$. There are only two $\rho_2$ edge to connect two $\rho_3$ edges. Thus the patterns saw in Proposition~\ref{todo} must be used. But in every case, using one pattern consume leave $\rho_1$ edges. But the $\rho_1$ edges cannot be used to link all the component $\rho_1$ due to the limitations of Proposition~\ref{fixed-only-1}.
+  Now only single edge can be placed. Thus the alternating square can only be connected by $c$ or $d$. There are only two $\rho_2$ edges to connect two $\rho_3$ edges. Thus the patterns saw in Proposition~\ref{todo} must be used. In every case, using one pattern consume leave $\rho_1$ edges. But the $\rho_1$ edges cannot be used to link all the component $\rho_1$ due to the limitations of Proposition~\ref{fixed-only-1}.
 
   \paragraph{}
   If the difference of the indices is 3, the double edge must be $(\rho_0, \rho_3)$ but the adjacent square must be $[\rho_1, \rho_3]$. There is a single $\rho_0$ edge remaining, this edge must be adjacent to a $\rho_1$ edge. There is only one $\rho_1$ edge for 4 $\rho_2$ edges, hence the graph can never be connected. Thus the index of the double edge must be separated by 2 and the double edge is $(\rho_0, \rho_2)$.\footnote{Not complete}
