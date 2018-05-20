@@ -17,7 +17,11 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
   \textbf{$\rho_0$ is a 4-transposition}
 
   \paragraph{}
-  If the $\rho_0$ edge are not part of any alternating square, by Lemma~\ref{rho0atEnd}, they needs one $\rho_1$ edge each to be connected to the graph. But that is impossible because there are only two $\rho_1$ edge for four $\rho_0$ edges. Thus the $\rho_0$ edges must be part of an alternating square and moreover no $\rho_1$ edges can be part of an alternating square except if all $\rho_0$ edges are part of an alternating square.
+  If the $\rho_0$ edge are not part of any alternating square, by Lemma~\ref{rho0atEnd}, they needs one $\rho_1$ edge each to be connected to the graph. But that is impossible because there are only two $\rho_1$ edges for four $\rho_0$ edges. Thus at least two $\rho_0$ edges must be part of an alternating square. The proof in now splitted in two if two $\rho_1$ forms an alternating squares or not.
+
+  \paragraph{}
+  If the $\rho_1$ square are in an alternating square, then all $\rho_0$ edges must be in alternating squares. But none of the square using $\rho_0$ edges can be connected to by a single edge by Proposition~\ref{square-connection} and because all $\rho_1$ are in alternating squares. Thus they must be adjacent to an alternating square but this square must contains $\rho_1$ by Proposition~\ref{continue-alternating-square} and there is only one of them. Thus all the $\rho_0$ edges must be in the same sequence of alternating squares and this sequence must end with a square containing $\rho_1$ edges. But this last square must be connected by a single edge and thus must be $[\rho_1, \rho_3]$.
+
 
   \paragraph{}
   There are multiple possibilities for the square: $[\rho_0, \rho_1]$, $[\rho_0, \rho_2]$ and $[\rho_0, \rho_3]$. The first possibility contains a $\rho_1$ edge and must form a sequence of length 3.
@@ -28,8 +32,50 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
   \paragraph{}
   Thus an alternating square must be $[\rho_0, \rho_2]$, this alternating square can be extended into a sequence. The possible adjacent alternating squares are $[\rho_1, \rho_2], [\rho_0, \rho_1]$ and $[\rho_0, \rho_3]$. The sequence cannot be extended twice in the same direction, and if it is extended once on both side, it cannot be connected to anything. Thus no $\rho_1$ edges can be part of an alternating square. The only possibility is the last one: $[\rho_0, \rho_3]$.
 
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (10,2)  {};
+          \node (2)  at (10,0)  {};
+          \node (3)  at (12,2)  {};
+          \node (4)  at (14,0)  {};
+          \node (5)  at (12,0)  {};
+          \node (6)  at (8,2)   {};
+          \node (7)  at (6,2)   {};
+          \node (8)  at (8,0)   {};
+          \node (9)  at (6,0)   {};
+          \node (10) at (8,-2)  {};
+          \node (11) at (6,-2)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (5);
+            \path (6)  edge node {$0$} (8);
+            \path (7)  edge node {$0$} (9);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
+            \path (1)  edge node {$2$} (6);
+            \path (2)  edge node {$2$} (8);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (5);
+            \path (6)  edge node {$3$} (7);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
   \paragraph{}
-  If the sequence is not extended.\footnote{Continue}
+  But there are 5 $\rho_3$ on this graph which is impossible.
 
   \paragraph{}
   \textbf{$\rho_3$ is a 4-transposition}
@@ -41,8 +87,49 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
   \textit{Alternating square $[\rho_1, \rho_3]$}
 
   \paragraph{}
-  In this case, all $\rho_1$ edges have been used thus all $\rho_0$ edges must placed inside alternating squares. This squares can be $[\rho_0, \rho_2]$ or $[\rho_0, \rho_3]$. If $\rho_0$ is a 4-transposition those squares uses 8 points but the square $[\rho_1, \rho_3]$ also uses 4 points. Thus at least two squares share one vertex.
+  In this case, all $\rho_1$ edges have been used thus all $\rho_0$ edges must placed inside alternating squares. This squares can be $[\rho_0, \rho_2]$ or $[\rho_0, \rho_3]$. However none of those squares can be connected with a simple edge by Proposition~\ref{continue-alternating-square} and due to the lack of $\rho_1$ edges. Thus those squares must be adjacent or adjacent to the $[\rho_1, \rho_3]$ square. Moreover the square $[\rho_1, \rho_3]$ cannot be adjacent to another alternating square by all its vertices, otherwise it cannot be connected by a single edge.
 
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (6,-2)  {};
+          \node (2)  at (8,-2)  {};
+          \node (3)  at (16,0)  {};
+          \node (4)  at (14,0)  {};
+          \node (5)  at (12,0)  {};
+          \node (6)  at (6,0)   {};
+          \node (7)  at (6,2)   {};
+          \node (8)  at (8,0)   {};
+          \node (9)  at (8,2)   {};
+          \node (10) at (10,0)  {};
+          \node (11) at (10,2)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (6)  edge node {$0$} (8);
+            \path (7)  edge node {$0$} (9);
+            \path (8)  edge node {$1$} (10);
+            \path (9)  edge node {$1$} (11);
+            \path (1)  edge node {$2$} (6);
+            \path (2)  edge node {$2$} (8);
+            \path (6)  edge node {$3$} (7);
+            \path (8)  edge node {$3$} (9);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  One $\rho_0$ edge must still be placed and must in an alternating square adjacent to the sequence. Thus it must be in a $[\rho_0, \rho_3]$ square adjacent to the $[\rho_0, \rho_2]$ square. But they would be five $\rho_3$ edges. Thus $\rho_0$ cannot be a 4-transposition.
 
   \paragraph{}
   If $\rho_0$ is a 2-transposition, there are two "joker" edges. The possibilities for the alternating squares are $[\rho_0, \rho_2]$ or $[\rho_0, \rho_3]$. If the last case is chosen the squares must be adjacent because there are not enough $\rho_0$ and $\rho_3$ edge to make the alternating square required by Proposition~\ref{continue-alternating-square}. All $\rho_0$ and $\rho_1$ edges have been used and there are one $\rho_1$ and 4 $\rho_2$ edges remaining, the graph cannot be connected because there are no "joker" edges remaining.
@@ -55,17 +142,17 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
       \begin{tikzpicture}[scale=.8]
 
         \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,0)   {a};
-          \node (2)  at (0,2)   {b};
-          \node (3)  at (2,0)   {c};
-          \node (4)  at (2,2)   {d};
-          \node (5)  at (4,0)   {e};
-          \node (6)  at (6,0)   {f};
-          \node (7)  at (8,0)   {g};
-          \node (8)  at (10,0)  {h};
-          \node (9)  at (10,2)  {i};
-          \node (10) at (12,0)  {j};
-          \node (11) at (12,2)  {k};
+          \node (1)  at (0,0)   {};
+          \node (2)  at (0,2)   {};
+          \node (3)  at (2,0)   {};
+          \node (4)  at (2,2)   {};
+          \node (5)  at (4,0)   {};
+          \node (6)  at (6,0)   {};
+          \node (7)  at (8,0)   {};
+          \node (8)  at (10,0)  {};
+          \node (9)  at (10,2)  {};
+          \node (10) at (12,0)  {};
+          \node (11) at (12,2)  {};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white}]
@@ -94,15 +181,15 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
   \textit{Double edge $(\rho_1, \rho_3)$}
 
   \paragraph{}
-  In this case, there are at least 2 $\rho_0$ edges for one single $\rho_1$ edge remaining. Thus the $\rho_0$ edges must form an alternating square. The possibilities are $[\rho_0, \rho_2]$ and $[\rho_0, \rho_3]$ but there are the same constraint as on the previous case. And the graph cannot be connected.
+  In this case, there are at least 2 $\rho_0$ edges for one single $\rho_1$ edge remaining. Thus the $\rho_0$ edges must form an alternating square. The possibilities are $[\rho_0, \rho_2]$ and $[\rho_0, \rho_3]$ but there are the same constraint as on the previous case. Thus the graph cannot be connected.
 
 \end{proof}
 
 \paragraph{}
-We start by proving some lemmas that are used when there are used for the cases with three or four 4-transpositions. We suppose in the following proofs that if there is a 2-transition, then it is $\rho_0$. This can be done with the previous theorem and by using the duality.
+We continue by proving some lemmas that are used when there are used for the cases with three or four 4-transpositions. We suppose in the following proofs that if there is a 2-transition, then it is $\rho_0$. This can be done with the previous theorem and by using the duality.
 
 \begin{lemma}
-  Let $\Gamma$ be a sggi of rank 4 on $A_{11}$ in which $\rho_1, \rho_2$ and $\rho_3$ are 4-transpositions, in the permutation representation graph of $\Gamma_{\rho_1, \rho_3}$, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge)\footnote{It can have more potential if written properly}.
+  Let $\Gamma$ be a sggi of rank 4 on $A_{11}$ in which $\rho_1, \rho_2$ and $\rho_3$ are 4-transpositions. In the permutation representation graph of $\Gamma_{\rho_1, \rho_3}$, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge)\footnote{It can have more potential if written properly}.
 \end{lemma}
 
 \begin{proof}
@@ -112,7 +199,7 @@ We start by proving some lemmas that are used when there are used for the cases 
   Here the $\rho_1$ and $\rho_0$ edges must not commute but if the $\rho_1$ edge is part of a double edge $(\rho_1, \rho_3)$, then $\rho_0$ and $\rho_3$ does not commute and this is a contradiction with Proposition~\ref{intersection-patterns}.
 
   \paragraph{}
-  If $\rho_1$ is on an alternating square $[\rho_1, \rho_3]$, the same occurs.
+  If $\rho_1$ is in an alternating square $[\rho_1, \rho_3]$, the same occurs.
 
 \end{proof}
 
@@ -179,5 +266,5 @@ We start by proving some lemmas that are used when there are used for the cases 
     \end{figure}
 
   \paragraph{}
-  Now no $\rho_0$ edge can be connected to any point without being in an alternating square. There are three remaining $\rho_0$ edges. And there must be two adjacent squares. Nut that is impossible because there are not two chains of length at least 3.
+  Now no $\rho_0$ edge can be connected to any point without being in an alternating square. There are three remaining $\rho_0$ edges. And there must be two adjacent squares. But that is impossible because there are not two chains of length at least 3.
 \end{proof}

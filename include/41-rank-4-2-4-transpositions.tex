@@ -177,7 +177,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   In the first case the other $\rho_3$ edge must be at the end of another branch and linked be a $\rho_2$ edge and a $\rho_1$ edge. But then there are a vertex and a $\rho_1$ edge that cannot be placed.
 
   \paragraph{}
-  In the second case, the other $\rho_3$ edge must be placed next to the $\rho_2$ edge and a $\rho_1$ edge cannot be placed.
+  In the second case, the other $\rho_3$ edge must be placed next to the $\rho_2$ edge and one $\rho_1$ edge cannot be placed.
 
   \paragraph{}
   If the double edge is $(\rho_1, \rho_2)$, the alternating square must be $[\rho_0, \rho_2]$ (up to duality).
@@ -217,7 +217,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  Now only single edge can be placed. Thus the alternating square can only be connected by $c$ or $d$. There are only two $\rho_2$ edges to connect two $\rho_3$ edges. Thus the patterns saw in Proposition~\ref{todo} must be used. In every case, using one pattern consume leave $\rho_1$ edges. But the $\rho_1$ edges cannot be used to link all the component $\rho_1$ due to the limitations of Proposition~\ref{fixed-only-1}.
+  Now only single edge can be placed. Thus the alternating square can only be connected by $c$ or $d$. There are only two $\rho_2$ edges to connect two $\rho_3$ edges. Thus the patterns saw in Proposition~\ref{rho0atEnd} must be used\footnote{Not complete}. In every case, using one pattern consume leave $\rho_1$ edges. But the $\rho_1$ edges cannot be used to link all the component $\rho_1$ due to the limitations of Proposition~\ref{fixed-only-1}.
 
   \paragraph{}
   If the difference of the indices is 3, the double edge must be $(\rho_0, \rho_3)$ but the adjacent square must be $[\rho_1, \rho_3]$. There is a single $\rho_0$ edge remaining, this edge must be adjacent to a $\rho_1$ edge. There is only one $\rho_1$ edge for 4 $\rho_2$ edges, hence the graph can never be connected. Thus the index of the double edge must be separated by 2 and the double edge is $(\rho_0, \rho_2)$.\footnote{Not complete}
@@ -235,7 +235,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   The alternating square uses two edges. Thus the involutions $\rho_0$ or $\rho_3$ cannot be used in both squares.
 
   \paragraph{}
-  If the indices of an alternating square are consecutive, another alternating square must be adjacent to the first one by Lemma~\ref{continue-alternating-square}. Thus all squares have been placed. There are two possibilities: $[\rho_0, \rho_1]$ or $[\rho_1, \rho_2]$. In the first case, there are no possible adjacent square because $[\rho_0, \rho_2]$ would use three $\rho_0$ edges and $[\rho_1, \rho_1]$ does not make sens by Proposition~\ref{fixed-only-1}. In the second case, the only possibility for an adjacent square is $[\rho_0, \rho_2]$. Now no extra alternating square can be built and thus this last square must be connected by a single edge.
+  If the indices of an alternating square are consecutive, another alternating square must be adjacent to the first one by Lemma~\ref{continue-alternating-square}. Thus all squares have been placed. There are two possibilities: $[\rho_0, \rho_1]$ or $[\rho_1, \rho_2]$. In the first case, there are no possible adjacent squares because $[\rho_0, \rho_2]$ would use three $\rho_0$ edges and $[\rho_1, \rho_1]$ does not make sens by Proposition~\ref{fixed-only-1}. In the second case, the only possibility for an adjacent square is $[\rho_0, \rho_2]$. Now no extra alternating square can be built and thus this last square must be connected by a single edge.
 
   \begin{figure}[H]
     \begin{center}
@@ -275,7 +275,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  But now there two $\rho_3$ that are not part of an alternating square for only one $\rho_2$ but that is forbidden by Lemma~\ref{rho0atEnd}.
+  Now there two $\rho_3$ that are not part of an alternating square for only one $\rho_2$ but that is forbidden by Lemma~\ref{rho0atEnd}.
 
   \paragraph{}
   If the difference between the indices if 3, the square is $[\rho_0, \rho_3]$. The adjacent square must be $[\rho_1, \rho_3]$ up to duality. But the index $3$ is repeated and that is impossible.
@@ -450,10 +450,10 @@ For each of this monodromy group we prove that it is not a string C-group repres
   The goal is now to prove that $\Gamma_{S_1} \cap \Gamma_{S_2} \ge S_5$.
 
   \paragraph{}
-  In the group $\Gamma_{S_1}$ we leave the points $i,j,k$ fixed for now. This is an even permutation on those three points. The group of the left component is one of the lateral class of $A_8$ but because the permutation on $i,j,k$ is even, it is $A_8$. Thus it contains all the permutations of $d,e,f,g,h$, i.e. $S_5$ on those five points. If the permutations on $d,e,f,g,h$ is odd, it is sufficient to move permute two points in $a,b,c$ in order to have a permutation of $A_8$.
+  In the group $\Gamma_{S_1}$ we leave the points $i,j,k$ fixed for now. This is an even permutation on those three points. The group of the left component is one of the lateral class of $A_8$ but because the permutation on $i,j,k$ is even, it is $A_8$. Thus it contains all the permutations of $d,e,f,g,h$, i.e. $S_5$ on those five points. If the permutation on $d,e,f,g,h$ is odd, it is sufficient to permute two points in $a,b,c$ in order to have a permutation of $A_8$.
 
   \paragraph{}
-  Now we look at $\Gamma_{S_2}$, we need to prove that all of those permutations are also in this group. First for every permutation of the points $a,b,c$ in $\Gamma_{S_1}$ the same permutation can be made in $\Gamma_{S_2}$ because the group of permutation of those 3 points is $S_3$ on $\Gamma_{S_2}$. The parity of the permutation of the component $d,e,f,g,h,i,j,k$ must be the same as the parity of the permutation of $a,b,c$ and that is possible because the points $i,j,k$ are fixed. Thus it means that the parity of the permutation of the permutation on $d,e,f,g,h$ in $\Gamma_{S_2}$ is the same as in $\Gamma_{S_1}$. Thus the group of permutation on $d,e,f,g,h$ in $\Gamma_{S_2}$ is one lateral class of $A_5$ but the permutation applied in $\Gamma_{S_1}$ lies in this group.
+  Now we look at $\Gamma_{S_2}$. We need to prove that all the permutations of $d,e,f,g,h$ are also in this group. First for every permutation of the points $a,b,c$ in $\Gamma_{S_1}$ the same permutation can be made in $\Gamma_{S_2}$ because the group of permutations of those 3 points is $S_3$ on $\Gamma_{S_2}$. The parity of the permutation of the component $d,e,f,g,h,i,j,k$ must be the same as the parity of the permutation of $a,b,c$ and that is possible because the points $i,j,k$ are fixed. Thus it means that the parity of the permutation on $d,e,f,g,h$ in $\Gamma_{S_2}$ is the same as in $\Gamma_{S_1}$. Thus the group of permutations on $d,e,f,g,h$ in $\Gamma_{S_2}$ is one coset of $A_5$ but the permutation applied in $\Gamma_{S_1}$ lies in this coset.
 
   \paragraph{}
   Thus the intersection is at least $S_5$ but $\Gamma_{S_1 \cap S_2} = D_{24}$ and $D_{24} \neq S_5$. The graph is therefore not a string C-group representation.
@@ -515,7 +515,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
       \ref{r4-2-9} & \\ \hline
       \ref{r4-2-10} & \\ \hline
       \ref{r4-2-11} & \\ \hline
-      \ref{r4-2-12} & \\ \hline 
+      \ref{r4-2-12} & \\ \hline
         \end{tabular}
     \caption{}
     \label{results-2-2}
