@@ -4,10 +4,10 @@
 
 \begin{definition}[Permutation representation graph]
   \index{permutation representation graph}
-  Let $\mathcal P$ be a regular polytope of dimension $d$ and let $\pi$ be an embedding of the automorphism graph of $\Gamma$ into $S_n$ for some $n$. The permutation representation graph of $P$ is a labeled multigraph with vertices ${1 \dots n}$, labels ${1 \dots d}$ such that there is an edge of label $k$ between $i$ and $j$ if $(\pi \rho_k)i = j$. The labels of those graphs are called indices.
+  Let $\mathcal P$ be a regular polytope of dimension $d$ and let $\pi$ be an embedding of the automorphism group of $\Gamma$ into $S_n$ for some $n$. The permutation representation graph of $\mathcal P$ is a labeled multigraph with vertices ${1 \dots n}$, labels ${1 \dots d}$ such that there is an edge of label $k$ between $i$ and $j$ if $(\pi \rho_k)i = j$. The labels of those graphs are called indices.
 \end{definition}
 
-Permutation representation graphs were introduced by Pellicier in~\cite{cprGraph} under the name "CPR graph". He requires an additional condition that the group satisfies the intersection property. But given the graph, it is not easy to check whether it is a C-group or not. Therefore we chose to remove the intersection condition and call it "permutation representation graph".
+Permutation representation graphs were introduced by Pellicier in~\cite{cprGraph} under the name "CPR graph". He requires as an additional condition that the group satisfies the intersection property. But given the graph, it is not easy to check whether it is a C-group or not. Therefore we chose to remove the intersection condition and call it "permutation representation graph".
 
 \begin{property}
   \label{intersection-patterns}
@@ -18,5 +18,5 @@ For the proof see the proposition 3.5 of~\cite{cprGraph}.
 
 \begin{property}
   \label{generators-not-free}
-  In a indexed group representation, if a generator can be written as a product of the other generator then it does not satisfies the intersection property and thus is not a C-group representation.
+  In an indexed group representation, if a generator can be written as a product of the other generator then it does not satisfy the intersection property and thus is not a C-group representation.
 \end{property}

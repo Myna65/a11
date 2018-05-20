@@ -1,14 +1,14 @@
 \subsection{Equality relations}
 
-The definitions come from~\cite{polytopes} and~\cite{incidenceGeometry}
+The definitions come from~\cite{incidenceGeometry} and~\cite{polytopes}.
 
 \begin{definition}[Equality relation]
   \index{equality relation}
   An equality relation $\sim$ on a set $E$ is a subset $R$ of $E \times E$. We write $x \sim y$ iff $(x,y) \in R$ with the following properties:
   \begin{enumerate}
-    \item \textbf{Reflexivity} $x \sim x \ \forall x \in E$
-    \item \textbf{Symmetry} $x \sim y \Leftrightarrow y\sim x \ \forall x,y \in E$.
-    \item \textbf{Transitivity} if $x \sim y$ and $y \sim z$ then $x \sim z$ for all $x,y,z \in E$.
+    \item \textbf{Reflexivity} $x \sim x \ (\forall x \in E$).
+    \item \textbf{Symmetry} $x \sim y \Leftrightarrow y\sim x \ (\forall x,y \in E$).
+    \item \textbf{Transitivity} if $x \sim y$ and $y \sim z$ then $x \sim z$ $(\forall x,y,z \in E)$.
   \end{enumerate}
 \end{definition}
 
@@ -19,9 +19,9 @@ The definitions come from~\cite{polytopes} and~\cite{incidenceGeometry}
   \index{poset}
   A \textit{partially ordered set} or \textit{poset} is a pair $(P,\le)$ with $P$ a set and $\le$ a relation between $P$ and $P$ such that
   \begin{enumerate}
-    \item \textbf{Reflexivity} $x \le x$ ($\forall x \in P$)
-    \item \textbf{Anti-symmetry} if $x \le y$ and $y \le x$, then $x = y$ ($\forall x,y \in P$)
-    \item \textbf{Transitivity} if $x \le y$ and $y \le z$, then $x \le z$ ($\forall x,y,z \in P$)
+    \item \textbf{Reflexivity} $x \le x$ ($\forall x \in P$).
+    \item \textbf{Anti-symmetry} if $x \le y$ and $y \le x$, then $x = y$ ($\forall x,y \in P$).
+    \item \textbf{Transitivity} if $x \le y$ and $y \le z$, then $x \le z$ ($\forall x,y,z \in P$).
   \end{enumerate}
 \end{definition}
 
@@ -116,7 +116,7 @@ In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. 
 \end{definition}
 
 \paragraph{}
-On the Hasse diagram, it means that, if all elements with the same rank are placed at the same level, an element in only connected to elements placed the level just above or just under itself.
+On the Hasse diagram, it means that, if all elements with the same rank are placed at the same level, an element is only connected to elements placed the level just above or just under itself.
 
 
 \begin{figure}[H]
@@ -178,7 +178,7 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
   \begin{definition}[Supremum, Infinimum]
     \index{supremum}
     \index{infinimum}
-    The supremum (resp. infinimum) of two elements $x$ and $y$ is the lower (resp. upper) bound in the set of all upper (resp. lower) bounds of $x$ and $y$. If it exists, it's unique. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$\footnote{Not good}.
+    The supremum (resp. infinimum) of two elements $x$ and $y$ is the lowest (resp. largest) bound in the set of all upper (resp. lower) bounds of $x$ and $y$. If it exists, it's unique. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$\footnote{Not good}.
   \end{definition}
 
   \begin{definition}[Lattice]
