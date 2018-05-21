@@ -23,13 +23,8 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
   If the $\rho_1$ edges are in an alternating square, then all $\rho_0$ edges must be in alternating squares. None of the square using $\rho_0$ edges can be connected to by a single edge by Proposition~\ref{square-connection} and because all $\rho_1$ are in alternating squares. Thus they must be adjacent to an alternating square. This square must contain $\rho_1$ by Proposition~\ref{continue-alternating-square} and there is only one of them. Thus all the $\rho_0$ edges must be in the same sequence of alternating squares and this sequence must end with a square containing $\rho_1$ edges. Furthermore this last square must be connected by a single edge and thus must be $[\rho_1, \rho_3]$.
 
   \paragraph{}
-  There are three possibilities for the square: $[\rho_0, \rho_1]$, $[\rho_0, \rho_2]$ and $[\rho_0, \rho_3]$. The first possibility contains a $\rho_1$ edge and must form a sequence of length 3.
+  The first square of the sequence of alteranting square containing $\rho_0$ edges must be adjacent to the square $[\rho_1, \rho_3]$, thus it must be $[\rho_0, \rho_3]$. This square must still be part of a sequence of alternating squares. And the adjacent alternating square can be $[\rho_0, \rho_2]$ or $[\rho_1, \rho_3]$. The last case is not possible because it contains a $\rho_1$ edge. A last square must be placed and must be $[\rho_0, \rho_3]$.
 
-  \paragraph{}
-  If the alternating square is $[\rho_0, \rho_3]$, it must still be part of a sequence of alternating squares. And the adjacent alternating square can be $[\rho_0, \rho_2]$ or $[\rho_1, \rho_3]$. The last case is not possible because it contains a $\rho_1$ edge.
-
-  \paragraph{}
-  Thus an alternating square must be $[\rho_0, \rho_2]$. This alternating square can be extended into a sequence. The possible adjacent alternating squares are $[\rho_1, \rho_2], [\rho_0, \rho_1]$ and $[\rho_0, \rho_3]$. The sequence cannot be extended twice in the same direction, and if it is extended once on both side, it cannot be connected to anything. Thus no $\rho_1$ edges can be part of an alternating square. The only possibility is the last one: $[\rho_0, \rho_3]$.
 
   \begin{figure}[H]
     \begin{center}
@@ -114,7 +109,7 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
   \end{figure}
 
   \paragraph{}
-  Now if the square $[\rho_0, \rho_2]$ is not extended, then no other $\rho_0$ edges are part on alternating square. The $\rho_1$ edge connected to the square must thus be extended to a $\rho_0$ edge. There are two possibilities: continue with a $\rho_1$ edge and a $\rho_0$ edge or place another $\rho_1$ connected to the square. But this new square must also be connected to a $\rho_0$ square.
+  Now if the square $[\rho_0, \rho_2]$ is not extended, then no other $\rho_0$ edges are part on alternating square\footnote{Add a graph}. The $\rho_1$ edge connected to the square must thus be extended to a $\rho_0$ edge. There are two possibilities: continue with a $\rho_1$ edge and a $\rho_0$ edge or place another $\rho_1$ connected to the square. But this new square must also be connected to a $\rho_0$ square.
 
   \paragraph{}
   Thus the square must be extended and the only possibility is a $[\rho_0, \rho_3]$ edge.
@@ -155,6 +150,141 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
       \caption{}
     \end{center}
   \end{figure}
+
+  \paragraph{}
+  The sequence cannot be extended further because it would use three "joker" edges. But if three "joker" edges are used, then $\rho_3$ must be a 4-tranposition but the new $\rho_3$ edges cannot be concected to the rest of the graph because it would need a $\rho_2$ edges.
+
+  \paragraph{}
+  We must continue the graph with a single edge adjacent to the $\rho_1$ edge. There are two possibilities: $\rho_0$ or $\rho_2$. In the first case, the graph is as follow:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)   {};
+          \node (2)  at (0,2)   {};
+          \node (3)  at (2,0)   {};
+          \node (4)  at (2,2)   {};
+          \node (5)  at (4,0)   {};
+          \node (6)  at (6,0)   {};
+          \node (7)  at (8,0)   {};
+          \node (8)  at (10,0)  {};
+          \node (9)  at (12,0)  {};
+          \node (10) at (-2,0)  {};
+          \node (11) at (-2,2)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (10) edge node {$0$} (11);
+            \path (3)  edge node {$1$} (5);
+            \path (6)  edge node {$1$} (7);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (1)  edge node {$3$} (10);
+            \path (2)  edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  But now we must insert two $\rho_2$ edges or two $\rho_3$ edges which is impossible. Thus the edge must be $\rho_2$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)   {};
+          \node (2)  at (0,2)   {};
+          \node (3)  at (2,0)   {};
+          \node (4)  at (2,2)   {};
+          \node (5)  at (4,0)   {};
+          \node (6)  at (6,0)   {};
+          \node (7)  at (8,0)   {};
+          \node (8)  at (10,0)  {};
+          \node (9)  at (12,0)  {};
+          \node (10) at (-2,0)  {};
+          \node (11) at (-2,2)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (10) edge node {$0$} (11);
+            \path (3)  edge node {$1$} (5);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (5)  edge node {$2$} (6);
+            \path (1)  edge node {$3$} (10);
+            \path (2)  edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If the chain is extended it must be extended by a $\rho_1$ because if we use a $\rho_3$ then $\rho_2$ and $\rho_3$ would be 4-transposition. Thus two double edges must still be placed which is impossible. If the chain is extended, then next single edge must be a $\rho_0$ edge by Property~\ref{rho0atEnd}. But then there is a $\rho_2$ edge remaining and a fixed point but they cannot make a connected graph.
+
+  \paragraph{}
+  Thus the chain must not be extended. Another $\rho_1$ edge must connect the alternating square to a fixed point. This edge must also be followed by a $\rho_0$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw}]
+          \node (1)  at (0,0)   {};
+          \node (2)  at (0,2)   {};
+          \node (3)  at (2,0)   {};
+          \node (4)  at (2,2)   {};
+          \node (5)  at (4,0)   {};
+          \node (6)  at (6,0)   {};
+          \node (7)  at (4,2)   {};
+          \node (8)  at (6,2)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (-2,0)  {};
+          \node (11) at (-2,2)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (7)  edge node {$0$} (8);
+            \path (10) edge node {$0$} (11);
+            \path (3)  edge node {$1$} (5);
+            \path (4)  edge node {$1$} (7);
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (5)  edge node {$2$} (6);
+            \path (1)  edge node {$3$} (10);
+            \path (2)  edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  There are also one remaining $\rho_2$ edge and a fixed points but none of them can be connected.
 
 
   \paragraph{}
@@ -269,7 +399,7 @@ We study the different cases for polytopes of rank 4. By Lemma~\ref{min-4-trans}
 We continue by proving some lemmas that are used for the cases with three or four 4-transpositions. We suppose in the following proofs that if there is a 2-transition, then it is $\rho_0$. This can be done with the previous theorem and by using the duality.
 
 \begin{lemma}
-  Let $\Gamma$ be a sggi of rank 4 on $A_{11}$ in which $\rho_1, \rho_2$ and $\rho_3$ are 4-transpositions. In the permutation representation graph of $\Gamma_{\rho_1, \rho_3}$, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge)\footnote{It can have more potential if written properly}.
+  Let $\Gamma$ be a sggi of rank 4 on $A_{11}$ in which $\rho_1, \rho_2$ and $\rho_3$ are 4-transpositions. In the permutation representation graph of $\Gamma_{\rho_1, \rho_3}$, there must be a least one single $\rho_1$ edge (and thus a single $\rho_3$ edge).
 \end{lemma}
 
 \begin{proof}

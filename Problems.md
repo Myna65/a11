@@ -1,5 +1,6 @@
 # Chapter 1
-A lot
+Drawings of graphs
+Abstract polytopes
 
 # Chapter 2
 End of section
@@ -10,6 +11,5 @@ Missing the case where the square is extended vertically
 Missing the case where the square id not extended
 
 # Chapter 4
-Missing the proof of a lemma
 Missing the proof of another lemma
 The proof for 4-transpositions is not good.
