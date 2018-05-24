@@ -12,16 +12,137 @@
   \end{itemize}
 \end{definition}
 
+\paragraph{}
+Most of the times the symbol $\cdot$ is omitted and $g \cdot h$ is written $gh$.
+
+\begin{definition}[Order]
+  \index{order}
+  The \textit{order} of a group is the number of elements in this group. It is denoted $|G|$.
+\end{definition}
+
+\begin{definition}[Abelian group]
+  \index{abelian group}
+  A group is said \textit{abelian} if for all $g, h \in G$
+  \[
+    g \cdot h = h \cdot g.
+  \]
+\end{definition}
+
 \begin{definition}[Generating set of a group]
   \index{generating set}
   \index{generator}
   It is said that a set generates a group if all elements of the group can be written as a product of elements of this set. The elements of this set are called \textit{generators}. Conversely, no element outside the group can be written as a product of the generators.
 \end{definition}
 
+\begin{definition}[Subgroup]
+  \index{subgroup}
+  Let $G = (E, \cdot)$ be a group. A pair $H = (F, \cdot)$ of $G$ is a \textit{subgroup} of $G$ if $F \subseteq E$ and $H$ is a group.
+\end{definition}
+
+\begin{definition}[Proper subgroup]
+  \index{proper subgroup}
+  A subgroup $H$ is a proper subgroup of $G$ if $H \neq G$ and $H \neq {1}$.
+\end{definition}
+
+\begin{definition}[Coset]
+  \index{coset}
+  A \textit{coset} of a subgroup $H$ of $G$ is the product $gH = \{g \cdot h | g \in G, h \in H\}$ between an element $g \in G$ and $H$. If the group is not commutative, there are left and right cosets.
+\end{definition}
+
 \begin{property}
+  If $G$ is a group and $H$ is a subgroup of $G$, every element $g \in G$ is in exactly one coset of $H$.
+\end{property}
+
+\begin{corollary}
   \label{magic-formula}
+  The order of a subgroup divides the order of the group.
+\end{corollary}
+
+\begin{definition}[Normal subgroup]
+  \index{normal subgroup}
+  If the left cosets of a subgroup are the same as the right cosets, then this subgroup is called \textit{normal}.
+\end{definition}
+
+\begin{definition}[Simple group]
+  \index{simple group}
+  A group is \textit{simple} if it does not have any propert normal subgroup.
+\end{definition}
+
+\begin{definition}[Action]
+  \index{action}
+  Let $G$ be a group and $X$ a set, we say the $G$ acts on $X$ if there is an application
+  \[
+    \cdot : G \times X \Leftrightarrow X \qquad (x,g) \mapsto x \cdot g
+  \]
+  such that
+  \begin{itemize}
+    \item \textbf{Associativity} $(g \cdot h) \cdot x = g \cdot (h \cdot x)$
+    \item \textbf{Identity} $ 1 \cdot x = x$ for all $x \in X$.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Degree]
+  \index{degree}
+  If a group $G$ acts on a group $X$, we say by abuse of language that the degree of $G$ is the size of $X$.
+\end{definition}
+
+\paragraph{}
+Be careful because the symbol $\cdot$ can refer to different things depending on the operands.
+
+\begin{definition}[Orbit of a elements]
+  \index{orbit}
+  Let $X$ be a set and $G$ a group acting on it.
+  The orbit of an element $x$ by the group $G$ is the subset
+  \[
+    O_x = \{g \cdot x | g \in G\}.
+  \]
+\end{definition}
+
+\begin{definition}
+  The stabilizer of an element $x\in X$ by a group $G$ is the set of elements of $G$ that lets $x$ fixed, i.e.
+  \[
+    G_x = \{g \in G | g \cdot x = x\}
+  \]
+\end{definition}
+
+\begin{property}
+  \label{orbit-stabilizer}
+  If a group $G$ acts on a finite set $X$, then for every $x \in X$.
+  \[
+    |G| = |O_x||G_x|
+  \]
   The order of a subgroup must divide the order of the group.
 \end{property}
+
+\begin{definition}[Direct product]
+  \index{direct product}
+  Given two groups $G = (E, \star)$ and $H = (F, \Delta)$, the direct product $G \times H$ is a group $(E \times F, \cdot)$ such that
+  \[
+    (g_1, h_1) \times (g_2, h_2) = (g_1 \star g_2, h_1 \Delta h_2).
+  \]
+\end{definition}
+
+\begin{definition}[Semidirect product]
+  \index{semidirect product}
+  \index{direct product}
+  Given two groups $G = (E, \star)$ and $H = (F, \Delta)$, the direct product $G : H$ is a group $(E \times F, \cdot)$ such that
+  \[
+    (g_1, h_1) \times (g_2, h_2) = (g_1 \star \varphi(h_1,g_2), h_1 \Delta h_2)
+  \]
+  for a given $\varphi$.
+
+  \paragraph{}
+  In this case the product of the first component only depends on $h_1$ and not on $h_2$.
+\end{definition}
+
+\begin{definition}[Automorphism group]
+  The automorphism group $\Aut(G)$ of a finite group $G$ is the set whose elements are automorphism $\sigma : G \to G$ and where the group multiplication is the composition of automorphisms.
+\end{definition}
+
+\begin{definition}[Almost simple group]
+  \index{almost simple group}
+  A group $G$ is almost simple if there is a simple non-abelian group $S$ such that $S \le T \le \Aut(S)$ for $T$ isomorphic to $G$.
+\end{definition}
 
 \subsection{Permutation groups}
 
@@ -110,7 +231,7 @@ A new notation for permutations can now be introduced. Permutations will now be 
 
 \begin{definition}[Symmetric group]
   \index{symmetric group}
-  Let $\Omega$ be a set, the group of all permutations of $\Omega$ is a called the symmetric group of $\Omega$ and is denoted $\Sym(\Omega)$. Often we do not care about the elements of $\Omega$, the only important thing about $\Omega$ is its size because the structure of $\Sym(\Omega)$ is only determined by this parameter. Therefore, we will mostly denote $S_n$ the symmetric group over an set of $n$ elements.
+  Let $\Omega$ be a set, the group of all permutations of $\Omega$ is a called the symmetric group of $\Omega$ and is denoted $\Sym(\Omega)$. This is a group acting on $\Omega$. Often we do not care about the elements of $\Omega$, the only important thing about $\Omega$ is its size because the structure of $\Sym(\Omega)$ is only determined by this parameter. Therefore, we will mostly denote $S_n$ the symmetric group over an set of $n$ elements.
 \end{definition}
 
 \begin{definition}[Permutation group]
@@ -130,19 +251,19 @@ A new notation for permutations can now be introduced. Permutations will now be 
 
 \begin{property}
   \label{practical-transitivity}
-  A group is $k$-transitive if it is $k-1$-transitive and if there are $k-1$ points that can be fixed while one other point can be permuted with any non fixed point.
+  A group is $k$-transitive if it is $(k-1)$-transitive and if there are $k-1$ points that can be fixed while one other point can be permuted with any non fixed point i.e. if the stabilizer of $k-1$ points is transitive.
 \end{property}
 
 \subsection{Primitivity}
 
 \begin{definition}[Congruence]
-  A congruence $\sim$ is an equality relation on $\Omega$ such that $\alpha \sim \beta \Leftrightarrow g\alpha \sim g\beta \ \forall g \in G$.
+  A congruence $\sim$ is an equality relation on $\Omega$ such that $\alpha \sim \beta \Leftrightarrow \alpha g \sim \beta g \ \forall g \in G$.
 \end{definition}
 
 There are two trivial congruences on all permutation groups:
 \begin{itemize}
   \item Equality
-  \item Universal relation i.e. $\alpha \sim \beta \ \forall \alpha, \beta \in \Omega$.
+  \item Universal relation i.e. $\alpha \sim \beta \quad \forall \alpha, \beta \in \Omega$.
 \end{itemize}
 
 \begin{definition}[Primitive group]
@@ -155,7 +276,7 @@ There are two trivial congruences on all permutation groups:
 \end{property}
 
 \paragraph{}
-For the proof, see for instance Theorem~1.7 of~\cite{permutationGroups}.
+For the proof, see for instance Theorem~1.7 of~\cite{cameronPermutationGroups}.
 
 \subsection{String groups generated by involutions}
 

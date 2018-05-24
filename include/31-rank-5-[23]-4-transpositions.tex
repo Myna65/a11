@@ -16,7 +16,7 @@ First we choose an involution, in this case $\rho_1$. The graph with only this i
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,0)  {};
         \node (2)  at (2,0)  {};
         \node (3)  at (4,0)  {};
@@ -30,7 +30,7 @@ First we choose an involution, in this case $\rho_1$. The graph with only this i
         \node (11) at (20,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$1$} (2);
@@ -60,7 +60,7 @@ The starting pattern of Method~\ref{method} is this graph:
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -74,7 +74,7 @@ The starting pattern of Method~\ref{method} is this graph:
         \node (11) at (16,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$1$} (2);
@@ -102,7 +102,7 @@ If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -116,7 +116,7 @@ If $\rho_4$ forms an alternating square with $\rho_1$, it must be adjacent to an
         \node (11) at (14,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$1$} (2);
@@ -158,7 +158,7 @@ Thus either $g$ or $h$ can be used to connect a $\rho_0$ edge but not both. The 
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -172,7 +172,7 @@ Thus either $g$ or $h$ can be used to connect a $\rho_0$ edge but not both. The 
         \node (11) at (14,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (8)  edge node {$0$} (9);
@@ -204,7 +204,7 @@ The only available vertex to connect the other end of this $\rho_2$ edge is the 
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -218,7 +218,7 @@ The only available vertex to connect the other end of this $\rho_2$ edge is the 
         \node (11) at (14,0) {k};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (8)  edge node {$0$} (9);
@@ -248,7 +248,7 @@ All $\rho_1$ edges have been used, so they cannot be used to link the $\rho_0$ e
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -262,7 +262,7 @@ All $\rho_1$ edges have been used, so they cannot be used to link the $\rho_0$ e
         \node (11) at (10,0) {i};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
@@ -297,7 +297,7 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -311,7 +311,7 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
         \node (11) at (10,0) {i};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
@@ -341,7 +341,7 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -355,7 +355,7 @@ There are only 3 $\rho_2$ edges on this graph. A last one must be added to resto
         \node (11) at (10,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
@@ -388,7 +388,7 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {};
@@ -402,7 +402,7 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
         \node (11) at (10,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
@@ -434,7 +434,7 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {};
@@ -448,7 +448,7 @@ Those graphs are valid permutation representation graphs but $\rho_3$ is a 2-tra
         \node (11) at (10,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (9)  edge node {$0$} (11);
@@ -486,7 +486,7 @@ If the $\rho_0 $ and $\rho_3$ edges are removed, all the graphs give the followi
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -500,7 +500,7 @@ If the $\rho_0 $ and $\rho_3$ edges are removed, all the graphs give the followi
         \node (11) at (16,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$1$} (2);
@@ -536,7 +536,7 @@ The second possibility is to have a double edge $(\rho_1, \rho_4)$. The double e
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -550,7 +550,7 @@ The second possibility is to have a double edge $(\rho_1, \rho_4)$. The double e
         \node (11) at (16,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);
@@ -585,7 +585,7 @@ If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$ 
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {d};
         \node (2)  at (0,0)  {c};
         \node (3)  at (2,2)  {f};
@@ -599,7 +599,7 @@ If an alternating square is attached on the left, it must be $[\rho_2, \rho_4]$ 
         \node (11) at (12,0) {k};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);
@@ -629,7 +629,7 @@ The two $\rho_0$ edges cannot be connected to any vertex $a, b, c, d, e, f$ of t
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {d};
         \node (2)  at (0,0)  {c};
         \node (3)  at (2,2)  {f};
@@ -643,7 +643,7 @@ The two $\rho_0$ edges cannot be connected to any vertex $a, b, c, d, e, f$ of t
         \node (11) at (12,0) {k};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (6)  edge node {$0$} (7);
@@ -673,7 +673,7 @@ By Proposition~\ref{chain-consecutive}, the component $\{g,h,i,j,k\}$ can only b
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {f};
@@ -687,7 +687,7 @@ By Proposition~\ref{chain-consecutive}, the component $\{g,h,i,j,k\}$ can only b
         \node (11) at (12,0) {k};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (8)  edge node {$0$} (11);
@@ -718,7 +718,7 @@ The graph is now connected. We begin the last part of the method~\ref{method}: p
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -732,7 +732,7 @@ The graph is now connected. We begin the last part of the method~\ref{method}: p
         \node (11) at (12,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (6)  edge[bend left=30] node {$0$} (7);
@@ -761,7 +761,7 @@ The graph is now connected. We begin the last part of the method~\ref{method}: p
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -775,7 +775,7 @@ The graph is now connected. We begin the last part of the method~\ref{method}: p
         \node (11) at (12,0) {k};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (6)  edge node {$0$} (7);
@@ -816,7 +816,7 @@ In the first graph we remove the $\rho_4$ edges. The graph becomes the following
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {d};
         \node (2)  at (0,0)  {c};
         \node (3)  at (2,2)  {f};
@@ -830,7 +830,7 @@ In the first graph we remove the $\rho_4$ edges. The graph becomes the following
         \node (11) at (12,0) {k};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (6)  edge[bend left=30] node {$0$} (7);
@@ -869,7 +869,7 @@ $\rho_4 \in A_{11}$, thus $\rho_4$ can be written as a product of other generato
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -883,7 +883,7 @@ $\rho_4 \in A_{11}$, thus $\rho_4$ can be written as a product of other generato
         \node (11) at (16,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);
@@ -915,7 +915,7 @@ The only remaining possibility is to link the square to the rest of the graph wi
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -929,7 +929,7 @@ The only remaining possibility is to link the square to the rest of the graph wi
         \node (11) at (4,0) {e};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);
@@ -956,7 +956,7 @@ Two $\rho_0$ edges must still be placed and they must not commute with $\rho_1$.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -970,7 +970,7 @@ Two $\rho_0$ edges must still be placed and they must not commute with $\rho_1$.
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (5)  edge node {$0$} (8);
@@ -999,7 +999,7 @@ By Proposition~\ref{chain-consecutive} and since all $\rho_4$ edges have been us
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {};
@@ -1013,7 +1013,7 @@ By Proposition~\ref{chain-consecutive} and since all $\rho_4$ edges have been us
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (5)  edge node {$0$} (8);
@@ -1044,7 +1044,7 @@ The $\rho_3$ involution is currently odd. An extra $\rho_3$ edge must be placed.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {};
@@ -1058,7 +1058,7 @@ The $\rho_3$ involution is currently odd. An extra $\rho_3$ edge must be placed.
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (5)  edge[bend left=30] node {$0$} (8);
@@ -1088,7 +1088,7 @@ The $\rho_3$ involution is currently odd. An extra $\rho_3$ edge must be placed.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -1102,7 +1102,7 @@ The $\rho_3$ involution is currently odd. An extra $\rho_3$ edge must be placed.
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (5)  edge node {$0$} (8);
@@ -1145,7 +1145,7 @@ If the double edges are placed on the same alternating square, the graph is the 
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -1159,7 +1159,7 @@ If the double edges are placed on the same alternating square, the graph is the 
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);
@@ -1183,7 +1183,7 @@ In this situation the graph must be extended to the left or to the right. But th
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -1197,7 +1197,7 @@ In this situation the graph must be extended to the left or to the right. But th
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);
@@ -1224,7 +1224,7 @@ There is only one $\rho_1$ edge remaining to connect two $\rho_0$ edges. Thus th
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -1238,7 +1238,7 @@ There is only one $\rho_1$ edge remaining to connect two $\rho_0$ edges. Thus th
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (5)  edge node {$0$} (8);
@@ -1271,7 +1271,7 @@ If the two double edges are placed on two different squares, the possibilities f
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {};
         \node (2)  at (0,0)  {};
         \node (3)  at (2,2)  {};
@@ -1285,7 +1285,7 @@ If the two double edges are placed on two different squares, the possibilities f
         \node (11) at (4,0) {};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);
@@ -1313,7 +1313,7 @@ There are only 4 edges available to connect 5 components. Thus every edge must l
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,2)  {b};
         \node (2)  at (0,0)  {a};
         \node (3)  at (2,2)  {d};
@@ -1327,7 +1327,7 @@ There are only 4 edges available to connect 5 components. Thus every edge must l
         \node (11) at (4,0) {e};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge[bend right=30] node {$1$} (2);

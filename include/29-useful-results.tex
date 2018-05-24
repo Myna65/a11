@@ -48,7 +48,7 @@ In this chapter we begin to apply Method~\ref{method} to prove that there are no
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {};
           \node (2)  at (2,0)  {};
           \node (3)  at (4,0)  {};
@@ -62,7 +62,7 @@ In this chapter we begin to apply Method~\ref{method} to prove that there are no
         \node (4b) at (7,0) {};
         \node (8b) at (8,0) {};
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
             \path (2)  edge node {$1$} (3);
@@ -89,7 +89,7 @@ In this chapter we begin to apply Method~\ref{method} to prove that there are no
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {};
           \node (2)  at (2,0)  {};
           \node (3)  at (4,0)  {};
@@ -105,7 +105,7 @@ In this chapter we begin to apply Method~\ref{method} to prove that there are no
         \node (5b) at (9,0) {};
         \node (7b) at (10,0) {};
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -142,7 +142,7 @@ In this chapter we begin to apply Method~\ref{method} to prove that there are no
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {};
           \node (2)  at (2,0)  {};
           \node (3)  at (4,0)  {};
@@ -152,7 +152,7 @@ In this chapter we begin to apply Method~\ref{method} to prove that there are no
 
         \node (6)  at (9,0) {};
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$3$} (2);
@@ -175,7 +175,7 @@ For the second case, the graph is display in Figure~\ref{props-5-2}. On each sid
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,0)  {};
         \node (2)  at (2,0)  {};
         \node (3)  at (4,0)  {};
@@ -188,7 +188,7 @@ For the second case, the graph is display in Figure~\ref{props-5-2}. On each sid
       \node (9b) at (6,0)  {};
 
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {$3$} (2);
@@ -209,6 +209,29 @@ For the second case, the graph is display in Figure~\ref{props-5-2}. On each sid
 \end{proof}
 
 \section{Properties for $A_{11}$}
+
+\begin{lemma}
+  \label{no-simple-cycle}
+  A string C-group representation graph of $A_{11}$ does not contains any simple cycle.
+\end{lemma}
+
+\begin{corollary}
+  \label{no-cycle}
+  A string C-group representation graph of $A_{11}$ does not contains any cycle.
+\end{corollary}
+
+\begin{proof}
+  This can be directly deduced from Proposition~\ref{cycle-simple-cycle} and Lemma~\ref{no-simple-cycle}.
+\end{proof}
+
+\begin{proposition}
+  \label{adjacent-must-not-commute}
+  If two consecutive generators commute then the generated group cannot be almost simple.
+\end{proposition}
+
+\begin{proof}
+  If two consecutive $\rho_i$ and $\rho_{i+1}$ generators commute, then all generators $\le i$ commutes with all generators $\ge i+1$ and thus the group can be written as a direct product. But it cannot be an almost simple group.
+\end{proof}
 
 \paragraph{}
 Due to previous lemma, we know that double edges or alternating square with non consecutive indices can lead to a long sequence of alternating squares. Now we prove that in the case of rank 5 sggi, no $\rho_0$ and $\rho_4$ edges can be adjacent.
@@ -231,7 +254,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -245,7 +268,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (16,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -270,7 +293,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -284,7 +307,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (14,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -309,7 +332,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -323,7 +346,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (12,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -351,7 +374,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -365,7 +388,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (12,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (2);
@@ -406,7 +429,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -420,7 +443,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (14,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=30] node {$0$} (2);
@@ -446,7 +469,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -460,7 +483,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (8,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=30] node {$0$} (2);
@@ -492,7 +515,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -506,7 +529,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (14,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=30] node {$0$} (2);
@@ -537,7 +560,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -551,7 +574,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
           \node (11) at (14,0) {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=30] node {$0$} (2);

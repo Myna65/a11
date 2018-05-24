@@ -17,7 +17,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {};
           \node (2)  at (2,0) {};
           \node (3)  at (4,0) {};
@@ -31,7 +31,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (11) at (14,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$0$} (2);
@@ -65,7 +65,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {};
           \node (2)  at (0,2) {};
           \node (3)  at (2,0) {};
@@ -79,7 +79,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (11) at (16,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$0$} (2);
@@ -102,7 +102,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {};
           \node (2)  at (0,2) {};
           \node (3)  at (2,0) {};
@@ -116,7 +116,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (11) at (8,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$0$} (2);
@@ -140,7 +140,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {};
           \node (2)  at (0,2) {};
           \node (3)  at (2,0) {};
@@ -154,7 +154,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (11) at (16,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$0$} (2);
@@ -186,7 +186,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {a};
           \node (2)  at (0,2) {b};
           \node (3)  at (2,0) {c};
@@ -200,7 +200,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (11) at (16,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$0$} (3);
@@ -241,7 +241,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {};
           \node (2)  at (0,2) {};
           \node (3)  at (2,0) {};
@@ -255,7 +255,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (11) at (14,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (5)  edge node {$0$} (3);
@@ -325,7 +325,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {a};
           \node (2)  at (2,0) {b};
           \node (3)  at (4,0) {c};
@@ -339,7 +339,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
           \node (11) at (14,0)  {h};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$0$} (2);
@@ -369,7 +369,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {a};
           \node (2)  at (2,0) {b};
           \node (3)  at (4,0) {c};
@@ -383,7 +383,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
           \node (11) at (14,0)  {h};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$0$} (2);
@@ -408,7 +408,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0) {a};
           \node (2)  at (2,0) {b};
           \node (3)  at (4,0) {c};
@@ -422,7 +422,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
           \node (11) at (14,0)  {h};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (2)  edge node {$1$} (3);

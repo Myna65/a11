@@ -14,7 +14,7 @@ The definitions are inspired by~\cite{diestel2017graph}. There are two meanings 
   \index{vertex}
   \index{edge}
   \index{label}
-  A \textit{labeled multigraph} is a triple $G = (V, E, L)$ of sets. The set $V$ is the set of \textit{vertices}, $E$ for the \textit{edges} and $L$ for the \textit{labels}. Each edge $e \in E$ is associated with one vertex or a set of two distinct vertices and a label, thus $e \in (V \cup [V]^2) \times L$ where $[V]^2$ is the set of all sets of size two of $V$ i.e. $[V]^2 = \{S \in P(V) | \#S = 2\}$.
+  A \textit{labeled multigraph} is a triple $G = (V, E, L)$ of sets. The set $V$ is the set of \textit{vertices}, $E$ is the multiset of \textit{edges} and $L$ is the set of \textit{labels}. Each edge $e \in E$ is associated with one vertex or a set of two distinct vertices and a label, thus $e \in (V \cup [V]^2) \times L$ where $[V]^2$ is the set of all sets of size two of $V$ i.e. $[V]^2 = \{S \in P(V) | \#S = 2\}$.
 \end{definition}
 
 \paragraph{}
@@ -38,7 +38,7 @@ Now we give the definition of a graph (here we are talking about the original co
 
 \begin{definition}[Graph]
   \index{graph}
-  A graph is a multigraph where all the edges must be associated with different vertices or different pair of vertices.
+  A \textit{graph} is a multigraph where all the edges must be associated with different vertices or different pair of vertices i.e. $E$ is a set.
 \end{definition}
 
 \begin{definition}[Simple graph]
@@ -62,7 +62,7 @@ For example, a graph with $V = \{1,2,3,4\}$ and $E = \{\{1,2\}, \{2,3\}, \{3,4\}
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,0) {1};
         \node (2)  at (0,2) {2};
         \node (3)  at (2,2) {3};
@@ -93,7 +93,7 @@ If not needed, the numbers of the vertices on the graphs are often omitted.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,0) {};
         \node (2)  at (0,2) {};
         \node (3)  at (2,2) {};
@@ -120,14 +120,14 @@ When a labeled graph is drawn, the labels are written on the edge.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,0) {1};
         \node (2)  at (0,2) {2};
         \node (3)  at (2,2) {3};
         \node (4)  at (4,0) {4};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white}]
+      \begin{scope}[every node/.style={fill=white, transform shape}]
         \begin{scope}[every edge/.style={draw}]
           \path (1)  edge node {1} (2);
           \path (2)  edge node {1} (3);
@@ -145,7 +145,7 @@ When a labeled graph is drawn, the labels are written on the edge.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (1)  at (0,0) {1};
         \node (2)  at (0,2) {2};
         \node (3)  at (2,2) {3};

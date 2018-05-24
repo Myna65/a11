@@ -47,7 +47,7 @@ We try to minimize the number of edges so we will not connect $x$ and $z$ (with 
   \begin{center}
     \begin{tikzpicture}
 
-      \begin{scope}[every node/.style={circle,draw}]
+      \begin{scope}[every node/.style={circle,draw, transform shape}]
         \node (f)  at (2,6)  {f};
         \node (e)  at (0,6)  {e};
         \node (d)  at (0,4)  {d};
@@ -56,7 +56,7 @@ We try to minimize the number of edges so we will not connect $x$ and $z$ (with 
         \node (a)  at (1,0)  {a};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white,circle, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (a)  edge (b);
@@ -133,7 +133,7 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
       \draw[very thin, dashed] (-3,2) -- (5,2);
       \draw[very thin, dashed] (-3,0) -- (5,0);
 
-      \begin{scope}[every node/.style={circle,draw,fill=white}]
+      \begin{scope}[every node/.style={circle,draw,fill=white, transform shape}]
         \node (f)  at (1,6)  {f};
         \node (e)  at (2,4)  {e};
         \node (d)  at (0,4)  {d};
@@ -142,7 +142,7 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
         \node (a)  at (1,0)  {a};
       \end{scope}
 
-      \begin{scope}[every node/.style={fill=white,circle}]
+      \begin{scope}[every node/.style={fill=white,circle, transform shape}]
 
         \begin{scope}[every edge/.style={draw}]
           \path (a) edge (b);
@@ -193,7 +193,7 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
     \begin{center}
       \begin{tikzpicture}
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (f)  at (1,6)  {f};
           \node (e)  at (2,4)  {e};
           \node (d)  at (0,4)  {d};
@@ -202,7 +202,7 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
           \node (a)  at (1,0)  {a};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white,circle}]
+        \begin{scope}[every node/.style={fill=white,circle, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (a)  edge (b);

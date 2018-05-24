@@ -16,13 +16,13 @@ In this chapter we discuss the implications of what we have seen in the previous
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {a};
           \node (2)  at (2,0)  {b};
           \node (3)  at (4,0)  {c};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$i$} (2);
@@ -45,20 +45,20 @@ We define three patterns that are used in the construction of permutation repres
 \section{Definitions}
 \begin{definition}[Alternating square]
   \index{alternating square}
-  An alternating edge is a set of 4 vertices and 4 edges that form the following graph:
+  An alternating square is a set of 4 vertices and 4 edges that form the following graph:
 
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
           \node (4)  at (2,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$i$} (2);
@@ -90,12 +90,12 @@ We define three patterns that are used in the construction of permutation repres
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend right=30] node {$i$} (2);
@@ -131,7 +131,7 @@ Now we continue with the implications on the permutation representation graphs.
 \end{definition}
 
 \paragraph{}
-If a single share more than one vertex with a given pattern then it not a single edge by the Definition~\ref{single-edge}.
+If a single edge shares more than one vertex with a given pattern then it is not a single edge by the Definition~\ref{single-edge}.
 
 \begin{definition}
   A sequence of adjacent single edges is called a chain.
@@ -149,13 +149,13 @@ If a single share more than one vertex with a given pattern then it not a single
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {a};
           \node (2)  at (2,0)  {b};
           \node (3)  at (4,0)  {c};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$i$} (2);
@@ -172,7 +172,7 @@ If a single share more than one vertex with a given pattern then it not a single
   If $i$ and $j$ are not consecutive, the graph obtained from the permutation representation graph where only the $\rho_i$ and $\rho_j$ edges are kept must only form the patterns displayed in Property~\ref{intersection-patterns}.
 
   \paragraph{}
-  The pattern of the graph cannot form fixed points, distinct single edges or a double edge. Thus the only remaining pattern of Property~\ref{intersection-patterns} is the alternating square. But if those two edges are part of an alternating square, there are no more single edges and thus they does not form a chain which is a contradiction.
+  The pattern of the graph cannot form fixed points, distinct single edges or a double edge. Thus the only remaining pattern of Property~\ref{intersection-patterns} is the alternating square. But if those two edges are part of an alternating square, there are no more single edges and thus they do not form a chain which is a contradiction.
 
   \paragraph{}
   Thus in a chain, the indices must be consecutive.
@@ -191,13 +191,13 @@ If a single share more than one vertex with a given pattern then it not a single
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {a};
           \node (2)  at (2,0)  {b};
           \node (3)  at (4,0)  {c};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=45] node {$i$} (2);
@@ -231,7 +231,7 @@ If a single share more than one vertex with a given pattern then it not a single
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {a};
           \node (2)  at (0,2)  {b};
           \node (3)  at (2,0)  {c};
@@ -239,7 +239,7 @@ If a single share more than one vertex with a given pattern then it not a single
           \node (5)  at (4,0)  {c};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$i$} (2);
@@ -273,13 +273,13 @@ If a single share more than one vertex with a given pattern then it not a single
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,0)  {a};
           \node (2)  at (2,0)  {b};
           \node (3)  at (4,0)  {c};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$i$} (2);
@@ -309,6 +309,9 @@ If a single share more than one vertex with a given pattern then it not a single
 
 \section{Alternating square}
 
+\paragraph{}
+In an alternating square $[\rho_i, \rho_j]$ we call $\rho_i$ and $\rho_j$ the components of the alternating square.
+
 \begin{proposition}
   \label{square-connection}
   Given an alternating square $[\rho_i, \rho_j]$ a single edge can be adjacent to this square only if $|i - j| = 2$. In this case the index of the single edge is in in the middle of the two indices i.e. if the index of the edge is $k$ then $|i-k| = 1$ and $|j-k| = 1$.
@@ -320,7 +323,7 @@ If a single share more than one vertex with a given pattern then it not a single
 
 \begin{proposition}
   \label{adjacent-squares}
-  Given an alternating square $[\rho_i, \rho_j]$ the only possible adjacent alternating square are $[\rho_{i-1}, \rho_j], [\rho_{i+1}, \rho_j], [\rho_i, \rho_{j-1}]$ or $[\rho_i, \rho_{j+1}]$.
+  Given an alternating square $[\rho_i, \rho_j]$ the only possible adjacent alternating squares are $[\rho_{i-1}, \rho_j], [\rho_{i+1}, \rho_j], [\rho_i, \rho_{j-1}]$ or $[\rho_i, \rho_{j+1}]$.
 \end{proposition}
 
 \begin{corollary}
@@ -329,40 +332,62 @@ If a single share more than one vertex with a given pattern then it not a single
 \end{corollary}
 
 \begin{corollary}
-  If two alternating squares are adjacent, then the difference between the indices of the square is exactly 1\footnote{From here, it is not very clear until the end of the section}.
+  If two alternating squares are adjacent, then the difference between the indices of the square is exactly 1.\footnote{Difference of difference}.
 \end{corollary}
 
 \paragraph{}
-Due to the fact that some alternating squares must be adjacent to other one, we study the sequence of alternating squares.
+Due to the fact that some alternating squares must be adjacent to other ones, we will deal with sequence of alternating squares.
+
+\begin{definition}[Sequence of alternating squares]
+  A \textit{sequence of alternating squares} is a sequence such that two consecutive squares are adjacents.
+\end{definition}
+
+\begin{definition}[Non-cyclic sequence of alternating squares]
+  A \textit{non-cyclic sequence of alternating squares} is a sequence of alternating squares such that no squares appears multiple times in the sequence.
+\end{definition}
+
+\begin{definition}[Cyclic sequence of alternating squares]
+  A \textit{cyclic sequence of alternating squares} or \textit{cycle} is a sequence of alternating squares such that at least one square appears multiple times in the sequence.
+\end{definition}
+
+\begin{definition}[Simple cycle]
+  A cycle is said simple if the first and the last square of the sequence are the same but
+\end{definition}
 
 \begin{corollary}
-  \label{parity-sequence-squares}
-  If an alternating square in a sequence can be connected to a single edge then the number of squares in the sequence before the next square with this property in sequence is odd.
+  \label{cycle-simple-cycle}
+  Every cycle contains a simple cycle and thus if a permutation representation graph does not contains any simple cycle, it does not contais any cycle.
 \end{corollary}
 
-\paragraph{}
-There is a number of special patterns that achieve a given goal. Those patterns are unique.
+\begin{proposition}
+  \label{parity-sequence-squares}
+  If an alternating square in a sequence can be connected to a single edge then the number of squares in the sequence before the next square with this property in sequence is odd.
+\end{proposition}
+
+\begin{definition}[Linear sequence of alternating squares]
+    A sequence of alternating square is said \textit{linear} if two alternating squares that are not consecutive does not share vertices.
+\end{definition}
 
 \begin{proposition}
   \label{rotation-pattern}
-  The single rotation pattern is the following:
+  If a sequence of alternating squares is not linear, then it contains a cycle of 4 squares or it contains the following pattern.
 
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (0,-2) {};
-          \node (4)  at (2,2)  {};
-          \node (5)  at (2,0)  {};
-          \node (6)  at (2,-2) {};
-          \node (7)  at (4,2)  {};
-          \node (8)  at (4,0)  {};
+          \node (4)  at (-2,2)  {};
+          \node (5)  at (-2,0)  {};
+          \node (6)  at (-2,-2) {};
+          \node (7)  at (-4,2)  {};
+          \node (8)  at (-4,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (2)  edge node {$i+1$} (3);
@@ -382,18 +407,149 @@ There is a number of special patterns that achieve a given goal. Those patterns 
       \caption{}
     \end{center}
   \end{figure}
-
 \end{proposition}
 
-\begin{proposition}
-  \label{linear-pattern}
-  The single linear pattern that allows to change the vertical index of the sequence is the following:
+\begin{proof}
+  So we start with four indicies $i, j, k, l$, all differents and two squares that shares exactly one vertex.
 
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}[scale=.8]
 
-        \begin{scope}[every node/.style={circle,draw}]
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {h};
+          \node (2)  at (0,0)  {g};
+          \node (3)  at (0,-2) {};
+          \node (4)  at (-2,2)  {e};
+          \node (5)  at (-2,0)  {d};
+          \node (6)  at (-2,-2) {};
+          \node (7)  at (-4,2)  {b};
+          \node (8)  at (-4,0)  {a};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (2)  edge node {$k$} (3);
+            \path (5)  edge node {$k$} (6);
+            \path (4)  edge node {$i$} (5);
+            \path (7)  edge node {$i$} (8);
+            \path (2)  edge node {$l$} (5);
+            \path (3)  edge node {$l$} (6);
+            \path (4)  edge node {$j$} (7);
+            \path (5)  edge node {$j$} (8);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  But there is a problem at the point $d$ because it is impossible that both indices of $(i,j)$ commutes with both indices of $(k,l)$. Thus there must be at least one pair of non consecutive indices, suppose that it is $(k,l)$, the other cases are isomorphic. An alternating square must be built to include the edges $(e,d)$ and $(d,g)$.
+
+  \paragraph{}
+  The last edge can be $a$, $b$ or $h$ up to isomorphim. But that makes no sense to use $a$ or $b$ because if an alternating square $[\rho_i, \rho_l]$ is built on the points $a,e,d,g$ then there is a $\rho_i$ edge between $a$ and $g$ but $a$ is already linked to $b$ by a $\rho_1$ edge, thus this is impossible by Proposition~\ref{fixed-only-1}. The same applies to $b$, hence there is an alternating square between $\rho_i$ and $\rho_l$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {h};
+          \node (2)  at (0,0)  {g};
+          \node (3)  at (0,-2) {c};
+          \node (4)  at (-2,2)  {e};
+          \node (5)  at (-2,0)  {d};
+          \node (6)  at (-2,-2) {f};
+          \node (7)  at (-4,2)  {b};
+          \node (8)  at (-4,0)  {a};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (2)  edge node {$k$} (3);
+            \path (5)  edge node {$k$} (6);
+            \path (1)  edge node {$i$} (2);
+            \path (4)  edge node {$i$} (5);
+            \path (7)  edge node {$i$} (8);
+            \path (1)  edge node {$l$} (4);
+            \path (2)  edge node {$l$} (5);
+            \path (3)  edge node {$l$} (6);
+            \path (4)  edge node {$j$} (7);
+            \path (5)  edge node {$j$} (8);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Suppose now that $i$ and $k$ are not consecutive, an alternating square. \footnote{to do}
+  Thus $i$ and $k$ must be consecutive and $k = i+1$ (up to duality). But by isomorphim the same applies to $j$ and $l$ and thus $l = j+1$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {h};
+          \node (2)  at (0,0)  {g};
+          \node (3)  at (0,-2) {c};
+          \node (4)  at (-2,2)  {e};
+          \node (5)  at (-2,0)  {d};
+          \node (6)  at (-2,-2) {f};
+          \node (7)  at (-4,2)  {b};
+          \node (8)  at (-4,0)  {a};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (2)  edge node {$i+1$} (3);
+            \path (5)  edge node {$i+1$} (6);
+            \path (1)  edge node {$i$} (2);
+            \path (4)  edge node {$i$} (5);
+            \path (7)  edge node {$i$} (8);
+            \path (1)  edge node {$j+1$} (4);
+            \path (2)  edge node {$j+1$} (5);
+            \path (3)  edge node {$j+1$} (6);
+            \path (4)  edge node {$j$} (7);
+            \path (5)  edge node {$j$} (8);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  then another alternating square must be built and this square forms a cycle of 4 squares. Otherwise $i$ and $k$ must be consecutive, thus $k = i+1$ up to duality.
+
+\end{proof}
+
+\begin{corollary}
+  Every linear cycle contains an even number of points.
+\end{corollary}
+
+\begin{definition}[Monotone sequence of alternating squares]
+  A sequence of alternating square is said \textit{monotone} if all alternating squares have one common component.
+\end{definition}
+
+\begin{proposition}
+  \label{linear-pattern}
+  Every non-monotone linear sequence of alternating squares contains the following pattern or a cycle.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
           \node (1)  at (0,2)  {};
           \node (2)  at (0,0)  {};
           \node (3)  at (2,2)  {};
@@ -402,7 +558,7 @@ There is a number of special patterns that achieve a given goal. Those patterns 
           \node (6)  at (4,0)  {};
         \end{scope}
 
-        \begin{scope}[every node/.style={fill=white}]
+        \begin{scope}[every node/.style={fill=white, transform shape}]
 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge node {$i$} (2);
@@ -424,10 +580,66 @@ There is a number of special patterns that achieve a given goal. Those patterns 
 
 \end{proposition}
 
+\begin{proof}
+  We have two adjacents alteranting square that does not share a component, thus the common edge must be a double edge.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (1)  edge node {$j$} (3);
+            \path (2)  edge node {$j$} (4);
+            \path (3)  edge node {$k$} (5);
+            \path (4)  edge node {$k$} (6);
+            \path (3)  edge[bend left=40] node {$l$} (4);
+            \path (5)  edge node {$l$} (6);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If $j$ and $k$ are not consecutive, then an alternating square must be built, it cannot use any of the existing points. Thus there is a cycle of length 3.
+
+  \paragraph{}
+  If $j$ and $k$ are consecutive, then $j = k+1$ (up to duality).
+
+  \paragraph{}
+  If an alternating square is built on the side $a,c$, this square must use one new involution: $\rho_n$ because the vertex $c$ is already connected by all other involutions.
+
+\end{proof}
+
 \begin{corollary}
+  \label{even-sequence}
+  Every simple cycle that have five squares or more and every sequence of alternating squares contains an even number of points.
+\end{corollary}
+
+\begin{proof}
+  We do not have any of the special patterns. Starting from a square, each added square to the sequence can be added in a linear and monotone fashion, in this case, it use two points. Otherwise it must one of the patterns found in Propositions~\ref{rotation-pattern} and~\ref{linear-pattern} but both of them add an even number of points.
+\end{proof}
+
+\begin{proposition}
   \label{sequence-connection}
   A sequence that cannot be extended can only be adjacent to a single edge.
-\end{corollary}
+\end{proposition}
 
 \section{General properties}
 
@@ -437,7 +649,7 @@ There is a number of special patterns that achieve a given goal. Those patterns 
   \begin{enumerate}
     \item An alternating square $[\rho_i, \rho_j]$.
     \item Two double edges $(\rho_i, \rho_j)$.
-    \item One double edge $(\rho_i, \rho_j)$ and a single edge between two points fixed by $\rho_j$.
+    \item One double edge $(\rho_i, \rho_j)$ and a single edge between two points fixed by $\rho_i$.
   \end{enumerate}
 \end{proposition}
 
@@ -446,7 +658,7 @@ There is a number of special patterns that achieve a given goal. Those patterns 
 \end{proof}
 
 \paragraph{}
-In the next chapter we prove that there are no polytope of a given rank with automorphism group $A_{11}$. To do this we generate all the possible permutation representation graphs and then prove that, if a such graph exists, the graph is not a string C-group representation of $A_{11}$.
+In the next chapter we prove that there are no polytopes of a given rank with automorphism group $A_{11}$. To do this we generate all the possible permutation representation graphs and then prove that, if such a graph exists, the graph is not a string C-group representation of $A_{11}$.
 
 \paragraph{}
 To generate all the possible permutation representation graphs we need a single and systematic method. We will use the following one.

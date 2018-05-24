@@ -43,72 +43,8 @@
 Dans la suite, nous noterons les carrés alternés grâce au deux involutions qui les composent. Un carré alterné avec des arêtes $\rho_0$ et $\rho_2$ sera noté $[\rho_0, \rho_2]$.
 
 \begin{definition}
-  Deux carrés alternés sont dit adjacents s'ils partagent deux sommets\footnote{Ces définitions sont à améliorer, il y a quelques problèmes mais je pense qu'il y a moyen de rendre ça correct}.
-\end{definition}
-
-\begin{definition}
   Une suite de carrés alternés adjacents est un suite finie dans laquelle chaque carré alterné est adjacent avec son précédesseur et son successeur s'ils existent.
 \end{definition}
-
-\begin{definition}
-  Une suite de carré alternés adjacents est dite linéaire si une des deux composante de sa notation est constante.
-\end{definition}
-
-Par exemple, la suite $[\rho_0, \rho_2], [\rho_0, \rho_4], [\rho_0, \rho_3]$ est linéaire car la première composante est toujours $\rho_0$.
-
-\begin{definition}
-  Une suite de carré alterné est dite monotone si la suite formée par les différences des indices de ses carrés est monotone.
-\end{definition}
-
-La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en effet la suite formée par la différente des indice est $2, 3, 4$ et cette suite est bien monotone.
-
-\begin{proposition}
-  Toute suite de carrés alternés monotone est linéaire.
-\end{proposition}
-
-\begin{proof}
-  Une suite monotone non-linéaire serait de la forme suivante: $[\rho_{i-1}, \rho_j], [\rho_i, \rho_j], [\rho_i, \rho_{j+1}]$, si nous représentons le graphe d'une telle suite nous obtenons le graphe suivant:
-
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-
-        \begin{scope}[every node/.style={circle,draw}]
-          \node (1)  at (0,2)  {};
-          \node (2)  at (0,0)  {};
-          \node (3)  at (0,-2) {};
-          \node (4)  at (2,2)  {};
-          \node (5)  at (2,0)  {};
-          \node (6)  at (2,-2) {};
-          \node (7)  at (4,2)  {};
-          \node (8)  at (4,0)  {};
-        \end{scope}
-
-        \begin{scope}[every node/.style={fill=white}]
-
-          \begin{scope}[every edge/.style={draw}]
-            \path (2)  edge node {$i-1$} (3);
-            \path (5)  edge node {$i-1$} (6);
-            \path (1)  edge node {$i$} (2);
-            \path (4)  edge node {$i$} (5);
-            \path (7)  edge node {$i$} (8);
-            \path (1)  edge node {$j$} (4);
-            \path (2)  edge node {$j$} (5);
-            \path (3)  edge node {$j$} (6);
-            \path (4)  edge node {$j+1$} (7);
-            \path (5)  edge node {$j+1$} (8);
-          \end{scope}
-        \end{scope}
-
-      \end{tikzpicture}
-      \caption{Suite de carrés alternés monotone et non-linéaire}
-    \end{center}
-  \end{figure}
-
-  \paragraph{}
-  Nous avons un problème en bas à droite, nous ne pouvons pas ajouter de carré à cet endroit sinon nous n'avons plus une suite, donc il faut que $i-1$ et $j+1$ soit consécutifs. On a alors $i = j+1$ ou $i+1=j$ étant donné la symétrie nous pouvons n'en conserver qu'une. Prenons $i = j+1$, ceci est un problème car alors notre carré alterné $[\rho_i, \rho_j]$ n'en est plus un, en effet $|i-j| = 1$.
-
-\end{proof}
 
 
 \begin{lemma}
@@ -135,9 +71,4 @@ La suite $[\rho_0, \rho_2], [\rho_0, \rho_3], [\rho_0, \rho_4]$ est monotone, en
 \begin{lemma}
   \label{parity-sequence-squares}
   La taille d'une suite allant d'un carré alterné dont la différence des indices est 2 vers un autre carré alterné qui satisfait le même propriété est impaire.
-\end{lemma}
-
-\begin{lemma}
-  \label{continue-double-edge}
-  Une arête double dont la différence des indices est supérieure à 2 ne peut être relié que par un carré alterné.
 \end{lemma}
