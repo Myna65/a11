@@ -81,54 +81,13 @@
   \end{figure}
 
   \paragraph{}
-  The involution $\rho_0$ must commute with $\rho_3$. The involution $\rho_0$ cannot double the single $\rho_3$ edge. not be connected to any vertex of this edge. It cannot double $\rho_1$ but one point is missing. It must use at least one point of this edge. It is a single $\rho_0$ edge. It must only be connected to a fixed point.
-
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-
-        \begin{scope}[every node/.style={circle,draw, transform shape}]
-          \node (1)  at (0,2)  {b};
-          \node (2)  at (0,0)  {a};
-          \node (3)  at (2,2)  {d};
-          \node (4)  at (2,0)  {c};
-          \node (5)  at (4,0)  {e};
-          \node (6)  at (6,0)  {f};
-          \node (7)  at (8,0)  {g};
-          \node (8)  at (10,0)  {h};
-          \node (9)  at (14,0) {i};
-          \node (10) at (12,0) {j};
-          \node (11) at (16,0) {k};
-        \end{scope}
-
-        \begin{scope}[every node/.style={fill=white, transform shape}]
-
-          \begin{scope}[every edge/.style={draw}]
-            \path (9) edge node {$0$} (11);
-            \path (1)  edge node {$1$} (2);
-            \path (3)  edge node {$1$} (4);
-            \path (5)  edge[bend left=30] node {$1$} (6);
-            \path (9)  edge node {$1$} (10);
-            \path (1)  edge node {$3$} (3);
-            \path (2)  edge node {$3$} (4);
-            \path (5)  edge[bend right=30] node {$3$} (6);
-            \path (7)  edge node {$3$} (8);
-          \end{scope}
-        \end{scope}
-
-      \end{tikzpicture}
-      \caption{}
-    \end{center}
-  \end{figure}
-
-  \paragraph{}
   Also by Lemma~\ref{rank-4-3-patterns}, $\rho_0$ and $\rho_2$ must form the same patterns. Thus there are at least two alternating squares. There are some possibilities for the relations between both squares.
 
   \paragraph{}
   \textbf{All vertices shared}
 
   \paragraph{}
-  If all vertices are shared then, the square cannot be connected.
+  If all vertices are shared, then the square cannot be connected.
 
   \paragraph{}
   \textbf{Two vertices shared}
@@ -174,7 +133,7 @@
   \end{figure}
 
   \paragraph{}
-  If the sequence is extended, the possible adjacent squares are $[\rho_0,\rho_3]$, $[\rho_2, \rho_3]$ or $[\rho_0, \rho_2]$\footnote{Not finished}.
+  If the sequence is extended, the possible adjacent squares are $[\rho_0,\rho_3]$, $[\rho_2, \rho_3]$ or $[\rho_0, \rho_2]$ but in all cases, it uses $\rho_1$ or $\rho_2$ edges and thus some $\rho_0$ or $\rho_3$ edge must be placed in atlernating squares but there are not enough points.
 
   \paragraph{}
   If the sequence is not extended, one $\rho_2$ edge must connect the square to a fixed point (up to duality).
@@ -218,10 +177,10 @@
   \end{figure}
 
   \paragraph{}
-  Now, there are four points remaining. We can build and alternating square. This square must be $[\rho_1, \rho_3]$ but then there are two $\rho_0$ edge and no $\rho_1$. No new alternating square can be built because there not enough points. Thus that is impossible and no new square can be built.
+  Now, there are four remaining points. We can build an alternating square. This square must be $[\rho_1, \rho_3]$ but then there are two $\rho_0$ edges and no $\rho_1$. No new alternating square can be built because there are not enough points.
 
   \paragraph{}
-  No $\rho_0$ edge can be placed inside existing square and there are two $\rho_0$ edges remaining for one $\rho_1$ and thus by Proposition~\ref{rho0atEnd} the graph will never be completed.
+  No $\rho_0$ edge can be placed inside existing square and there are two remaining $\rho_0$ edges for one $\rho_1$ and by Proposition~\ref{rho0atEnd} the graph will never be completed.
 
   \paragraph{}
   \textbf{No share}
@@ -267,7 +226,7 @@
   \end{figure}
 
   \paragraph{}
-  If a square is extended in a sequence this sequence cannot have a length bigger than two because there are not enough points. Suppose that this square is $[\rho_0, \rho_2]$, the new square must left one $\rho_1$ and one $\rho_3$ edge to link the two squares together. Thus the new square must be $[\rho_0, \rho_3]$.
+  If a square is extended in a sequence, this sequence cannot have a length bigger than two because there are not enough points. Suppose that this square is $[\rho_0, \rho_2]$, the new square must left one $\rho_1$ and one $\rho_3$ edges to link the two squares together. Thus the new square must be $[\rho_0, \rho_3]$.
 
   \begin{figure}[H]
     \begin{center}
@@ -310,7 +269,7 @@
   \end{figure}
 
   \paragraph{}
-  Now we must connect the two square together using one $\rho_1$ and one $\rho_2$ edge.
+  Now we must connect the two squares together using one $\rho_1$ edge and one $\rho_2$ edge.
 
   \begin{figure}[H]
     \begin{center}
@@ -355,10 +314,10 @@
   \end{figure}
 
   \paragraph{}
-  The last $\rho_0$ edge must be placed on $(j,k)$. But there no available position for the last $\rho_1$ edge. Thus this does not lead to any valid sggi.
+  The last $\rho_0$ edge must be placed on $(j,k)$. But there are no available positions for the last $\rho_1$ edge. Thus this does not lead to any valid sggi.
 
   \paragraph{}
-  Thus none of the two alternating square can be extended. Thus they must be linked by a single edge.
+  Thus none of the two alternating squares can be extended and they must be linked by a single edge.
 
   \begin{figure}[H]
     \begin{center}
@@ -400,7 +359,7 @@
   \end{figure}
 
   \paragraph{}
-  There are three possibilities to link both component a chain $\rho_0, \rho_1$, a chain $\rho_2, \rho_1$ or a chain $\rho_3, \rho_1$. The last case is the dual of the first case.
+  Then there are three possibilities to link both components: a chain $\rho_0, \rho_1$, a chain $\rho_2, \rho_1$ or a chain $\rho_3, \rho_1$. The last case is the dual of the first case.
 
   \begin{figure}[H]
     \begin{center}
@@ -485,16 +444,16 @@
   \end{figure}
 
   \paragraph{}
-  In both graphs, a $\rho_0$ edge can be placed on $(j,k)$ and a $\rho_3$ edge on $(a,b)$ but in the first one, there is no possibility for the last $\rho_3$ edge. In the second graph the last $\rho_0$ edge must be placed on $(e,f)$ but the the last $\rho_3$ cannot be placed on $(f,g)$ and thus can not be placed.
+  In both graphs, a $\rho_0$ edge can be placed on $(j,k)$ and a $\rho_3$ edge on $(a,b)$. In the first one, there is no possibility for the last $\rho_3$ edge. In the second graph the last $\rho_0$ edge must be placed on $(e,f)$ but the the last $\rho_3$ cannot be placed on $(f,g)$ and thus anywhere.
 
   \paragraph{}
-  This conclude this part of the proof.
+  This concludes this part of the proof.
 
   \paragraph{}
   \textbf{One vertex shared}
 
   \paragraph{}
-  If one vertex is shared, then a rotation pattern must be used between the two square (see Proposition~\ref{rotation-pattern}).
+  If one vertex is shared, then a rotation pattern must be used between the two squares (see Proposition~\ref{rotation-pattern}).
 
   \begin{figure}[H]
     \begin{center}
@@ -536,13 +495,13 @@
   \end{figure}
 
   \paragraph{}
-  But we need to place all the other patterns deduces from the usages of~\ref{rank-4-3-patterns}. But the edge $(b,c)$ or $(c,f)$ can be used to form those pattern. First we suppose that both are single edges and then we we see the case where one of the edge is a double edge.
+  We need to place all the other patterns deduced from the usages of Lemma~\ref{rank-4-3-patterns}. The edges $(b,c)$ or $(c,f)$ can be used to form those patterns. First we suppose that both are single edges and then we examine the case where one of the edge is a double edge.
 
   \paragraph{}
-  Both two double edges cannot be placed on vertices $i,j,k$. Thus one double edge must share a vertex with an alternating square. But then it must be inside this alternating square. Suppose that this edge is $(\rho_0, \rho_2)$ (using $(\rho_0, \rho_3)$ gives the same situation up to duality), it must not use any other vertex already used by an edge $\rho_0$ or $\rho_2$. The only possibility is $(a,d)$. If the other double edge is placed in this component, on $(g,h)$ then this component cannot be connected to anything and thus the graph can not be connected.
+  Both double edges cannot be placed on vertices $i,j,k$ because two double edges cannot be adjacent. Thus one double edge must share a vertex with an alternating square. Hence it must be inside this alternating square. Suppose that this edge is $(\rho_0, \rho_2)$ (using $(\rho_0, \rho_3)$ gives the same situation up to duality), it must not use any other vertex already used by an edge $\rho_0$ or $\rho_2$. The only possibility is $(a,d)$. If the other double edge is placed in this component, it must be placed on $(g,h)$ but then this component cannot be connected to anything and thus the graph can not be connected.
 
   \paragraph{}
-  Now the component $\{a,b,c,d,e,f,g,h\}$ can not be extended by $a$ or $b$. If it is extended on $g$ and $h$ then there is no more free vertices for the double edges $(\rho_1, \rho_3)$, thus it must be placed on the big component but then this component cannot be extended by previous statement.
+  Now the component $\{a,b,c,d,e,f,g,h\}$ can not be extended by $a$ or $b$. If it is extended on $g$ and $h$ then there are no more free vertices for the double edges $(\rho_1, \rho_3)$, and it must be placed on the big component, but this component cannot be extended by previous statement.
 
   \paragraph{}
   The double edge $(\rho_1, \rho_3)$ must be on the three remaining points. This edge must be connected to a $\rho_2$ edge. But this $\rho_2$ edge cannot have its other vertex in the big component.
@@ -685,7 +644,7 @@
   \end{figure}
 
   \paragraph{}
-  Now we prove that both of those graphs are string C-group representations of $A_{11}$. To prove this, remove the $\rho_3$ edge, both graphs becomes:
+  Now we prove that both of those graphs are string C-group representations of $A_{11}$. To prove this, remove the $\rho_3$ edge. Both graphs become:
 
   \begin{figure}[H]
     \begin{center}
@@ -773,13 +732,13 @@
   As usual, only the first case is proved and the other are left to the reader.
 
   \paragraph{}
-  The group displayed is transitive because the graph is connected. Furthermore it is to transitive, to prove that, we must find permutations that keep $c$ fixed and that send $b$ to any other unfixed point. However $c$ keep fixed if no $\rho_0$ edge are used, thus $b$ can be easily send to $a,d,e,g,i,j,k$ while keeping $c$ fixed. Now we only need to find a permutation that send $c$ fixed and that send $b$ to $f$ or $h$. This permutation is $(\rho_1\rho_2)^3\rho_0\rho_1\rho_2\rho_0\rho_1\rho_0$.
+  The group displayed is transitive because the graph is connected. Furthermore it is 2-transitive. To prove that, we must find permutations that keep $c$ fixed and that send $b$ to any other unfixed point. However $c$ keep fixed if no $\rho_0$ edge are used, thus $b$ can be easily send to $a,d,e,g,i,j,k$ while keeping $c$ fixed. Now we only need to find a permutation that sends $c$ fixed and that sends $b$ to $f$ or $h$. This permutation is $(\rho_1\rho_2)^3\rho_0\rho_1\rho_2\rho_0\rho_1\rho_0$.
 
   \paragraph{}
-  The group is 2-transitive thus primitive. Its order is a multiple of $11 \times 10$ and of the order of the subgroups: $D_{12}$ and $D_{16}$. The order is thus a multiple of $11 \times 5 \times 3 \times 2^4 = 2640$. By looking at the primitive groups of degree 11 in~\cite{buekenhout1996list}, there is only three possible groups: $M_{11}$, $A_{11}$ and $S_{11}$. The first can be eliminated because $D_{16}$ is not one of its subgroup, $S_{11}$ contains odd permutations but the graph only contains even generators and thus cannot generate $S_{11}$.
+  The group is 2-transitive thus primitive. Its order is a multiple of $11 \times 10$ and of the order of the subgroups: $D_{12}$ and $D_{16}$. The order is thus a multiple of $11 \times 5 \times 3 \times 2^4 = 2640$. By looking at the primitive groups of degree 11 in~\cite{buekenhout1996list}, there are only three possible groups: $M_{11}$, $A_{11}$ and $S_{11}$. The first can be eliminated because $D_{16}$ is not one of its subgroup, $S_{11}$ contains odd permutations but the graph only contains even generators and thus cannot generate $S_{11}$.
 
   \paragraph{}
-  The only solution is $A_{11}$. But if $\Gamma_{\rho_0, \rho_1, \rho_2} = \Gamma = A_{11}$, then $\Gamma$ cannot satisfies the intersection property by~\ref{not-monodromy-intersection}.
+  The only solution is $A_{11}$. But if $\Gamma_{\rho_0, \rho_1, \rho_2} = \Gamma = A_{11}$, then $\Gamma$ cannot satisfy the intersection property by~\ref{not-monodromy-intersection}.
 
   \paragraph{}
   The last possibility is to move the double edge on $(c,d)$. The graph is this one:
@@ -827,10 +786,10 @@
   \end{figure}
 
   \paragraph{}
-  There are 16 edges to link 11 vertices, thus we have 6 "joker" edges. But we built three alternating square and three double edges and thus all of them have been used. All new edges must link two different components.
+  There are 16 edges to link 11 vertices, thus we have 6 "joker" edges. We already built three alternating square and three double edges and thus all of them have been used. All new edges must link two different components.
 
   \paragraph{}
-  The component big component can only be linked by a $\rho_1$ edge from $g$ or $h$. Then there are a $\rho_2$ and a $\rho_3$ edge remaining and thus the possible graphs are:
+  The big component can only be linked by a $\rho_1$ edge from $g$ or $h$. Then there are a remaining $\rho_2$ edge and a remaining $\rho_3$ edge and thus the possible graphs are:
 
   \begin{figure}[H]
     \begin{center}
@@ -930,13 +889,17 @@
 
 \end{proof}
 
-\begin{theorem}
+\begin{lemma}
   This monodromy group is not a string C-group representation of $A_{11}$.
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
-  As usual, we define $S_1 = \{\rho_0,\rho_1, \rho_2\}$ and $S_2 = \{\rho_1, \rho_2, \rho_3\}$. We have that $\Gamma_{S_1 \cap S_2}$ is isomorphic to $D_{42}$. We have also that $\Gamma_{S_1}$ is isomorphic to $A_{10}$\footnote{Incomplete}.
-
-  \paragraph{}
-  Thus the order of $\Gamma_{S_1} \cap \Gamma_{S_2}$ must be a multiple of $9$. But 42 is not and thus this monodromy group is no a string C-group representation.
+  As in previous sections, the proof of this statement is left to the reader.
 \end{proof}
+
+\paragraph{}
+Now we can summarized what we have seen in Lemmas~\ref{proof-2-1}, \ref{proof-2-2}
+
+\begin{theorem}
+  There does not exist a string C-group representation of rank 4 of $A_{11}$.
+\end{theorem}

@@ -830,7 +830,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 
 \begin{proposition}
   \label{linear-pattern}
-  In a polytope of rank 5 or less and on 11 points or less, every non-monotone linear sequence of alternating squares contains one of the following two patterns or a simple cycle with three squares.
+  On a polytope of rank 5 or less, every non-monotone linear sequence of alternating squares contains one cycle with three squares or one of the two following patterns:
 
   \begin{figure}[H]
     \begin{center}
@@ -862,7 +862,46 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 
       \end{tikzpicture}
       \caption{}
-      \ref{linear-1}
+      \label{linear-1}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+          \node (7)  at (6,2)  {h};
+          \node (8)  at (6,0)  {g};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (5)  edge[bend right=40] node {$i$} (6);
+            \path (1)  edge node {$i+3$} (3);
+            \path (2)  edge node {$i+3$} (4);
+            \path (3)  edge node {$i+2$} (5);
+            \path (4)  edge node {$i+2$} (6);
+            \path (7)  edge node {$i+1$} (5);
+            \path (8)  edge node {$i+1$} (6);
+            \path (3)  edge[bend left=40] node {$i+4$} (4);
+            \path (5)  edge[bend left=40] node {$i+4$} (6);
+            \path (7)  edge node {$i+4$} (8);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
     \end{center}
   \end{figure}
 
@@ -980,7 +1019,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  If $i$ and $k$ are not consecutive then a $\rho_i$ edge must be placed between $e$ and $f$. However, by Proposition~\ref{square-connection}, an additionnal square must be built. In order to end the sequence at one moment the horizontal component of the last square must be adjacent to $i$ or $l$.
+  If $i$ and $k$ are not consecutive then a $\rho_i$ edge must be placed between $e$ and $f$. However, by Proposition~\ref{square-connection}, an additionnal square must be built. In order to end the sequence the horizontal component of the squares at the end of the pattern must be adjacent to $i$ or $l$.
 
   \paragraph{}
   Suppose that we are currently at the left end of a such sequence, then $k+1$ is consecutive to $l$ and $l = k + 2$. The graph is the following one:
@@ -1100,7 +1139,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  If there are ten points: there are two possible patterns:
+  If there are 10 points, we are limited because there are only five involutions. Thus the only possible pattern is:
 
   \begin{figure}[H]
     \begin{center}
@@ -1147,19 +1186,21 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
     \end{center}
   \end{figure}
 
-
+  \paragraph{}
+  But this pattern contains the pattern displayed in Figure~\ref{linear-1} and thus one of the two patterns is contained in it.
 
   \paragraph{}
-  If there are more than eight points, then the rank of polytope will be greater than five or the pattern constructed will include the pattern of Figure~\ref{linear-1}.
+  We can see that no other cycle can be made, even for a bigger number of involutions and a bigger number of points. For a general study of all possible permutation representation graph, it can be useful to enumerate more completly on the possible pattern of this family.
 
 \end{proof}
 
 \begin{corollary}
   \label{even-sequence}
-  Every simple cycle that have five squares or more and every sequence of alternating squares contains an even number of points.
+  Every sequence of alternating square (cyclic or acyclic) that does not contains any non-linear cycle seen in Proposition~\ref{rotation-pattern} and~\ref{linear-pattern} contains an even number of points.
 \end{corollary}
 
 \begin{proof}
+  If the sequence is linear monotone, then each new square add two new points. If the sequence is not linear then it must use the pattern seen in Proposition~\ref{rotation-pattern} but this pattern also add an even number of points. If it is not monotone, then it must used
   We do not have any of the special patterns. Starting from a square, each added square to the sequence can be added in a linear and monotone fashion, in this case, it use two points. Otherwise it must one of the patterns found in Propositions~\ref{rotation-pattern} and~\ref{linear-pattern} but both of them add an even number of points.
 \end{proof}
 
@@ -1211,9 +1252,38 @@ To generate all the possible permutation representation graphs we need a single 
 
 \begin{lemma}
   \label{rho0atEnd}
-  During the construction of a permutation representation graph of rank $r$ (i.e. the generators are $\rho_0, \dots, \rho_{r-1}$), if there are $r$ $\rho_0$ edges that are not placed and that none of the unplaced $\rho_0$ edges can be part of an alternating square, then there must be at least $n$ single $\rho_1$ edges in the final $\Gamma_{\rho_0, \rho_1}$.
+  In permutation representation graph on $n$ vertices, if there are $r < \frac{n}{2}$ $\rho_0$ edges that are not in an alternating square, then there are at least $r$ $\rho_1$ edges that are not in an alternating square.
 \end{lemma}
 
 \begin{proof}
-  Easy\footnote{to do}.
+  If the $\rho_0$ edges are not part of an alternating square then they must be adjacent to a simple edge, a double edge or an alternating square. But the last two cases are impossible by Propositions~\ref{square-connection} and~\ref{continue-double-edge} because there are no $\rho_{-1}$ involution.
+
+  \paragraph{}
+  Moreover, if two $\rho_0$ share a $\rho_1$ edges like in the Figure~\ref{rho0Fig}, then this component needs a $\rho_1$ edge for the same reason.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (2)  edge node {$1$} (3);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+      \label{rho0Fig}
+    \end{center}
+  \end{figure}
 \end{proof}

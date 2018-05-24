@@ -72,6 +72,14 @@ The set of all automorphisms of a polytope $\mathcal P$ forms a group called the
   An abstract regular polytope is a polytope such that $\Gamma(\mathcal P)$ is transitive on $\mathcal F(\mathcal P)$.
 \end{definition}
 
+\begin{definition}[Schläfli type]
+  \index{schläfli type}
+  The Schläfli type of a regular polytope is the sequence of the order of the elements $\rho_i \rho_{i+1}$.
+\end{definition}
+
+\paragraph{}
+The Schläfli type completly define Euclidean polytope however this is not true anymore. The Schläfli type are just a compact way to denote the relation between consecutive generators. For example, the Schläfli type of the cube is $\{4,3\}$, the octahedron is $\{3,4\}$ and the tetrahedron is $\{3,3\}$.
+
 \begin{theorem}
   An abstract regular polytope is a string C-group representation of its automorphism group.
 \end{theorem}
@@ -112,3 +120,8 @@ Thus the distinguished generators completly define the polytope and they form a 
 
 \paragraph{}
 For the details of the proofs of properties, see the section 2B of~\cite{abstractRegularPolytopes}.
+
+\begin{definition}[Dual of an abstract regular polytope]
+  \index{dual of an abstract regular polytope}
+  The \textit{dual of an abstract regular polytope} is the polytope obtained by inversing the list of generators: $(\rho_0, \rho_1, \dots, \rho_r)$ becomes $(\rho_r, \rho_{r-1}, \dots, \rho_0)$.
+\end{definition}

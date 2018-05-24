@@ -8,7 +8,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
 \end{lemma}
 
 \begin{proof}
-  If the difference between the indices of one double edge is not 2, this double edge must be included in an alternating square by Proposition~\ref{continue-double-edge}. But there are no alternating squares, thus the difference of the indices must be 2. There are only two possibilities: $(\rho_0, \rho_2)$ and $(\rho_1, \rho_3)$
+  If the difference between the indices of a double edge is not 2, this double edge must be included in an alternating square by Proposition~\ref{continue-double-edge}. Since there are no alternating squares, thus the difference of the indices must be 2. There are only two possibilities: $(\rho_0, \rho_2)$ and $(\rho_1, \rho_3)$.
 
   \paragraph{}
   If there are two double edges $(\rho_0, \rho_2)$, then all $\rho_0$ edges have been used and the graph is the following:
@@ -47,15 +47,52 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  To connect the two $\rho_3$ edges, since no alternating square or double edge can be built, the $\rho_3$ edges must be surrounded by two $\rho_2$ edges by Lemma~\ref{rho0atEnd}. Hence one $\rho_3$ edge must use one of the two ends of the graph.
+  To connect the two $\rho_3$ edges, since no alternating square or double edge can be built, two $\rho_2$ edges are needed by Lemma~\ref{rho0atEnd}. This two $\rho_2$ edge cannot be in an alternating square or in a double edges. Moreover those edges are adjacent to at least one $\rho_3$ edge. Here is one example:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (2,0) {};
+          \node (3)  at (4,0) {};
+          \node (4)  at (6,0)  {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (10,0)  {};
+          \node (7)  at (12,0)  {};
+          \node (8)  at (18,0)  {};
+          \node (9)  at (20,0)  {};
+          \node (10) at (16,0)  {};
+          \node (11) at (14,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (6)  edge[bend left=30] node {$0$} (7);
+            \path (8)  edge[bend left=30] node {$0$} (9);
+            \path (6)  edge[bend right=30] node {$2$} (7);
+            \path (8)  edge[bend right=30] node {$2$} (9);
+            \path (2)  edge node {$2$} (3);
+            \path (4)  edge node {$2$} (5);
+            \path (1)  edge node {$3$} (2);
+            \path (3)  edge node {$3$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
   \paragraph{}
-  Thus at least one double edge is not placed at one end of the graph and thus needs two $\rho_2$ edges to be connected. But the last double edge also needs at least one $\rho_2$ edge. And thus 5 $\rho_2$ edges are needed but that is impossible\footnote{False}.
+  But now, there are only $\rho_1$ edges to connect everything and this is clearly impossible.
 
 \end{proof}
 
 \begin{lemma}
-  If there are one double edges and one alternating square then they must be $(\rho_0, \rho_2)$ and $[\rho_1, \rho_3]$.
+  If there are one double edge and one alternating square then they must be $(\rho_0, \rho_2)$ and $[\rho_1, \rho_3]$.
 \end{lemma}
 
 \begin{proof}
@@ -275,7 +312,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  Now there two $\rho_3$ that are not part of an alternating square for only one $\rho_2$ but that is forbidden by Lemma~\ref{rho0atEnd}.
+  There are two $\rho_3$ that are not part of an alternating square for only one $\rho_2$ but that is forbidden by Lemma~\ref{rho0atEnd}.
 
   \paragraph{}
   If the difference between the indices if 3, the square is $[\rho_0, \rho_3]$. The adjacent square must be $[\rho_1, \rho_3]$ up to duality. But the index $3$ is repeated and that is impossible.
@@ -287,12 +324,13 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
 
 Now we list all the possible monodromy groups with rank 4 on $A_{11}$.
 
-\begin{theorem}
+\begin{lemma}
+  \label{proof-2-1}
   All monodromy groups of rank 4 on $A_{11}$ with two 4-transpositions are those presented in appendix~\ref{rank4-2-4transpositions} (p.~\pageref{rank4-2-4transpositions})).
-\end{theorem}
+\end{lemma}
 
 \paragraph{}
-The proof of this theorem is left to the reader because it is just a very simple (but long) application of the Method~\ref{method}.
+The proof of this theorem is left to the reader because it is just a very simple (but long) application of Method~\ref{method}.
 
 \paragraph{}
 There are a lot of monodromy groups, thus it is important to be systematic. The appendix~\ref{rank4-2-4transpositions} is structured in the following way and we encourage the reader to search for all monodromy groups in the same way.
@@ -309,14 +347,17 @@ Once this decision tree is made, finding the graphs is very easy. The structure 
 \paragraph{}
 For each of this monodromy group we prove that it is not a string C-group representation of $A_{11}$. We make three sub-sections for the three main cases. The proofs are not complete. In the first examples a method is given to proof that the monodromy group is not a string C-group representation.
 
-\subsection{Two double edges}
 
-\begin{theorem}
+\paragraph{}
+\textbf{Two double edges}
+
+\begin{lemma}
+  \label{proof-2-2}
   None of the monodromy groups with two double edges presented in appendix~\ref{rank4-2-1-4transpositions} are not string C-groups representation of $A_{11}$.
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
-  For all the graphs we always consider $S_1 = \{\rho_1,\rho_2,\rho_3\}$ and $S_2 = \{\rho_2, \rho_3, \rho_4\}$. We must prove that $\Gamma_{S_1 \cap S_2} \neq \Gamma_{S_1} \cap \Gamma_{S_2}$.
+  For all the graphs we always consider $I = \{\rho_1,\rho_2,\rho_3\}$ and $J = \{\rho_2, \rho_3, \rho_4\}$. We must prove that $\Gamma_{I \cap J} \neq \Gamma_{I} \cap \Gamma_{J}$.
 
   \paragraph{}
   We look at the first graph, the Figure~\ref{r4-1-1}. Here is one copy of this graph.
@@ -363,7 +404,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
   \end{figure}
 
   \paragraph{}
-  Let's have a look at $\Gamma_{S_1}$ and $\Gamma_{S_2}$
+  Let's have a look at $\Gamma_{I}$ and $\Gamma_{J}$
 
   \begin{figure}[H]
     \begin{center}
@@ -400,7 +441,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
         \end{scope}
 
       \end{tikzpicture}
-      \caption{$\Gamma_{S_1}$}
+      \caption{$\Gamma_{I}$}
     \end{center}
   \end{figure}
 
@@ -439,33 +480,33 @@ For each of this monodromy group we prove that it is not a string C-group repres
         \end{scope}
 
       \end{tikzpicture}
-      \caption{$\Gamma_{S_2}$}
+      \caption{$\Gamma_{J}$}
     \end{center}
   \end{figure}
 
   \paragraph{}
-  In the graph of $\Gamma_{S_1}$, the group of the left component is $S_8$ and the group of the right component is $S_3$ but because the global group must only have even permutation in order to have $A_{11}$, there is a semi-direct product and the group is $A_8 : S_3$.
+  In the graph of $\Gamma_{I}$, the group of the left component is $S_8$ and the group of the right component is $S_3$. Since the global group must only have even permutation in order to have $A_{11}$, there is a semi-direct product and the group is $A_8 : S_3$.
 
   \paragraph{}
-  The goal is now to prove that $\Gamma_{S_1} \cap \Gamma_{S_2} \ge S_5$.
+  The goal is now to prove that $\Gamma_{I} \cap \Gamma_{J} \ge S_5$.
 
   \paragraph{}
-  In the group $\Gamma_{S_1}$ we leave the points $i,j,k$ fixed for now. This is an even permutation on those three points. The group of the left component is one of the lateral class of $A_8$ but because the permutation on $i,j,k$ is even, it is $A_8$. Thus it contains all the permutations of $d,e,f,g,h$, i.e. $S_5$ on those five points. If the permutation on $d,e,f,g,h$ is odd, it is sufficient to permute two points in $a,b,c$ in order to have a permutation of $A_8$.
+  In the group $\Gamma_{I}$ we leave the points $i,j,k$ fixed for now. This is an even permutation on those three points. The group of the left component is one of the lateral class of $A_8$ but because the permutation on $i,j,k$ is even, it is $A_8$. Thus it contains all the permutations of $d,e,f,g,h$, i.e. $S_5$ on those five points. If the permutation on $d,e,f,g,h$ is odd, it is sufficient to permute two points in $a,b,c$ in order to have a permutation of $A_8$.
 
   \paragraph{}
-  Now we look at $\Gamma_{S_2}$. We need to prove that all the permutations of $d,e,f,g,h$ are also in this group. First for every permutation of the points $a,b,c$ in $\Gamma_{S_1}$ the same permutation can be made in $\Gamma_{S_2}$ because the group of permutations of those 3 points is $S_3$ on $\Gamma_{S_2}$. The parity of the permutation of the component $d,e,f,g,h,i,j,k$ must be the same as the parity of the permutation of $a,b,c$ and that is possible because the points $i,j,k$ are fixed. Thus it means that the parity of the permutation on $d,e,f,g,h$ in $\Gamma_{S_2}$ is the same as in $\Gamma_{S_1}$. Thus the group of permutations on $d,e,f,g,h$ in $\Gamma_{S_2}$ is one coset of $A_5$ but the permutation applied in $\Gamma_{S_1}$ lies in this coset.
+  Now we look at $\Gamma_{J}$, this group is isomorphic. We need to prove that all the permutations of $d,e,f,g,h$ are also in this group. First for every permutation of the points $a,b,c$ in $\Gamma_{I}$ the same permutation can be made in $\Gamma_{J}$ because the group of permutations of those 3 points is $S_3$ on $\Gamma_{J}$. The parity of the permutation of the component $d,e,f,g,h,i,j,k$ must be the same as the parity of the permutation of $a,b,c$ and that is possible because the points $i,j,k$ are fixed. Thus it means that the parity of the permutation on $d,e,f,g,h$ in $\Gamma_{J}$ is the same as in $\Gamma_{I}$. Thus the group of permutations on $d,e,f,g,h$ in $\Gamma_{J}$ is one coset of $A_5$ but the permutation applied in $\Gamma_{I}$ lies in this coset.
 
   \paragraph{}
-  Thus the intersection is at least $S_5$ but $\Gamma_{S_1 \cap S_2} = D_{24}$ and $D_{24} \neq S_5$. The graph is therefore not a string C-group representation.
+  Thus the intersection is at least $S_5$ but $\Gamma_{I \cap J} = D_{24}$ and $D_{24} \neq S_5$. The graph is therefore not a string C-group representation.
 
   \paragraph{}
   The same kind of reasoning can be made for all graphs of Appendix~\ref{rank4-2-1-4transpositions}. The results are displayed in Table~\ref{results-2-1}.
 
-\begin{table}
+\begin{table}[h]
   \centering
   \begin{tabular}{|c|c|c|c|c|c|c|}
     \hline
-    Figure & $\Gamma_{S_1}$ & $\Gamma_{S_2}$ & $\Gamma_{S_1 \cap S_2}$ & $\#\Gamma_{S_1 \cap S_2}$ & $\Gamma_{S_1} \cap \Gamma_{S_2}$ & $\#(\Gamma_{S_1} \cap \Gamma_{S_2})$ \\ \hline
+    Figure & $\Gamma_{I}$ & $\Gamma_{J}$ & $\Gamma_{I \cap J}$ & $\#\Gamma_{I \cap J}$ & $\Gamma_{I} \cap \Gamma_{J}$ & $\#(\Gamma_{I} \cap \Gamma_{J})$ \\ \hline
     \ref{r4-1-1} & $A_8 : S_3$ & $A_8 : S_3$ & $D_{30}$ & 30 & $\ge S_5$ & $\ge 120$ \\ \hline
     \ref{r4-1-2} & $A_5 \times D_{10}$ & $A_8 : S_3$ & $D_{30}$ & 30 & $\ge S_3 \times D_{10}$ & $\ge 60$ \\ \hline
     \ref{r4-1-3} & $A_7 : S_4$ & $A_7 : S_4$ & $D_{24}$ & 24 & $\ge S_4 \times S_4$ & $\ge 576$ \\ \hline
@@ -493,7 +534,8 @@ For each of this monodromy group we prove that it is not a string C-group repres
   \label{results-2-1}
 \end{table}
 
-\subsection{One double edge and one alternating square}
+\paragraph{}
+\textbf{One double edge and one alternating square}
 
   \paragraph{}
   The same process can be done with the monodromy groups of Appendix~\ref{rank4-2-2-4transpositions}. The result is displayed in Table~\ref{results-2-2}.
@@ -502,7 +544,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
       \hline
-      Figure & $\Gamma_{S_1}$ & $\Gamma_{S_2}$ & $\Gamma_{S_1 \cap S_2}$ & $\#\Gamma_{S_1 \cap S_2}$ & $\Gamma_{S_1} \cap \Gamma_{S_2}$ & $\#(\Gamma_{S_1} \cap \Gamma_{S_2})$ \\ \hline
+      Figure & $\Gamma_{I}$ & $\Gamma_{J}$ & $\Gamma_{I \cap J}$ & $\#\Gamma_{I \cap J}$ & $\Gamma_{I} \cap \Gamma_{J}$ & $\#(\Gamma_{I} \cap \Gamma_{J})$ \\ \hline
 
       \ref{r4-2-1} & $A_8 : S_3$ & $A_8 : S_3 $ & $D_{30}$ & 30 & $\ge S_5$ & $\ge 120$ \\ \hline
       \ref{r4-2-2} & $A_7 : D_8$ & $A_8 : S_3$ & $D_{24}$ & 24 & & \\ \hline
@@ -521,7 +563,9 @@ For each of this monodromy group we prove that it is not a string C-group repres
     \label{results-2-2}
   \end{table}
 
-\subsection{Two alternating squares}
+  \paragraph{}
+  \textbf{Two alternating squares}
+
   \paragraph{}
   This section can be done very easily by doing the same procedure that for the previous one. The results are displayed in Table~\ref{results-2-3}
 
@@ -529,7 +573,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
       \hline
-      Figure & $\Gamma_{S_1}$ & $\Gamma_{S_2}$ & $\Gamma_{S_1 \cap S_2}$ & $\#\Gamma_{S_1 \cap S_2}$ & $\Gamma_{S_1} \cap \Gamma_{S_2}$ & $\#(\Gamma_{S_1} \cap \Gamma_{S_2})$ \\ \hline
+      Figure & $\Gamma_{I}$ & $\Gamma_{J}$ & $\Gamma_{I \cap J}$ & $\#\Gamma_{I \cap J}$ & $\Gamma_{I} \cap \Gamma_{J}$ & $\#(\Gamma_{I} \cap \Gamma_{J})$ \\ \hline
 
       \ref{r4-3-1} & $S_9$ & $S_9$ & $D_{28}$ & 28 & $\ge S_7$ & $\ge 5040$ \\ \hline
       \ref{r4-3-2} & $S_3 \times S_3 \times S_3:S_3$ & $A_8 : S_3$ & $D_{12}$ & 12 & & \\ \hline
