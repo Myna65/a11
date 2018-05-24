@@ -42,7 +42,7 @@ The equation of a half plane is of the form $Ax \le c$. Each half plane can be s
 \end{definition}
 
 \begin{definition}[Face of polytope]
-  A face of a polytopes $\mathcal P$ is the intersection between $\mathcal P$ and the hyperplane determined by $Ax = c$ where $Ax \le c$ is a valid inequality. By convention, $\mathcal P$ itself is also a face of $\mathcal P$ with $A=0$ and $c=0$.
+  A face of a polytope $\mathcal P$ is the intersection between $\mathcal P$ and the hyperplane determined by $Ax = c$ where $Ax \le c$ is a valid inequality. By convention, $\mathcal P$ itself is also a face of $\mathcal P$ with $A=0$ and $c=0$.
 \end{definition}
 
 \begin{definition}[Face lattice]
@@ -53,7 +53,8 @@ The equation of a half plane is of the form $Ax \le c$. Each half plane can be s
   $L(\mathcal P)$ is a graded poset of length $\dim(F) + 1$ with rank function : $\rank(F) = \dim(F) + 1$.
 \end{property}
 
-\begin{proposition}
+\begin{property}
+  \label{major-properties}
   Let $\mathcal P$ be a convex polytope and $L(\mathcal P)$ its face lattice:
 
   \begin{enumerate}
@@ -62,4 +63,7 @@ The equation of a half plane is of the form $Ax \le c$. Each half plane can be s
     \item \textbf{(P3)} $L(\mathcal P)$ is strongly connected.
     \item \textbf{(P4)} $L(\mathcal P)$ satisfies the diamond property.
   \end{enumerate}
-\end{proposition}
+\end{property}
+
+\paragraph{}
+Fore more details see for instance Theorem~2.7 of~\cite{polytopes}.

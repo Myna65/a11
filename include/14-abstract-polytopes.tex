@@ -4,7 +4,7 @@
 This section uses~\cite{incidenceGeometry} and \cite{abstractRegularPolytopes}.
 
 \paragraph{}
-Given a face lattice it is not possible to not known whether there exists an euclidean polytope that admits this face lattice or not. Therefore it is not possible to modify or to generate face lattice. So we define the concept of \textit{abstract polytope}. An abstract polytope is a face lattice which satisfies the four major properties of the face lattice of polytopes but without asking them to have a representation in an euclidean space. With abstract polytopes, only the combinatorial structure is kept.
+Given a face lattice it is not possible to not known whether there exists an euclidean polytope that admits this face lattice or not. Therefore it is not possible to modify or to generate face lattice. So we define the concept of \textit{abstract polytope}. An abstract polytope is a face lattice which satisfies the four major properties seen in Property~\ref{major-properties} of the face lattice of polytopes but without asking them to have a representation in an euclidean space. With abstract polytopes, only the combinatorial structure is kept.
 
 \begin{definition}[Abstract $d$-polytope]
   An \textit{abstract $d$-polytope} $\mathcal P$ is a ranked lattice. The elements of the lattice are called \textit{faces}. This lattice must be such that
@@ -20,22 +20,24 @@ Given a face lattice it is not possible to not known whether there exists an euc
 The main subject of this work is abstract polytope. Therefore the word \textit{polytope} will be used to talk about abstract polytopes and not about euclidean polytopes.
 
 \begin{definition}[Flags of polytope]
-  The flags of a polytope are the maximal chains of the underlying poset. The set of all flags is denoted $\mathcal F(P)$.
+  \index{flag}
+  The \textit{flags of a polytope} are the maximal chains of the underlying poset. The set of all flags is denoted $\mathcal F(P)$.
 \end{definition}
 
-\begin{definition}[adjacent flag]
+\begin{definition}[Adjacent flag]
+  \index{adjacent flag}
   The flag $\Phi = x_0, \dots x_{r-1}$ and $\Psi = y_0, \dots y_{r-1}$ are called $i$-adjacent if $x_j = y_j$ for all $j \neq i$ and $x_i \neq y_i$.
 \end{definition}
 
 \paragraph{}
-By property (P4), in an abstract polytope, there is exactly one flag $i$-adjacent to a given one.
+By property (P4), in an abstract polytope, there is exactly one flag $i$-adjacent to a given one. Because there is a single $i$-adjacent flag $\Psi$ to $\Phi$ we denote $\Psi = \Phi^i$.
 
 \begin{definition}[Flag-connected]
-  A poset is flag-connected if, for every pair of flag $\Phi, \Psi$, there exists a sequence $\Phi = \Phi_0 \dots \Phi_k = \Psi$ such that all $\Phi_{j-1}$ and $\Phi_j$ are adjacent for all $j$.
+  A poset is flag-connected if, for every pair of flags $\Phi, \Psi$, there exists a sequence $\Phi = \Phi_0 \dots \Phi_k = \Psi$ such that all $\Phi_{j-1}$ and $\Phi_j$ are adjacent for all $j$.
 \end{definition}
 
 \begin{definition}[Strongly flag-connected]
-  A poset is strongly flag connected every pair of flag $\Phi, \Psi$ is flag-connected and all elements of the sequence lies in $\Phi \cup \Psi$.
+  A poset is strongly flag-connected if every pair of flags $\Phi, \Psi$ is flag-connected and all elements of the sequence lie in $\Phi \cup \Psi$.
 \end{definition}
 
 \begin{proposition}
@@ -44,7 +46,7 @@ By property (P4), in an abstract polytope, there is exactly one flag $i$-adjacen
 
 Thus (P3) can be rewritten as : \textbf{(P3')} $\mathcal P$ is strongly flag-connected.
 
-\subsection{Morphisms}
+\subsection{Morphisms of polytopes}
 
 \begin{definition}[Homomorphism of polytopes]
   \index{homomorphism}
@@ -64,7 +66,7 @@ Thus (P3) can be rewritten as : \textbf{(P3')} $\mathcal P$ is strongly flag-con
 \paragraph{}
 The set of all automorphisms of a polytope $\mathcal P$ forms a group called the automorphism group of the polytope. This group is denoted $\Gamma(\mathcal P)$.
 
-\subsection{Regularity}
+\subsection{Regular polytopes}
 
 \begin{definition}
   An abstract regular polytope is a polytope such that $\Gamma(\mathcal P)$ is transitive on $\mathcal F(\mathcal P)$.
@@ -78,7 +80,7 @@ The set of all automorphisms of a polytope $\mathcal P$ forms a group called the
 We provide some of the guidelines to achieve the proof to the reader. We explain how the correspondance can be achieved.
 
 \begin{proposition}
-  A polytope $\mathcal P$ of rank $n$ is regular iff for some $\Phi$ of $\mathcal P$ and each $j = 0, \dots, n-1$, there exists a involutory automorphism $\rho_j$ of $\mathcal P$ such that $\rho_j \Phi = \Phi^j$.
+  A polytope $\mathcal P$ of rank $n$ is regular iff for some $\Phi$ of $\mathcal P$ and each $j = 0, \dots, n-1$, there exists an involution $\rho_j$ of $\mathcal P$ such that $\rho_j \Phi = \Phi^j$.
 \end{proposition}
 
 \paragraph{}
@@ -89,7 +91,7 @@ The flag used in this proposition is called the base flag of the polytopes. This
 \end{proposition}
 
 \paragraph{}
-The distinguished generators form a group generated by involution: $(\Gamma(\mathcal P), (\rho_0, \dots, \rho_{n-1}))$.
+The distinguished generators form a group generated by involutions: $(\Gamma(\mathcal P), (\rho_0, \dots, \rho_{n-1}))$.
 
 \begin{property}
   If $|j - k| \ge 2$, then $(\rho_j \rho_k)^2 = \id$
@@ -106,7 +108,7 @@ Thus the indexed group of distinguished generated is a sggi.
 \end{property}
 
 \paragraph{}
-Thus the distinguished generators completly define the polytope and they form a string C-group. Therefore this string C-group representation completly define the polytope but is also a representation of the automorphism group.
+Thus the distinguished generators completly define the polytope and they form a string C-group. Therefore this string C-group representation completly defines the polytope but it is also a representation of the automorphism group.
 
 \paragraph{}
 For the details of the proofs of properties, see the section 2B of~\cite{abstractRegularPolytopes}.

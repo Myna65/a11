@@ -50,7 +50,7 @@ Most of the times the symbol $\cdot$ is omitted and $g \cdot h$ is written $gh$.
 \end{definition}
 
 \begin{property}
-  If $G$ is a group and $H$ is a subgroup of $G$, every element $g \in G$ is in exactly one coset of $H$.
+  If $G$ is a group and $H$ is a subgroup of $G$, every element $g \in G$ belongs to exactly one coset of $H$.
 \end{property}
 
 \begin{corollary}
@@ -70,7 +70,7 @@ Most of the times the symbol $\cdot$ is omitted and $g \cdot h$ is written $gh$.
 
 \begin{definition}[Action]
   \index{action}
-  Let $G$ be a group and $X$ a set, we say the $G$ acts on $X$ if there is an application
+  Let $G$ be a group and $X$ a set, we say that $G$ acts on $X$ if there is an application
   \[
     \cdot : G \times X \Leftrightarrow X \qquad (x,g) \mapsto x \cdot g
   \]
@@ -89,7 +89,7 @@ Most of the times the symbol $\cdot$ is omitted and $g \cdot h$ is written $gh$.
 \paragraph{}
 Be careful because the symbol $\cdot$ can refer to different things depending on the operands.
 
-\begin{definition}[Orbit of a elements]
+\begin{definition}[Orbit of a element]
   \index{orbit}
   Let $X$ be a set and $G$ a group acting on it.
   The orbit of an element $x$ by the group $G$ is the subset
@@ -111,7 +111,6 @@ Be careful because the symbol $\cdot$ can refer to different things depending on
   \[
     |G| = |O_x||G_x|
   \]
-  The order of a subgroup must divide the order of the group.
 \end{property}
 
 \begin{definition}[Direct product]
@@ -125,7 +124,7 @@ Be careful because the symbol $\cdot$ can refer to different things depending on
 \begin{definition}[Semidirect product]
   \index{semidirect product}
   \index{direct product}
-  Given two groups $G = (E, \star)$ and $H = (F, \Delta)$, the direct product $G : H$ is a group $(E \times F, \cdot)$ such that
+  Given two groups $G = (E, \star)$ and $H = (F, \Delta)$, the semidirect product $G : H$ is a group $(E \times F, \cdot)$ such that
   \[
     (g_1, h_1) \times (g_2, h_2) = (g_1 \star \varphi(h_1,g_2), h_1 \Delta h_2)
   \]
@@ -136,7 +135,7 @@ Be careful because the symbol $\cdot$ can refer to different things depending on
 \end{definition}
 
 \begin{definition}[Automorphism group]
-  The automorphism group $\Aut(G)$ of a finite group $G$ is the set whose elements are automorphism $\sigma : G \to G$ and where the group multiplication is the composition of automorphisms.
+  The automorphism group $\Aut(G)$ of a finite group $G$ is the set whose elements are the automorphisms $G \to G$ and where the group operation is the composition of automorphisms.
 \end{definition}
 
 \begin{definition}[Almost simple group]
@@ -149,6 +148,9 @@ Be careful because the symbol $\cdot$ can refer to different things depending on
 \paragraph{}
 The followings statements about permutation groups come from~\cite{cameronPermutationGroups}.
 
+\paragraph{}
+In the context of permutations, the elements of set on which the group acts are called \textit{points}.
+
 \begin{definition}[Permutation]
   \index{permutation}
   A permutation of a set $S$ is a bijection between $S$ and itself. It can be seen as a reordering of the elements of $S$.
@@ -158,7 +160,7 @@ The followings statements about permutation groups come from~\cite{cameronPermut
 Instead of using the functional notation, the permutation will be written on the right on the composing read from the left to right. The application of the permutation $g$ to a point $\alpha$ is noted $\alpha g$ and not $g(\alpha)$. This make the notation lighter and the reading easier. So $\alpha gh$ will be written instead of $h(g(\alpha))$.
 
 \paragraph{}
-One common way to write permutation is the following notation.
+One common way to write permutation is the following notation:
 
 \[
   g =
@@ -214,24 +216,19 @@ The term \textit{cyclic permutation} is used to describe a full permutation and 
 \end{proof}
 
 \begin{proposition}
-  Every permutation can be written as a product of a cycles.
+  Every permutation can be written as a product of cycles.
 \end{proposition}
 
 \begin{proof}
   For every non fixed-point $\alpha_0$, we can find a sequence defined by $\alpha_{i+1} = \alpha_i g$. There must be a $j \neq 0$ such that $\alpha_j = \alpha_0$. $g$ is a bijection between the same set. And so it's a bijection between two finite sets of the same size. But if the sequence does not loop back to its first element, it can't loop at all because it's a bijection. So it must be infinite and it's a contradiction.
-  % TOO COMPLICATED
 \end{proof}
-
-\begin{corollary}
-  Every permutation can be written as a product of transpositions.
-\end{corollary}
 
 \paragraph{}
 A new notation for permutations can now be introduced. Permutations will now be written as a product of cycles. This new notation does not include the total number of points. This must be clear in the context.
 
 \begin{definition}[Symmetric group]
   \index{symmetric group}
-  Let $\Omega$ be a set, the group of all permutations of $\Omega$ is a called the symmetric group of $\Omega$ and is denoted $\Sym(\Omega)$. This is a group acting on $\Omega$. Often we do not care about the elements of $\Omega$, the only important thing about $\Omega$ is its size because the structure of $\Sym(\Omega)$ is only determined by this parameter. Therefore, we will mostly denote $S_n$ the symmetric group over an set of $n$ elements.
+  Let $\Omega$ be a set, the group of all permutations of $\Omega$ is called the symmetric group of $\Omega$ and is denoted $\Sym(\Omega)$. This is a group acting on $\Omega$. Often we do not care about the elements of $\Omega$, the only important thing about $\Omega$ is its size because the structure of $\Sym(\Omega)$ is only determined by this parameter. Therefore, we mostly denote $S_n$ the symmetric group over an set of $n$ elements.
 \end{definition}
 
 \begin{definition}[Permutation group]
@@ -239,7 +236,7 @@ A new notation for permutations can now be introduced. Permutations will now be 
   A permutation group on a set $\Omega$ (resp. a set of $n$ points) is a subgroup of $\Sym(\Omega)$ (resp. $S_n$).
 \end{definition}
 
-\subsection{Transitivity}
+\subsection{Transitive groups}
 
 \begin{definition}[$k$-transitive group]\index{k-transitive group}
   A permutation group $G$ on $\Omega$ is called \textit{$k$-transitive} if for every pair of $k$-uple $((\alpha_1, \dots, \alpha_k), (\beta_1, \dots, \beta_k)$ with $\alpha_i, \beta_i \in \Omega$ there exists at least one $g \in G$ such that $\alpha_i g = \beta_i \  \forall i$.
@@ -254,7 +251,7 @@ A new notation for permutations can now be introduced. Permutations will now be 
   A group is $k$-transitive if it is $(k-1)$-transitive and if there are $k-1$ points that can be fixed while one other point can be permuted with any non fixed point i.e. if the stabilizer of $k-1$ points is transitive.
 \end{property}
 
-\subsection{Primitivity}
+\subsection{Primitive groups}
 
 \begin{definition}[Congruence]
   A congruence $\sim$ is an equality relation on $\Omega$ such that $\alpha \sim \beta \Leftrightarrow \alpha g \sim \beta g \ \forall g \in G$.
@@ -272,7 +269,7 @@ There are two trivial congruences on all permutation groups:
 
 \begin{property}
   \label{2-transitive-primitive}
-  Every 2-transitive permutation group is primitive
+  Every 2-transitive permutation group is primitive.
 \end{property}
 
 \paragraph{}
@@ -286,7 +283,7 @@ For the proof, see for instance Theorem~1.7 of~\cite{cameronPermutationGroups}.
 
 \begin{definition}[Indexed generated group]
   Let $G$ be a group and let $S = \{\rho_0, \dots, \rho_{r-1}\}$ be an indexed set of generators.
-  We call the pair $(G,S)$ an \textit{indexed generated group}. It will be denoted $\Gamma$.
+  We call the pair $(G,S)$ an \textit{indexed generated group}. It is denoted $\Gamma$.
 \end{definition}
 
 \begin{definition}[Rank of an indexed generated group]
@@ -306,7 +303,7 @@ For the proof, see for instance Theorem~1.7 of~\cite{cameronPermutationGroups}.
 \end{definition}
 
 \begin{definition}[Monodromy group]
-  A monodromy group is sggi such that its generators are indepedent.
+  A monodromy group is sggi such that its generators are independent.
 \end{definition}
 
 \subsection{String C-groups}
@@ -319,10 +316,10 @@ Let $\Gamma = (G,S)$ be an indexed generated group. We denote $\Gamma_I$ with $I
 \end{definition}
 
 \begin{definition}[String C-group]
-  If a sggi satisfies the intersection property, we will say that is a $\textit{string C-group}$.
+  If a sggi satisfies the intersection property, we say that is a $\textit{string C-group}$.
 \end{definition}
 
 \begin{property}
   \label{not-monodromy-intersection}
-  An sggi with non independent genrators (i.e. not a monodromy group), cannot satisfies the intersection property and thus cannot be a string C-group representation.
+  An sggi with non independent generators (i.e. not a monodromy group), cannot satisfy the intersection property and thus cannot be a string C-group representation.
 \end{property}

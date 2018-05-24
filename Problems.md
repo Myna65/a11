@@ -1,16 +1,12 @@
 #Remerciements
 TODO
 
-#Abstract
-A little too short
-
 #Introduction
 Fix paragraph
 
 # Chapter 1
 Drawings of graphs
-Abstract polytopes
-Almost simple group
+Schalfli
 
 # Chapter 2
 End of section

@@ -41,7 +41,7 @@ We denote $x < y$ when $x \le y$ and $x \neq y$.
 Given a poset, we can draw its \textit{Hasse diagram}. It's a graph where the vertices are the elements of $P$ and two elements $x$ and $y$ are connected with $x$ under $y$ if $x \le y$. Therefore, no horizontal edge can exist.
 
 \paragraph{}
-We try to minimize the number of edges so we will not connect $x$ and $z$ (with $x \le z$) if there exists $y$ such that $x < y < z$. This is required otherwise the diagram becomes overloaded quickly. The reader can deduce the removed edge by transitivity.
+We try to minimize the number of edges so we do not connect $x$ and $z$ (with $x \le z$) if there exists $y$ such that $x < y < z$. This is required otherwise the diagram becomes overloaded quickly. The reader can deduce the removed edge by transitivity.
 
 \begin{figure}[H]
   \begin{center}
@@ -74,7 +74,7 @@ We try to minimize the number of edges so we will not connect $x$ and $z$ (with 
 \end{figure}
 
 \paragraph{}
-In the figure, there is a link between $a$ and $b$ so $a \le b$, and $b \le d$. So $a \le d$ by transitivity, even if there is no line between those points.
+In the figure, there is a link between $a$ and $b$ so $a \le b$. For the same raeson $b \le d$. So $a \le d$ by transitivity, even if there is no line between those points.
 
 \begin{definition}[Section]
   \index{section}
@@ -178,7 +178,7 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
   \begin{definition}[Supremum, Infinimum]
     \index{supremum}
     \index{infinimum}
-    The supremum (resp. infinimum) of two elements $x$ and $y$ is the lowest (resp. largest) bound in the set of all upper (resp. lower) bounds of $x$ and $y$. If it exists, it's unique. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$\footnote{Not good}.
+    The supremum (resp. infinimum) of two elements $x$ and $y$ is the lowest (resp. largest) bound in the set of all upper (resp. lower) bounds of $x$ and $y$. If it is not unique, we say that it does not exist. We denote the supremum of $x$ and $y$ $x \wedge y$, and the infinimum $ x \vee y$.
   \end{definition}
 
   \begin{definition}[Lattice]
@@ -187,7 +187,7 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
   \end{definition}
 
   \paragraph{}
-  It's not always clear whether a poset is a lattice or not, see for example the following diagram.
+  It's not always clear whether a poset is a lattice or not, for example the following diagram is not a poset because the infinimum of $d$ and $e$ is not unique.
 
   \begin{figure}[H]
     \begin{center}
@@ -218,6 +218,6 @@ On the Hasse diagram, it means that, if all elements with the same rank are plac
         \end{scope}
 
       \end{tikzpicture}
-      \caption{Not a lattice: the infinimum of $d$ and $e$ is not unique}
+      \caption{}
     \end{center}
   \end{figure}
