@@ -119,7 +119,7 @@ We define three patterns that are used in the construction of permutation repres
 \end{definition}
 
 \paragraph{}
-Note that the word \textit{edge} without adjectives conserves its original meaning of the graph theory. We only define a special type of edge here.
+Note that the word \textit{edge} without adjectives conserves its original meaning of the graph theory. We only define a special types of edge in this section.
 
 \paragraph{}
 Now we continue with the implications on the permutation representation graphs.
@@ -131,7 +131,7 @@ Now we continue with the implications on the permutation representation graphs.
 \end{definition}
 
 \paragraph{}
-If a single edge shares more than one vertex with a given pattern then it is not a single edge by the Definition~\ref{single-edge}.
+If a single edge shares more than one vertex with a given pattern then it is not a single edge by Definition~\ref{single-edge}.
 
 \begin{definition}
   A sequence of adjacent single edges is called a chain.
@@ -225,7 +225,7 @@ If a single edge shares more than one vertex with a given pattern then it is not
 \end{proposition}
 
 \begin{proof}
-  The proof of this proposition is similar to the previous one. Here is the graph $\Gamma$.
+  The proof of this proposition is similar to the previous one. Here is the graph of $\Gamma$.
 
   \begin{figure}[H]
     \begin{center}
@@ -258,6 +258,9 @@ If a single edge shares more than one vertex with a given pattern then it is not
 
   \paragraph{}
   Here there exists a pair, suppose $j$ and $l$ such that $|j-l| > 1$. Thus, in $\Gamma_{\rho_j, \rho_l}$, there is a chain of length 2. An alternating square must thus be built but that is a contradiction.
+
+  \paragraph{}
+  The same applies for two adjacent double edges.
 
 \end{proof}
 
@@ -310,7 +313,7 @@ If a single edge shares more than one vertex with a given pattern then it is not
 \section{Alternating squares}
 
 \paragraph{}
-In an alternating square $[\rho_i, \rho_j]$ we call $\rho_i$ and $\rho_j$ the components of the alternating square.
+In an alternating square $[\rho_i, \rho_j]$ we call $\rho_i$ and $\rho_j$ the \textit{components} of the alternating square.
 
 \begin{proposition}
   \label{square-connection}
@@ -339,38 +342,43 @@ In an alternating square $[\rho_i, \rho_j]$ we call $\rho_i$ and $\rho_j$ the co
 Due to the fact that some alternating squares must be adjacent to other ones, we will deal with sequence of alternating squares.
 
 \begin{definition}[Sequence of alternating squares]
+  \index{sequence of alternating squares}
   A \textit{sequence of alternating squares} is a sequence such that two consecutive squares are adjacents.
 \end{definition}
 
 \begin{definition}[Non-cyclic sequence of alternating squares]
+  \index{Non-cyclic sequence of atlernating squares}
   A \textit{non-cyclic sequence of alternating squares} is a sequence of alternating squares such that no squares appears multiple times in the sequence.
 \end{definition}
 
 \begin{definition}[Cyclic sequence of alternating squares]
+  \index{cycle (permutation representation graph)}
+  \index{cyclic sequence of alternating squares}
   A \textit{cyclic sequence of alternating squares} or \textit{cycle} is a sequence of alternating squares such that at least one square appears multiple times in the sequence.
 \end{definition}
 
 \begin{definition}[Simple cycle]
-  A cycle is said simple if the first and the last square of the sequence are the same but
+  \index{simple cycle}
+  A cycle is said \textit{simple} if the first and the last squares of the sequence are the same.
 \end{definition}
 
 \begin{corollary}
   \label{cycle-simple-cycle}
-  Every cycle contains a simple cycle and thus if a permutation representation graph does not contains any simple cycle, it does not contais any cycle.
+  Every cycle contains a simple cycle and thus if a permutation representation graph does not contain any simple cycle, it does not contain any cycle.
 \end{corollary}
 
 \begin{proposition}
   \label{parity-sequence-squares}
-  If an alternating square in a sequence can be connected to a single edge then the number of squares in the sequence before the next square with this property in sequence is odd.
+  If an alternating square in a sequence can be connected to a single edge then the number of squares in the sequence before the next square with this property in sequence is odd\footnote{to do}.
 \end{proposition}
 
 \begin{definition}[Linear sequence of alternating squares]
-    A sequence of alternating square is said \textit{linear} if two alternating squares that are not consecutive does not share vertices.
+    A sequence of alternating square is said \textit{linear} if two alternating squares that are not consecutive does not share any vertex.
 \end{definition}
 
 \begin{proposition}
   \label{rotation-pattern}
-  If a sequence of alternating squares is not linear, then it contains a cycle of 4 squares or it contains the following pattern.
+  If a sequence of alternating squares is not linear, then it contains a simple cycle of 4 squares or it contains the following pattern.
 
   \begin{figure}[H]
     \begin{center}
@@ -410,7 +418,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 \end{proposition}
 
 \begin{proof}
-  So we start with four indices $i, j, k, l$, all differents and two squares that shares exactly one vertex.
+  we start with four different indices $i, j, k, l$ and two squares that share exactly one vertex.
 
   \begin{figure}[H]
     \begin{center}
@@ -447,10 +455,10 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  But there is a problem at the point $d$ because it is impossible that both indices of $(i,j)$ commutes with both indices of $(k,l)$. Thus there must be at least one pair of non consecutive indices, suppose that it is $(k,l)$, the other cases are isomorphic. An alternating square must be built to include the edges $(e,d)$ and $(d,g)$.
+  But there is a problem at the point $d$ because it is impossible that both indices of $(i,j)$ commutes with both indices of $(k,l)$. Thus there must be at least one pair of non consecutive indices. Suppose that it is $(i,l)$, the other cases are isomorphic. An alternating square must be built to include the edges $(e,d)$ and $(d,g)$.
 
   \paragraph{}
-  The last edge can be $a$, $b$ or $h$ up to isomorphim. But that makes no sense to use $a$ or $b$ because if an alternating square $[\rho_i, \rho_l]$ is built on the points $a,e,d,g$ then there is a $\rho_i$ edge between $a$ and $g$ but $a$ is already linked to $b$ by a $\rho_1$ edge, thus this is impossible by Proposition~\ref{fixed-only-1}. The same applies to $b$, hence there is an alternating square between $\rho_i$ and $\rho_l$.
+  The last vertex of the square can be $a$, $b$ or $h$ up to isomorphim. But that makes no sense to use $a$ or $b$ because if an alternating square $[\rho_i, \rho_l]$ is built on the points $a,e,d,g$ then there is a $\rho_i$ edge between $a$ and $g$ but $a$ is already linked to $b$ by a $\rho_i$ edge, thus this is impossible by Proposition~\ref{fixed-only-1}. The same applies to $b$, hence the alternating square between $\rho_i$ and $\rho_l$ must use the vertex $h$.
 
   \begin{figure}[H]
     \begin{center}
@@ -489,10 +497,49 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  Suppose now that $j$ and $k$ are not consecutive, then another alternating square must be built on the points $a,d,f$. This square must use a new point. The graph is now:
+  Suppose now that $j$ and $k$ are not consecutive, then another alternating square must be built on the points $a,c,d$. This square must use a new point. The graph is now:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {h};
+          \node (2)  at (0,0)  {g};
+          \node (3)  at (0,-2) {f};
+          \node (4)  at (-2,2)  {e};
+          \node (5)  at (-2,0)  {d};
+          \node (6)  at (-2,-2) {c};
+          \node (7)  at (-4,2)  {b};
+          \node (8)  at (-4,0)  {a};
+          \node (9)  at (-4,-2)  {i};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (2)  edge node {$k$} (3);
+            \path (5)  edge node {$k$} (6);
+            \path (8)  edge node {$k$} (9);
+            \path (1)  edge node {$i$} (2);
+            \path (4)  edge node {$i$} (5);
+            \path (7)  edge node {$i$} (8);
+            \path (1)  edge node {$l$} (4);
+            \path (2)  edge node {$l$} (5);
+            \path (3)  edge node {$l$} (6);
+            \path (4)  edge node {$j$} (7);
+            \path (5)  edge node {$j$} (8);
+            \path (6)  edge node {$j$} (9);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
   \paragraph{}
-  But there is a cycle of 4 squares is this graph. Thus $j$ and $k$ must be consecutive, thus $j = k+1$ up to duality.
+  There is a cycle of 4 squares in this graph. Otherwise $j$ and $k$ must be consecutive, thus $j = k+1$ up to duality.
 
   \begin{figure}[H]
     \begin{center}
@@ -531,7 +578,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  Suppose now that $i$ and $k$ are not consecutive, then two alternating squares must be built on $c,d,e$ and $f,g,h$. None of those squares can use existing points. The graph is the folowing:
+  Suppose now that $i$ and $k$ are not consecutive, then two alternating squares must be built on $c,d,e$ and $f,g,h$. None of those squares can use existing points. The graph is the following:
 
   \begin{figure}[H]
     \begin{center}
@@ -579,7 +626,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  Now if $i$ and $l$ are not consecutive then a $\rho_l$ edge must be added between the points $i$ and $j$. This edge form a loop of four alternating squares. Therefore $i$ and $l$ must commute and $l = i+1$. Moreover the same applies to $k$ and $i+1$, thus $k = i + 2$.
+  Now if $i$ and $l$ are not consecutive then a $\rho_l$ edge must be added between the points $i$ and $j$. This edge form a cycle of four alternating squares. Therefore $i$ and $l$ must commute and $l = i+1$. Moreover the same applies to $k$ and $i+1$, thus $k = i + 2$.
 
   \begin{figure}[H]
     \begin{center}
@@ -627,7 +674,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  But there is the same problem in the horizontal direction. Thus two other alternating square must be built an $b, e, h$ and $a, d, g$ because $\rho_{i+1}$ and $\rho_{i+3}$ does not commute.
+  There is the same problem in the horizontal direction. Thus two other alternating square must be built an $b, e, h$ and $a, d, g$ because $\rho_{i+1}$ and $\rho_{i+3}$ does not commute.
 
   \begin{figure}[H]
     \begin{center}
@@ -687,7 +734,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  But the a $i$ edge must be placed between $k$ and $l$ because $\rho_i$ and $\rho_{i+3}$ does not commute. Thus there is a cycle of four squares.
+  A $\rho_i$ edge must be placed between $k$ and $l$ because $\rho_i$ and $\rho_{i+3}$ does not commute. Thus there is a cycle of four squares.
 
   \paragraph{}
   We choose that $i$ and $k$ are not consecutive and we only make cycles. The graph was this:
@@ -777,12 +824,13 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 \end{corollary}
 
 \begin{definition}[Monotone sequence of alternating squares]
+  \index{monotone sequence of alternating squares}
   A sequence of alternating square is said \textit{monotone} if all alternating squares have one common component.
 \end{definition}
 
 \begin{proposition}
   \label{linear-pattern}
-  Every non-monotone linear sequence of alternating squares contains the following pattern or a cycle.
+  In a polytope of rank 5 or less and on 11 points or less, every non-monotone linear sequence of alternating squares contains one of the following two patterns or a simple cycle with three squares.
 
   \begin{figure}[H]
     \begin{center}
@@ -814,13 +862,14 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 
       \end{tikzpicture}
       \caption{}
+      \ref{linear-1}
     \end{center}
   \end{figure}
 
 \end{proposition}
 
 \begin{proof}
-  We have two adjacents alteranting square that does not share a component, thus the common edge must be a double edge.
+  We have two adjacents alternating squares that do not share a component, thus the common edge must be a double edge.
 
   \begin{figure}[H]
     \begin{center}
@@ -856,13 +905,252 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  If $j$ and $k$ are not consecutive, then an alternating square must be built, it cannot use any of the existing points. Thus there is a cycle of length 3.
+  If $j$ and $k$ are not consecutive, then an alternating square must be built, it cannot use any of the existing points.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+          \node (7)  at (2,4)  {g};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (1)  edge node {$j$} (3);
+            \path (2)  edge node {$j$} (4);
+            \path (5)  edge node {$j$} (7);
+            \path (3)  edge node {$k$} (5);
+            \path (4)  edge node {$k$} (6);
+            \path (1)  edge node {$k$} (7);
+            \path (3)  edge[bend left=40] node {$l$} (4);
+            \path (5)  edge node {$l$} (6);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
   \paragraph{}
-  If $j$ and $k$ are consecutive, then $j = k+1$ (up to duality).
+  Thus there is a cycle of length 3. Otherwise $j$ and $k$ are consecutive, thus $j = k+1$ (up to duality).
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (1)  edge node {$k+1$} (3);
+            \path (2)  edge node {$k+1$} (4);
+            \path (3)  edge node {$k$} (5);
+            \path (4)  edge node {$k$} (6);
+            \path (3)  edge[bend left=40] node {$l$} (4);
+            \path (5)  edge node {$l$} (6);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
   \paragraph{}
-  If an alternating square is built on the side $a,c$, this square must use one new involution: $\rho_n$ because the vertex $c$ is already connected by all other involutions.
+  If $i$ and $k$ are not consecutive then a $\rho_i$ edge must be placed between $e$ and $f$. However, by Proposition~\ref{square-connection}, an additionnal square must be built. In order to end the sequence at one moment the horizontal component of the last square must be adjacent to $i$ or $l$.
+
+  \paragraph{}
+  Suppose that we are currently at the left end of a such sequence, then $k+1$ is consecutive to $l$ and $l = k + 2$. The graph is the following one:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (1)  edge node {$k+1$} (3);
+            \path (2)  edge node {$k+1$} (4);
+            \path (3)  edge node {$k$} (5);
+            \path (4)  edge node {$k$} (6);
+            \path (3)  edge[bend left=40] node {$k+2$} (4);
+            \path (5)  edge node {$k+2$} (6);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Because the sequence is not monotone, the vertical component of the last square must be $\rho_{k+2}$.
+
+  \paragraph{}
+  If there are 6 points, $i$ and $k$ must be consecutive and thus $k = i+1$. The pattern must be
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (1)  edge node {$i+2$} (3);
+            \path (2)  edge node {$i+2$} (4);
+            \path (3)  edge node {$i+1$} (5);
+            \path (4)  edge node {$i+1$} (6);
+            \path (3)  edge[bend left=40] node {$i+3$} (4);
+            \path (5)  edge node {$i+3$} (6);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Otherwise if there are 8 points, then $k-1$ must be adjacent to $i$ and thus $k = i+2$. The pattern is this one:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+          \node (7)  at (6,2)  {h};
+          \node (8)  at (6,0)  {g};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (5)  edge[bend right=40] node {$i$} (6);
+            \path (1)  edge node {$i+3$} (3);
+            \path (2)  edge node {$i+3$} (4);
+            \path (3)  edge node {$i+2$} (5);
+            \path (4)  edge node {$i+2$} (6);
+            \path (7)  edge node {$i+1$} (5);
+            \path (8)  edge node {$i+1$} (6);
+            \path (3)  edge[bend left=40] node {$i+4$} (4);
+            \path (5)  edge[bend left=40] node {$i+4$} (6);
+            \path (7)  edge node {$i+4$} (8);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  If there are ten points: there are two possible patterns:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {b};
+          \node (2)  at (0,0)  {a};
+          \node (3)  at (2,2)  {d};
+          \node (4)  at (2,0)  {c};
+          \node (5)  at (4,2)  {f};
+          \node (6)  at (4,0)  {e};
+          \node (7)  at (6,2)  {h};
+          \node (8)  at (6,0)  {g};
+          \node (9)  at (8,2)  {j};
+          \node (10) at (8,0)  {i};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$i$} (2);
+            \path (3)  edge[bend right=40] node {$i$} (4);
+            \path (5)  edge[bend right=40] node {$i$} (6);
+            \path (7)  edge[bend right=40] node {$i$} (8);
+            \path (1)  edge node {$i+2$} (3);
+            \path (2)  edge node {$i+2$} (4);
+            \path (3)  edge node {$i+1$} (5);
+            \path (4)  edge node {$i+1$} (6);
+            \path (9)  edge node {$i+1$} (7);
+            \path (10) edge node {$i+1$} (8);
+            \path (7)  edge node {$i+2$} (5);
+            \path (8)  edge node {$i+2$} (6);
+            \path (3)  edge[bend left=40] node {$i+3$} (4);
+            \path (5)  edge[bend left=40] node {$i+3$} (6);
+            \path (7)  edge[bend left=40] node {$i+3$} (8);
+            \path (9)  edge node {$i+3$} (10);
+
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+
+
+  \paragraph{}
+  If there are more than eight points, then the rank of polytope will be greater than five or the pattern constructed will include the pattern of Figure~\ref{linear-1}.
 
 \end{proof}
 

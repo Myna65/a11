@@ -13,6 +13,7 @@ End of section
 Proof of one lemma
 
 # Chapter 3
+One paragraph
 Missing the case where the square is extended vertically
 Missing the case where the square is not extended
 
