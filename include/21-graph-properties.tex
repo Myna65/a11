@@ -119,7 +119,7 @@ We define three patterns that are used in the construction of permutation repres
 \end{definition}
 
 \paragraph{}
-Note that the word \textit{edge} without adjectives conserves its original meaning of the graph theory. We only define a special types of edge in this section.
+Note that the word \textit{edge} without adjectives conserves its original meaning of the graph theory. We only define a special type of edges in this section.
 
 \paragraph{}
 Now we continue with the implications on the permutation representation graphs.
@@ -326,7 +326,7 @@ In an alternating square $[\rho_i, \rho_j]$ we call $\rho_i$ and $\rho_j$ the \t
 
 \begin{proposition}
   \label{adjacent-squares}
-  Given an alternating square $[\rho_i, \rho_j]$ the only possible adjacent alternating squares are $[\rho_{i-1}, \rho_j], [\rho_{i+1}, \rho_j], [\rho_i, \rho_{j-1}]$ or $[\rho_i, \rho_{j+1}]$.
+  Given an alternating square $[\rho_i, \rho_j]$ the only possible adjacent alternating squares are $[\rho_{i-1}, \rho_j], [\rho_{i+1}, \rho_j], [\rho_i, \rho_{j-1}]$ or $[\rho_i, \rho_{j+1}]$ if the intersection of both square is a single edge.
 \end{proposition}
 
 \begin{corollary}
@@ -335,7 +335,7 @@ In an alternating square $[\rho_i, \rho_j]$ we call $\rho_i$ and $\rho_j$ the \t
 \end{corollary}
 
 \begin{corollary}
-  If two alternating squares are adjacent, then the difference between the indices of the square is exactly 1.\footnote{Difference of difference}.
+  If two alternating squares are adjacent and their intersection is a single edge, then they share a component and the difference between the indices of the other component is exactly 1.
 \end{corollary}
 
 \paragraph{}
@@ -343,12 +343,12 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 
 \begin{definition}[Sequence of alternating squares]
   \index{sequence of alternating squares}
-  A \textit{sequence of alternating squares} is a sequence such that two consecutive squares are adjacents.
+  A \textit{sequence of alternating squares} is a sequence such that two consecutive squares are adjacent.
 \end{definition}
 
 \begin{definition}[Non-cyclic sequence of alternating squares]
   \index{Non-cyclic sequence of atlernating squares}
-  A \textit{non-cyclic sequence of alternating squares} is a sequence of alternating squares such that no squares appears multiple times in the sequence.
+  A \textit{non-cyclic sequence of alternating squares} is a sequence of alternating squares such that no squares appear multiple times in the sequence.
 \end{definition}
 
 \begin{definition}[Cyclic sequence of alternating squares]
@@ -367,14 +367,23 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   Every cycle contains a simple cycle and thus if a permutation representation graph does not contain any simple cycle, it does not contain any cycle.
 \end{corollary}
 
-\begin{proposition}
-  \label{parity-sequence-squares}
-  If an alternating square in a sequence can be connected to a single edge then the number of squares in the sequence before the next square with this property in sequence is odd\footnote{to do}.
-\end{proposition}
-
 \begin{definition}[Linear sequence of alternating squares]
     A sequence of alternating square is said \textit{linear} if two alternating squares that are not consecutive does not share any vertex.
 \end{definition}
+
+\begin{definition}[Monotone sequence of alternating squares]
+  \index{monotone sequence of alternating squares}
+  A linear sequence of alternating square is said \textit{monotone} if all alternating squares have one common component.
+\end{definition}
+
+\begin{proposition}
+  \label{parity-sequence-squares}
+  If an alternating square in a linear monotone sequence can be connected to a single edge then the number of squares that must be added to the sequence such that is can be connected is even.
+\end{proposition}
+
+\begin{proof}
+  This can be deduced from Proposition~\ref{sequence-connection} and~\ref{adjacent-squares}.
+\end{proof}
 
 \begin{proposition}
   \label{rotation-pattern}
@@ -458,7 +467,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   But there is a problem at the point $d$ because it is impossible that both indices of $(i,j)$ commutes with both indices of $(k,l)$. Thus there must be at least one pair of non consecutive indices. Suppose that it is $(i,l)$, the other cases are isomorphic. An alternating square must be built to include the edges $(e,d)$ and $(d,g)$.
 
   \paragraph{}
-  The last vertex of the square can be $a$, $b$ or $h$ up to isomorphim. But that makes no sense to use $a$ or $b$ because if an alternating square $[\rho_i, \rho_l]$ is built on the points $a,e,d,g$ then there is a $\rho_i$ edge between $a$ and $g$ but $a$ is already linked to $b$ by a $\rho_i$ edge, thus this is impossible by Proposition~\ref{fixed-only-1}. The same applies to $b$, hence the alternating square between $\rho_i$ and $\rho_l$ must use the vertex $h$.
+  The last vertex of the square can be $a$, $b$ or $h$ up to isomorphim. That makes no sense to use $a$ or $b$ because if an alternating square $[\rho_i, \rho_l]$ is built on the points $a,e,d,g$ then there is a $\rho_i$ edge between $a$ and $g$ and $a$ is already linked to $b$ by a $\rho_i$ edge, thus this is impossible by Proposition~\ref{fixed-only-1}. The same applies to $b$, hence the alternating square between $\rho_i$ and $\rho_l$ must use the vertex $h$.
 
   \begin{figure}[H]
     \begin{center}
@@ -674,7 +683,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   \end{figure}
 
   \paragraph{}
-  There is the same problem in the horizontal direction. Thus two other alternating square must be built an $b, e, h$ and $a, d, g$ because $\rho_{i+1}$ and $\rho_{i+3}$ does not commute.
+  There is the same problem in the horizontal direction. Thus two other alternating squares must be built on $b, e, h$ and $a, d, g$ because $\rho_{i+1}$ and $\rho_{i+3}$ does not commute.
 
   \begin{figure}[H]
     \begin{center}
@@ -823,10 +832,6 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
   Every linear cycle contains an even number of points.
 \end{corollary}
 
-\begin{definition}[Monotone sequence of alternating squares]
-  \index{monotone sequence of alternating squares}
-  A sequence of alternating square is said \textit{monotone} if all alternating squares have one common component.
-\end{definition}
 
 \begin{proposition}
   \label{linear-pattern}
@@ -1196,12 +1201,11 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 
 \begin{corollary}
   \label{even-sequence}
-  Every sequence of alternating square (cyclic or acyclic) that does not contains any non-linear cycle seen in Proposition~\ref{rotation-pattern} and~\ref{linear-pattern} contains an even number of points.
+  Every sequence of alternating square (cyclic or non-cyclic) that does not contains any non-linear cycle seen in Proposition~\ref{rotation-pattern} and~\ref{linear-pattern} contains an even number of points.
 \end{corollary}
 
 \begin{proof}
-  If the sequence is linear monotone, then each new square add two new points. If the sequence is not linear then it must use the pattern seen in Proposition~\ref{rotation-pattern} but this pattern also add an even number of points. If it is not monotone, then it must used
-  We do not have any of the special patterns. Starting from a square, each added square to the sequence can be added in a linear and monotone fashion, in this case, it use two points. Otherwise it must one of the patterns found in Propositions~\ref{rotation-pattern} and~\ref{linear-pattern} but both of them add an even number of points.
+  We do not have any of the special patterns. Starting from a square, each added square to the sequence can be added in a linear and monotone fashion and in this case, it use two points. Otherwise it must one of the patterns found in Propositions~\ref{rotation-pattern} and~\ref{linear-pattern} but both of them add an even number of points.
 \end{proof}
 
 \begin{proposition}
@@ -1229,7 +1233,7 @@ Due to the fact that some alternating squares must be adjacent to other ones, we
 In the next chapter we prove that there are no polytopes of a given rank with automorphism group $A_{11}$. To do this we generate all the possible permutation representation graphs and then prove that, if such a graph exists, the graph is not a string C-group representation of $A_{11}$.
 
 \paragraph{}
-To generate all the possible permutation representation graphs we need a single and systematic method. We will use the following one.
+To generate all the possible permutation representation graphs we need a single and systematic method. We will use the following one:
 
 \begin{method}
   \label{method}
@@ -1259,7 +1263,7 @@ To generate all the possible permutation representation graphs we need a single 
   If the $\rho_0$ edges are not part of an alternating square then they must be adjacent to a simple edge, a double edge or an alternating square. But the last two cases are impossible by Propositions~\ref{square-connection} and~\ref{continue-double-edge} because there are no $\rho_{-1}$ involution.
 
   \paragraph{}
-  Moreover, if two $\rho_0$ share a $\rho_1$ edges like in the Figure~\ref{rho0Fig}, then this component needs a $\rho_1$ edge for the same reason.
+  Moreover, if two $\rho_0$ share a $\rho_1$ edge like in the Figure~\ref{rho0Fig}, then this component needs a $\rho_1$ edge for the same reason.
 
   \begin{figure}[H]
     \begin{center}

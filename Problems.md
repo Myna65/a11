@@ -1,6 +1,8 @@
 #Introduction
 CONTENTS
 
+Transitive graph
+
 # Chapter 2
 End of section
 

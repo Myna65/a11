@@ -1,7 +1,7 @@
 \section{Two 4-transpositions}
 
 \paragraph{}
-If there are two 4-transpositions, there are 12 edges but the minimum number to link 11 points is 10. So there are two "joker" edges. There are three different possibilities for those "joker" edges: two double edges, one double edge and one alternating square or two alternating squares. We study this three cases.
+If there are two 4-transpositions, there are 12 edges and the minimum number to link 11 points is 10. So there are two "joker" edges. There are three different possibilities for those "joker" edges: two double edges, one double edge and one alternating square or two alternating squares. We study this three cases.
 
 \begin{lemma}
   If there are two double edges then they must be $(\rho_0, \rho_2)$ and $(\rho_1, \rho_3)$.
@@ -129,11 +129,12 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
 
       \end{tikzpicture}
       \caption{}
+      \label{figLemma}
     \end{center}
   \end{figure}
 
   \paragraph{}
-  The alternating square can only be connected by a $\rho_1$ edge. There are only two $\rho_2$ edges to link the two $\rho_3$ edges thus one of them must be at the end of a branch of the graph. This $\rho_3$ edge must be connected by a $\rho_2$ edge and this last edge can be connected to the $\rho_1$ edge or not. That gives us the two following graphs:
+  The alternating square can only be connected by one or more $\rho_1$ edges. Now we can apply Lemma~\ref{rho0atEnd} and thus the $\rho_3$ edges must be adjacent to $\rho_2$ edges and there are two possibilities:
 
   \begin{figure}[H]
     \begin{center}
@@ -163,6 +164,8 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
             \path (1)  edge[bend right=30] node {$1$} (2);
             \path (1)  edge node {$2$} (3);
             \path (2)  edge node {$2$} (4);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$3$} (9);
             \path (5)  edge node {$2$} (10);
             \path (10) edge node {$3$} (11);
           \end{scope}
@@ -182,13 +185,13 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \node (2)  at (0,2) {};
           \node (3)  at (2,0) {};
           \node (4)  at (2,2)  {};
-          \node (5)  at (4,0)  {};
-          \node (6)  at (6,0)  {};
-          \node (7)  at (8,0)  {};
-          \node (8)  at (10,0)  {};
-          \node (9)  at (12,0)  {};
-          \node (10) at (14,0)  {};
-          \node (11) at (16,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (6,2)  {};
+          \node (7)  at (4,0)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (10,0)  {};
+          \node (11) at (12,0)  {};
         \end{scope}
 
         \begin{scope}[every node/.style={fill=white, transform shape}]
@@ -196,10 +199,13 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
           \begin{scope}[every edge/.style={draw}]
             \path (1)  edge[bend left=30] node {$0$} (2);
             \path (3)  edge node {$0$} (4);
-            \path (3)  edge node {$1$} (5);
+            \path (3)  edge node {$1$} (7);
+            \path (4)  edge node {$1$} (5);
             \path (1)  edge[bend right=30] node {$1$} (2);
             \path (1)  edge node {$2$} (3);
             \path (2)  edge node {$2$} (4);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$3$} (9);
             \path (9)  edge node {$2$} (10);
             \path (10) edge node {$3$} (11);
           \end{scope}
@@ -211,13 +217,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  In the first case the other $\rho_3$ edge must be at the end of another branch and linked be a $\rho_2$ edge and a $\rho_1$ edge. But then there are a vertex and a $\rho_1$ edge that cannot be placed.
-
-  \paragraph{}
-  In the second case, the other $\rho_3$ edge must be placed next to the $\rho_2$ edge and one $\rho_1$ edge cannot be placed.
-
-  \paragraph{}
-  If the double edge is $(\rho_1, \rho_2)$, the alternating square must be $[\rho_0, \rho_2]$ (up to duality).
+  In both cases, there is only one remaining $\rho_1$ edge but it cannot be placed. Thus the double edge cannot be $(\rho_0, \rho_1)$. If the double edge is $(\rho_1, \rho_2)$, the alternating square must be $[\rho_0, \rho_2]$ (up to duality).
 
   \begin{figure}[H]
     \begin{center}
@@ -254,13 +254,215 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  Now only single edge can be placed. Thus the alternating square can only be connected by $c$ or $d$. There are only two $\rho_2$ edges to connect two $\rho_3$ edges. Thus the patterns saw in Proposition~\ref{rho0atEnd} must be used\footnote{Not complete}. In every case, using one pattern consume leave $\rho_1$ edges. But the $\rho_1$ edges cannot be used to link all the component $\rho_1$ due to the limitations of Proposition~\ref{fixed-only-1}.
+  This situation is exactly the same as in Figure~\ref{figLemma} because there is a square that can only be linked by $\rho_1$ edges and there is the same amount of edges to be placed. Thus it is also impossible.
 
   \paragraph{}
-  If the difference of the indices is 3, the double edge must be $(\rho_0, \rho_3)$ but the adjacent square must be $[\rho_1, \rho_3]$. There is a single $\rho_0$ edge remaining, this edge must be adjacent to a $\rho_1$ edge. There is only one $\rho_1$ edge for 4 $\rho_2$ edges, hence the graph can never be connected. Thus the index of the double edge must be separated by 2 and the double edge is $(\rho_0, \rho_2)$.\footnote{Not complete}
+  The indices of the double edge cannot therefore be consecutive. If the double edge is $(\rho_0, \rho_3)$, it must be included in an alternating square and this alternating square must be $[\rho_0, \rho_2]$ up to duality.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {a};
+          \node (2)  at (0,2) {b};
+          \node (3)  at (2,0) {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0)  {};
+          \node (9)  at (12,0)  {};
+          \node (10) at (14,0)  {};
+          \node (11) at (16,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (1)  edge[bend left=30] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (1)  edge[bend right=30] node {$3$} (2);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
 
   \paragraph{}
-  No index 0 or 3 can be repeated in both patterns if they are distinct because the alternating square uses two edges. But $\rho_0$ and $\rho_3$ are 2-transpositions and thus have only two edges.
+  By Lemma~\ref{rho0atEnd}, the $\rho_3$ square must be adjacent to a $\rho_2$ edge. This $\rho_2$ edge must also be adjacent to a $\rho_1$ edge. This last $\rho_1$ edge can be adjacent to the square or not, that give us two cases:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {a};
+          \node (2)  at (0,2) {b};
+          \node (3)  at (2,0) {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (6,2)  {};
+          \node (7)  at (8,2)  {};
+          \node (8)  at (10,2)  {};
+          \node (9)  at (4,0)  {};
+          \node (10) at (6,0)  {};
+          \node (11) at (8,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (1)  edge[bend left=30] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (1)  edge[bend right=30] node {$3$} (2);
+            \path (4)  edge node {$1$} (5);
+            \path (5)  edge node {$2$} (6);
+            \path (6)  edge node {$1$} (7);
+            \path (3)  edge node {$1$} (9);
+            \path (9)  edge node {$2$} (10);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {a};
+          \node (2)  at (0,2) {b};
+          \node (3)  at (2,0) {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0)  {};
+          \node (9)  at (12,0)  {};
+          \node (10) at (14,0)  {};
+          \node (11) at (16,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (1)  edge[bend left=30] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (1)  edge[bend right=30] node {$3$} (2);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$1$} (9);
+            \path (9)  edge node {$2$} (10);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+
+  \paragraph{}
+  In the first square there is a $\rho_1$ edge that cannot be placed. In the second one, the chain must be continue with a $\rho_1$ edge, and this edge can be adjacent to the square or not.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {a};
+          \node (2)  at (0,2) {b};
+          \node (3)  at (2,0) {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (6,2)  {};
+          \node (7)  at (4,0)  {};
+          \node (8)  at (6,0)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (10,0)  {};
+          \node (11) at (12,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (1)  edge[bend left=30] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (1)  edge[bend right=30] node {$3$} (2);
+            \path (4)  edge node {$1$} (5);
+            \path (3)  edge node {$1$} (7);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$1$} (9);
+            \path (9)  edge node {$2$} (10);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {a};
+          \node (2)  at (0,2) {b};
+          \node (3)  at (2,0) {c};
+          \node (4)  at (2,2)  {d};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0)  {};
+          \node (9)  at (12,0)  {};
+          \node (10) at (14,0)  {};
+          \node (11) at (16,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$2$} (3);
+            \path (2)  edge node {$2$} (4);
+            \path (1)  edge[bend left=30] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (1)  edge[bend right=30] node {$3$} (2);
+            \path (3)  edge node {$1$} (5);
+            \path (6)  edge node {$1$} (7);
+            \path (7)  edge node {$2$} (8);
+            \path (8)  edge node {$1$} (9);
+            \path (9)  edge node {$2$} (10);
+            \path (10) edge node {$3$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+      \caption{}
+    \end{center}
+  \end{figure}
+
+  \paragraph{}
+  Both cases are impossible because there is one edge that must still be placed.
+
+  \paragraph{}
+  Thus the double edge must be $(\rho_0, \rho_2)$. This double edge cannot be included in any alternating square otherwise this alternating square cannot be adjacent to a single edge. Thus the alternating square must be $[\rho_1, \rho_3]$ because it must be adjacent to a single edge.
 
 \end{proof}
 
@@ -272,7 +474,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   The alternating square uses two edges. Thus the involutions $\rho_0$ or $\rho_3$ cannot be used in both squares.
 
   \paragraph{}
-  If the indices of an alternating square are consecutive, another alternating square must be adjacent to the first one by Lemma~\ref{continue-alternating-square}. Thus all squares have been placed. There are two possibilities: $[\rho_0, \rho_1]$ or $[\rho_1, \rho_2]$. In the first case, there are no possible adjacent squares because $[\rho_0, \rho_2]$ would use three $\rho_0$ edges and $[\rho_1, \rho_1]$ does not make sens by Proposition~\ref{fixed-only-1}. In the second case, the only possibility for an adjacent square is $[\rho_0, \rho_2]$. Now no extra alternating square can be built and thus this last square must be connected by a single edge.
+  If the indices of an alternating square are consecutive, another alternating square must be adjacent to the first one by Lemma~\ref{continue-alternating-square}. Hence all squares have been placed. There are two possibilities: $[\rho_0, \rho_1]$ or $[\rho_1, \rho_2]$. In the first case, there are no possible adjacent squares because $[\rho_0, \rho_2]$ would use three $\rho_0$ edges and $[\rho_1, \rho_1]$ does not make sens by Proposition~\ref{fixed-only-1}. In the second case, the only possibility for an adjacent square is $[\rho_0, \rho_2]$. Now no extra alternating square can be built and thus this last square must be connected by a single edge.
 
   \begin{figure}[H]
     \begin{center}
@@ -312,7 +514,7 @@ If there are two 4-transpositions, there are 12 edges but the minimum number to 
   \end{figure}
 
   \paragraph{}
-  There are two $\rho_3$ that are not part of an alternating square for only one $\rho_2$ but that is forbidden by Lemma~\ref{rho0atEnd}.
+  There are two $\rho_3$ that are not part of an alternating square for only one $\rho_2$ and that is forbidden by Lemma~\ref{rho0atEnd}.
 
   \paragraph{}
   If the difference between the indices if 3, the square is $[\rho_0, \rho_3]$. The adjacent square must be $[\rho_1, \rho_3]$ up to duality. But the index $3$ is repeated and that is impossible.
@@ -485,7 +687,7 @@ For each of this monodromy group we prove that it is not a string C-group repres
   \end{figure}
 
   \paragraph{}
-  In the graph of $\Gamma_{I}$, the group of the left component is $S_8$ and the group of the right component is $S_3$. Since the global group must only have even permutation in order to have $A_{11}$, there is a semi-direct product and the group is $A_8 : S_3$.
+  In the graph of $\Gamma_{I}$, the group of the left component is $S_8$ and the group of the right component is $S_3$. Since the global group must only have even permutation in order to have $A_{11}$, there is a semidirect product and the group is $A_8 : S_3$.
 
   \paragraph{}
   The goal is now to prove that $\Gamma_{I} \cap \Gamma_{J} \ge S_5$.

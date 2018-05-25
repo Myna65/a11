@@ -1,4 +1,4 @@
-\section{Minimal number of 4-transposition}
+\section{Minimal number of 4-transpositions}
 
 \paragraph{}
 In this chapter we begin to apply Method~\ref{method} to prove that there are no sggis with some properties. The first applications are very easy. We only use the full method in Chapter~\ref{proof-5}.
@@ -216,19 +216,7 @@ For the second case, the graph is display in Figure~\ref{props-5-2}. On each sid
 \end{lemma}
 
 \begin{proof}
-  In Propositions~\ref{rotation-patterns} and~\ref{linear-pattern}, we found two special cycles. But none of those cycles can be connected by a simple edge.
-
-  \paragraph{}
-  So the only cycles that are left are linear monotone cycle or cycles that contains either the pattern~\ref{rotation-pattern} or one of the patterns from~\ref{linear-pattern}. But for both of those patterns, if a simple edge is attached
-\end{proof}
-
-\begin{corollary}
-  \label{no-cycle}
-  A string C-group representation graph of $A_{11}$ does not contains any cycle.
-\end{corollary}
-
-\begin{proof}
-  This can be directly deduced from Proposition~\ref{cycle-simple-cycle} and Lemma~\ref{no-simple-cycle}.
+  In Propositions~\ref{rotation-pattern} and~\ref{linear-pattern}, we found two special cycles. We must now proof that those cycle cannot be connected a single and and cannot be extended to 11 points. This proof is easy but a quite long and not very interesting and is left to the reader.
 \end{proof}
 
 \begin{proposition}
@@ -237,25 +225,22 @@ For the second case, the graph is display in Figure~\ref{props-5-2}. On each sid
 \end{proposition}
 
 \begin{proof}
-  If two consecutive $\rho_i$ and $\rho_{i+1}$ generators commute, then all generators $\le i$ commutes with all generators $\ge i+1$ and thus the group can be written as a direct product. But it cannot be an almost simple group.
+  If two consecutive $\rho_i$ and $\rho_{i+1}$ generators commute, then all generators $\le i$ commute with all generators $\ge i+1$ and thus the group can be written as a direct product. But it cannot be an almost simple group.
 \end{proof}
 
 \paragraph{}
-Due to previous lemma, we know that double edges or alternating square with non consecutive indices can lead to a long sequence of alternating squares. Now we prove that in the case of rank 5 sggi, no $\rho_0$ and $\rho_4$ edges can be adjacent.
+Due to Lemmas~\ref{continue-alternating-square}, \ref{square-connection} and~\ref{continue-double-edge}, we know that double edges or alternating square with non consecutive indices can lead to a long sequence of alternating squares. Now we prove that in the case of a rank 5 sggi, no $\rho_0$ and $\rho_4$ edges can be adjacent.
 
 \begin{lemma}
   \label{lemma-forbidden-alternating-square}
-  Let $\Gamma$ be sggi generating $A_{11}$ of rank 5. Then its permutation representation graph does not contain an alternating square between $\rho_0$ and $\rho_4$.
+  Let $\Gamma$ be a sggi generating $A_{11}$ of rank 5. Then its permutation representation graph does not contain an alternating square between $\rho_0$ and $\rho_4$.
 \end{lemma}
 
 \begin{proof}
-  In this graph we apply Method~\ref{method}. First we must choose a starting pattern, it is very easy here: it will be an alternating square $[\rho_0, \rho_4]$. The second step of the method is to try to build a connected graph with only even involutions. If no graph are found, that means that the pattern chosen is impossible.
+  In this graph we apply Method~\ref{method}. First we must choose a starting pattern, it is very easy here: it will be an alternating square $[\rho_0, \rho_4]$. The second step of the method is to try to build a connected graph with only even involutions. If no graph is found, that means that the pattern chosen is impossible.
 
   \paragraph{}
-  Let's start by placing the 4-transposition $\rho_4$ on the graph. We have the following graph:
-
-  \paragraph{}
-  Now, let's form an alternation square between $\rho_0$ and $\rho_4$.
+  We start with an alteranting square between $\rho_0$ and $\rho_4$.
 
   \begin{figure}[H]
     \begin{center}
@@ -333,7 +318,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
   \end{figure}
 
   \paragraph{}
-  Now, the rotation pattern seen in Proposition~\ref{rotation-pattern} cannot be placed because the difference between the indices of the square $[\rho_1, \rho_4]$ is not 2. Thus next square must be a $[\rho_0, \rho_2]$ or a $[\rho_0, \rho_4]$. If we use the last case, we are stuck because all 4 $\rho_0$ edges have been used and none if the square of the sequence have a difference between their indices of 2. Thus the sequence of alternating squares cannot be connected by an alternating square nor a double edge nor a simple edge. So the next square must be $[\rho_0, \rho_2]$.
+  Now, the rotation pattern seen in Proposition~\ref{rotation-pattern} cannot be placed because the difference between the indices of the square $[\rho_1, \rho_4]$ is not 2. Thus the next square must be a $[\rho_0, \rho_2]$ or a $[\rho_0, \rho_4]$. If we use the last case, we are stuck because all 4 $\rho_0$ edges have been used and none of the square of the sequence have a difference between their indices of 2. Thus the sequence of alternating squares cannot be connected by an alternating square nor a double edge nor a simple edge. So the next square must be $[\rho_0, \rho_2]$.
 
   \begin{figure}[H]
     \begin{center}
@@ -418,7 +403,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
   \end{figure}
 
   \paragraph{}
-  To link the two remaining points, we only need two edges but the total amount of edges would be odd but that is forbidden because we want that the generated group is $A_{11}$. To restore parity we need to create a double edge or an alternating square. The number of points is insufficient to create an alternating square, so we must create a double edge and the difference between its indices must be two. All $\rho_0$ edges have already be used, so the possibilities for double edges are $(\rho_1, \rho_3)$ and $(\rho_2, \rho_4)$ but then the number of $\rho_3$ or $\rho_4$ edge becomes odd. So it is impossible to connect all points if $\rho_0$ is a 4-transposition and there is an alternating square between $\rho_0$ and $\rho_4$.
+  To link the two remaining points, we only need two edges but the total amount of edges would be odd and that is forbidden because we want that the generated group to be $A_{11}$. To restore parity we need to create a double edge or an alternating square. The number of points is insufficient to create an alternating square, so we must create a double edge and the difference between its indices must be two. All $\rho_0$ edges have already been used, so the possibilities for double edges are $(\rho_1, \rho_3)$ and $(\rho_2, \rho_4)$ but then the number of $\rho_3$ and $\rho_4$ edges becomes odd. So it is impossible to connect all points if $\rho_0$ is a 4-transposition and there is an alternating square between $\rho_0$ and $\rho_4$.
 
   \paragraph{}
   Thus there are no permutation representation graphs of $A_{11}$ that contain an alternating square $[\rho_0, \rho_4]$.
@@ -426,7 +411,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
 
 \begin{lemma}
   \label{lemma-forbidden-double-edge}
-  In a permutation representation graph of rank 5 with 11 points, it's impossible to have a double edge between $\rho_0$ and $\rho_4$.
+  In a permutation representation graph of rank 5 with 11 points, it is impossible to have a double edge between $\rho_0$ and $\rho_4$.
 \end{lemma}
 
 \begin{proof}
@@ -516,7 +501,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
   \end{figure}
 
   \paragraph{}
-  We used 5 $\rho_3$ and there are only 4 of them. Thus the sequence of alternating squares must not be extended beyond length 2. Thus it must be connected by a single edge.
+  We used 5 $\rho_3$  edges and there are only 4 of them. Thus the sequence of alternating squares must not be extended beyond length 2. Thus it must be connected by a single edge.
 
   \begin{figure}[H]
     \begin{center}
@@ -605,7 +590,7 @@ Due to previous lemma, we know that double edges or alternating square with non 
   \end{figure}
 
   \paragraph{}
-  The number of $\rho_0$ edges is still odd and there is place for an additional one. Thus the graph cannot be turned into the permutation representation graph of a sggi of rank 5 of $A_{11}$.
+  The number of $\rho_0$ edges is still odd and there is room for an additional one. Thus the graph cannot be turned into the permutation representation graph of a sggi of rank 5 of $A_{11}$.
 
 
 \end{proof}

@@ -189,7 +189,7 @@ The sequence of alternating squares cannot be extended neither on the left nor o
 By Lemma~\ref{rho0atEnd}, the $\rho_0$ edges must be in an alternating square because there is only one remaining $\rho_1$ edge. There are two possibilities: $[\rho_0, \rho_2]$, $[\rho_0, \rho_3]$. But if the last possibility is chosen then an adjacent alternating square must be built but there is not enough points. Thus the square is $[\rho_0, \rho_2]$ and this square must be linked by a $\rho_1$ edge.
 
 \paragraph{}
-By Lemma~\ref{adjacent-must-not-commute} $\rho_0$ and $\rho_1$ must not commute. Thus a $\rho_0$ edge must share a vertex with a $\rho_1$ edge. By Lemma~\ref{0-4-no-share}, the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex. So the $\rho_0$ edge cannot be linked to the vertices $a, b, c$ or $d$ of Figure~\ref{proof-5-3}. Also, they cannot be adjacent to the vertices $e$ or $f$ because that would form an alternating square. But it is in contradiction with the fact that the sequence of alternating squares cannot be extended.
+By Lemma~\ref{adjacent-must-not-commute} $\rho_0$ and $\rho_1$ cannot commute. Thus a $\rho_0$ edge must share a vertex with a $\rho_1$ edge. By Lemma~\ref{0-4-no-share}, the edges of involutions $\rho_0$ and $\rho_4$ cannot share a vertex. So the $\rho_0$ edge cannot be linked to the vertices $a, b, c$ or $d$ of Figure~\ref{proof-5-3}. Also, they cannot be adjacent to the vertices $e$ or $f$ because that would form an alternating square. But it is in contradiction with the fact that the sequence of alternating squares cannot be extended.
 
 \begin{figure}[H]
   \begin{center}
@@ -562,7 +562,7 @@ The second possibility is to have a double edge $(\rho_1, \rho_4)$. The double e
 \end{figure}
 
 \paragraph{}
-By lemma~\ref{adjacent-must-not-commute}, $\rho_0$ and $\rho_1$ must not commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge must not be part of an alternating square if there are no $\rho_0$ edges in this square.
+By Lemma~\ref{adjacent-must-not-commute}, $\rho_0$ and $\rho_1$ cannot commute. A $\rho_0$ edge must thus be connected to at least one $\rho_1$ edge. So at least one $\rho_1$ edge cannot be part of an alternating square if there are no $\rho_0$ edges in this square.
 
 \paragraph{}
 The alternating square cannot be extended to a sequence on the right because this needs two alternating squares by Proposition~\ref{parity-sequence-squares}.  If the index of the vertical edges is not changed, adding two squares would require all of the $\rho_1$ edges. None of the horizontal edges of the squares can be an edge of $\rho_0$. Thus, the square cannot be extended to the right by the previous statement.
@@ -704,7 +704,7 @@ By Proposition~\ref{chain-consecutive}, the component $\{g,h,i,j,k\}$ can only b
 \end{figure}
 
 \paragraph{}
-The graph is now connected. We begin the last part of the method~\ref{method}: place all remaining edges to satisfy parity. Thus at least one $\rho_2$ edge must still be placed. The only available vertices are $f,h,i,j$ and $k$. But $f$ cannot be connected to any other point by a $\rho_0$ edge because it must form an alternating square but that would not satisfy Proposition~\ref{adjacent-squares}. Thus an edge $(h,i)$ or an edge $(j,k)$ must be built. That gives us two cases.
+The graph is now connected. We begin the last part of Method~\ref{method}: place all remaining edges to satisfy parity. Thus at least one $\rho_2$ edge must still be placed. The only available vertices are $f,h,i,j$ and $k$. But $f$ cannot be connected to any other point by a $\rho_0$ edge because it must form an alternating square and that would not satisfy Proposition~\ref{adjacent-squares}. Thus an edge $(h,i)$ or an edge $(j,k)$ must be built. That gives us two cases.
 
 \begin{figure}[H]
   \begin{center}
@@ -793,7 +793,7 @@ The graph is now connected. We begin the last part of the method~\ref{method}: p
 \end{figure}
 
 \paragraph{}
-Now we want to prove that one generator can be written as a product of the other. The strategy used is different because there is no obvious solution. We remove one involution and then prove that the generated group is still $A_{11}$. But the removed generator is in $A_{11}$ thus it must be written as a product of other generators.
+Now we want to prove that one generator can be written as a product of the other. The strategy used is different because there is no obvious solution. We remove one involution and then prove that the generated group is still $A_{11}$. The removed generator is in $A_{11}$ thus it must be written as a product of other generators.
 
 \paragraph{}
 To achieve this goal, we use the classification of primitive groups. Those groups are well-known and have been classified in~\cite{buekenhout1996list} for groups of degree smaller than 50. We first prove that the group is 2-transitive with Proposition~\ref{practical-transitivity}. We then use Property~\ref{2-transitive-primitive} to prove that they are primitive.
@@ -846,7 +846,7 @@ In the first graph we remove the $\rho_4$ edges. The graph becomes the following
 \end{figure}
 
 \paragraph{}
-The graph is connected, thus the group is transitive on 11 points. Moreover, this group is 2-transitive. To prove this we use the Proposition~\ref{practical-transitivity}: we fix the point $k$ and try to keep $k$ fixed while finding permutation between $j$ and all non-fixed points. This is trivial because the point $k$ does not move if no $\rho_0$ edges are placed. All the other points are in the same orbit of $\Gamma_{\rho_1, \rho_2, \rho_3}$ and thus $j$ can be permuted with any non-fixed point without using a $\rho_0$ edge.
+The graph is connected, thus the group is transitive on 11 points. Moreover, this group is 2-transitive. To prove this we use Proposition~\ref{practical-transitivity}: we fix the point $k$ and try to keep $k$ fixed while finding permutation between $j$ and all non-fixed points. This is trivial because the point $k$ does not move if no $\rho_0$ edges are placed. All the other points are in the same orbit of $\Gamma_{\rho_1, \rho_2, \rho_3}$ and thus $j$ can be permuted with any non-fixed point without using a $\rho_0$ edge.
 
 \paragraph{}
 The group is 2-transitive thus primitive. Its order is a multiple of $11 \times 10 = 110$. The subgroup $\Gamma_{\rho_2, \rho_3}$ is $D_{24}$. Thus the order of the group must be a multiple of 1320. There are 3 possibilities in~\cite{buekenhout1996list}: $M_{11}$, $A_{11}$ and $S_{11}$. $M_{11}$ is not possible because $D_{24}$ is not a subgroup of $M_{11}$, see for instance~\cite{connor2013atlas}. All involutions are even and $S_{11}$ contains odd involutions. Therefore the group must be $A_{11}$.
@@ -942,7 +942,7 @@ The only remaining possibility is to link the square to the rest of the graph wi
 \end{figure}
 
 \paragraph{}
-Two $\rho_0$ edges must still be placed and they must not commute with $\rho_1$. Thus at least one edge must be adjacent to a $\rho_1$ edge. However the other end of the edge cannot be connected to either $a,b,c,d$ or $e$ by Proposition~\ref{square-connection} or by Proposition~\ref{chain-consecutive}. This $\rho_1$ edge must thus be adjacent to two $\rho_0$ edges. Moreover the other $\rho_0$ edge must also link the two other $\rho_1$ edges.
+Two $\rho_0$ edges must still be placed and they cannot commute with $\rho_1$. Thus at least one edge must be adjacent to a $\rho_1$ edge. However the other end of the edge cannot be connected to either $a,b,c,d$ or $e$ by Proposition~\ref{square-connection} or by Proposition~\ref{chain-consecutive}. This $\rho_1$ edge must thus be adjacent to two $\rho_0$ edges. Moreover the other $\rho_0$ edge must also link the two other $\rho_1$ edges.
 
 \begin{figure}[H]
   \begin{center}
