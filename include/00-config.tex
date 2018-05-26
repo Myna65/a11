@@ -22,6 +22,7 @@
 \usepackage{enumitem}
 \usepackage{titling}
 \usepackage{emptypage}
+\usepackage{afterpage}
 
 \usepackage{array}
 \usepackage{booktabs}
@@ -76,6 +77,11 @@
 %\NewEnviron{killcontents}{}
 %\let\proof\killcontents
 %\let\endproof\endkillcontents
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \newpage}
 
 %\usepackage{showkeys}
 
