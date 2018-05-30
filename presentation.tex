@@ -1,0 +1,57 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\usepackage{tikz}
+\usepackage{svg}
+
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+\usetikzlibrary{graphs}
+\usetikzlibrary{graphs.standard}
+
+\title{Abstract polytopes on $A_{11}$}
+%\subtitle{Graphes de Moore}
+% \date{\today}
+\date{}
+\author{Nathan Meynaert}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table des matières}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Polytopes abstraits}
+
+\begin{frame}{Définition}
+
+  \begin{definition}
+    Un \textit{polytope abstrait} est un ensemble partiellement ordonné gradué  dont les éléments sont appelés \textit{faces} et sont ordonnés par l'inclusion $\subseteq$ tels que
+    \begin{itemize}
+      \item \textbf{(P1)} Il existe un face maximale $F_d$ et une face minimale $F_{-1}$.
+    \end{itemize}
+  \end{definition}
+
+\end{frame}
+
+\end{document}
