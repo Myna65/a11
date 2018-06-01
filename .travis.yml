@@ -12,6 +12,7 @@ install:
   - cd mtheme
   - make sty
   - sudo make install
+  - cd ..
 
 script:
   - cmake .
@@ -24,6 +25,6 @@ deploy:
     secure: KiPbRslevFfbnFmwdaLNE317lPJeRL6mqelIrei6Fb80JV+OrQQmBZuDJ+GloezzOjUbo9eRXPkI5Qq14gcEFFLNfCeNdjwDy+EnKYdaY7Zi0moh7loLuI2BdaDIRuTNbiW20EfsSqUXpu30SX9QGwZjfuy3QMb/dTufto+HDqw6YqBELneQcquOJ5r+YDMc9jyJODVb/yJjuFEWNSYQ2qfl7QU5/jdl6pN3qY0y8bnDzGOr/9D0yvgWn7KsooSraYKeINC0SUDglylkeSALQ7+ERcDk+DF1ncOQ7arH3ESKmBvQ24Xon2MP+t6EiLfakGjP4Sy0CMBXqp7UunUvj7vbR7wS9asPLwzdWe5Hh9adJY0go4p+mdzv9YSkPjjBv+zzZDODmjQX9VE0SQPzMJYPctk/8BSAnNDUc/7jZxL54hwZUdPugoGMzf7VNdNuvT1Wo7sckYpJGUHHdfcy3+N7cTSDOf0RHN9zBL99x0dYlk10LjioNuQq7ziI18NXm11vXBqeor/fLCW5dWiHd7CTTBn80Xfia9Onc7CgxbwgIJ2/d738SYFL+oR+2H7Ksx/XghmqD8MVrzpJCuWBMkRDG2NIK19qtqq4TUWeAy9YGQ/kfZqj3gcOJTLzhxvSqinRrconPW5P6xPo7B9xl/JMjhS6y5iL3bLCidcK+sA=
   file:
     - build/full.pdf
-    - build/persentation.tex
+    - build/presentation.tex
   on:
     tags: true

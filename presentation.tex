@@ -22,8 +22,16 @@
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
 
+\usepackage{thmtools}
+
 \usetikzlibrary{graphs}
 \usetikzlibrary{graphs.standard}
+
+\let\definition\relax
+\let\theorem\relax
+\newtheorem{definition}{Définition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{theorem}[definition]{Théorem}
 
 \title{Abstract polytopes on $A_{11}$}
 %\subtitle{Graphes de Moore}
@@ -64,8 +72,8 @@
 
 \section{Permutation representation graphs}
 
-\begin{frame}
-  Un permutation representation graph est un graphe représentation un sggi. Le sggi est composé de générateurs $\rho_0, \rho_{r-1}$. Ce graph est un multigraphe avec labels dont les sommets sont les points du string C-group. Deux points $\alpha$ et $\beta$ sont reliés par une arête avec un label $i$ ssi $\alpha \rho_i = \beta$. Par convention, le graphe ne contient pas de boucle.
+\begin{frame}{Définition}
+  Un permutation representation graph est un graphe représentant un sggi. Le sggi est composé de générateurs $\rho_0, \dots, \rho_{r-1}$. Ce graphe est un multigraphe avec labels dont les sommets sont les points du string C-group. Deux points $\alpha$ et $\beta$ sont reliés par une arête avec un label $i$ ssi $\alpha \rho_i = \beta$. Par convention, le graphe ne contient pas de boucle.
 
 
   \pause
@@ -313,16 +321,853 @@
       \end{center}
     \end{figure}
 
+    Supposons que $i$ et $k$ soient non-consécutifs alors les deux arêtes $i$ et $k$ de ce graphe doivent être dans un motif valide. Le seul possible est le carré alterné mais alors le graphe n'est pas un arbre.
+
     Donc le graphe doit être une chaîne.
 \end{frame}
 
 \begin{frame}{Preuve (2)}
 
+  Dans une chaîne, les indices des arêtes adjacentes doivent être consécutifs. En particulier les arêtes $\rho_0$ ne peuvent être adjacentes qu'à des arêtes $\rho_1$.
+
+  Vu qu'il y a deux arêtes de chaque type, une arête $\rho_0$ doit être à l'extrémité du graphe. Si une arête $\rho_0$ ne se trouve pas à l'extrémité du graphe, alors elle doit être entourée de deux arêtes $\rho_1$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$1$} (2);
+            \path (2)  edge node {$0$} (3);
+            \path (3)  edge node {$1$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  \pause
+
+  La seconde arête $\rho_0$ doit être adjacente à une de ces arêtes $\rho_1$ mais ne peut avoir d'arête adjacente à son autre extrémité.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (0)  at (-2,0)  {};
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+          \begin{scope}[every edge/.style={draw}]
+            \path (0)  edge node {$0$} (1);
+            \path (1)  edge node {$1$} (2);
+            \path (2)  edge node {$0$} (3);
+            \path (3)  edge node {$1$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+
+
+\end{frame}
+
+\begin{frame}{Preuve (3)}
+  Par dualité, la même conclusion s'applique à $\rho_4$, la chaîne doit donc commencer par ces motifs à chaque extrémité.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+          \node (5)  at (8,0)  {};
+          \node (7)  at (11,0) {};
+          \node (8)  at (13,0) {};
+          \node (9)  at (15,0) {};
+          \node (10) at (17,0) {};
+          \node (11) at (19,0) {};
+        \end{scope}
+
+        \node (5b) at (9,0) {};
+        \node (7b) at (10,0) {};
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (2)  edge node {$1$} (3);
+            \path (3)  edge node {$0$} (4);
+            \path (4)  edge node {$1$} (5);
+            \path (5)  edge[style={dotted}] (5b);
+            \path (7)  edge[style={dotted}] (7b);
+            \path (7)  edge node {$3$} (8);
+            \path (8)  edge node {$4$} (9);
+            \path (9)  edge node {$3$} (10);
+            \path (10) edge node {$4$} (11);
+          \end{scope}
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  \pause
+
+  Il ne reste que des arêtes $\rho_2$ à placer.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (10,0)  {};
+          \node (7)  at (12,0) {};
+          \node (8)  at (14,0) {};
+          \node (9)  at (16,0) {};
+          \node (10) at (18,0) {};
+          \node (11) at (20,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (2)  edge node {$1$} (3);
+            \path (3)  edge node {$0$} (4);
+            \path (4)  edge node {$1$} (5);
+            \path (7)  edge node {$3$} (8);
+            \path (8)  edge node {$4$} (9);
+            \path (9)  edge node {$3$} (10);
+            \path (10) edge node {$4$} (11);
+          \end{scope}
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Ce qui est clairement impossible et donc aucune chaîne ne peut être construite.
+
+\end{frame}
+
+\begin{frame}{Rang 4}
+  \begin{theorem}
+    Tout permutation representation graph de rang 4 de $A_{11}$ admet au moins deux 4-transpositions.
+  \end{theorem}
+\end{frame}
+
+\section{Méthode}
+
+\begin{frame}{Méthode}
+  Une méthode permettant de construire tous les graphes possibles est la suivante:
+
+  \begin{enumerate}
+    \item Partir d'une involution de base
+    \item À partir d'une deuxième involution, sachant qu'il existe uniquement quatre motifs valides, lister toutes les possibilités.
+    \item Étendre le graphe afin qu'il devienne connexe. Des arêtes supplémentaire peuvent être placées afin de satisfaire diverses contraintes.
+    \item Ajouter les arêtes restantes.
+  \end{enumerate}
 \end{frame}
 
 \section{Ni $\rho_0$ ni $\rho_4$ ne peut être une 4-transposition}
 
+\begin{frame}{Intersection}
+  Supposons que $\rho_0$ soit une 4-transposition, alors il permute 8 points. Cependant $\rho_4$ permute au moins 4 points et donc il existe un point qui est permuté par $\rho_0$ et $\rho_4$.
+
+  Ce point doit faire partie d'un des 4 motifs. Les deux seuls possibles sont le carré alterné et l'arête double.
+
+  Les motifs de départ sont donc les suivants:
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (6)  at (10,0) {};
+          \node (7)  at (12,0) {};
+          \node (8)  at (14,0) {};
+          \node (9)  at (14,2) {};
+          \node (10) at (16,0) {};
+          \node (11) at (16,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (6)  edge[bend left=30] node {$0$} (7);
+            \path (8)  edge node {$0$} (10);
+            \path (9)  edge node {$0$} (11);
+            \path (6)  edge[bend right=30] node {$4$} (7);
+            \path (8)  edge node {$4$} (9);
+            \path (10) edge node {$4$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}{Carré alterné (1)}
+  Partons du carré alterné
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (3);
+            \path (2)  edge node {$0$} (4);
+            \path (1)  edge node {$4$} (2);
+            \path (3)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  \pause
+
+  Ce carré alterné ne peut être adjacent à une arête simple.
+
+  Il doit donc être adjacent à un autre carré alterné. Les possibilités sont un carré avec $\rho_0$ et $\rho_3$ ou un carré avec $\rho_1$ et $\rho_4$. Le second cas peut être ramené au premier par dualité.
+
+  \pause
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+          \node (5)  at (4,0) {};
+          \node (6)  at (4,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (5)  edge node {$3$} (3);
+            \path (6)  edge node {$3$} (4);
+            \path (1)  edge node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}{Carré alterné (2)}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+          \node (5)  at (4,0) {};
+          \node (6)  at (4,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (5)  edge node {$3$} (3);
+            \path (6)  edge node {$3$} (4);
+            \path (1)  edge node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Un troisième carré alterné doit être placé, ce carré doit être composé de $\rho_0$ et $\rho_2$.
+
+  \pause
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+          \node (5)  at (4,0) {};
+          \node (6)  at (4,2) {};
+          \node (7)  at (6,0) {};
+          \node (8)  at (6,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (7)  edge node {$0$} (8);
+            \path (5)  edge node {$2$} (7);
+            \path (6)  edge node {$2$} (8);
+            \path (5)  edge node {$3$} (3);
+            \path (6)  edge node {$3$} (4);
+            \path (1)  edge node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}{Carré alterné (3)}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+          \node (5)  at (4,0) {};
+          \node (6)  at (4,2) {};
+          \node (7)  at (6,0) {};
+          \node (8)  at (6,2) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (7)  edge node {$0$} (8);
+            \path (5)  edge node {$2$} (7);
+            \path (6)  edge node {$2$} (8);
+            \path (5)  edge node {$3$} (3);
+            \path (6)  edge node {$3$} (4);
+            \path (1)  edge node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Maintenant il est possible de connecter une arête simple, celle-ci doit être $\rho_1$.
+
+  \pause
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+          \node (5)  at (4,0) {};
+          \node (6)  at (4,2) {};
+          \node (7)  at (6,0) {};
+          \node (8)  at (6,2) {};
+          \node (9)  at (8,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (7)  edge node {$0$} (8);
+            \path (7)  edge node {$1$} (9);
+            \path (5)  edge node {$2$} (7);
+            \path (6)  edge node {$2$} (8);
+            \path (5)  edge node {$3$} (3);
+            \path (6)  edge node {$3$} (4);
+            \path (1)  edge node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Maintenant une arête $\rho_2$ doit être placée.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+          \node (5)  at (4,0) {};
+          \node (6)  at (4,2) {};
+          \node (7)  at (6,0) {};
+          \node (8)  at (6,2) {};
+          \node (9)  at (8,0) {};
+          \node (10) at (10,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (7)  edge node {$0$} (8);
+            \path (7)  edge node {$1$} (9);
+            \path (5)  edge node {$2$} (7);
+            \path (6)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+            \path (5)  edge node {$3$} (3);
+            \path (6)  edge node {$3$} (4);
+            \path (1)  edge node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Carré alterné (4)}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0) {};
+          \node (2)  at (0,2) {};
+          \node (3)  at (2,0) {};
+          \node (4)  at (2,2) {};
+          \node (5)  at (4,0) {};
+          \node (6)  at (4,2) {};
+          \node (7)  at (6,0) {};
+          \node (8)  at (6,2) {};
+          \node (9)  at (8,0) {};
+          \node (10) at (10,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (5)  edge node {$0$} (6);
+            \path (7)  edge node {$0$} (8);
+            \path (7)  edge node {$1$} (9);
+            \path (5)  edge node {$2$} (7);
+            \path (6)  edge node {$2$} (8);
+            \path (9)  edge node {$2$} (10);
+            \path (5)  edge node {$3$} (3);
+            \path (6)  edge node {$3$} (4);
+            \path (1)  edge node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Un point doit encore être relié mais le nombre total d'arêtes $\rho_2$ est pour le moment impair. Donc soit le dernier point doit être relié par une arête $\rho_2$ soit une arête double contenant $\rho_2$ doit être créée entre deux points déjà reliés.
+
+  Cependant aucune de ces options n'est possible donc aucun permutation representation graph ne peut être trouvé.
+
+
+\end{frame}
+
 \section{Ni $\rho_1$ ni $\rho_3$ ne peut être une 4-transposition}
+
+\begin{frame}{Graphes possibles}
+
+  Après application de la méthode dans ce cas, nous trouvons deux familles de graphes. Voici un exemple pour chaque famille.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,0)  {};
+          \node (8)  at (8,2)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (10,2) {};
+          \node (11) at (10,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (9)  edge node {$0$} (11);
+            \path (8)  edge[bend left=30] node {$0$} (10);
+            \path (1)  edge[bend right=30] node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (9);
+            \path (1)  edge[bend left=30] node {$2$} (3);
+            \path (6)  edge node {$2$} (7);
+            \path (8)  edge node {$2$} (9);
+            \path (10) edge node {$2$} (11);
+            \path (1)  edge[bend left=30] node {$3$} (2);
+            \path (3)  edge node {$3$} (5);
+            \path (4)  edge node {$3$} (6);
+            \path (8)  edge[bend right=30] node {$3$} (10);
+            \path (1)  edge[bend right=30] node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0) {};
+          \node (9)  at (-2,2) {};
+          \node (10) at (-2,0) {};
+          \node (11) at (12,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (6)  edge[bend left=30] node {$0$} (7);
+            \path (8)  edge node {$0$} (11);
+            \path (1)  edge[bend right=30] node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge node {$2$} (9);
+            \path (2)  edge node {$2$} (10);
+            \path (4)  edge node {$2$} (5);
+            \path (6)  edge[bend right=30] node {$2$} (7);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (1)  edge[bend left=30] node {$4$} (2);
+            \path (9)  edge node {$4$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Nous allons maintenant essayer de prouver que les générateurs de ces graphes ne sont pas indépendants.
+
+\end{frame}
+
+\begin{frame}{Premier graphe}
+
+  Reprenons le premier graphe.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,2)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (6,0)  {};
+          \node (8)  at (8,2)  {};
+          \node (9)  at (8,0)  {};
+          \node (10) at (10,2) {};
+          \node (11) at (10,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (9)  edge node {$0$} (11);
+            \path (8)  edge[bend left=30] node {$0$} (10);
+            \path (1)  edge[bend right=30] node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (9);
+            \path (1)  edge[bend left=30] node {$2$} (3);
+            \path (6)  edge node {$2$} (7);
+            \path (8)  edge node {$2$} (9);
+            \path (10) edge node {$2$} (11);
+            \path (1)  edge[bend left=30] node {$3$} (2);
+            \path (3)  edge node {$3$} (5);
+            \path (4)  edge node {$3$} (6);
+            \path (8)  edge[bend right=30] node {$3$} (10);
+            \path (1)  edge[bend right=30] node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Conservons uniquement les arêtes $\rho_1$, $\rho_2$ et $\rho_4$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (6,0)  {};
+          \node (6)  at (4,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0)  {};
+          \node (9)  at (12,0)  {};
+          \node (10) at (14,0)  {};
+          \node (11) at (16,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge[bend left=30] node {$2$} (3);
+            \path (5)  edge node {$2$} (7);
+            \path (8)  edge node {$2$} (9);
+            \path (10) edge node {$2$} (11);
+            \path (1)  edge[bend right=30] node {$4$} (3);
+            \path (2)  edge node {$4$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  \pause
+
+  Il apparaît clairement que $\rho_4 = (\rho_1 \rho_2)^{10}$.
+
+  Donc la propriété d'intersection ne peut être vérifiée.
+
+\end{frame}
+
+\begin{frame}{Second graphe (1)}
+
+  Dans le cas du second graphe.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0) {};
+          \node (9)  at (-2,2) {};
+          \node (10) at (-2,0) {};
+          \node (11) at (12,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (6)  edge[bend left=30] node {$0$} (7);
+            \path (8)  edge node {$0$} (11);
+            \path (1)  edge[bend right=30] node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge node {$2$} (9);
+            \path (2)  edge node {$2$} (10);
+            \path (4)  edge node {$2$} (5);
+            \path (6)  edge[bend right=30] node {$2$} (7);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+            \path (1)  edge[bend left=30] node {$4$} (2);
+            \path (9)  edge node {$4$} (10);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Retirons les arêtes $\rho_4$.
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0) {};
+          \node (9)  at (-2,2) {};
+          \node (10) at (-2,0) {};
+          \node (11) at (12,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (6)  edge[bend left=30] node {$0$} (7);
+            \path (8)  edge node {$0$} (11);
+            \path (1)  edge node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge node {$2$} (9);
+            \path (2)  edge node {$2$} (10);
+            \path (4)  edge node {$2$} (5);
+            \path (6)  edge[bend right=30] node {$2$} (7);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Nous allons prouver que ce graphe génère $A_{11}$ et donc que $\rho_4$ peut être exprimé comme un produit des autres générateurs.
+
+\end{frame}
+
+\begin{frame}{Second graphe (2)}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,2)  {};
+          \node (2)  at (0,0)  {};
+          \node (3)  at (2,2)  {};
+          \node (4)  at (2,0)  {};
+          \node (5)  at (4,0)  {};
+          \node (6)  at (6,0)  {};
+          \node (7)  at (8,0)  {};
+          \node (8)  at (10,0) {};
+          \node (9)  at (-2,2) {};
+          \node (10) at (-2,0) {};
+          \node (11) at (12,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (6)  edge[bend left=30] node {$0$} (7);
+            \path (8)  edge node {$0$} (11);
+            \path (1)  edge node {$1$} (2);
+            \path (3)  edge node {$1$} (4);
+            \path (5)  edge node {$1$} (6);
+            \path (7)  edge node {$1$} (8);
+            \path (1)  edge node {$2$} (9);
+            \path (2)  edge node {$2$} (10);
+            \path (4)  edge node {$2$} (5);
+            \path (6)  edge[bend right=30] node {$2$} (7);
+            \path (1)  edge node {$3$} (3);
+            \path (2)  edge node {$3$} (4);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  Ce graphe est 2-transitif, il est donc primitif. Dès lors il est possible d'utiliser la classification des groupes primitifs afin de prouver que ce graphe génère $A_{11}$. Le sous-groupe généré par $\rho_2$ et $\rho_3$ est $D_{24}$, l'ordre du groupe doit donc être un multiple de 1320.
+
+  Il y a trois possibilités pour un tel ordre: $M_{11}$, $A_{11}$ ou $S_{11}$. La première est impossible car $M_{11}$ n'a pas $D_{24}$ comme sous-groupe et $S_{11}$ est impossible car tous les générateurs sont des permutations paires. Ce graphe doit donc générer $A_{11}$.
+
+\end{frame}
 
 \section{$\rho_2$ ne peut être une 4-transposition}
 
