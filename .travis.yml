@@ -1,8 +1,17 @@
+dist: trusty
+sudo: required
+
 addons:
   apt:
     packages:
     - cmake
     - texlive-full
+
+install:
+  - git clone https://github.com/matze/mtheme
+  - cd mtheme
+  - make sty
+  - sudo make install
 
 script:
   - cmake .
