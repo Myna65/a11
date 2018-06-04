@@ -33,7 +33,7 @@
 \newtheorem{proposition}[definition]{Proposition}
 \newtheorem{theorem}[definition]{Théorème}
 
-\title{Abstract polytopes on $A_{11}$}
+\title{Polytopes abstraits réguliers de $A_{11}$}
 %\subtitle{Graphes de Moore}
 % \date{\today}
 \date{}
@@ -43,6 +43,16 @@
 \begin{document}
 
 \maketitle
+
+\begin{frame}{Objectifs}
+  Dans l'étude des polytopes abstraits possédant un certain groupe d'automorphismes, le groupe $A_{11}$ est un peu spécial.
+
+  Il a été calculé que ce groupe n'admet que des polytopes de rang 3 et de rang 6.
+
+  C'est le seul exemple connu où l'ensemble des rangs admissibles n'est pas un intervalle.
+
+  Il s'agit de comprendre pourquoi le groupe $A_{11}$ n'a pas de polytopes de rang 4 ou de rang 5 malgré le fait qu'il ait des polytopes de rang 3 et de rang 6.
+\end{frame}
 
 \begin{frame}{Table des matières}
   \setbeamertemplate{section in toc}[sections numbered]
@@ -66,36 +76,12 @@
 
 \begin{frame}{Fortement connexe}
 
-  Un poset est dit connexe, si, pour toute paire de points $x, y$ il existe une suite de points $x = x_0, \dots, x_n = y$ tels que $x_i$ et $x_{i+1}$ soient comparables.
+  Un poset gradué est dit connexe, si son rang est $\le 1$ ou si, pour toute paire de points $x, y$ il existe une suite de points $x = x_0, \dots, x_n = y$ tels que $x_i$ et $x_{i+1}$ soient comparables.
 
   Une section $[x,z]$ d'un poset est l'ensemble des points $y$ du poset tels que  $x \le y \le z$.
 
-  Un poset est fortement connecté si toute section du poset est connexe.
+  Un poset est fortement connexe si toute section du poset est connexe.
 
-\end{frame}
-
-\begin{frame}{Exemple (1)}
-  \begin{figure}[H]
-    \begin{center}
-      \includegraphics[width=8cm]{Pyramid.png}
-    \end{center}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Exemple (2)}
-  \begin{figure}[H]
-    \begin{center}
-      \includegraphics[width=8cm]{Prism.png}
-    \end{center}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Exemple (3)}
-  \begin{figure}[H]
-    \begin{center}
-      \includegraphics[width=8cm]{Hosohedron.png}
-    \end{center}
-  \end{figure}
 \end{frame}
 
 \begin{frame}{Exemple (4)}
@@ -104,14 +90,6 @@
       \includegraphics[width=7cm]{Hemicube.png}
     \end{center}
   \end{figure}
-\end{frame}
-
-\begin{frame}{$i$-transpositions}
-  Les générateurs doivent être des involutions, dès lors ils doivent être des $i$-transpositions, c'est-à-dire que les générateurs permutent $i$ paires de points distincts.
-
-  Le groupe $A_{11}$ ne contient que des permutations paires. Donc $i$ doit être pair mais ne peut pas être égal à 6 car il n'y a que 11 points.
-
-  Les générateurs doivent donc être des 2-transpositions ou des 4-transpositions.
 \end{frame}
 
 \section{String C-group representations}
@@ -128,12 +106,26 @@
     \]
 
   \begin{definition}
-    Un sggi qui satisfait la propriété d'intersection est appelé une string C-group representations.
+    Un sggi qui satisfait la propriété d'intersection est appelé une string C-group representation.
   \end{definition}
 \end{frame}
 
-\begin{frame}{Propriétés}
-  Il existe une correspondance entre les polytopes et les string C-groups representation.
+\begin{frame}{Dualité et propriétés}
+  Il existe une correspondance entre les polytopes abstraits réguliers et les string C-groups representations.
+
+  Pour y arriver, il faut prendre certains générateurs bien choisis du groupe d'automorphismes du polytope.
+
+  Le dual d'un sggi est obtenu en inversant l'ordre des générateurs. Ceci donne aussi le dual du polytope.
+\end{frame}
+
+\begin{frame}{$i$-transpositions}
+  Concentrons nous maintenant sur $A_{11}$.
+
+  Les générateurs doivent être des involutions, dès lors ils doivent être des $i$-transpositions, c'est-à-dire que les générateurs permutent $i$ paires de points distincts.
+
+  Le groupe $A_{11}$ ne contient que des permutations paires. Donc $i$ doit être pair mais ne peut pas être égal à 6 ou plus car il n'y a que 11 points.
+
+  Les générateurs doivent donc être des 2-transpositions ou des 4-transpositions.
 \end{frame}
 
 \section{Permutation representation graphs}
@@ -193,7 +185,7 @@
   %Les générateurs non consecutifs d'un sggi doivent commuter, ceci a des conséquences sur le graphe.
 
   \begin{theorem}
-    Dans un permutation representation graph, le graphe obtenu en ne conservant que les arêtes de deux générateurs non-consécutifs peuvent uniquement former les motifs suivants:
+    Dans un permutation representation graph, le graphe obtenu en ne conservant que les arêtes de deux générateurs non-consécutifs peut uniquement former les motifs suivants:
     \begin{itemize}
       \item Un point fixe
       \item Une arête simple
@@ -351,16 +343,16 @@
   \end{figure}
 \end{frame}
 
-\section{Nombre minimal de 4-transpositions}
+\section{En rang 5, il faut au moins une 4-transposition}
 
-\begin{frame}{Rang 5}
+\begin{frame}{Objectif}
   \begin{theorem}
     Tout permutation representation graph de rang 5 de $A_{11}$ admet au moins une 4-transposition.
   \end{theorem}
 \end{frame}
 
 \begin{frame}{Preuve (1)}
-    Supposons qu'il n'y ait aucune 4-transposition alors tous les générateurs doivent être des 2-transpositions et donc il y a 10 arêtes pour lier 11 points. Le graphe doit donc être un arbre.
+    Supposons qu'il n'y ait aucune 4-transposition alors tous les générateurs doivent être des 2-transpositions. Donc il y a 10 arêtes pour lier 11 points. Le graphe doit donc être un arbre.
 
     Cependant aucun sommet ne peut être relié par 3 arêtes.
 
@@ -387,7 +379,7 @@
       \end{center}
     \end{figure}
 
-    Supposons que $i$ et $k$ soient non-consécutifs alors les deux arêtes $i$ et $k$ de ce graphe doivent être dans un motif valide. Le seul possible est le carré alterné mais alors le graphe n'est pas un arbre.
+    Supposons que $i$ et $k$ soient non-consécutifs alors les deux arêtes $i$ et $k$ de ce graphe doivent être dans un motif valide. La seule possibilité est un carré alterné mais alors le graphe n'est pas un arbre.
 
     Donc le graphe doit être une chaîne.
 \end{frame}
@@ -539,12 +531,6 @@
 
 \end{frame}
 
-\begin{frame}{Rang 4}
-  \begin{theorem}
-    Tout permutation representation graph de rang 4 de $A_{11}$ admet au moins deux 4-transpositions.
-  \end{theorem}
-\end{frame}
-
 \section{Méthode}
 
 \begin{frame}{Méthode}
@@ -553,7 +539,7 @@
   \begin{enumerate}
     \item Partir d'une involution de base
     \item À partir d'une deuxième involution, sachant qu'il existe uniquement quatre motifs valides, lister toutes les possibilités.
-    \item Étendre le graphe afin qu'il devienne connexe. Des arêtes supplémentaire peuvent être placées afin de satisfaire diverses contraintes.
+    \item Étendre le graphe afin qu'il devienne connexe. Des arêtes supplémentaires peuvent être placées afin de satisfaire diverses contraintes.
     \item Ajouter les arêtes restantes.
   \end{enumerate}
 \end{frame}
@@ -599,7 +585,7 @@
 \end{frame}
 
 \begin{frame}{Carré alterné (1)}
-  Partons du carré alterné
+  Dans le cas du carré alterné
 
   \begin{figure}[H]
     \begin{center}
@@ -628,7 +614,7 @@
 
   \pause
 
-  Ce carré alterné ne peut être adjacent à une arête simple.
+  Ce carré alterné ne peut être adjacent à une arête qui n'est pas contenue dans un carré alterné.
 
   Il doit donc être adjacent à un autre carré alterné. Les possibilités sont un carré avec $\rho_0$ et $\rho_3$ ou un carré avec $\rho_1$ et $\rho_4$. Le second cas peut être ramené au premier par dualité.
 
@@ -897,9 +883,11 @@
     \end{center}
   \end{figure}
 
-  Un point doit encore être relié mais le nombre total d'arêtes $\rho_2$ est pour le moment impair. Donc soit le dernier point doit être relié par une arête $\rho_2$ soit une arête double contenant $\rho_2$ doit être créée entre deux points déjà reliés.
+  Un point doit encore être relié mais le nombre total d'arêtes $\rho_2$ est pour le moment impair.
 
-  Cependant aucune de ces options n'est possible donc aucun permutation representation graph ne peut être trouvé.
+  La dernière arête $\rho_2$ doit donc soit lier le dernier point à cette composante, soit lier deux points dejà dans cette même composante.
+
+  Aucune de ces options n'est possible donc aucun permutation representation graph ne peut être trouvé.
 
 
 \end{frame}
@@ -1417,9 +1405,147 @@
   \end{figure}
 
 
-  Vu que le groupe est $S_7$ l'arête isolée permet que le graphe dans son ensemble soit pair. Toutes les permutations de 4 points de $\rho_2$ se trouvent dans le groupe représenté par ce graphe. En particulier la permutation que nous avons trouvée pour $\Gamma_I$ s'y trouve.
+  Vu que le groupe est $S_7$ l'arête isolée permet que la permutation prise sur le graphe dans son ensemble soit paire. Toutes les permutations de 4 points de $\rho_2$ se trouvent dans le groupe représenté par ce graphe. En particulier la permutation que nous avons trouvée pour $\Gamma_I$ s'y trouve.
 
   Donc il existe une permutation qui est dans $\Gamma_I$ et dans $\Gamma_J$ mais pas dans $\Gamma_{I \cap J}$. Ce sggi n'est donc pas une string C-group representation.
+
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Et le rang 6?}
+  Pourquoi est-ce qu'il existe de polytopes de rang 6 alors?
+
+  \pause
+
+  En rang 6, il est possible de n'avoir que des 2-transpositions. Dans ce cas, on a quand même 12 arêtes pour lier 11 points.
+
+  La différence est que l'on est plus capable de construire des motifs d'intersection entre les involutions non-consécutives car on est plus sûr qu'elle partagent effectivement un sommet.
+
+  Ceci retire des contraintes et permet quand même de former 3 polytopes.
+\end{frame}
+
+\begin{frame}{Polytopes de rang 6}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (10,0)  {};
+          \node (7)  at (12,0)  {};
+          \node (8)  at (14,0)  {};
+          \node (9)  at (16,0)  {};
+          \node (10) at (18,0)  {};
+          \node (11) at (20,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge[bend left=30] node {$0$} (2);
+            \path (3)  edge node {$0$} (4);
+            \path (2)  edge node {$1$} (3);
+            \path (4)  edge node {$1$} (5);
+            \path (1)  edge[bend right=30] node {$2$} (2);
+            \path (5)  edge node {$2$} (6);
+            \path (6)  edge node {$3$} (7);
+            \path (10) edge[bend left=30] node {$3$} (11);
+            \path (7)  edge node {$4$} (8);
+            \path (9)  edge node {$4$} (10);
+            \path (8)  edge node {$5$} (9);
+            \path (10) edge[bend right=30] node {$5$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (10,0)  {};
+          \node (7)  at (12,0)  {};
+          \node (8)  at (14,0)  {};
+          \node (9)  at (16,0)  {};
+          \node (10) at (18,0)  {};
+          \node (11) at (20,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=30] node {$0$} (4);
+            \path (2)  edge node {$1$} (3);
+            \path (4)  edge node {$1$} (5);
+            \path (3)  edge[bend right=30] node {$2$} (4);
+            \path (5)  edge node {$2$} (6);
+            \path (6)  edge node {$3$} (7);
+            \path (10) edge[bend left=30] node {$3$} (11);
+            \path (7)  edge node {$4$} (8);
+            \path (9)  edge node {$4$} (10);
+            \path (8)  edge node {$5$} (9);
+            \path (10) edge[bend right=30] node {$5$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[scale=.55]
+
+        \begin{scope}[every node/.style={circle,draw, transform shape}]
+          \node (1)  at (0,0)  {};
+          \node (2)  at (2,0)  {};
+          \node (3)  at (4,0)  {};
+          \node (4)  at (6,0)  {};
+          \node (5)  at (8,0)  {};
+          \node (6)  at (10,0)  {};
+          \node (7)  at (12,0)  {};
+          \node (8)  at (14,0)  {};
+          \node (9)  at (16,0)  {};
+          \node (10) at (18,0)  {};
+          \node (11) at (20,0) {};
+        \end{scope}
+
+        \begin{scope}[every node/.style={fill=white, transform shape}]
+
+          \begin{scope}[every edge/.style={draw}]
+            \path (1)  edge node {$0$} (2);
+            \path (3)  edge[bend left=30] node {$0$} (4);
+            \path (2)  edge node {$1$} (3);
+            \path (4)  edge node {$1$} (5);
+            \path (3)  edge[bend right=30] node {$2$} (4);
+            \path (5)  edge node {$2$} (6);
+            \path (6)  edge node {$3$} (7);
+            \path (8) edge[bend left=30] node {$3$} (9);
+            \path (7)  edge node {$4$} (8);
+            \path (9)  edge node {$4$} (10);
+            \path (8)  edge[bend right=30] node {$5$} (9);
+            \path (10) edge node {$5$} (11);
+          \end{scope}
+        \end{scope}
+
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
 
 \end{frame}
 
