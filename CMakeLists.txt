@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 SET(LATEX_OUTPUT_PATH build)
 INCLUDE(deps/UseLATEX/UseLATEX.cmake)
 
-file(GLOB_RECURSE contents_files RELATIVE ${CMAKE_SOURCE_DIR} include/*.tex *.png)
+file(GLOB_RECURSE contents_files RELATIVE ${CMAKE_SOURCE_DIR} include/*.tex Hemicube.pdf_tex Hemicube.pdf)
 
 add_latex_document(full.tex
   BIBFILES references.bib
